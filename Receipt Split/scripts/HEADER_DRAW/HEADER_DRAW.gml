@@ -1,5 +1,5 @@
 
-function draw_screen_header(header_string,height){
+function draw_screen_header(header_left,header_right,header_string,height){
 
 var xx = room_width*0.5;
 var yy = 50;
@@ -19,20 +19,48 @@ if header_string != ""
 	draw_set_valign(fa_top);
 	}
 
-// draw the 3 bars
-draw_menu_bars(20,35,40,4,7,c_white);
-
-// clicked on bars
-if (submenu < 0) && !mode_delete
-if click_region_released(0,0,100,100,true,navbar.hidden) // make_color_rgb(0,255,255)
+var xpos = 0;
+var region = 100;
+var header_type = header_left;
+repeat 2
 	{
-	submenu_previous = submenu;
-	submenu = navbar.sidebar;
+	if header_type == headerType.bars
+		{
+		// draw the 3 bars
+		draw_menu_bars(xpos+30,35,40,4,7,c_white);
+
+		// clicked on bars
+		if (submenu < 0) && !mode_delete
+		if click_region_released(xpos,0,region,region,true,navbar.hidden) // make_color_rgb(0,255,255)
+			{
+			submenu_previous = submenu;
+			submenu = navbar.sidebar;
 	
-	submenu_menu_xpos = 0;
-	screen_darken_value = darken_index.sidebar;
+			submenu_menu_xpos = 0;
+			screen_darken_value = darken_index.sidebar;
+			}
+		}
+	else if header_type == headerType.dots
+		{
+		// draw the 3 dots
+		draw_menu_dots(xpos+(region*0.5),35,3,7,c_white);
+		
+		click_region_released(xpos,0,region,region,true,navbar.hidden) // make_color_rgb(0,255,255)
+
+		}
+	else if header_type == headerType.back
+		{
+		draw_menu_arrow(xpos+20,50,40,30,4,1,c_white);
+
+		if click_region_released(xpos,0,region,region,true,navbar.hidden) // make_color_rgb(0,255,255)
+		screen_goto_prev();
+		}
+		
+	var header_type = header_right;
+	var xpos = room_width-region;
 	}
 	
+// other header overwrite
 draw_header_delete(0,0,ww,hh);
 }
 

@@ -2,7 +2,7 @@
 function draw_friends_profile() {
 	
 // draw the 3 bars
-draw_screen_header("Profile Info",60);
+draw_screen_header(headerType.back,headerType.none,"Profile Info",60);
 
 var xx = room_width*0.5;
 var yy = 175;

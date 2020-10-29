@@ -6,7 +6,7 @@ var header = "Create Receipt";
 if screen_index == screen.receiptUpdate
 var header = "Update Receipt";
 
-draw_screen_header(header,60);
+draw_screen_header(headerType.back,headerType.none,header,60);
 
 if kv_active
 switch textbox_index

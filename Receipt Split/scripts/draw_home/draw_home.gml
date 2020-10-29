@@ -2,7 +2,7 @@
 function draw_home() {
 	
 // draw the 3 bars
-draw_screen_header("Home",60);
+draw_screen_header(headerType.bars,headerType.none,"Home",60);
 
 // create expense button
 var xx = 20;

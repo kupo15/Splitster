@@ -43,10 +43,11 @@ var sep = 60;
 var height = 40;
 
 draw_set_halign(fa_left);
-draw_text_height(xx+xx_off,yy+yoff+(0*sep),"Home",height);
-draw_text_height(xx+xx_off,yy+yoff+(1*sep),"Friends",height);
-draw_text_height(xx+xx_off,yy+yoff+(2*sep),"Create Expense",height);
-draw_text_height(xx+xx_off,yy+yoff+(3*sep),"Expense History",height);
+draw_text_height(xx+xx_off,yy+yoff+(screen.home*sep),"Home",height);
+draw_text_height(xx+xx_off,yy+yoff+(screen.friendsList*sep),"Friends",height);
+draw_text_height(xx+xx_off,yy+yoff+(screen.expenseCreate*sep),"Create Expense",height);
+draw_text_height(xx+xx_off,yy+yoff+(screen.squareUp*sep),"Pending Expenses",height);
+draw_text_height(xx+xx_off,yy+yoff+(screen.expenseHistory*sep),"Expense History",height);
 
 draw_text_height(xx+xx_off,yy+yoff+(11*sep),"Settings",height);
 
@@ -55,7 +56,7 @@ draw_text_height(xx_off+15,room_height-40,"Vers. "+string(GM_version),30);
 
 for(var i=0;i<12;i++)
 	{
-	if i>3 && i<10
+	if i>screen.expenseHistory && i<screen.settings
 	continue;
 		
 	draw_sprite_ext(spr_footer_icon,i,res_bleed_xx+xx_off,yy+9+(i*sep),0.12,0.12,0,c_white,1); // draw menu icons

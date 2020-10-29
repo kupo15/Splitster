@@ -2,7 +2,7 @@
 function draw_splitcost() {
 		
 // draw the 3 bars
-draw_screen_header("Split Cost",60);
+draw_screen_header(headerType.back,headerType.none,"Split Cost",60);
 		
 // draw friends list
 var ysep = 85;

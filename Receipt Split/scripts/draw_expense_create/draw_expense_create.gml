@@ -2,7 +2,7 @@
 function draw_expense_create() {
 	
 // draw the 3 bars
-draw_screen_header("Expense Report",60);
+draw_screen_header(headerType.back,headerType.none,"Expense Report",60);
 
 // entry
 if kv_active
@@ -184,15 +184,15 @@ var str = "Create Expense";
 
 if click_button(xx,yy,str,height,c_black,ww,hh,c_white,true,true,navbar.hidden)
 	{
-	active_expense.name = event_name;
+	active_expense.name = event_name; // set event name
 	
-	ds_list_add(master_expense_list,active_expense);
-	ds_list_sort_nested_struct(master_expense_list,"date",false);
+	ds_list_add(squareup_list,active_expense);
+	ds_list_sort_nested_struct(squareup_list,"date",false);
 
 	active_expense = undefined;
 	active_receipt = undefined;
 	
-	screen_change(screen.home,true);
+	screen_change(screen.squareUp,true);
 	}
 #endregion
 

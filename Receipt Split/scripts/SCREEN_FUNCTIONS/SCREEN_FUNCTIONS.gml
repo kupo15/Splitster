@@ -34,5 +34,5 @@ if ds_stack_empty(prev_screen_stack)
 else
 screen_index = ds_stack_pop(prev_screen_stack);
 
-
+vk_hide();
 }

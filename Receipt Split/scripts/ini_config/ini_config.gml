@@ -19,7 +19,7 @@ function ini_config() {
 		var hh = 960;
 		var scale = 1;
 		var debug_ww = 2.5;
-
+		
 		window_set_size(ww*debug_ww*scale,hh*scale);
 		surface_resize(application_surface,ww*scale,hh*scale);
 

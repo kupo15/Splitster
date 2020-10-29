@@ -46,6 +46,9 @@ master_expense_list_offset_start = master_expense_list_offset;
 receipt_list_offset = 0;
 receipt_list_offset_start = receipt_list_offset;
 
+squareup_list_offset = 0;
+squareup_list_offset_start = squareup_list_offset;
+
 #endregion
 
 

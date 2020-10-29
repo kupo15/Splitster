@@ -1,8 +1,17 @@
 
+enum headerType {
+none,
+bars,
+dots,
+back
+
+}
+
 enum screen {
 home,
 friendsList,
 expenseCreate,
+squareUp,
 expenseHistory,
 
 settings = 11,
