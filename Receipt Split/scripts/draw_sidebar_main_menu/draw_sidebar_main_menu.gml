@@ -63,8 +63,11 @@ for(var i=0;i<12;i++)
 	if i==10
 	draw_line(xx_off,yy+(i*sep),xx_off+ww,yy+(i*sep)); // separating line
 
-	if click_region_released(xx_off,yy+(i*sep),ww,sep,true,navbar.sidebar) // make_color_rgb(0,255,255)
+	if click_region_released(xx_off,yy+(i*sep),ww,sep,true,navbar.sidebar)
 		{
+		click_highlight_alpha = 0;
+		click_highlight_alpha_start = 0;
+		
 		submenu = navbar.hidden;
 		android_back_sidebar = true;
 
@@ -78,6 +81,7 @@ for(var i=0;i<12;i++)
 
 #endregion
 
+draw_highlight_click(submenu == navbar.sidebar)
 
 if android_back_sidebar
 	{

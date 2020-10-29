@@ -18,7 +18,7 @@ function draw_screens() {
 		}
 #endregion
 
-draw_darken_screen();
+draw_background_screen();
 
 draw_set_halign(fa_left);
 switch screen_index
@@ -41,14 +41,16 @@ switch screen_index
 	
 	case screen.edit_date: draw_date_edit_calendar(); break;
 	}
-   
+	
+draw_highlight_click(submenu != navbar.sidebar);
+draw_darken_screen();
+
 // draw_footer_button();
 draw_nav_bar();
 draw_sidebar_main_menu();
 	
 draw_popup_par();
 	
-draw_highlight_click();
 
 
 // update the virtual keyboard

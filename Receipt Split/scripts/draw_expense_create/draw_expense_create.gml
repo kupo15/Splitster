@@ -24,7 +24,7 @@ draw_set_halign(fa_left);
 draw_text_height_ext_cursor(xx+5,yy+text_yoff+(0*ysep),event_name,"Enter a description",0,-1,ww,height,0);
 draw_line_pixel(xx,yy+height+10+(0*ysep),ww,2,c_gray,0.8); // draw separating line
 
-if click_region_released(0,yy+(0*ysep),ww,ysep+10,true,submenu)
+if click_region_released(0,yy+(0*ysep),ww,ysep+10,true,navbar.hidden)
 click_textbox_set(event_name,0,kbv_type_default);
 
 // draw Receipt label
@@ -131,7 +131,7 @@ draw_set_halign(fa_center);
 draw_text_height(xx+(ww*0.5),yy+text_yoff+(0*ysep),"Click to add",height);
 draw_text_height(xx+(ww*0.5),yy+text_yoff+(1*ysep),"Receipt",height);
 
-if click_region_released(xx,yy,ww,hh,true,submenu)
+if click_region_released(xx,yy,ww,hh,true,navbar.hidden)
 	{
 	scr_receipt_create();
 	
@@ -154,7 +154,7 @@ draw_set_alpha(1);
 draw_sprite_ext(ico_trash2,1,xx+55,yy+10,0.8,0.8,0,c_white,1); // draw trash icon
 	
 // clicked trash icon
-if click_region_released(xx,yy,ww,hh,true,submenu)
+if click_region_released(xx,yy,ww,hh,true,navbar.hidden)
 	{
 	//ds_list_delete(master_score_list,index); // delete score
 	//json_save(save_data);
@@ -182,7 +182,7 @@ var height = 50;
 //if screen_index == screen.add_score
 var str = "Create Expense";
 
-if click_button(xx,yy,str,height,c_black,ww,hh,c_white,true,true,submenu)
+if click_button(xx,yy,str,height,c_black,ww,hh,c_white,true,true,navbar.hidden)
 	{
 	active_expense.name = event_name;
 	

@@ -24,7 +24,7 @@ draw_menu_bars(20,35,40,4,7,c_white);
 
 // clicked on bars
 if (submenu < 0) && !mode_delete
-if click_region_released(0,0,100,100,true,submenu) // make_color_rgb(0,255,255)
+if click_region_released(0,0,100,100,true,navbar.hidden) // make_color_rgb(0,255,255)
 	{
 	submenu_previous = submenu;
 	submenu = navbar.sidebar;

@@ -4,7 +4,6 @@ prev_screen_stack = ds_stack_create();
 	
 }
 
-
 function screen_change(ind,clear) {
 /// @param screen_index
 /// @param [clear]
@@ -21,8 +20,8 @@ ds_stack_clear(prev_screen_stack);
 vk_hide();
 }
 
-/// @param [submen]
 function screen_goto_prev() {
+/// @param [submen]
 
 if argument_count == 1
 submenu = argument[0];

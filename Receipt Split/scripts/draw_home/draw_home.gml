@@ -12,6 +12,6 @@ var hh = 60;
 var height = 40;
 var col = make_color_rgb(28,164,109);
 
-if click_button(xx,yy,"New Expense",height,c_white,ww,hh,col,true,false,submenu)
+if click_button(xx,yy,"New Expense",height,c_white,ww,hh,col,true,false,navbar.hidden)
 scr_navbar_click(screen.expenseCreate);
 }

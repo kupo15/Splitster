@@ -12,9 +12,6 @@ function click_button(xx,yy,str,height,str_col,ww,hh,col,rounded,outline,sub) {
 /// @param outline
 /// @param submenu
 
-if sub != submenu
-exit;
-
 var yoff = (hh-height)*0.5;
 
 if rounded
@@ -35,7 +32,7 @@ else
 draw_set_halign(fa_center);
 draw_text_height_color(xx+(ww*0.5),yy+yoff,str,height,str_col);
 
-if click_region_released(xx,yy,ww,hh,true,submenu)
+if click_region_released(xx,yy,ww,hh,true,sub)
 return true;
 else
 return false;

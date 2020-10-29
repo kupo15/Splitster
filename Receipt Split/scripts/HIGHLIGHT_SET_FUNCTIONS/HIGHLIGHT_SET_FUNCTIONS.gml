@@ -86,9 +86,9 @@ if clickout //|| width_reached || (curs_moved && width_reached)
 click_highlight_alpha_end = 0; // fade away
 }
 	
-function draw_highlight_click() {
+function draw_highlight_click(sub) {
 	
-if click_highlight_index != undefined
+if click_highlight_index != undefined || !sub
 exit;
 	
 var xx = click_highlight_xpos;

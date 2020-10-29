@@ -33,7 +33,7 @@ draw_text_height_ext_cursor(xx+5,yy+(1*ysep),receipt_price,"0.00",0,-1,ww,height
 
 for(var i=0;i<2;i++)
 	{
-	if click_region_released(xx,yy-30+(i*ysep),ww,ysep-30,true,submenu)
+	if click_region_released(xx,yy-30+(i*ysep),ww,ysep-30,true,navbar.hidden)
 	switch i
 		{
 		case 0: click_textbox_set(receipt_name,0,kbv_type_default); break;	
@@ -51,7 +51,7 @@ var ww = room_width-xx-xx;
 var hh = 60;
 var col = make_color_rgb(28,164,109);
 
-if click_button(xx,yy,"Split Costs",height,c_white,ww,hh,col,true,false,submenu)
+if click_button(xx,yy,"Split Costs",height,c_white,ww,hh,col,true,false,navbar.hidden)
 screen_change(screen.splitCost);
 
 #region delete expense
@@ -70,7 +70,7 @@ if screen_index == screen.receiptUpdate
 	draw_sprite_ext(ico_trash2,1,xx+55,yy+10,0.8,0.8,0,c_white,1); // draw trash icon
 	
 	// clicked trash icon
-	if click_region_released(xx,yy,ww,hh,true,submenu)
+	if click_region_released(xx,yy,ww,hh,true,navbar.hidden)
 		{
 		//ds_list_delete(master_score_list,index); // delete score
 		//json_save(save_data);
@@ -100,7 +100,7 @@ var str = "Create Receipt";
 draw_set_alpha(0.5+(0.5*submit));
 
 // clicked submit
-if click_button(xx,yy,str,height,c_black,ww,hh,c_white,true,true,submenu) || keyboard_check_released(vk_enter)
+if click_button(xx,yy,str,height,c_black,ww,hh,c_white,true,true,navbar.hidden) || keyboard_check_released(vk_enter)
 	{
 	scr_receipt_add(receipt_index);
 	
