@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Receipt Split",
-    "path": "Receipt Split.yyp",
+    "name": "Submenus",
+    "path": "folders/Submenus.yy",
   },
   "resourceVersion": "1.0",
   "name": "draw_submenu_friends_list",

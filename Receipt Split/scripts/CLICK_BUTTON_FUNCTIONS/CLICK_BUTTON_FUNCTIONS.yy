@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Receipt Split",
-    "path": "Receipt Split.yyp",
+    "name": "Functions",
+    "path": "folders/Functions.yy",
   },
   "resourceVersion": "1.0",
   "name": "CLICK_BUTTON_FUNCTIONS",

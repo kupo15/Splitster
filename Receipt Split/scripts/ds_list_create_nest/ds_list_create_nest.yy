@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Functions",
-    "path": "folders/Scripts/Functions.yy",
+    "path": "folders/Functions.yy",
   },
   "resourceVersion": "1.0",
   "name": "ds_list_create_nest",

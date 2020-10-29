@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Functions",
-    "path": "folders/Scripts/Functions.yy",
+    "path": "folders/Functions.yy",
   },
   "resourceVersion": "1.0",
   "name": "HIGHLIGHT_SET_FUNCTIONS",

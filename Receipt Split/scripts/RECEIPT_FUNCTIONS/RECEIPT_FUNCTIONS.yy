@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Receipt Split",
-    "path": "Receipt Split.yyp",
+    "name": "PROJECT FUNCTIONS",
+    "path": "folders/PROJECT FUNCTIONS.yy",
   },
   "resourceVersion": "1.0",
   "name": "RECEIPT_FUNCTIONS",

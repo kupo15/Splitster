@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Receipt Split",
-    "path": "Receipt Split.yyp",
+    "name": "Ini",
+    "path": "folders/Scripts/Main/Ini.yy",
   },
   "resourceVersion": "1.0",
   "name": "ini_debug",
