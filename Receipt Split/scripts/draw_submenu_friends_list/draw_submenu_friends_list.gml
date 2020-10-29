@@ -81,7 +81,7 @@ scr_searchbar(master_friends_list);
 
 #region draw search bar
 xx = 0;
-var col = make_color_rgb(28,194,159);
+var col = make_color_rgb(140,238,255);
 var text_yoff = (ysep-(height*0.8))*0.5;
 
 draw_rectangle_color(xx,yy-ysep,xx+ww,yy,col,col,col,col,false);
