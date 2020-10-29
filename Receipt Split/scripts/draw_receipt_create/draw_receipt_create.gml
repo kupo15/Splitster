@@ -28,12 +28,7 @@ draw_text_height(xx,yy+height+(0*ysep),"Expense Name",30);
 draw_text_height(xx,yy+height+(1*ysep),"Amount",30);
 
 var height = 60;
-//if receipt_name == ""
-//draw_text_height_entry(xx+5,yy+20+(0*ysep),"Enter a description",height*0.7,noone,-1,height,fn_italic); // draw label
 draw_text_height_ext_cursor(xx+5,yy+(0*ysep),receipt_name,"Enter a description",0,-1,ww,height,0);
-
-//if receipt_price == ""
-//draw_text_height_entry(xx+5,yy+20+(1*ysep),"0.00",height*0.7,noone,-1,height,fn_italic); // draw label
 draw_text_height_ext_cursor(xx+5,yy+(1*ysep),receipt_price,"0.00",0,-1,ww,height,1);
 
 for(var i=0;i<2;i++)
@@ -48,7 +43,7 @@ for(var i=0;i<2;i++)
 	draw_line_pixel(xx,yy+height+(i*ysep),ww,2,c_gray,0.8); // draw separating line
 	}
 	
-	
+// split costs button
 var xx = 30;
 var yy = 500;
 var height = 40;

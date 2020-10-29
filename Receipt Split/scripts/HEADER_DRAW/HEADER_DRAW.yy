@@ -6,7 +6,7 @@
     "path": "folders/Scripts/Main/Draw/Navbar.yy",
   },
   "resourceVersion": "1.0",
-  "name": "draw_screen_header",
+  "name": "HEADER_DRAW",
   "tags": [],
   "resourceType": "GMScript",
 }

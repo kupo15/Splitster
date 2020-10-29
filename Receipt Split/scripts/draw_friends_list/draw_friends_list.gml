@@ -6,9 +6,8 @@ draw_screen_header("Friends List",60);
 
 var ysep = 85;
 
-if draw_submenu_friends_list(30,header_height+ysep,room_width,60,ysep,10)
+if draw_submenu_friends_list(30,header_height+ysep,room_width,60,ysep,8)
 screen_change(screen.friendsProfile)
-
 
 if android_back
 	{

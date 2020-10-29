@@ -12,6 +12,10 @@ ds_list_add(delete_list,first_pos); // add that index slot to the delete list
 
 function delete_list_enable() {
 
+// turn off click highlight
+click_highlight_alpha_end = 0;
+click_highlight_alpha = 0;
+
 // enable delete mode
 mode_delete = true;
 can_delete = false;
@@ -45,14 +49,24 @@ mode_delete = false;
 //json_save(save_data);
 }
 
-function delete_list_draw_selected(xx,yy,ww,hh,del_list_id,ind) {
+function delete_list_draw_selected(xx,yy,yoff,ww,hh,box_hh,del_list_id,ind) {
 
 var col = c_green;
+
+// change yy and sep/hh
+var ypos = yy+yoff;
+var ypos_clamp = clamp(ypos,yy,yy+box_hh); // clamp between window
+var sep_adj = abs(ypos-ypos_clamp); // remaining height after clamped
+var sep = hh-sep_adj;
+		
+// if hanging off the bottom
+if ypos+sep > yy+box_hh
+sep = yy+box_hh-ypos;
 
 if del_list_id[| ind]	
 	{
 	draw_set_alpha(0.2);
-	draw_rectangle_color(xx,yy,xx+ww,yy+hh,col,col,col,col,false);
+	draw_rectangle_color(xx,ypos_clamp,xx+ww,ypos_clamp+sep,col,col,col,col,false);
 	draw_set_alpha(1);
 	}
 }

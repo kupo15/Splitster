@@ -69,18 +69,17 @@ for(var i=pos_start;i<pos_end;i++)
 	
 	// highlight selected
 	if mode_delete
-	delete_list_draw_selected(xx,yy+(off_pos*ysep),ww,hh,delete_list,i);
-	
+	delete_list_draw_selected(0,yy,(off_pos*ysep),ww,ysep,hh,delete_list,i);
+
 	// clicked on expense
 	if !mode_delete && click_region_pressed_clamp(xx,yy,(off_pos*ysep),ww,hh,hh,mb_left,noone,navbar.hidden,i)
 	delete_list_set(active_expense.receiptList,i);
-	
-	// set highlight ypos and height
-	if click_region(xx,yy+(off_pos*ysep),ww,hh,noone,noone)
-	click_highlight_set_clamped(yy,off_pos,hh,hh);
+		
+	// draw clicked highlight
+	draw_highlight_click_clamp(yy,(off_pos*ysep),ysep,hh,i);
 
 	// click released on event
-	if click_region_released_clamp(xx,yy,(off_pos*ysep),ww,hh,hh,mb_left,c_yellow,navbar.hidden)
+	if click_region_released_clamp(xx,yy,(off_pos*ysep),ww,hh,hh,mb_left,c_yellow,navbar.hidden,i)
 		{
 		if mode_delete
 			{

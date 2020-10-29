@@ -36,7 +36,6 @@ if click_region_released(0,0,100,100,true,submenu) // make_color_rgb(0,255,255)
 draw_header_delete(0,0,ww,hh);
 }
 
-
 function draw_header_delete(xx,yy,ww,hh){
 	
 draw_set_alpha(header_delete_offset_disp);

@@ -18,6 +18,7 @@ screen_index = ind;
 if clear
 ds_stack_clear(prev_screen_stack);
 
+vk_hide();
 }
 
 /// @param [submen]

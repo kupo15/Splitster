@@ -74,7 +74,7 @@ for(var i=pos_start;i<pos_end;i++)
 	
 	// highlight selected
 	if mode_delete
-	delete_list_draw_selected(0,yy+(off_pos*ysep),ww,ysep,delete_list,i);
+	delete_list_draw_selected(0,yy,(off_pos*ysep),ww,ysep,hh,delete_list,i);
 		
 	draw_text_height(xpos,yy+10+(off_pos*ysep)+(0*height)+sq_yoff,name,height); // draw name
 	draw_text_height(xpos,yy+10+(off_pos*ysep)+(1*height)+sq_yoff,"Receipts: "+string(receiptNum),height); // draw receipt numbers
@@ -83,12 +83,11 @@ for(var i=pos_start;i<pos_end;i++)
 	if !mode_delete && click_region_pressed_clamp(0,yy,(off_pos*ysep),ww,ysep,hh,mb_left,noone,navbar.hidden,i)
 	delete_list_set(master_expense_list,i);
 	
-	// set highlight ypos and height
-	if click_region(xx,yy+(off_pos*ysep),ww,ysep,noone,noone)
-	click_highlight_set_clamped(yy,off_pos,ysep,hh);
-
+	// draw clicked highlight
+	draw_highlight_click_clamp(yy,(off_pos*ysep),ysep,hh,i);
+	
 	// click released on event
-	if click_region_released_clamp(0,yy,(off_pos*ysep),ww,ysep,hh,mb_left,c_yellow,navbar.hidden)
+	if click_region_released_clamp(0,yy,(off_pos*ysep),ww,ysep,hh,mb_left,c_yellow,navbar.hidden,i)
 		{
 		if mode_delete
 			{

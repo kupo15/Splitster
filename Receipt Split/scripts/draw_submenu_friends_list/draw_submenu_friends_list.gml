@@ -22,7 +22,7 @@ else
 	
 		// highlight selected
 		if mode_delete
-		delete_list_draw_selected(0,yy+(off_pos*ysep),ww,ysep,delete_list,i);
+		delete_list_draw_selected(0,yy,(off_pos*ysep),ww,ysep,hh,delete_list,i);
 		
 		draw_text_height(xx,yy+text_yoff+(off_pos*ysep),name,height); // draw name
 	
@@ -31,13 +31,12 @@ else
 		// clicked on score
 		if !mode_delete && click_region_pressed_clamp(0,yy,(off_pos*ysep),ww,ysep,hh,mb_left,noone,submenu,i)
 		delete_list_set(master_friends_list,i);
-	
-		// set highlight ypos and height
-		if click_region(xx,yy+(off_pos*ysep),ww,ysep,noone,noone)
-		click_highlight_set_clamped(yy,off_pos,ysep,hh);
+			
+		// draw clicked highlight
+		draw_highlight_click_clamp(yy,(off_pos*ysep),ysep,hh,i);
 
 		// click released on friend
-		if click_region_released_clamp(0,yy,(off_pos*ysep),ww,ysep,hh,mb_left,c_yellow,submenu)
+		if click_region_released_clamp(0,yy,(off_pos*ysep),ww,ysep,hh,mb_left,c_yellow,submenu,i)
 			{
 			if mode_delete
 				{
