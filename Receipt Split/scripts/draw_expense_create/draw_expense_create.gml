@@ -46,10 +46,11 @@ var ysep = 30;
 var xx = 30;
 var yy = 220;
 var ww = room_width-xx-xx;
-var hh = 100;
-var text_yoff = (hh-(height*2))*0.5;
+var receipt_height = 100;
+var text_yoff = (receipt_height-(height*2))*0.5;
 
 var rows = 5;
+var hh = rows*receipt_height;
 var list_size = ds_list_size(active_expense.receiptList);
 var pos_start = floor(receipt_list_offset);
 var pos_end = min(list_size,ceil(receipt_list_offset)+rows);
@@ -60,26 +61,26 @@ for(var i=pos_start;i<pos_end;i++)
 	var off_pos = i-receipt_list_offset;
 	var pointer = active_expense.receiptList[| i];
 	
-	draw_roundrect(xx,yy+(i*hh),xx+ww,yy+hh+(i*hh),true);
+	draw_roundrect(xx,yy+(i*receipt_height),xx+ww,yy+receipt_height-1+(i*receipt_height),true);
 
 	var name = pointer.description;
 	var price = currency_symbol[pointer.currency]+pointer.price;
-	draw_text_height(xx+10,yy+text_yoff+(0*ysep)+(i*hh),"Name: "+string(name),height);
-	draw_text_height(xx+10,yy+text_yoff+(1*ysep)+(i*hh),"Price: "+string(price),height);
+	draw_text_height(xx+10,yy+text_yoff+(0*ysep)+(i*receipt_height),"Name: "+string(name),height);
+	draw_text_height(xx+10,yy+text_yoff+(1*ysep)+(i*receipt_height),"Price: "+string(price),height);
 	
 	// highlight selected
 	if mode_delete
-	delete_list_draw_selected(0,yy,(off_pos*ysep),ww,ysep,hh,delete_list,i);
+	delete_list_draw_selected(xx,yy,(off_pos*receipt_height),ww,receipt_height,hh,delete_list,i);
 
 	// clicked on expense
-	if !mode_delete && click_region_pressed_clamp(xx,yy,(off_pos*ysep),ww,hh,hh,mb_left,noone,navbar.hidden,i)
+	if !mode_delete && click_region_pressed_clamp(xx,yy,(off_pos*receipt_height),ww,receipt_height,hh,mb_left,noone,navbar.hidden,i)
 	delete_list_set(active_expense.receiptList,i);
 		
 	// draw clicked highlight
-	draw_highlight_click_clamp(yy,(off_pos*ysep),ysep,hh,i);
+	draw_highlight_click_clamp(yy,(off_pos*receipt_height),receipt_height,hh,i);
 
 	// click released on event
-	if click_region_released_clamp(xx,yy,(off_pos*ysep),ww,hh,hh,mb_left,c_yellow,navbar.hidden,i)
+	if click_region_released_clamp(xx,yy,(off_pos*receipt_height),ww,receipt_height,hh,mb_left,c_yellow,navbar.hidden,i)
 		{
 		if mode_delete
 			{
