@@ -9,13 +9,14 @@ exit;
 
 
 // draw kv popup overlay
-var kv_off = 400*kv_active;
+var kv_off = 400*kv_active*(submenu != navbar.numpad);
 var col = c_blue;
 
 draw_set_alpha(0.4);
 draw_rectangle_color(0,room_height+1,room_width,room_height+1-kv_off,col,col,col,col,false);
 draw_set_alpha(1);
 
+// mouse measuring
 if mouse_check_button_pressed(mb_middle)
 	{
 	mouse_xpos = mouse_x;
@@ -23,6 +24,4 @@ if mouse_check_button_pressed(mb_middle)
 	}
 
 if mouse_check_button(mb_middle)
-	{
-	draw_rectangle(mouse_xpos,mouse_ypos,mouse_x,mouse_y,true);
-	}
+draw_rectangle(mouse_xpos,mouse_ypos,mouse_x,mouse_y,true);

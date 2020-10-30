@@ -12,6 +12,12 @@ function sidebar_fades() {
 	if friendsbar_yoff != friendsbar_yoff_start
 	friendsbar_yoff_start = lerp(friendsbar_yoff_start,friendsbar_yoff,0.19);
 	
+	// numpad
+	numpad_yoff = !(submenu == navbar.numpad); // ? coursebar_yoff = true : coursebar_yoff = false
+
+	if numpad_yoff != numpad_yoff_start
+	numpad_yoff_start = lerp(numpad_yoff_start,numpad_yoff,0.19);
+	
 	// alpha
 	if alpha_lerp != alpha_lerp_end
 	alpha_lerp = lerp(alpha_lerp,alpha_lerp_end,0.19);

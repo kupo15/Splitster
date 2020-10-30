@@ -46,6 +46,9 @@ function draw_debug() {
 	
 	var yoff = 25;
 	
+	draw_text_height(xx,yy+((yoff+0)*sep),"numpad_value: "+string(numpad_value),height);
+	
+	/*
 	draw_text_height(xx,yy+((yoff+0)*sep),"scrollbar_spd "+string(scrollbar_speed[0]),height);
 	draw_text_height(xx,yy+((yoff+1)*sep),"scrollbar_ind_scro "+string(scrollbar_index_scrolling),height);
 

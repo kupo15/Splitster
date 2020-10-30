@@ -44,6 +44,8 @@ switch screen_index
 	case screen.edit_date: draw_date_edit_calendar(); break;
 	}
 	
+numpad_value = draw_numpad(numpad_value);
+	
 draw_highlight_click(submenu != navbar.sidebar);
 draw_darken_screen();
 

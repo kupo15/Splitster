@@ -182,64 +182,122 @@ function scr_input_text(limit) {
 
 }
 
+function string_convert_currency(str_,limit) {
 /// @description converts strings to currency format
 /// @param string
 /// @param number_limit
-function string_convert_currency(argument0, argument1) {
 
-	var str_ = argument0;
-	var limit = argument1;
-	var decimal_places = 1; // two cents places
+var decimal_places = 1; // two cents places
 
-	var str_cull = string_digits(str_); // string with non digits culled
-	var str_ll = string_length(str_cull); // length of string
+var str_cull = string_digits(str_); // string with non digits culled
+var str_ll = string_length(str_cull); // length of string
 
-	// remove 0s in front
-	repeat (2)
-		{
-		if string_char_at(str_cull,1) == "0"
-		str_cull = string_delete(str_cull,1,1);
-		}
+// remove 0s in front
+repeat (2)
+	{
+	if string_char_at(str_cull,1) == "0"
+	str_cull = string_delete(str_cull,1,1);
+	}
 
-	if str_cull != str_ // if culled
-	keyboard_string = str_cull;
+if str_cull != str_ // if culled
+keyboard_string = str_cull;
 
-	if str_ll > limit // if more than the limit
-		{
-		str_ = string_delete(str_cull,limit+1,1); // remove extra digits
-		keyboard_string = str_;
-		}
-	else str_ = str_cull;
+if str_ll > limit // if more than the limit
+	{
+	str_ = string_delete(str_cull,limit+1,1); // remove extra digits
+	keyboard_string = str_;
+	}
+else str_ = str_cull;
 
-	str_ = string(str_); // convert back to a string
+str_ = string(str_); // convert back to a string
 
-	if str_ != ""
-		{
-		str_ll = string_length(str_); // get the length of the string
+if str_ != ""
+	{
+	str_ll = string_length(str_); // get the length of the string
 	
-		var str_ins = ".";
+	var str_ins = ".";
 	
-		// decimal insert
-		if str_ll == 1
-		str_ins = "0.0";
-		else if str_ll == 2
-		str_ins = "0.";
+	// decimal insert
+	if str_ll == 1
+	str_ins = "0.0";
+	else if str_ll == 2
+	str_ins = "0.";
 	
-		str_ = string_insert(str_ins,str_,str_ll-decimal_places); // insert a decimal only
+	str_ = string_insert(str_ins,str_,str_ll-decimal_places); // insert a decimal only
 	
-		if str_ll > 5
-		str_ = string_insert(",",str_,str_ll-4); // insert a decimal and comma
+	if str_ll > 5
+	str_ = string_insert(",",str_,str_ll-4); // insert a decimal and comma
 	
-		str_ = string(str_); // add currency symbol
-		}
+	str_ = string(str_); // add currency symbol
+	}
 	
-	if string_length(kv_last_string) == 1 && kv_input_backspace
-		{
-		keyboard_string = "";
-		str_ = "";
-		}
+if string_length(kv_last_string) == 1 && kv_input_backspace
+	{
+	keyboard_string = "";
+	str_ = "";
+	}
 
-	return str_;
+return str_;
+
+
+}
+
+function string_convert_currency_numpad(str_,limit) {
+/// @description converts strings to currency format
+/// @param string
+/// @param number_limit
+
+var decimal_places = 1; // two cents places
+
+var str_cull = string_digits(str_); // string with non digits culled
+var str_ll = string_length(str_cull); // length of string
+
+// remove 0s in front
+repeat (2)
+	{
+	if string_char_at(str_cull,1) == "0"
+	str_cull = string_delete(str_cull,1,1);
+	}
+
+if str_cull != str_ // if culled
+numpad_value = str_cull;
+
+if str_ll > limit // if more than the limit
+	{
+	str_ = string_delete(str_cull,limit+1,1); // remove extra digits
+	numpad_value = str_;
+	}
+else str_ = str_cull;
+
+str_ = string(str_); // convert back to a string
+
+if str_ != ""
+	{
+	str_ll = string_length(str_); // get the length of the string
+	
+	var str_ins = ".";
+	
+	// decimal insert
+	if str_ll == 1
+	str_ins = "0.0";
+	else if str_ll == 2
+	str_ins = "0.";
+	
+	str_ = string_insert(str_ins,str_,str_ll-decimal_places); // insert a decimal only
+	
+	if str_ll > 5
+	str_ = string_insert(",",str_,str_ll-4); // insert a decimal and comma
+	
+	str_ = string(str_); // add currency symbol
+	}
+	
+if string_length(kv_last_string) == 1 && kv_input_backspace
+	{
+	keyboard_string = "";
+	str_ = "";
+	}
+
+return str_;
 
 
 }

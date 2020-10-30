@@ -38,7 +38,8 @@ sidebar = -5,
 main = -4,
 hidden = -1,
 
-friendsBar
+friendsBar,
+numpad
 }
 
 enum timerIndex {

@@ -12,7 +12,7 @@ if kv_active
 switch textbox_index
 	{
 	case 0: receipt_name = string_capitalize(keyboard_string,200); break;
-	case 1: receipt_price = string_convert_currency(keyboard_string,10); break;
+	case 1: receipt_price = string_convert_currency(numpad_value,10); break;
 	}
 
 var xx = 80;

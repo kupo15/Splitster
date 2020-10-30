@@ -29,10 +29,15 @@ friend_id = undefined;
 user_disp_name = "Lindsey"
 user_username = "Lindsey";
 
+numpad_value = "";
+
 #region offsets
 
 friendsbar_yoff = 0;
 friendsbar_yoff_start = 0;
+
+numpad_yoff = 0;
+numpad_yoff_start = 0;
 	
 #endregion
 
