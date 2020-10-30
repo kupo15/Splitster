@@ -64,6 +64,9 @@ function draw_debug() {
 	var yoff = 29;
 	draw_text_height(xx,yy+((yoff+0)*sep),string(win_ww)+"x"+string(win_hh),height); // resolution
 	draw_text_height(xx,yy+((yoff+1)*sep),string(mouse_x)+","+string(mouse_y),height); // mouse coor
+	
+	if mouse_check_button(mb_middle)
+	draw_text_height(xx+150,yy+((yoff+1)*sep),"["+string(abs(mouse_xpos-mouse_x))+","+string(abs(mouse_ypos-mouse_y))+"]",height); // mouse coor
 
 	// right side
 	var size = ds_list_size(delete_list);

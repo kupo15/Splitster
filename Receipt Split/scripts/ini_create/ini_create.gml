@@ -51,6 +51,8 @@ squareup_list_offset_start = squareup_list_offset;
 
 #endregion
 
+mouse_xpos = 0;
+mouse_ypos = 0;
 
 repeat 15
 scr_friend_create();
