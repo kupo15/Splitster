@@ -1,21 +1,21 @@
 function draw_screens() {
 	
 #region android back
-	if android_back
+if android_back
+	{
+	if mode_delete
 		{
-		if mode_delete
-			{
-			mode_delete = false;
-			android_back = false;
-			}
-		else if submenu == navbar.hidden
-			{
-			if screen_index == screen.home && os_type == os_android
-			game_end();
-
-			// screen_change(screen.home,true);
-			}
+		mode_delete = false;
+		android_back = false;
 		}
+	else if submenu == navbar.hidden
+		{
+		if screen_index == screen.home && os_type == os_android
+		game_end();
+
+		// screen_change(screen.home,true);
+		}
+	}
 #endregion
 
 draw_background_screen();
@@ -64,7 +64,7 @@ if kv_active // || timer[timerIndex.vk_switch] > -1
 	kv_input_string = keyboard_string; // get string input
 	}
 
-if android_back
+if android_back && (submenu != navbar.numpad)
 vk_hide();
 
 }

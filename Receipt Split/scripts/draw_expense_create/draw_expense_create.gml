@@ -2,7 +2,7 @@
 function draw_expense_create() {
 	
 // draw the 3 bars
-draw_screen_header(headerType.back,headerType.none,"Expense Report",60);
+draw_screen_header(headerType.back,headerType.none,"Expenses",60);
 
 // entry
 if kv_active
@@ -136,7 +136,7 @@ if click_region_released(xx,yy,ww,hh,true,navbar.hidden)
 	scr_receipt_create();
 	
 	screen_change(screen.receiptCreate);
-	click_textbox_set(receipt_name,0,kbv_type_default);
+	click_textbox_set(receipt_price,0,kbv_type_numbers);
 	}
 #endregion
 

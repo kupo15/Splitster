@@ -11,6 +11,9 @@ function screen_change(ind,clear) {
 if clear == undefined
 clear = false;
 
+if argument_count == 2
+clear = argument[1]
+
 ds_stack_push(prev_screen_stack,screen_index);
 screen_index = ind;
 

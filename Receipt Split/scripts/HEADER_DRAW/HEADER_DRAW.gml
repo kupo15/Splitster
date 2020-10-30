@@ -1,5 +1,5 @@
 
-function draw_screen_header(header_left,header_right,header_string,height){
+function draw_screen_header(header_left,header_right,header_string,height) {
 
 var xx = room_width*0.5;
 var yy = 50;
@@ -31,7 +31,7 @@ repeat 2
 
 		// clicked on bars
 		if (submenu < 0) && !mode_delete
-		if click_region_released(xpos,0,region,region,true,navbar.hidden) // make_color_rgb(0,255,255)
+		if click_region_released(xpos,0,region,region,true,submenu)
 			{
 			submenu_previous = submenu;
 			submenu = navbar.sidebar;
@@ -45,14 +45,14 @@ repeat 2
 		// draw the 3 dots
 		draw_menu_dots(xpos+(region*0.5),35,3,7,c_white);
 		
-		click_region_released(xpos,0,region,region,true,navbar.hidden) // make_color_rgb(0,255,255)
+		click_region_released(xpos,0,region,region,true,submenu)
 
 		}
 	else if header_type == headerType.back
 		{
 		draw_menu_arrow(xpos+20,50,40,30,4,1,c_white);
 
-		if click_region_released(xpos,0,region,region,true,navbar.hidden) // make_color_rgb(0,255,255)
+		if click_region_released(xpos,0,region,region,true,submenu)
 		screen_goto_prev();
 		}
 		

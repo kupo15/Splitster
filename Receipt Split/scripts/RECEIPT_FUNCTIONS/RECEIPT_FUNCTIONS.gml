@@ -37,6 +37,7 @@ currency_index = active_expense.receiptList[| ind].currency;
 receipt_index = ind;
 
 screen_change(screen.receiptUpdate);
+click_textbox_set(receipt_price,0,kbv_type_numbers);
 }
 
 function scr_receipt_add(ind) {

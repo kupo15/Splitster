@@ -3,6 +3,7 @@ function vk_hide() {
 	keyboard_virtual_hide(); // hide keyboard
 	
 	submenu = navbar.hidden;
+	numpad_value = "";
 	kv_active = false;
 	android_back = false;
 	
