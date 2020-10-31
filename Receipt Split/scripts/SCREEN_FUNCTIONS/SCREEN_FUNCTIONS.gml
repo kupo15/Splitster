@@ -32,7 +32,7 @@ submenu = argument[0];
 
 if ds_stack_empty(prev_screen_stack)
 	{
-	screen_index = ds_stack_pop(prev_screen_stack);
+	screen_index = screen.home;
 	db("stack empty");
 	}
 else

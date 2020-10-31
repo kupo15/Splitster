@@ -40,6 +40,6 @@
 
 #macro start_date date_create_datetime(1970,1,1,0,0,0)
 
-#macro background_color draw_rectangle_color(0,0,room_width,room_height,col,col,col,col,false)
+#macro set_background_color draw_rectangle_color(0,0,room_width,room_height,col,col,col,col,false)
 #macro dialogue draw_dialogue_box(xx,yy,ww,hh,col,sub)
 #macro db show_debug_message

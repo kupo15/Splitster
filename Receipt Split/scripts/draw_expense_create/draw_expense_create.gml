@@ -183,7 +183,7 @@ if click_button(xx,yy,str,height,c_black,ww,hh,c_white,true,true,navbar.hidden)
 	active_expense = undefined;
 	active_receipt = undefined;
 	
-	screen_change(screen.squareUp,true);
+	screen_change(screen.home,true);
 	}
 #endregion
 

@@ -1,14 +1,14 @@
 
 function draw_home() {
 var col = c_lt_gray;
-background_color;
+set_background_color;
 
 // draw the 3 bars
 draw_screen_header(headerType.bars,headerType.none,"Home",60);
 
 // draw pending box
 var xx = 10;
-var yy = 140;
+var yy = 150;
 var ww = room_width-xx-xx;
 var hh = 80;
 var col = c_white;
@@ -17,13 +17,27 @@ var sub = navbar.hidden;
 if dialogue
 screen_change(screen.squareUp);
 
+var xoff = 120;
+var yoff = 30;
+var height = 40;
 var size = ds_list_size(squareup_list);
 
 if size == 0
-/*else
 	{
-	draw_text_height
-	}*/
+	draw_text_height(xx+xoff,yy+yoff,"No expenses pending!!",height);
+	}
+else
+	{
+	var spr_hh = sprite_get_height(spr_icon_megaphone)
+	var scale = hh/spr_hh*0.8;
+	
+	draw_sprite_ext(spr_icon_megaphone,0,xx+20,yy+5,scale,scale,0,c_white,1); // draw megaphone
+	
+	var str = " Expense";
+	if size > 1
+	str += "s";
+	draw_text_height(xx+xoff,yy+yoff,string(size)+str+" pending!",height);
+	}
 
 // create expense button
 var xx = 20;
