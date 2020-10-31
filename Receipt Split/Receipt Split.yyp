@@ -43,6 +43,7 @@
     {"id":{"name":"scr_inputs","path":"scripts/scr_inputs/scr_inputs.yy",},"order":1,},
     {"id":{"name":"ELEMENT_STRUCTS","path":"scripts/ELEMENT_STRUCTS/ELEMENT_STRUCTS.yy",},"order":16,},
     {"id":{"name":"sidebar_fades","path":"scripts/sidebar_fades/sidebar_fades.yy",},"order":2,},
+    {"id":{"name":"DIALOGUE_FUNCTIONS","path":"scripts/DIALOGUE_FUNCTIONS/DIALOGUE_FUNCTIONS.yy",},"order":25,},
     {"id":{"name":"scr_sidebar_active","path":"scripts/scr_sidebar_active/scr_sidebar_active.yy",},"order":3,},
     {"id":{"name":"scr_expense_create","path":"scripts/scr_expense_create/scr_expense_create.yy",},"order":8,},
     {"id":{"name":"DRAW_NUMPAD","path":"scripts/DRAW_NUMPAD/DRAW_NUMPAD.yy",},"order":24,},
@@ -82,6 +83,7 @@
     {"id":{"name":"round_tenth","path":"scripts/round_tenth/round_tenth.yy",},"order":14,},
     {"id":{"name":"if_undef","path":"scripts/if_undef/if_undef.yy",},"order":15,},
     {"id":{"name":"draw_receipt_create","path":"scripts/draw_receipt_create/draw_receipt_create.yy",},"order":7,},
+    {"id":{"name":"DRAW_BUTTON_FUNCTIONS","path":"scripts/DRAW_BUTTON_FUNCTIONS/DRAW_BUTTON_FUNCTIONS.yy",},"order":1,},
     {"id":{"name":"ini_shared","path":"scripts/ini_shared/ini_shared.yy",},"order":5,},
     {"id":{"name":"vk_hide","path":"scripts/vk_hide/vk_hide.yy",},"order":0,},
     {"id":{"name":"vk_initiate","path":"scripts/vk_initiate/vk_initiate.yy",},"order":1,},
@@ -122,7 +124,9 @@
     {"folderPath":"folders/Scripts/Main/Draw.yy","order":0,"resourceVersion":"1.0","name":"Draw","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/Main/Step.yy","order":2,"resourceVersion":"1.0","name":"Step","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/Scripts.yy","order":2,"resourceVersion":"1.0","name":"Scripts","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/Functions.yy","order":13,"resourceVersion":"1.0","name":"Functions","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Functions.yy","order":13,"resourceVersion":"1.0","name":"Functions","tags":[
+        "functions",
+      ],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/Virtual Keyboard.yy","order":4,"resourceVersion":"1.0","name":"Virtual Keyboard","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Fonts.yy","order":3,"resourceVersion":"1.0","name":"Fonts","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects.yy","order":4,"resourceVersion":"1.0","name":"Objects","tags":[],"resourceType":"GMFolder",},
@@ -131,7 +135,9 @@
     {"folderPath":"folders/Screens.yy","order":6,"resourceVersion":"1.0","name":"Screens","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/Main/Draw/Calendar.yy","order":37,"resourceVersion":"1.0","name":"Calendar","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/Main/Draw/Other.yy","order":38,"resourceVersion":"1.0","name":"Other","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/PROJECT FUNCTIONS.yy","order":14,"resourceVersion":"1.0","name":"PROJECT FUNCTIONS","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/PROJECT FUNCTIONS.yy","order":14,"resourceVersion":"1.0","name":"PROJECT FUNCTIONS","tags":[
+        "functions",
+      ],"resourceType":"GMFolder",},
     {"folderPath":"folders/Submenus.yy","order":15,"resourceVersion":"1.0","name":"Submenus","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [

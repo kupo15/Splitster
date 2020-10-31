@@ -26,9 +26,6 @@ receipt_price = "";
 friend_index = undefined;
 friend_id = undefined;
 
-user_disp_name = "Lindsey"
-user_username = "Lindsey";
-
 numpad_value = "";
 
 #region offsets

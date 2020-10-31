@@ -9,10 +9,24 @@ description: "",
 currency: currency_symbol[currency_index],
 price: "",
 
-split: {
-you: 0,	
+split: [
+		{// auto add yourself
+		memberId: profileInfo, 
+		paid: true,
+		share: 0,
+		},
+		/*{
+		memberId: profileInfo, 
+		paid: false,
+		share: 0,
+		},
+		{
+		memberId: profileInfo, 
+		paid: true,
+		share: 10,
+		},*/
 	
-}
+       ]
 
 }
 

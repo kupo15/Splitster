@@ -1,8 +1,29 @@
 
 function draw_home() {
-	
+var col = c_lt_gray;
+background_color;
+
 // draw the 3 bars
 draw_screen_header(headerType.bars,headerType.none,"Home",60);
+
+// draw pending box
+var xx = 10;
+var yy = 140;
+var ww = room_width-xx-xx;
+var hh = 80;
+var col = c_white;
+var sub = navbar.hidden;
+
+if dialogue
+screen_change(screen.squareUp);
+
+var size = ds_list_size(squareup_list);
+
+if size == 0
+/*else
+	{
+	draw_text_height
+	}*/
 
 // create expense button
 var xx = 20;

@@ -31,8 +31,8 @@ draw_sprite(spr_icon_blank_profile,0,xx+xx_off,yy); // profile picture
 var yy = 120;
 draw_set_halign(fa_center);
 draw_set_color(c_black);
-draw_text_height(xx+xx_off,yy,user_disp_name,30); // draw user name
-draw_text_height(xx+xx_off,yy+25,"@"+user_username,25); // draw user id
+draw_text_height(xx+xx_off,yy,profileInfo.dispName,30); // draw user name
+draw_text_height(xx+xx_off,yy+25,"@"+profileInfo.userId,25); // draw user id
 
 
 // draw menu items

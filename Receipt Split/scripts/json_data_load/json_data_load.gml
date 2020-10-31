@@ -5,6 +5,8 @@ function json_data_load() {
 	squareup_list = ds_list_create();
 	undo_map = ds_map_create();
 	
+	ini_profile_info();
+	
 	// debug_reset = true;
 	json_load(save_data);
 

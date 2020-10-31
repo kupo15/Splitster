@@ -26,4 +26,16 @@ height: 50,
 	
 }
 
+element_paid_by = {
+
+xx: 0,
+yy: 290,
+ww: room_width,
+hh: 180,
+
+sep: 50,
+hh_expanded: 0
 }
+
+}
+

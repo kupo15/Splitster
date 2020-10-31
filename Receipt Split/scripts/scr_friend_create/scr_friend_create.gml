@@ -1,4 +1,15 @@
 
+function ini_profile_info() {
+	
+profileInfo = {
+
+dispName: "Lindsey",
+userId: "Lindesy",
+	
+}	
+	
+}
+
 function scr_friend_create() {
 
 var name = choose("Lindsey","Matt","John", "Steven", "Graham", "Jack", "Emily", "Tina", "Jill", "Helen");

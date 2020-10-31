@@ -10,14 +10,14 @@ function draw_text_height() {
 	var yy = argument[1];
 	var str = argument[2];
 
-	var wantSize = argument[3]; // height of text I want
-	var currSize = string_height(str);
-	var scale = wantSize / currSize;
-
 	if argument_count > 4
 	draw_set_font(argument[4]);
 	else
 	draw_set_font(fn_normal);
+	
+	var wantSize = argument[3]; // height of text I want
+	var currSize = string_height(str);
+	var scale = wantSize / currSize;
 
 	draw_text_transformed(xx,yy,str,scale,scale,0); // this will draw at 64 pixels tall
 	
@@ -64,7 +64,6 @@ function draw_text_height_ext(xx,yy,str,angle,sep,w,target) {
 
 	return scale;
 }
-
 
 
 function draw_text_height_ext_cursor(xx,yy,str,str_disp,angle,sep,str_ww,height,ind,cursor_ww,cursor_col,font) {

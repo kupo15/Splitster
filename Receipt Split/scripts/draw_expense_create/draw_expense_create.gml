@@ -145,22 +145,13 @@ var ww = 170;
 var hh = 95;
 var xx = 5;
 var yy = 850;
-var col = c_red;
-	
-draw_set_alpha(0.3);
-draw_roundrect_color(xx,yy,xx+ww,yy+hh,col,col,false);
-draw_set_alpha(1);
 
-draw_sprite_ext(ico_trash2,1,xx+55,yy+10,0.8,0.8,0,c_white,1); // draw trash icon
-	
 // clicked trash icon
-if click_region_released(xx,yy,ww,hh,true,navbar.hidden)
+if draw_button_trash(xx,yy,ww,hh,screen_index,navbar.hidden)
 	{
 	//ds_list_delete(master_score_list,index); // delete score
 	//json_save(save_data);
 
-	delete active_expense;
-	delete active_receipt;
 	active_expense = undefined;
 	active_receipt = undefined;
 	receipt_index = undefined;

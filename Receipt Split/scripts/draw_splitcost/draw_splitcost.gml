@@ -15,7 +15,6 @@ switch textbox_index
 	}
 	
 
-
 // draw labels
 var xx = 80;
 var yy = 90;
@@ -37,6 +36,7 @@ var ww = 500-xx;
 var height = 60;
 
 draw_text_height_ext_cursor(xx+5,yy+yoff,receipt_name,"Enter a description",0,-1,ww,height,0);
+draw_set_color(c_black);
 
 for(var i=0;i<1;i++)
 	{
@@ -50,17 +50,55 @@ for(var i=0;i<1;i++)
 	}
 	
 // draw who paid
-var yy = 290;
-var hh = 180;
+var sep = element_paid_by.sep;
+var size = array_length(active_receipt.split);
+element_paid_by.hh_expanded = clamp(size-2,0,size)*sep;
+
+var yy = element_paid_by.yy;
+var hh = element_paid_by.hh+element_paid_by.hh_expanded;
 
 draw_rectangle_color(0,yy,room_width,yy+hh,box_col,box_col,box_col,box_col,false);
 
+var xx = 30;
+var yoff = 10;
+var height = 25;
+var col = c_gray; 
+
+draw_text_height_color(xx,yy+yoff,"Paid by",height,col);
+
+var xx = 120;
+var yoff = 50;
+var ind = 0;
+var height = 30;
+var col = make_color_rgb(239,91,35); // red
+
+for(var i=0;i<size;i++)
+	{
+	var pointer = active_receipt.split[i];
+	var paid = pointer.paid;
+
+	if !paid
+	continue;
+	
+	var profilePointer = pointer.memberId;
+	var name = profilePointer.dispName;
+	var share = pointer.share;
+	
+	draw_set_halign(fa_left);
+	draw_text_height(xx,yy+yoff+(ind*sep),name,height); // draw name
+	
+	draw_set_halign(fa_right);
+	draw_text_height_color(room_width-30,yy+yoff+(ind*sep),currency_symbol[currency_index]+string(share),height,col);
+	ind ++;
+	}
+
+
 // draw amount split
-var height = 50;
+var height = 40;
 var col = make_color_rgb(239,91,35);
 
 draw_set_halign(fa_right);
-draw_text_height_color(room_width-30,360,currency_symbol[currency_index]+string(receipt_price),height,col);
+//draw_text_height_color(room_width-30,420,currency_symbol[currency_index]+string(receipt_price),height,col);
 
 if click_region_released(0,yy,room_width,hh,true,navbar.hidden)
 screen_change(screen.receiptAmount);	
@@ -76,22 +114,13 @@ draw_submenu_friends_list(xx,yy,room_width,60,ysep,6)
 
 
 #region delete expense
+
 var ww = 170;
 var hh = 95;
 var xx = 5;
-var yy = 850;
-var col = c_red;
-	
-if screen_index == screen.splitCost
-	{	
-	draw_set_alpha(0.3);
-	draw_roundrect_color(xx,yy,xx+ww,yy+hh,col,col,false);
-	draw_set_alpha(1);
+var yy = room_height-hh-5;
 
-	draw_sprite_ext(ico_trash2,1,xx+55,yy+10,0.8,0.8,0,c_white,1); // draw trash icon
-	
-	// clicked trash icon
-	if click_region_released(xx,yy,ww,hh,true,navbar.hidden)
+if draw_button_trash(xx,yy,ww,hh,screen.splitCost,navbar.hidden)
 		{
 		//ds_list_delete(master_score_list,index); // delete score
 		//json_save(save_data);
@@ -102,7 +131,7 @@ if screen_index == screen.splitCost
 		screen_goto_prev();
 		exit;
 		}	
-	}
+		
 #endregion
 
 #region Create
@@ -111,7 +140,7 @@ var submit = 1;
 var ww = 350;
 var hh = 95;
 var xx = 185;
-var yy = 850;
+var yy = room_height-hh-5;
 var height = 50;
 
 var str = "Update Receipt";
