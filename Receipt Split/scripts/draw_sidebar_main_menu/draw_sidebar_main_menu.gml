@@ -56,7 +56,7 @@ draw_text_height(xx_off+15,room_height-40,"Vers. "+string(GM_version),30);
 
 for(var i=0;i<12;i++)
 	{
-	if i>screen.expenseHistory && i<screen.settings
+	if i>screen.expenseHistory && i<(screen.settings-1)
 	continue;
 		
 	draw_sprite_ext(spr_footer_icon,i,res_bleed_xx+xx_off,yy+9+(i*sep),0.12,0.12,0,c_white,1); // draw menu icons
