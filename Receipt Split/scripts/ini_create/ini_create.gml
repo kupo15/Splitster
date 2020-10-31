@@ -1,6 +1,5 @@
 function ini_create() {
-	
-	
+		
 json_data_load();
 ini_shared();
 ini_screen_change();

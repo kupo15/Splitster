@@ -14,4 +14,29 @@ var col = make_color_rgb(28,164,109);
 
 if click_button(xx,yy,"New Expense",height,c_white,ww,hh,col,true,false,navbar.hidden)
 scr_navbar_click(screen.expenseCreate);
+
+#region debug testing
+exit;
+draw_rectangle(50,250,250,450,true);
+
+var ww = display_get_width();
+var hh = display_get_height();
+
+draw_text_height(150,400+(0*40),"display: "+string(ww)+" x "+string(hh),30);
+
+var ww = window_get_width();
+var hh = window_get_height();
+draw_text_height(150,400+(1*40),"window: "+string(ww)+" x "+string(hh),30);
+
+var ww = surface_get_width(application_surface);
+var hh = surface_get_height(application_surface);
+draw_text_height(150,400+(2*40),"app surf: "+string(ww)+" x "+string(hh),30);
+
+var ww = display_get_gui_width();
+var hh = display_get_gui_height();
+draw_text_height(150,400+(3*40),"gui window: "+string(ww)+" x "+string(hh),30);
+
+draw_text_height(150,400+(4*40),"window xpos: "+string(window_get_x),30);
+draw_text_height(150,400+(5*40),"window ypos: "+string(window_get_y),30);
+#endregion
 }
