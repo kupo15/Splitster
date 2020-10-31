@@ -2,7 +2,7 @@
 function draw_square_up() {
 	
 // draw the 3 bars
-draw_screen_header(headerType.back,headerType.none,"Square Up",60);
+draw_screen_header(headerType.back,headerType.none,"Square Up");
 
 var ysep = 140;
 var xx = 20;

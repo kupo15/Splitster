@@ -10,7 +10,7 @@ switch screen_index
 	default: var header = "Create Receipt"; break;
 	}
 
-draw_screen_header(headerType.back,headerType.none,header,60);
+draw_screen_header(headerType.back,headerType.none,header);
 
 if kv_active
 switch textbox_index

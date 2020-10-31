@@ -1,7 +1,7 @@
 
 // draw 3 bar icon
 function draw_menu_bars(xx,yy,ww,hh,thick,col) {
-// centered
+// centered vertically
 
 var sep = hh/3;
 
@@ -17,7 +17,7 @@ draw_line_width_color(xx,yy+hh,xx+ww,yy,thick,col,col); // line bot left to top 
 }
 	
 function draw_menu_dots(xx,yy,rr,sep,col) {
-// centered
+// centered vertically
 
 for(var i=-1;i<2;i++)
 draw_circle_color(xx,yy+(i*(sep+rr)),rr,col,col,false);

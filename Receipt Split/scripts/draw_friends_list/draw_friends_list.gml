@@ -2,7 +2,7 @@
 function draw_friends_list() {
 	
 // draw the 3 bars
-draw_screen_header(headerType.back,headerType.none,"Friends List",60);
+draw_screen_header(headerType.back,headerType.none,"Friends List");
 
 var ysep = 85;
 

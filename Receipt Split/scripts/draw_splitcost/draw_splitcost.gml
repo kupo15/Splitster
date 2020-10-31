@@ -6,7 +6,7 @@ var bg_col = c_lt_gray;
 
 draw_rectangle_color(0,0,room_width,room_height,bg_col,bg_col,bg_col,bg_col,false);
 
-draw_screen_header(headerType.back,headerType.none,"Split Cost",60);
+draw_screen_header(headerType.back,headerType.none,"Split Cost");
 
 if kv_active
 switch textbox_index

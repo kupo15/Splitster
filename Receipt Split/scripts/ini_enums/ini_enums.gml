@@ -13,8 +13,11 @@ friendsList,
 expenseCreate,
 squareUp,
 expenseHistory,
-
-settings = 11,
+blank5,
+blank6,
+blank7,
+info,
+settings,
 enumcount,
 
 receiptUpdate,

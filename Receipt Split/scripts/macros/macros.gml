@@ -6,6 +6,7 @@
 // header
 #macro header_color c_black // make_color_rgb(0,122,173)
 #macro header_height 80
+#macro header_font_height 50
 
 // background colors
 #macro c_lt_gray make_color_rgb(228,228,228)

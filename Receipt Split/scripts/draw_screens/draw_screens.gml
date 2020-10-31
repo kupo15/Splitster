@@ -40,6 +40,7 @@ switch screen_index
 		
 	case screen.expenseHistory: draw_expense_history(); break;
 	
+	case screen.info: draw_info(); break;
 	case screen.settings: draw_settings(); break;
 	
 	case screen.edit_date: draw_date_edit_calendar(); break;

@@ -19,7 +19,6 @@ android_back_sidebar = true;
 var yy_sep = 180;
 draw_line(xx+xx_off,yy_sep,xx+xx_off+ww,yy_sep); // separating line
 
-
 var xx = side_menu_width*0.5;
 var yy = 55;
 var ww_hh = sprite_get_width(spr_icon_blank_profile);
@@ -38,9 +37,9 @@ draw_text_height(xx+xx_off,yy+25,"@"+profileInfo.userId,25); // draw user id
 // draw menu items
 var xx = 100;
 var yy = yy_sep;
-var yoff = 10;
 var sep = 70;
 var height = 30;
+var yoff = (sep-height)*0.5;
 
 draw_set_halign(fa_left);
 draw_text_height(xx+xx_off,yy+yoff+(screen.home*sep),"Home",height);
@@ -49,14 +48,14 @@ draw_text_height(xx+xx_off,yy+yoff+(screen.expenseCreate*sep),"Create Expense",h
 draw_text_height(xx+xx_off,yy+yoff+(screen.squareUp*sep),"Pending Expenses",height);
 draw_text_height(xx+xx_off,yy+yoff+(screen.expenseHistory*sep),"Expense History",height);
 
-draw_text_height(xx+xx_off,yy+yoff+(11*sep),"Settings",height);
+draw_text_height(xx+xx_off,yy+yoff+(screen.settings*sep),"Settings",height);
 
 draw_text_height(xx_off+15,room_height-40,"Vers. "+string(GM_version),30);
 
 if active_submenu == navbar.sidebar
 click_highlight_xpos = xx_off+(ww*0.5);
 
-for(var i=0;i<12;i++)
+for(var i=0;i<screen.enumcount;i++)
 	{
 	if i>screen.expenseHistory && i<(screen.settings-1)
 	continue;
@@ -64,12 +63,12 @@ for(var i=0;i<12;i++)
 	// draw highlight
 	draw_highlight_click_clamp(yy,(i*sep),sep,hh,i);
 
-	draw_sprite_ext(spr_footer_icon,i,res_bleed_xx+xx_off,yy+9+(i*sep),0.12,0.12,0,c_white,1); // draw menu icons
+	draw_sprite_ext(spr_footer_icon,i,res_bleed_xx+xx_off,yy+yoff+(i*sep),0.12,0.12,0,c_white,1); // draw menu icons
 	
-	if i==10
+	if i==screen.settings-1
 	draw_line(xx_off,yy+(i*sep),xx_off+ww,yy+(i*sep)); // separating line
 
-	if click_region_released_clamp(xx_off,yy,(i*sep),ww,sep,12*sep,mb_left,c_yellow,navbar.sidebar,i)
+	if click_region_released_clamp(xx_off,yy,(i*sep),ww,sep,screen.enumcount*sep,mb_left,c_yellow,navbar.sidebar,i)
 		{
 		click_highlight_alpha = 0;
 		click_highlight_alpha_start = 0;
@@ -77,11 +76,8 @@ for(var i=0;i<12;i++)
 		submenu = navbar.hidden;
 		android_back_sidebar = true;
 
-		if i<5
-			{
-			scr_navbar_click(i);
-			new_submenu = true;
-			}
+		scr_navbar_click(i);
+		new_submenu = true;
 		}
 	}
 
@@ -92,7 +88,7 @@ if android_back_sidebar
 	// submenu_menu_xpos = 1;
 	submenu_menu_xpos = -side_menu_width-30;
 	
-	if !new_submenu && submenu == navbar.sidebar
+	if !new_submenu && (submenu == navbar.sidebar)
 	submenu = submenu_previous;
 	}
 

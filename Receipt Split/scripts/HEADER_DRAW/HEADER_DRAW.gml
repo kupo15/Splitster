@@ -1,6 +1,9 @@
 
 function draw_screen_header(header_left,header_right,header_string,height) {
 
+if height == undefined
+height = header_font_height;
+
 var xx = room_width*0.5;
 var yy = (header_height-height)*0.5;
 var ww = 540;
@@ -23,7 +26,7 @@ repeat 2
 	if header_type == headerType.bars
 		{
 		// draw the 3 bars
-		var ww = 40;
+		var ww = 30;
 		var hh = 24;
 		var xx = (region-ww)*0.5;
 		

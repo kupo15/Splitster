@@ -2,7 +2,7 @@
 function draw_expense_create() {
 	
 // draw the 3 bars
-draw_screen_header(headerType.back,headerType.none,"Expenses",60);
+draw_screen_header(headerType.back,headerType.none,"Expenses");
 
 // entry
 if kv_active

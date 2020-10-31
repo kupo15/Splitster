@@ -4,7 +4,7 @@ var col = c_lt_gray;
 set_background_color;
 
 // draw the 3 bars
-draw_screen_header(headerType.bars,headerType.none,"Home",60);
+draw_screen_header(headerType.bars,headerType.none,"Home");
 
 // draw pending box
 var xx = 10;
