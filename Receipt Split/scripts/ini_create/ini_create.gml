@@ -2,6 +2,7 @@ function ini_create() {
 		
 json_data_load();
 ini_shared();
+layout_normal();
 ini_screen_change();
 ini_timers();
 ini_highlight_vars();

@@ -41,6 +41,7 @@
     {"id":{"name":"DRAW_ICON_FUNCTIONS","path":"scripts/DRAW_ICON_FUNCTIONS/DRAW_ICON_FUNCTIONS.yy",},"order":19,},
     {"id":{"name":"draw_expense_create","path":"scripts/draw_expense_create/draw_expense_create.yy",},"order":5,},
     {"id":{"name":"scr_inputs","path":"scripts/scr_inputs/scr_inputs.yy",},"order":1,},
+    {"id":{"name":"ELEMENT_STRUCTS","path":"scripts/ELEMENT_STRUCTS/ELEMENT_STRUCTS.yy",},"order":16,},
     {"id":{"name":"sidebar_fades","path":"scripts/sidebar_fades/sidebar_fades.yy",},"order":2,},
     {"id":{"name":"scr_sidebar_active","path":"scripts/scr_sidebar_active/scr_sidebar_active.yy",},"order":3,},
     {"id":{"name":"scr_expense_create","path":"scripts/scr_expense_create/scr_expense_create.yy",},"order":8,},

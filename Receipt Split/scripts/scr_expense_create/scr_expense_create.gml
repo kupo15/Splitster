@@ -18,6 +18,6 @@ receiptList: ds_list_create()
 
 }
 
-click_textbox_set(event_name,0,kbv_type_default);
+//click_textbox_set(event_name,0,kbv_type_default);
 
 }

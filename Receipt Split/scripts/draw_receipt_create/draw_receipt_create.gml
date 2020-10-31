@@ -2,9 +2,13 @@
 function draw_receipt_create() {
 	
 // draw the 3 bars
-var header = "Create Receipt";
-if screen_index == screen.receiptUpdate
-var header = "Update Receipt";
+switch screen_index
+	{
+	case screen.receiptUpdate: var header = "Update Receipt"; break;
+	case screen.receiptAmount: var header = "Receipt Amount"; break;
+	
+	default: var header = "Create Receipt"; break;
+	}
 
 draw_screen_header(headerType.back,headerType.none,header,60);
 
@@ -45,17 +49,23 @@ for(var i=0;i<1;i++)
 	
 // split costs button
 var submit = (receipt_price != "");
+var hh = 60;
 var xx = 0;
-var yy = 500;
+var yy = element_numpad.yy-hh;
 var height = 40;
 var ww = room_width-xx-xx;
-var hh = 60;
 var col = make_color_rgb(28,164,109); // green
+
 if !submit
 var col = c_gray;
 
 if click_button(xx,yy,"Split Costs",height,c_white,ww,hh,col,false,false,submenu) && submit
-screen_change(screen.splitCost);
+	{
+	if screen_index == screen.receiptAmount
+	screen_goto_prev();
+	else
+	screen_change(screen.splitCost);
+	}
 
     
 if android_back

@@ -21,6 +21,7 @@ if clear
 ds_stack_clear(prev_screen_stack);
 
 vk_hide();
+screen_goto_actions();
 }
 
 function screen_goto_prev() {
@@ -38,4 +39,16 @@ else
 screen_index = ds_stack_pop(prev_screen_stack);
 
 vk_hide();
+screen_goto_actions();
+}
+
+function screen_goto_actions() {
+	
+switch screen_index
+	{
+	case screen.receiptAmount:
+	case screen.receiptUpdate:
+	case screen.receiptCreate: click_textbox_set(receipt_price,0,kbv_type_numbers); break;
+	}	
+	
 }

@@ -2,7 +2,7 @@
 function draw_screen_header(header_left,header_right,header_string,height) {
 
 var xx = room_width*0.5;
-var yy = 50;
+var yy = (header_height-height)*0.5;
 var ww = 540;
 var hh = header_height;
 
@@ -10,24 +10,24 @@ draw_rectangle_color(0,0,ww,hh,header_color,header_color,header_color,header_col
 
 if header_string != ""
 	{
-	draw_set_halign(fa_center);
-	draw_set_valign(fa_middle);
-	
+	draw_set_halign(fa_center);	
 	draw_text_height_color(xx,yy,header_string,height,c_white);
-
 	draw_set_halign(fa_left);
-	draw_set_valign(fa_top);
 	}
 
 var xpos = 0;
-var region = 100;
+var region = header_height;
 var header_type = header_left;
 repeat 2
 	{
 	if header_type == headerType.bars
 		{
 		// draw the 3 bars
-		draw_menu_bars(xpos+30,35,40,4,7,c_white);
+		var ww = 40;
+		var hh = 24;
+		var xx = (region-ww)*0.5;
+		
+		draw_menu_bars(xpos+xx,header_height*0.5,ww,hh,2,c_white);
 
 		// clicked on bars
 		if (submenu < 0) && !mode_delete
@@ -43,14 +43,14 @@ repeat 2
 	else if header_type == headerType.dots
 		{
 		// draw the 3 dots
-		draw_menu_dots(xpos+(region*0.5),35,3,7,c_white);
+		draw_menu_dots(xpos+(region*0.5),header_height*0.5,3,7,c_white);
 		
 		click_region_released(xpos,0,region,region,true,submenu)
 
 		}
 	else if header_type == headerType.back
 		{
-		draw_menu_arrow(xpos+20,50,40,30,4,1,c_white);
+		draw_menu_arrow(xpos+20,header_height*0.5,40,30,4,1,c_white);
 
 		if click_region_released(xpos,0,region,region,true,submenu)
 		screen_goto_prev();

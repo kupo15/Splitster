@@ -32,6 +32,7 @@ switch screen_index
 	
 	case screen.squareUp: draw_square_up(); break;
 	
+	case screen.receiptAmount:
 	case screen.receiptUpdate:
 	case screen.receiptCreate: draw_receipt_create(); break;
 	

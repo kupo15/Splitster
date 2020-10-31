@@ -19,6 +19,8 @@ enumcount,
 
 receiptUpdate,
 receiptCreate,
+receiptAmount,
+
 splitCost,
 friendsProfile,
 edit_date,

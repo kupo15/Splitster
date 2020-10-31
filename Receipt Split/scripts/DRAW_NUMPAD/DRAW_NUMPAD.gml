@@ -1,10 +1,10 @@
 
 function draw_numpad(variable) {
 
-var xx = 0;
-var yy = 580+(numpad_yoff*381);
-var vsep = 95;
-var hsep1 = 105;
+var xx = element_numpad.xx;
+var yy = element_numpad.yy+(numpad_yoff*381);
+var vsep = element_numpad.vsep;
+var hsep1 = element_numpad.hsep1;
 
 // draw number button background
 var col = c_white;
@@ -14,7 +14,7 @@ draw_rectangle_color(xx,yy,room_width,room_height,col,col,col,col,false);
 var col = make_color_rgb(247,247,247);
 draw_rectangle_color(xx,yy,xx+(1*hsep1),room_height,col,col,col,col,false);
 
-var hsep2 = 145;
+var hsep2 = element_numpad.hsep2;
 draw_rectangle_color(xx,yy+(3*vsep),xx+105+(1*hsep2),room_height,col,col,col,col,false);
 draw_rectangle_color(xx+hsep1+(2*hsep2),yy+(3*vsep),room_width,room_height,col,col,col,col,false);
 
@@ -26,7 +26,7 @@ for(var i=0;i<3;i++)
 	draw_line_color(hsep1+(i*hsep2),yy,hsep1+(i*hsep2),room_height,col,col); // vert lines
 	}
 	
-var height = 50;
+var height = element_numpad.height;
 var yoff = (vsep-height)*0.5;
 
 draw_set_color(c_gray);

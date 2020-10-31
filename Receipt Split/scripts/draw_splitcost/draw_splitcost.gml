@@ -14,16 +14,19 @@ switch textbox_index
 	case 0: receipt_name = string_capitalize(keyboard_string,200); break;
 	}
 	
-var yy = 90;
-var hh = 190;
 
-draw_rectangle_color(0,yy,room_width,yy+hh,box_col,box_col,box_col,box_col,false);
 
 // draw labels
 var xx = 80;
+var yy = 90;
+var hh = 190;
+
 var yoff = 35;
 var ysep = 80;
 var height = 50;
+
+// background
+draw_rectangle_color(0,yy,room_width,yy+hh,box_col,box_col,box_col,box_col,false);
 
 draw_set_halign(fa_left);
 draw_set_color(c_gray);
@@ -32,6 +35,7 @@ draw_text_height(xx,yy+10+yoff+height,"Expense Name",30);
 
 var ww = 500-xx;
 var height = 60;
+
 draw_text_height_ext_cursor(xx+5,yy+yoff,receipt_name,"Enter a description",0,-1,ww,height,0);
 
 for(var i=0;i<1;i++)
@@ -45,7 +49,7 @@ for(var i=0;i<1;i++)
 	draw_line_pixel(xx,yy+yoff+height+(i*ysep),ww,2,c_gray,0.8); // draw separating line
 	}
 	
-// draw split
+// draw who paid
 var yy = 290;
 var hh = 180;
 
@@ -57,7 +61,9 @@ var col = make_color_rgb(239,91,35);
 
 draw_set_halign(fa_right);
 draw_text_height_color(room_width-30,360,currency_symbol[currency_index]+string(receipt_price),height,col);
-	
+
+if click_region_released(0,yy,room_width,hh,true,navbar.hidden)
+screen_change(screen.receiptAmount);	
 		
 // draw friends list
 var ysep = 85;

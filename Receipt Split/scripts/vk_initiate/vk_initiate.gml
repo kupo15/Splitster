@@ -7,7 +7,10 @@ function vk_initiate(kvtype,kvreturn) {
 	kvreturn = kbv_returnkey_next;
 
 	if kvtype == kbv_type_numbers
-	submenu = navbar.numpad;
+		{
+		numpad_value = keyboard_string;
+		submenu = navbar.numpad;
+		}
 	else
 	keyboard_virtual_show(kvtype,kvreturn,kbv_autocapitalize_words,false); // show keyboard
 	
