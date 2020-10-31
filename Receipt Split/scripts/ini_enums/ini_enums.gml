@@ -24,6 +24,8 @@ receiptUpdate,
 receiptCreate,
 receiptAmount,
 
+expenseReview,
+
 splitCost,
 friendsProfile,
 edit_date,

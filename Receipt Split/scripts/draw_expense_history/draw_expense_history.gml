@@ -12,8 +12,8 @@ var rows = (room_height-yy)/ysep;
 var ww = 540;
 var hh = rows*ysep;
 	
-var w_h = 80;
-var sq_yoff = (ysep-w_h)*0.5-15;
+var sq_size = 80;
+var sq_yoff = (ysep-sq_size)*0.5-15;
 
 var banner_hh = 40;
 var banner_ratio = banner_hh/ysep;
@@ -71,7 +71,7 @@ for(var i=0;i<pos_end;i++)
 	if mode_delete
 	delete_list_draw_selected(0,yy,off_pos,ww,ysep,hh,delete_list,i);
 		
-	draw_calendar_icon(xx,yy+15+off_pos,sq_yoff,w_h,date);
+	draw_calendar_icon(xx,yy+15+off_pos,sq_yoff,sq_size,date);
 		
 	// draw_text_height(xx,yy+off_pos,i,height); // 
 	

@@ -25,6 +25,7 @@
     {"id":{"name":"ini_create","path":"scripts/ini_create/ini_create.yy",},"order":3,},
     {"id":{"name":"draw_debug","path":"scripts/draw_debug/draw_debug.yy",},"order":1,},
     {"id":{"name":"draw_footer_button","path":"scripts/draw_footer_button/draw_footer_button.yy",},"order":5,},
+    {"id":{"name":"draw_expense_review","path":"scripts/draw_expense_review/draw_expense_review.yy",},"order":11,},
     {"id":{"name":"draw_screens","path":"scripts/draw_screens/draw_screens.yy",},"order":0,},
     {"id":{"name":"draw_nav_bar","path":"scripts/draw_nav_bar/draw_nav_bar.yy",},"order":1,},
     {"id":{"name":"draw_date_edit","path":"scripts/draw_date_edit/draw_date_edit.yy",},"order":0,},

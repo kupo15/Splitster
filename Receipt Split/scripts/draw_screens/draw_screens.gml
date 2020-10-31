@@ -38,6 +38,7 @@ switch screen_index
 	
 	case screen.splitCost: draw_splitcost(); break;
 		
+	case screen.expenseReview: draw_expense_review(); break;
 	case screen.expenseHistory: draw_expense_history(); break;
 	
 	case screen.info: draw_info(); break;
