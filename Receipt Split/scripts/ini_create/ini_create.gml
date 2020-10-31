@@ -43,6 +43,7 @@ master_friends_list_offset = 0;
 master_friends_list_offset_start = master_friends_list_offset;
 
 master_expense_list_offset = 0;
+master_expense_list_offset_extended = 0;
 master_expense_list_offset_start = master_expense_list_offset;
 
 receipt_list_offset = 0;

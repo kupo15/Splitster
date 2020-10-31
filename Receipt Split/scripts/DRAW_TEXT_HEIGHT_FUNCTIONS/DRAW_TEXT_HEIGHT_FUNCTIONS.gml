@@ -25,7 +25,6 @@ function draw_text_height() {
 }
 
 function draw_text_height_color() {
-	/// @description  draw_text_height(x,y,string,height,[font]);
 	/// @param x
 	/// @param y
 	/// @param string

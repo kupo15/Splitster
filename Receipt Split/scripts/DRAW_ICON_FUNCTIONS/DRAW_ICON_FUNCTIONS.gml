@@ -34,3 +34,20 @@ draw_line_width_color(xx,yy,xx+ww,yy,thickness,col,col); // horizontal line
 draw_line_width_color(xx,yy,xx+diag_ll,yy+half,thickness,col,col); // diagonal down line
 	
 }
+	
+function draw_calendar_icon(xx,yy,sq_yoff,ww_hh,date) {
+	
+var day = date_get_day(date);
+var weekday = date_get_weekday(date);
+var day_str = funct_convert_day(weekday,false);
+
+// draw calendar icon
+draw_roundrect_color(xx+1,yy+sq_yoff,xx+ww_hh,yy+ww_hh-1+sq_yoff,c_gray,c_gray,true);
+draw_roundrect_color(xx,yy+sq_yoff,xx+ww_hh,yy+ww_hh+sq_yoff,c_gray,c_gray,true);
+	
+draw_set_halign(fa_center);
+draw_text_height_color(xx+(ww_hh*0.5),yy+10+sq_yoff,day_str,25,c_red);
+draw_text_height_color(xx+(ww_hh*0.5),yy+33+sq_yoff,day,46,c_black);
+
+draw_set_halign(fa_left);
+}
