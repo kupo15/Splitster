@@ -17,7 +17,7 @@
 #macro navbar_color c_black // make_color_rgb(0,122,173)
 
 // sidebar
-#macro side_menu_width 400
+#macro side_menu_width 420
 
 // textbox scrolling
 #macro fric 0.009
@@ -35,7 +35,7 @@
 
 #macro click_highlight_lerp 0.35
 
-#macro res_bleed_xx 10
+#macro res_bleed_xx 15
 #macro res_bleed_yy 10
 
 #macro start_date date_create_datetime(1970,1,1,0,0,0)

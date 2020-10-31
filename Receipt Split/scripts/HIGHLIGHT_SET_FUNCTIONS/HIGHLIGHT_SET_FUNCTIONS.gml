@@ -11,6 +11,8 @@ click_highlight_alpha_end = 0;
 click_highlight_color = c_gray;
 click_highlight_screen = noone;
 click_highlight_index = noone;
+
+active_submenu = navbar.hidden;
 }
 
 function scr_click_highlight_set(xx,yy,ww,hh,col,screen_ind,array_pos){
@@ -31,6 +33,8 @@ click_highlight_alpha_end = 1;
 click_highlight_color = col;
 click_highlight_screen = screen_ind;
 click_highlight_index = array_pos;
+
+active_submenu = submenu;
 }
 
 function draw_highlight_click_clamp(y_top,yoff,hh,box_hh,array_pos) {
@@ -90,7 +94,7 @@ function draw_highlight_click(sub) {
 	
 if click_highlight_index != undefined || !sub
 exit;
-	
+
 var xx = click_highlight_xpos;
 var yy = click_highlight_ypos;
 var hh = click_highlight_height;
