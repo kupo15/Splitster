@@ -11,7 +11,7 @@ enum screen {
 home,
 friendsList,
 expenseCreate,
-squareUp,
+expensesPending,
 expenseHistory,
 blank5,
 blank6,

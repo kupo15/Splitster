@@ -1,8 +1,8 @@
 
-function draw_square_up() {
+function draw_expenses_pending() {
 	
 // draw the 3 bars
-draw_screen_header(headerType.back,headerType.none,"Square Up");
+draw_screen_header(headerType.back,headerType.none,"Pending Expenses");
 
 var ysep = 200;
 var xx = 20;

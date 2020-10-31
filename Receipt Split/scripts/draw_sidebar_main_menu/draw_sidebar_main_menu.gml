@@ -45,7 +45,7 @@ draw_set_halign(fa_left);
 draw_text_height(xx+xx_off,yy+yoff+(screen.home*sep),"Home",height);
 draw_text_height(xx+xx_off,yy+yoff+(screen.friendsList*sep),"Friends",height);
 draw_text_height(xx+xx_off,yy+yoff+(screen.expenseCreate*sep),"Create Expense",height);
-draw_text_height(xx+xx_off,yy+yoff+(screen.squareUp*sep),"Pending Expenses",height);
+draw_text_height(xx+xx_off,yy+yoff+(screen.expensesPending*sep),"Pending Expenses",height);
 draw_text_height(xx+xx_off,yy+yoff+(screen.expenseHistory*sep),"Expense History",height);
 
 draw_text_height(xx+xx_off,yy+yoff+(screen.settings*sep),"Settings",height);

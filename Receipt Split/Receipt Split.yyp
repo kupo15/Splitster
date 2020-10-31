@@ -39,7 +39,7 @@
     {"id":{"name":"draw_popup_par","path":"scripts/draw_popup_par/draw_popup_par.yy",},"order":2,},
     {"id":{"name":"spr_icon_member_add","path":"sprites/spr_icon_member_add/spr_icon_member_add.yy",},"order":12,},
     {"id":{"name":"draw_sidebar_main_menu","path":"scripts/draw_sidebar_main_menu/draw_sidebar_main_menu.yy",},"order":3,},
-    {"id":{"name":"draw_square_up","path":"scripts/draw_square_up/draw_square_up.yy",},"order":1,},
+    {"id":{"name":"draw_expenses_pending","path":"scripts/draw_expenses_pending/draw_expenses_pending.yy",},"order":1,},
     {"id":{"name":"DRAW_ICON_FUNCTIONS","path":"scripts/DRAW_ICON_FUNCTIONS/DRAW_ICON_FUNCTIONS.yy",},"order":19,},
     {"id":{"name":"draw_expense_create","path":"scripts/draw_expense_create/draw_expense_create.yy",},"order":5,},
     {"id":{"name":"scr_inputs","path":"scripts/scr_inputs/scr_inputs.yy",},"order":1,},

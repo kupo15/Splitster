@@ -30,7 +30,7 @@ switch screen_index
 	
 	case screen.expenseCreate: draw_expense_create(); break;
 	
-	case screen.squareUp: draw_square_up(); break;
+	case screen.expensesPending: draw_expenses_pending(); break;
 	
 	case screen.receiptAmount:
 	case screen.receiptUpdate:

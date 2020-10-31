@@ -6,7 +6,7 @@
     "path": "folders/Screens.yy",
   },
   "resourceVersion": "1.0",
-  "name": "draw_square_up",
+  "name": "draw_expenses_pending",
   "tags": [],
   "resourceType": "GMScript",
 }

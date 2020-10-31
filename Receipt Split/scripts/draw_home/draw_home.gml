@@ -15,7 +15,7 @@ var col = c_white;
 var sub = navbar.hidden;
 
 if dialogue
-screen_change(screen.squareUp);
+screen_change(screen.expensesPending);
 
 var xoff = 120;
 var yoff = 30;
