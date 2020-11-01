@@ -120,7 +120,7 @@ click_highlight_alpha = lerp(click_highlight_alpha,click_highlight_alpha_end,cli
 
 // set values
 var ww = click_highlight_width*0.5;
-var alpha = click_highlight_alpha*(click_highlight_screen == screen_index);
+var alpha = click_highlight_alpha*(click_highlight_screen == screenIndex);
 
 draw_set_alpha(0.4*alpha);
 draw_roundrect_color(xx-ww,yy,xx+ww,yy+hh,col,col,false); // draw highlight

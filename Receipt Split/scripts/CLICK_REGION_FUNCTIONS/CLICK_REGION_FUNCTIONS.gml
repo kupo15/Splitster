@@ -79,7 +79,7 @@ if (mx > x_left) && (mx < x_left+ww) && (my > y_top) && (my < y_top+hh)
 		
 	// clicked highlight
 	if mouse_check_button_pressed(button) && highlight != noone
-	scr_click_highlight_set(x_left,y_top,ww,hh,highlight,screen_index,undefined);
+	scr_click_highlight_set(x_left,y_top,ww,hh,highlight,screenIndex,undefined);
            
 	if (mouse_check_button_released(button) && abs(mouse_ydist) < 15 && abs(mouse_xdist) < 30) || button = noone
 	    {
@@ -139,7 +139,7 @@ function click_region_released_clamp(x_left,y_top,yoff,ww,hh,box_hh,button,highl
 		
 		// clicked highlight
 		if mouse_check_button_pressed(button) && highlight != noone
-		scr_click_highlight_set(x_left,y_top,ww,hh,highlight,screen_index,array_pos);
+		scr_click_highlight_set(x_left,y_top,ww,hh,highlight,screenIndex,array_pos);
            
 		// clicked selection
 	    if (mouse_check_button_released(button) && abs(mouse_ydist) < 10 && abs(mouse_xdist) < 30) || button = noone
@@ -192,7 +192,7 @@ if (mx > x_left) && (mx < x_left+ww) && (my > ypos_clamp) && (my < ypos_clamp+se
 		
 	// clicked highlight
 	if mouse_check_button_pressed(button) && highlight != noone
-	scr_click_highlight_set(x_left+(ww*0.5),y_top,ww,hh,highlight,screen_index);
+	scr_click_highlight_set(x_left+(ww*0.5),y_top,ww,hh,highlight,screenIndex);
            
 	// clicked selection
 	if (mouse_check_button_pressed(button) && abs(mouse_ydist) < 15 && abs(mouse_xdist) < 30) || button = noone

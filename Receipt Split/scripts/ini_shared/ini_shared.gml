@@ -19,7 +19,7 @@ submenu = navbar.hidden;
 submenu_previous = submenu;
 activeSubmenu = submenu;
 
-screen_index = screen.home;
+screenIndex = screen.home;
 
 textbox_index = noone;
 date_pointer = noone;

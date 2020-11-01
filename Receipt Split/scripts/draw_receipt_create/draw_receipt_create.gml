@@ -2,7 +2,7 @@
 function draw_receipt_create() {
 	
 // draw the 3 bars
-switch screen_index
+switch screenIndex
 	{
 	case screen.receiptUpdate: var header = "Update Receipt"; break;
 	case screen.receiptAmount: var header = "Receipt Amount"; break;
@@ -61,7 +61,7 @@ if click_button(xx,yy,"Split Costs",height,c_white,ww,hh,col,false,false,submenu
 	if receipt_price == ""
 	receipt_price = string(irandom_range(1,10));	
 		
-	if screen_index == screen.receiptAmount
+	if screenIndex == screen.receiptAmount
 	screen_goto_prev();
 	else
 	screen_change(screen.splitCost);

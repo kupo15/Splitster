@@ -5,7 +5,7 @@ prev_screen_stack = ds_stack_create();
 }
 
 function screen_change(ind,clear) {
-/// @param screen_index
+/// @param screenIndex
 /// @param [clear]
 
 if clear == undefined
@@ -14,8 +14,8 @@ clear = false;
 if argument_count == 2
 clear = argument[1]
 
-ds_stack_push(prev_screen_stack,screen_index);
-screen_index = ind;
+ds_stack_push(prev_screen_stack,screenIndex);
+screenIndex = ind;
 
 if clear
 ds_stack_clear(prev_screen_stack);
@@ -32,11 +32,11 @@ submenu = argument[0];
 
 if ds_stack_empty(prev_screen_stack)
 	{
-	screen_index = screen.home;
+	screenIndex = screen.home;
 	db("stack empty");
 	}
 else
-screen_index = ds_stack_pop(prev_screen_stack);
+screenIndex = ds_stack_pop(prev_screen_stack);
 
 vk_hide();
 screen_goto_actions();
@@ -44,7 +44,7 @@ screen_goto_actions();
 
 function screen_goto_actions() {
 	
-switch screen_index
+switch screenIndex
 	{
 	case screen.receiptAmount:
 	case screen.receiptUpdate:

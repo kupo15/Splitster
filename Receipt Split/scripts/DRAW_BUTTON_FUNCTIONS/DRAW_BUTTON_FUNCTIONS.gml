@@ -1,7 +1,7 @@
 
 function draw_button_trash(xx,yy,ww,hh,screenInd,sub) {
 
-if screen_index == screenInd
+if screenIndex == screenInd
 	{	
 	var col = c_red;
 

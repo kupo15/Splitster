@@ -10,7 +10,7 @@ if android_back
 		}
 	else if submenu == navbar.hidden
 		{
-		if screen_index == screen.home && os_type == os_android
+		if (screenIndex == screen.home) && (os_type == os_android)
 		game_end();
 
 		// screen_change(screen.home,true);
@@ -21,7 +21,7 @@ if android_back
 draw_background_screen();
 
 draw_set_halign(fa_left);
-switch screen_index
+switch screenIndex
 	{
 	case screen.home: draw_home(); break;
 	

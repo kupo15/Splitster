@@ -146,7 +146,7 @@ var height = 50;
 
 var str = "Update Receipt";
 
-if screen_index == screen.splitCost
+if screenIndex == screen.splitCost
 var str = "Create Receipt";
 	
 // draw Create/Update box

@@ -141,7 +141,7 @@ var xx = 5;
 var yy = 850;
 
 // clicked trash icon
-if draw_button_trash(xx,yy,ww,hh,screen_index,navbar.hidden)
+if draw_button_trash(xx,yy,ww,hh,screenIndex,navbar.hidden)
 	{
 	//ds_list_delete(master_score_list,index); // delete score
 	//json_save(save_data);
@@ -164,7 +164,7 @@ var xx = 185;
 var height = 50;
 
 //var str = "Update";
-//if screen_index == screen.add_score
+//if screenIndex == screen.add_score
 var str = "Create Expense";
 
 if click_button(xx,yy,str,height,c_black,ww,hh,c_white,true,true,navbar.hidden)
