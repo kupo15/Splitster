@@ -27,7 +27,7 @@ function vk_hide() {
 	debug_vk_height = 0; // set vk simulation on windows
 	virtual_keyboard_active = false; // keyboard not active
 
-	if kv_status >= vk.showing // if keyboard is visible
+	if kvStatus >= vk.showing // if keyboard is visible
 	keyboard_virtual_hide(); // hide keyboard
 
 /* end vk_hide */

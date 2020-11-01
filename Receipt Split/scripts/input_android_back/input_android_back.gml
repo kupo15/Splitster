@@ -25,7 +25,7 @@ function input_android_back(argument0, argument1, argument2) {
 		{
 		if keyboard_check_released(vk_backspace) // if backspace
 			{
-			if kv_status == vk.hidden
+			if kvStatus == vk.hidden
 			nav_back = true;
 			else
 			nav_back = false;
