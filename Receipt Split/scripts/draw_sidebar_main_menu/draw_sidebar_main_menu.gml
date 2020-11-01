@@ -61,15 +61,12 @@ for(var i=0;i<screen.enumcount;i++)
 	if i>screen.expenseHistory && i<(screen.settings-1)
 	continue;
 
-	// draw highlight
-	draw_highlight_click_clamp(yy,(i*sep),sep,hh,i,navbar.sidebar);
-
 	draw_sprite_ext(spr_footer_icon,i,res_bleed_xx+xx_off,yy+yoff+(i*sep),0.12,0.12,0,c_white,1); // draw menu icons
 	
 	if i==screen.settings-1
 	draw_line(xx_off,yy+(i*sep),xx_off+ww,yy+(i*sep)); // separating line
 
-	if click_region_released_clamp(xx_off,yy,(i*sep),ww,sep,screen.enumcount*sep,mb_left,true,navbar.sidebar,i)
+	if click_region_released_clamp(xx_off,yy,(i*sep),ww,sep,screen.enumcount*sep,mb_left,true,navbar.sidebar,i,undefined,navbar.sidebar)
 		{
 		click_highlight_alpha = 0;
 		click_highlight_alpha_start = 0;

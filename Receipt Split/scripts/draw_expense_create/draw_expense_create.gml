@@ -69,9 +69,6 @@ for(var i=pos_start;i<pos_end;i++)
 	var price = currency_symbol[pointer.currency]+pointer.price;
 	draw_text_height(xx+10,yy+off_pos+text_yoff+(0*ysep),"Name: "+string(name),height);
 	draw_text_height(xx+10,yy+off_pos+text_yoff+(1*ysep),"Price: "+string(price),height);
-			
-	// draw clicked highlight
-	draw_highlight_click_clamp(yy,off_pos,receipt_height,hh,i);
 
 	// click released on event
 	if click_region_released_clamp(xx,yy,off_pos,ww,receipt_height,hh,mb_left,true,navbar.hidden,i,active_expense.receiptList)

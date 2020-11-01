@@ -186,9 +186,12 @@ else return false;
 
 }
 
-function click_region_released_clamp(x_left,y_top,yoff,ww,hh,box_hh,button,highlight,sub,array_pos,ref_list) {
+function click_region_released_clamp(x_left,y_top,yoff,ww,hh,box_hh,button,highlight,sub,array_pos,ref_list,active_sub) {
 	
 var condition = mouse_check_button_released(button);
+
+// draw clicked highlight
+draw_highlight_click_clamp(y_top,yoff,hh,box_hh,array_pos,active_sub);
 	
 // highlight selected
 if (ref_list != undefined) && mode_delete

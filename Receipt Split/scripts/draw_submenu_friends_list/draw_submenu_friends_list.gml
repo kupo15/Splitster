@@ -31,9 +31,6 @@ else
 	
 		draw_line_pixel(xx,yy+((off_pos+1)*ysep),room_width,1,c_black,0.7);
 				
-		// draw clicked highlight
-		draw_highlight_click_clamp(yy,(off_pos*ysep),ysep,hh,i);
-
 		// click released on friend
 		if click_region_released_clamp(0,yy,(off_pos*ysep),ww,ysep,hh,mb_left,true,submenu,i,master_friends_list)
 			{

@@ -73,10 +73,7 @@ for(var i=0;i<pos_end;i++)
 	
 	draw_text_height(xpos,yy+25+off_pos+(0*height)+sq_yoff,name,height); // draw name
 	draw_text_height(xpos,yy+25+off_pos+(1*height)+sq_yoff,"Receipts: "+string(receiptNum),height); // draw receipt numbers
-	
-	// draw clicked highlight
-	draw_highlight_click_clamp(yy,off_pos,ysep,hh,i);
-	
+		
 	// click released on event
 	if click_region_released_clamp(0,yy,off_pos,ww,ysep,hh,mb_left,true,navbar.hidden,i,master_expense_list)
 		{
