@@ -247,17 +247,16 @@ function draw_date_edit() {
 
 #endregion
 
-
-	if android_back
-	    {
-		if submit
-		datePointer[| score_data.date] = date_create_datetime(year_offset_end,month_offset_end+1,day_offset_end+1,1,1,1); // save date
+if android_back
+	{
+	if submit
+	datePointer[| score_data.date] = date_create_datetime(year_offset_end,month_offset_end+1,day_offset_end+1,1,1,1); // save date
 		
-		submenu = navbar.main;
-	    screen_goto_prev();
-		datePointer = noone;
-		//json_save(save_data);
-	    }
+	submenu = navbar.main;
+	screen_goto_prev();
+	datePointer = noone;
+	//json_save(save_data);
+	}
 
 
 }

@@ -59,7 +59,7 @@ function click_region_released(x_left,y_top,ww,hh,highlight,sub) {
 var mx = mouse_x;
 var my = mouse_y;
 
-if sub != submenu || !can_click
+if (sub != submenu) || !canClick
 exit;
 
 var button = mb_left;
@@ -83,7 +83,7 @@ if (mx > x_left) && (mx < x_left+ww) && (my > y_top) && (my < y_top+hh)
            
 	if (mouse_check_button_released(button) && abs(mouse_ydist) < 15 && abs(mouse_xdist) < 30) || button = noone
 	    {
-		can_click = false;
+		canClick = false;
 
 	    return true;
 	    }
@@ -108,7 +108,7 @@ function click_region_released_clamp(x_left,y_top,yoff,ww,hh,box_hh,button,highl
 	var mx = mouse_x;
 	var my = mouse_y;
 
-	if sub != submenu || !can_click
+	if (sub != submenu) || !canClick
 	exit;
 
 	// change yy and sep/hh
@@ -144,7 +144,7 @@ function click_region_released_clamp(x_left,y_top,yoff,ww,hh,box_hh,button,highl
 		// clicked selection
 	    if (mouse_check_button_released(button) && abs(mouse_ydist) < 10 && abs(mouse_xdist) < 30) || button = noone
 	        {
-			can_click = false;
+			canClick = false;
 			scrollbarIndexScrolling = noone;
 
 	        return true;
@@ -202,7 +202,7 @@ if (mx > x_left) && (mx < x_left+ww) && (my > ypos_clamp) && (my < ypos_clamp+se
 		
 		click_highlight_index = ind;
 		
-		if can_click
+		if canClick
 	    return true;
 	    }
 	else 
@@ -222,7 +222,7 @@ function clickout_region(xx,yy,ww,hh,highlight,_sub) {
 	if submenu != _sub
 	exit;
 
-	if android_back || (can_click && !click_region(xx,yy,ww,hh,noone,highlight) && mouse_check_button_released(mb_left))
+	if android_back || (canClick && !click_region(xx,yy,ww,hh,noone,highlight) && mouse_check_button_released(mb_left))
 	return true;
 	else
 	return false;

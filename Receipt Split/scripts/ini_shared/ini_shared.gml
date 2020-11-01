@@ -22,7 +22,7 @@ screenIndex = screen.home;
 textboxIndex = noone;
 datePointer = noone;
 
-can_click = true;
+canClick = true;
 
 kv_status = false;
 kv_active = false;

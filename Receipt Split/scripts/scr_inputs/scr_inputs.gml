@@ -25,9 +25,9 @@ function scr_inputs() {
 	mouse_ydist = mouse_y-mouse_ystart;
 
 	if mouse_check_button(mb_left) && (mouse_xdist > 30 || mouse_ydist > 15)
-	can_click = false;
+	canClick = false;
 	else 
-	can_click = true;
+	canClick = true;
 	
 	// released click
 	if mouse_check_button_released(mb_left)
