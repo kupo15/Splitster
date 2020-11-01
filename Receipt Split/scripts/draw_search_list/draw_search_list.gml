@@ -19,7 +19,7 @@ for(var i=0;i<size;i++)
 
 	if click_region_released(0,yy+(i*sep),ww,sep,true,submenu) 
 		{
-		textbox_index = noone;
+		textboxIndex = noone;
 		searched_name = "";
 		keyboard_string = "";
 		vk_hide();

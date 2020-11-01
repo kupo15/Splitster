@@ -19,7 +19,7 @@ function vk_hide() {
 	timer[timerIndex.vk_switch] = vk_switch_time;
 	else // canceling out
 		{
-		textbox_index = noone; // no textboxes active
+		textboxIndex = noone; // no textboxes active
 		virtual_keyboard_type = noone; // no keyboard
 		}
 

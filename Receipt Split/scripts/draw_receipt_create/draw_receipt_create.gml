@@ -13,7 +13,7 @@ switch screenIndex
 draw_screen_header(headerType.back,headerType.none,header);
 
 if kv_active
-switch textbox_index
+switch textboxIndex
 	{
 	case 0: receipt_price = string_convert_currency(numpad_value,8); break;
 	}

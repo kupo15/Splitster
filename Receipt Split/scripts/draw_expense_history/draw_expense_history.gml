@@ -97,7 +97,7 @@ for(var i=0;i<pos_end;i++)
 			}
 		else // clicking on an expense
 			{
-			textbox_index = noone;
+			textboxIndex = noone;
 			keyboard_string = "";
 			vk_hide();
 				

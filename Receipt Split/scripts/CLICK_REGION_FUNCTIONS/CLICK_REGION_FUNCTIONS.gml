@@ -232,7 +232,7 @@ function click_textbox_set(str,textbox_ind,kvInit,kvGo) {
 
 keyboard_string = str;
 kv_last_string = str;
-textbox_index = textbox_ind; // set the textbox_index
+textboxIndex = textbox_ind; // set the textbox index
 
 vk_initiate(kvInit,kvGo); // popup keyboard
 }

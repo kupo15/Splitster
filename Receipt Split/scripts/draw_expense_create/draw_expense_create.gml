@@ -6,7 +6,7 @@ draw_screen_header(headerType.back,headerType.none,"Expenses");
 
 // entry
 if kv_active
-switch textbox_index
+switch textboxIndex
 	{
 	case 0: event_name = string_capitalize(keyboard_string,200); break;
 	}

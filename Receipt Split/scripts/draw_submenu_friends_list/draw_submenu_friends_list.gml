@@ -47,7 +47,7 @@ else
 				}
 			else // clicking on a friend
 				{
-				textbox_index = noone;
+				textboxIndex = noone;
 				keyboard_string = "";
 				vk_hide();
 				
@@ -72,7 +72,7 @@ else
 	
 // type in search bar
 if kv_active
-switch textbox_index
+switch textboxIndex
 	{
 	case -1: searched_name = string_capitalize(keyboard_string,22); break; // scr_input_text(22); break;
 	}
