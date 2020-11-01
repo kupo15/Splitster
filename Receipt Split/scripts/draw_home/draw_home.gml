@@ -26,7 +26,6 @@ if size == 0
 	{
 	var str = "No expenses pending!!";
 	draw_text_height(xx+xoff,yy+yoff,str,height);
-
 	}
 else
 	{

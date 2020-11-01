@@ -1,67 +1,84 @@
 
-function draw_text_height() {
-	/// @description  draw_text_height(x,y,string,height,[font]);
-	/// @param x
-	/// @param y
-	/// @param string
-	/// @param height
-	/// @param [font]
-	var xx = argument[0];
-	var yy = argument[1];
-	var str = argument[2];
+function draw_text_height(xx,yy,str,height,font) {
+/// @param xx
+/// @param yy
+/// @param str
+/// @param height
+/// @param [font]
 
-	if argument_count > 4
-	draw_set_font(argument[4]);
-	else
-	draw_set_font(fn_normal);
-	
-	var wantSize = argument[3]; // height of text I want
-	var currSize = string_height(str);
-	var scale = wantSize / currSize;
+var int = argument[4];
 
-	draw_text_transformed(xx,yy,str,scale,scale,0); // this will draw at 64 pixels tall
-	
-	return scale;
+var sep = -1;
+var w = -1;
+var angle = 0;
+var col = draw_get_color();
+var alpha = 1;
+
+return draw_text_height_ext_color(xx,yy,str,sep,w,angle,col,alpha,height,font);
 }
 
-function draw_text_height_color() {
-	/// @param x
-	/// @param y
-	/// @param string
-	/// @param height
-	/// @param color
-	/// @param [font]
-	var xx = argument[0];
-	var yy = argument[1];
-	var str = argument[2];
-	var col = argument[4];
+function draw_text_height_color(xx,yy,str,height,col,font) {
+/// @param xx
+/// @param yy
+/// @param str
+/// @param height
+/// @param color
+/// @param [font]
 
-	var wantSize = argument[3]; // height of text I want
-	var currSize = string_height(str);
-	var scale = wantSize / currSize;
+var int = argument[5];
 
-	if argument_count > 5
-	draw_set_font(argument[5]);
-	else
-	draw_set_font(fn_normal);
+var sep = -1;
+var w = -1;
+var angle = 0;
+var alpha = 1;
 
-	draw_text_transformed_color(xx,yy,str,scale,scale,0,col,col,col,col,1); // this will draw at 64 pixels tall
-	
-	return scale;
+return draw_text_height_ext_color(xx,yy,str,sep,w,angle,col,alpha,height,font);
 }
 
-function draw_text_height_ext(xx,yy,str,angle,sep,w,target) {
+function draw_text_height_ext(xx,yy,str,angle,sep,w,height,font) {
+/// @param xx
+/// @param yy
+/// @param str
+/// @param angle
+/// @param sep
+/// @param w
+/// @param height
+/// @param [font]
 
-	var wantSize = target; // height of string I want
-	var currSize = string_height(str); // current height of string
-	var scale = wantSize/currSize;
+var int = argument[7];
+
+var col = draw_get_color();
+var alpha = 1;
+
+return draw_text_height_ext_color(xx,yy,str,sep,w,angle,col,alpha,height,font);
+}
+
+function draw_text_height_ext_color(xx,yy,str,sep,w,angle,col,alpha,height,font) {
+/// @param xx
+/// @param yy
+/// @param str
+/// @param sep
+/// @param w
+/// @param angle
+/// @param color
+/// @param alpha
+/// @param height
+/// @param [font]	
+
+if argument[9] == undefined
+font = fn_normal;
 	
-	var sep_scale = sep/scale;
-	w /= scale;
+draw_set_font(font);
+	
+var currSize = string_height(str); // current height of string
+var scale = height/currSize;
+	
+var sep_scale = sep/scale;
+w /= scale;
 
-	draw_text_ext_transformed(xx,yy,str,sep_scale,w,scale,scale,angle);
+draw_text_ext_transformed_color(xx,yy,str,sep_scale,w,scale,scale,angle,col,col,col,col,alpha);
 
-	return scale;
+return scale;	
 }
 
 
