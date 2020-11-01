@@ -73,16 +73,12 @@ for(var i=pos_start;i<pos_end;i++)
 	// highlight selected
 	if mode_delete
 	delete_list_draw_selected(xx,yy,off_pos,ww,receipt_height,hh,delete_list,i);
-
-	// clicked on expense
-	if !mode_delete && click_region_pressed_clamp(xx,yy,off_pos,ww,receipt_height,hh,mb_left,false,navbar.hidden,i)
-	delete_list_set(active_expense.receiptList,i);
 		
 	// draw clicked highlight
 	draw_highlight_click_clamp(yy,off_pos,receipt_height,hh,i);
 
 	// click released on event
-	if click_region_released_clamp(xx,yy,off_pos,ww,receipt_height,hh,mb_left,true,navbar.hidden,i)
+	if click_region_released_clamp(xx,yy,off_pos,ww,receipt_height,hh,mb_left,true,navbar.hidden,i,active_expense.receiptList)
 		{
 		if mode_delete
 			{

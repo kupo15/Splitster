@@ -186,11 +186,15 @@ else return false;
 
 }
 
-function click_region_released_clamp(x_left,y_top,yoff,ww,hh,box_hh,button,highlight,sub,array_pos) {
+function click_region_released_clamp(x_left,y_top,yoff,ww,hh,box_hh,button,highlight,sub,array_pos,ref_list) {
 	
 var condition = mouse_check_button_released(button);
 	
-return click_region_clamp_set(x_left,y_top,yoff,ww,hh,box_hh,button,highlight,condition,sub,array_pos);
+// set list variables to delete
+if (ref_list != undefined) && !mode_delete && click_region_pressed_clamp(0,y_top,yoff,ww,hh,box_hh,button,false,sub,array_pos)	
+delete_list_set(ref_list,array_pos);
+	
+return click_region_clamp_set(x_left,y_top,yoff,ww,hh,box_hh,button,highlight,condition,sub,array_pos)
 }
 
 function click_region_clamp_set(x_left,y_top,yoff,ww,hh,box_hh,button,highlight,condition,sub,array_pos) {
