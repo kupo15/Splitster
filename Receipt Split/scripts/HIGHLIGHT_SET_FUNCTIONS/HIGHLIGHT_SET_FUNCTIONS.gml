@@ -6,6 +6,7 @@ click_highlight_ypos = 0;
 click_highlight_width = 0;
 click_highlight_width_end = 0;
 click_highlight_height = 0;
+
 click_highlight_alpha = 0;
 click_highlight_alpha_end = 0;
 click_highlight_color = c_gray;

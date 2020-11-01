@@ -44,13 +44,14 @@ draw_set_halign(fa_center);
 var height = 30;
 var ysep = 30;
 var xx = 30;
-var yy = 220;
+var yy = 180;
 var ww = room_width-xx-xx;
 var receipt_height = 100;
+var receipt_sep = 110;
 var text_yoff = (receipt_height-(height*2))*0.5;
 
-var rows = 5;
-var hh = rows*receipt_height;
+var rows = 4;
+var hh = rows*receipt_sep;
 var list_size = ds_list_size(active_expense.receiptList);
 var pos_start = floor(receipt_list_offset);
 var pos_end = min(list_size,ceil(receipt_list_offset)+rows);
@@ -58,29 +59,30 @@ var pos_end = min(list_size,ceil(receipt_list_offset)+rows);
 draw_set_halign(fa_left);
 for(var i=pos_start;i<pos_end;i++)
 	{
-	var off_pos = i-receipt_list_offset;
+	var off_ind = i-receipt_list_offset;
+	var off_pos = (off_ind*receipt_sep);
 	var pointer = active_expense.receiptList[| i];
 	
-	draw_roundrect(xx,yy+(i*receipt_height),xx+ww,yy+receipt_height-1+(i*receipt_height),true);
+	draw_roundrect(xx,yy+off_pos,xx+ww,yy+off_pos+receipt_height-1,true);
 
 	var name = pointer.description;
 	var price = currency_symbol[pointer.currency]+pointer.price;
-	draw_text_height(xx+10,yy+text_yoff+(0*ysep)+(i*receipt_height),"Name: "+string(name),height);
-	draw_text_height(xx+10,yy+text_yoff+(1*ysep)+(i*receipt_height),"Price: "+string(price),height);
+	draw_text_height(xx+10,yy+off_pos+text_yoff+(0*ysep),"Name: "+string(name),height);
+	draw_text_height(xx+10,yy+off_pos+text_yoff+(1*ysep),"Price: "+string(price),height);
 	
 	// highlight selected
 	if mode_delete
-	delete_list_draw_selected(xx,yy,(off_pos*receipt_height),ww,receipt_height,hh,delete_list,i);
+	delete_list_draw_selected(xx,yy,off_pos,ww,receipt_height,hh,delete_list,i);
 
 	// clicked on expense
-	if !mode_delete && click_region_pressed_clamp(xx,yy,(off_pos*receipt_height),ww,receipt_height,hh,mb_left,noone,navbar.hidden,i)
+	if !mode_delete && click_region_pressed_clamp(xx,yy,off_pos,ww,receipt_height,hh,mb_left,noone,navbar.hidden,i)
 	delete_list_set(active_expense.receiptList,i);
 		
 	// draw clicked highlight
-	draw_highlight_click_clamp(yy,(off_pos*receipt_height),receipt_height,hh,i);
+	draw_highlight_click_clamp(yy,off_pos,receipt_height,hh,i);
 
 	// click released on event
-	if click_region_released_clamp(xx,yy,(off_pos*receipt_height),ww,receipt_height,hh,mb_left,c_yellow,navbar.hidden,i)
+	if click_region_released_clamp(xx,yy,off_pos,ww,receipt_height,hh,mb_left,c_yellow,navbar.hidden,i)
 		{
 		if mode_delete
 			{
@@ -92,14 +94,6 @@ for(var i=pos_start;i<pos_end;i++)
 		else // clicking on an expense
 			{
 			scr_receipt_update(i);
-
-			/*textbox_index = noone;
-			keyboard_string = "";
-			vk_hide();
-				
-			expense_index = i;
-			expense_id = expense_pointer;
-			//screen_change(screen.friendsProfile);*/
 			}
 		}
 	}
@@ -201,7 +195,7 @@ if android_back
 	screen_change(screen.home,true);
 	}
 	
-if keyboard_check_released(vk_enter)
+if keyboard_check_pressed(vk_enter)
 	{
 	var price = string(irandom_range(1,10));
 	scr_receipt_create("",price);

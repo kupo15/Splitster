@@ -8,9 +8,9 @@ draw_screen_header(headerType.bars,headerType.none,"Home");
 
 // draw pending box
 var xx = 10;
-var yy = 150;
+var yy = 300;
 var ww = room_width-xx-xx;
-var hh = 80;
+var hh = 150;
 var col = c_white;
 var sub = navbar.hidden;
 
@@ -48,7 +48,7 @@ var hh = 60;
 var height = 40;
 var col = make_color_rgb(28,164,109);
 
-if click_button(xx,yy,"New Expense",height,c_white,ww,hh,col,true,false,navbar.hidden) || keyboard_check_released(vk_enter)
+if click_button(xx,yy,"New Expense",height,c_white,ww,hh,col,true,false,navbar.hidden) || keyboard_check_pressed(vk_enter)
 scr_navbar_click(screen.expenseCreate);
 
 #region debug testing

@@ -28,23 +28,15 @@ function draw_debug() {
 	draw_text_height(xx,yy+((yoff+9)*sep),"receipt_index: "+string(receipt_index),height);
 
 	var yoff = 11;
-	draw_text_height(xx,yy+((yoff+0)*sep),"event_name: "+string(event_name),height);
+	debug_draw_click_highlight(xx,yy,yoff,sep,height);
 	
-	//draw_text_height(xx,yy+((yoff+0)*sep),"vk_active: "+string(kv_active),height);
-	//draw_text_height(xx,yy+((yoff+1)*sep),"keyboard_string:",height);
-	//draw_text_height(xx,yy+((yoff+2)*sep),"'"+keyboard_string+"'",height,fn_italic);
+	//debug_draw_vk(xx,yy,yoff,sep,height);
 	
 	var yoff = 15;
-	draw_text_height(xx,yy+((yoff+0)*sep),"textbox_index: "+string(textbox_index),height);
-	draw_text_height(xx,yy+((yoff+1)*sep),"texStringLength: "+string(textboxStringLength),height);
-	draw_text_height(xx,yy+((yoff+2)*sep),"texStringWidth: "+string(textboxStringWidth),height);
-	draw_text_height(xx,yy+((yoff+3)*sep),"texStringScale: "+string(textboxStringScale),height);
+	//debug_draw_textbox(xx,yy,yoff,sep,height);
 
 	var yoff = 20;
-	draw_text_height(xx,yy+((yoff+0)*sep),"cursPosStart "+string(cursorPosStart),height);
-	draw_text_height(xx,yy+((yoff+1)*sep),"cursorPos "+string(cursorPos),height);
-	draw_text_height(xx,yy+((yoff+2)*sep),"cursorHoverPos "+string(cursorHoverPos),height);
-	draw_text_height(xx,yy+((yoff+3)*sep),"cursorXposOff "+string(cursorXposOff),height);
+	debug_draw_textbox_cursor(xx,yy,yoff,sep,height);
 	
 	var yoff = 25;
 	
@@ -105,3 +97,4 @@ function draw_debug() {
 
 /* end draw_debug */
 }
+

@@ -45,6 +45,7 @@
     {"id":{"name":"scr_inputs","path":"scripts/scr_inputs/scr_inputs.yy",},"order":1,},
     {"id":{"name":"ELEMENT_STRUCTS","path":"scripts/ELEMENT_STRUCTS/ELEMENT_STRUCTS.yy",},"order":16,},
     {"id":{"name":"draw_info","path":"scripts/draw_info/draw_info.yy",},"order":10,},
+    {"id":{"name":"DEBUG_DRAW_VARIABLES","path":"scripts/DEBUG_DRAW_VARIABLES/DEBUG_DRAW_VARIABLES.yy",},"order":17,},
     {"id":{"name":"sidebar_fades","path":"scripts/sidebar_fades/sidebar_fades.yy",},"order":2,},
     {"id":{"name":"DIALOGUE_FUNCTIONS","path":"scripts/DIALOGUE_FUNCTIONS/DIALOGUE_FUNCTIONS.yy",},"order":25,},
     {"id":{"name":"scr_sidebar_active","path":"scripts/scr_sidebar_active/scr_sidebar_active.yy",},"order":3,},
