@@ -14,7 +14,7 @@ delete_list = ds_list_create();
 android_back = false;
 
 submenu = navbar.hidden;
-submenu_previous = submenu;
+submenuPrevious = submenu;
 activeSubmenu = submenu;
 
 screenIndex = screen.home;

@@ -91,7 +91,7 @@ if android_back_sidebar
 	
 	// go back to previous submenu if clicked 3bars from a submenu
 	if !new_submenu && (submenu == navbar.sidebar)
-	submenu = submenu_previous;
+	submenu = submenuPrevious;
 	}
 
 

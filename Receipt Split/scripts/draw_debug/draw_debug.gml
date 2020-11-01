@@ -17,7 +17,7 @@ function draw_debug() {
 	draw_set_halign(fa_left);
 
 	var yoff = 0;
-	draw_text_height(xx,yy+((yoff+0)*sep),"submenu prev: "+string(submenu_previous),height);
+	draw_text_height(xx,yy+((yoff+0)*sep),"submenuPrevious: "+string(submenuPrevious),height);
 	draw_text_height(xx,yy+((yoff+1)*sep),"submenu: "+string(submenu),height);
 	draw_text_height(xx,yy+((yoff+2)*sep),"screenIndex: "+string(screenIndex),height);
 	draw_text_height(xx,yy+((yoff+3)*sep),"friends_list_off: "+string(master_friends_list_offset),height);

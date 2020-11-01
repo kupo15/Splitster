@@ -36,7 +36,7 @@ repeat 2
 		if (submenu < 0) && !mode_delete
 		if click_region_released(xpos,0,region,region,true,submenu)
 			{
-			submenu_previous = submenu;
+			submenuPrevious = submenu;
 			submenu = navbar.sidebar;
 	
 			submenu_menu_xpos = 0;
