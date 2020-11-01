@@ -1,58 +1,4 @@
 
-
-function click_region_home(x_left,y_top,ww,hh,highlight,button,condition,sub) {
-	
-var col = c_yellow;
-var alpha = 0.3;
-
-var mx = mouse_x;
-var my = mouse_y;
-
-var within_region = (mx > x_left) && (mx < x_left+ww) && (my > y_top) && (my < y_top+hh);
-var test_failed = (sub != submenu) || !canClick;
-
-if mouse_check_button_pressed(button)
-	{
-	mouse_xstart = mouse_x;
-	mouse_ystart = mouse_y;
-	
-	mouse_xdist = 0;
-	mouse_ydist = 0;
-	}
-
-if within_region
-	{
-	// highlight region
-	if (os_type == os_windows) && highlight
-		{
-		if test_failed
-		var col = c_orange;
-			
-		draw_set_alpha(alpha);
-		draw_rectangle_colour(x_left,y_top,x_left+ww,y_top+hh,col,col,col,col,false);
-		draw_set_alpha(1);
-		}
-		
-	if test_failed
-	exit;
-	
-	// clicked highlight
-	if mouse_check_button_pressed(button) && highlight
-	scr_click_highlight_set(x_left,y_top,ww,hh,highlight,screenIndex,undefined);
-           
-	if (condition && (abs(mouse_ydist) < 15) && (abs(mouse_xdist) < 30)) || (condition == undefined)
-	    {
-		canClick = false;
-
-	    return true;
-	    }
-	else 
-	return false;
-	}
-
-return false;
-}
-
 function clickout_region(xx,yy,ww,hh,highlight,_sub) {
 
 var tolerance = 5;
@@ -64,7 +10,7 @@ hh += tolerance*2;
 if submenu != _sub
 exit;
 
-if androidBack || (canClick && !click_region(xx,yy,ww,hh,noone,highlight) && mouse_check_button_released(mb_left))
+if androidBack || (canClick && !click_region(xx,yy,ww,hh,noone,highlight,_sub) && mouse_check_button_released(mb_left))
 return true;
 else
 return false;
@@ -140,74 +86,12 @@ function scr_cursor_position_set(str,scale) {
 
 
 }
-
-function click_region_released(x_left,y_top,ww,hh,highlight,sub) {
 	
-var button = mb_left;	
-var condition = mouse_check_button_released(button);
+
+function click_region_home(x_left,y_top,ww,hh,button,highlight,condition,sub,array_pos) {
 	
-return click_region_home(x_left,y_top,ww,hh,highlight,button,condition,sub);
-}
-
-function click_region_pressed(x_left,y_top,ww,hh,highlight,sub) {
-	
-var button = mb_left;	
-var condition = mouse_check_button_pressed(button);
-	
-return click_region_home(x_left,y_top,ww,hh,highlight,button,condition,sub);
-}
-
-function click_region(x_left,y_top,ww,hh,highlight,button,sub) {
-		
-var condition = mouse_check_button(button) || mouse_check_button_pressed(button)
-
-if button == noone
-var condition = undefined;
-	
-return click_region_home(x_left,y_top,ww,hh,highlight,button,condition,sub);
-}
-
-
-function click_region_pressed_clamp(x_left,y_top,yoff,ww,hh,box_hh,button,highlight,sub,array_pos) {
-	
-var condition = mouse_check_button_pressed(button);
-	
-if click_region_clamp_home(x_left,y_top,yoff,ww,hh,box_hh,button,highlight,condition,sub,array_pos)
-	{
-	//click_highlight_index = array_pos;
-	return true;
-	}
-else return false;
-
-}
-
-function click_region_released_clamp(x_left,y_top,yoff,ww,hh,box_hh,button,highlight,sub,array_pos) {
-	
-var condition = mouse_check_button_released(button);
-	
-return click_region_clamp_home(x_left,y_top,yoff,ww,hh,box_hh,button,highlight,condition,sub,array_pos);
-}
-
-function click_region_clamp_home(x_left,y_top,yoff,ww,hh,box_hh,button,highlight,condition,sub,array_pos) {
-
 var col = c_yellow;
 var alpha = 0.3;
-
-// change yy and sep/hh
-var ypos = y_top+yoff;
-var ypos_clamp = clamp(ypos,y_top,y_top+box_hh); // clamp between window
-var sep_adj = abs(ypos-ypos_clamp); // remaining height after clamped
-var sep = hh-sep_adj;
-		
-// if hanging off the bottom
-if ypos+sep > y_top+box_hh
-sep = y_top+box_hh-ypos;
-
-// set variables
-y_top = ypos_clamp;
-hh = sep;
-
-// y_top += yoff; // top of selection
 
 var mx = mouse_x;
 var my = mouse_y;
@@ -228,24 +112,25 @@ if within_region
 	{
 	// highlight region
 	if (os_type == os_windows) && highlight
-	    {
-		if test_failed
+		{
+		if (sub != submenu)
+		var col = c_red;
+		else if !canClick && mouse_check_button(mb_left)
 		var col = c_orange;
-		
-	    draw_set_alpha(alpha);
-	    draw_rectangle_colour(x_left,y_top,x_left+ww,y_top+hh,col,col,col,col,false);
-	    draw_set_alpha(1);
-	    }
+			
+		draw_set_alpha(alpha);
+		draw_rectangle_colour(x_left,y_top,x_left+ww,y_top+hh,col,col,col,col,false);
+		draw_set_alpha(1);
+		}
 		
 	if test_failed
 	exit;
-		
+	
 	// clicked highlight
 	if mouse_check_button_pressed(button) && highlight
 	scr_click_highlight_set(x_left,y_top,ww,hh,highlight,screenIndex,array_pos);
            
-	// clicked selection
-	if condition && (abs(mouse_ydist) < 15) && (abs(mouse_xdist) < 30)
+	if condition || (condition == undefined)
 	    {
 		if mouse_check_button_released(button)
 		canClick = false;
@@ -257,8 +142,76 @@ if within_region
 	else 
 	return false;
 	}
-	
+
 return false;
+}
+
+function click_region_released(x_left,y_top,ww,hh,highlight,sub) {
+	
+var button = mb_left;	
+var condition = mouse_check_button_released(button);
+	
+return click_region_home(x_left,y_top,ww,hh,button,highlight,condition,sub,undefined);
+}
+
+function click_region_pressed(x_left,y_top,ww,hh,highlight,sub) {
+	
+var button = mb_left;	
+var condition = mouse_check_button_pressed(button);
+
+return click_region_home(x_left,y_top,ww,hh,button,highlight,condition,sub,undefined);
+}
+
+function click_region(x_left,y_top,ww,hh,highlight,button,sub) {
+		
+var condition = mouse_check_button(button) || mouse_check_button_pressed(button)
+
+if button == noone
+var condition = undefined;
+	
+return click_region_home(x_left,y_top,ww,hh,button,highlight,condition,sub,undefined);
+}
+
+
+function click_region_pressed_clamp(x_left,y_top,yoff,ww,hh,box_hh,button,highlight,sub,array_pos) {
+	
+var condition = mouse_check_button_pressed(button);
+	
+if click_region_clamp_set(x_left,y_top,yoff,ww,hh,box_hh,button,highlight,condition,sub,array_pos)
+	{
+	//click_highlight_index = array_pos;
+	return true;
+	}
+else return false;
+
+}
+
+function click_region_released_clamp(x_left,y_top,yoff,ww,hh,box_hh,button,highlight,sub,array_pos) {
+	
+var condition = mouse_check_button_released(button);
+	
+return click_region_clamp_set(x_left,y_top,yoff,ww,hh,box_hh,button,highlight,condition,sub,array_pos);
+}
+
+function click_region_clamp_set(x_left,y_top,yoff,ww,hh,box_hh,button,highlight,condition,sub,array_pos) {
+
+// change yy and sep/hh
+var ypos = y_top+yoff;
+var ypos_clamp = clamp(ypos,y_top,y_top+box_hh); // clamp between window
+var sep_adj = abs(ypos-ypos_clamp); // remaining height after clamped
+var sep = hh-sep_adj;
+		
+// if hanging off the bottom
+if ypos+sep > y_top+box_hh
+sep = y_top+box_hh-ypos;
+
+// set variables
+y_top = ypos_clamp;
+hh = sep;
+
+// y_top += yoff; // top of selection
+
+return click_region_home(x_left,y_top,ww,hh,button,highlight,condition,sub,array_pos);
 }
 
 

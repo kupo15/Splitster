@@ -1,6 +1,6 @@
 function scr_inputs() {
 	
-	androidBack = input_android_back(vk_down,noone,noone) && submenu != navbar.sidebar;
+	androidBack = input_android_back(vk_down,noone,noone) && (submenu != navbar.sidebar);
 	androidBackSidebar = input_android_back(vk_down,noone,noone);
 
 	//if androidBack
@@ -24,10 +24,7 @@ function scr_inputs() {
 	mouse_xdist = mouse_x-mouse_xstart;
 	mouse_ydist = mouse_y-mouse_ystart;
 
-	if mouse_check_button(mb_left) && (mouse_xdist > 30 || mouse_ydist > 15)
-	canClick = false;
-	else 
-	canClick = true;
+	canClick = (abs(mouse_xdist) < 30) && (abs(mouse_ydist) < 15);
 	
 	// released click
 	if mouse_check_button_released(mb_left)
