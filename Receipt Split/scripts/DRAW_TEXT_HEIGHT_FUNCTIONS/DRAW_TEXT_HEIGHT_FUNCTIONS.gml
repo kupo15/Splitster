@@ -78,6 +78,17 @@ w /= scale;
 
 draw_text_ext_transformed_color(xx,yy,str,sep_scale,w,scale,scale,angle,col,col,col,col,alpha);
 
+// debug position
+var ww = string_width(str)*scale;
+var xoff = (draw_get_halign() == fa_center)*ww*0.5;
+
+if (os_type == os_windows) && click_region(xx-xoff,yy,ww,height,false,noone,submenu)
+	{
+	var ww = 3;
+	draw_line(xx-ww,yy,xx+ww,yy);
+	draw_line(xx,yy-ww,xx,yy+ww);
+	}
+
 return scale;	
 }
 

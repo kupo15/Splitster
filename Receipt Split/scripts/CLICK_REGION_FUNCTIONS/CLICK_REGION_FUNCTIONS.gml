@@ -169,7 +169,7 @@ return click_region_home(x_left,y_top,ww,hh,button,highlight,condition,sub,undef
 }
 
 function click_region(x_left,y_top,ww,hh,highlight,button,sub) {
-		
+
 var condition = mouse_check_button(button) || mouse_check_button_pressed(button)
 
 if button == noone
