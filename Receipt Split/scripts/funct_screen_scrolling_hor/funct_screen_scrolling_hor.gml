@@ -16,18 +16,18 @@ function funct_screen_scrolling_hor(xx,yy,ww,hh,sep,list_size,list_disp,offset_s
 		var offset_value = ref_get(offset_pointer); // get the value of the original offset variable
 		ref_set(offset_start_pointer,offset_value); // set pointer variable of offset start
 	
-		scrollbar_index_scrolling = scrollbar_index;
+		scrollbarIndexScrolling = scrollbar_index;
 		}
 	else if mouse_check_button_released(mb_left)
 		{
 		debug_flick_speed = scrollbar_speed[scrollbar_index];
-		scrollbar_index_scrolling = noone;
+		scrollbarIndexScrolling = noone;
 		timer[timerIndex.flick] = -1;
 		}
 
 	var offset_var;
 
-	if scrollbar_index == scrollbar_index_scrolling
+	if scrollbar_index == scrollbarIndexScrolling
 	    {
 		var offset_var;
 	    var num = 1/sep;

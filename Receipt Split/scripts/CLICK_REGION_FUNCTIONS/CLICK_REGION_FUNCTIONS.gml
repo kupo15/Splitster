@@ -145,7 +145,7 @@ function click_region_released_clamp(x_left,y_top,yoff,ww,hh,box_hh,button,highl
 	    if (mouse_check_button_released(button) && abs(mouse_ydist) < 10 && abs(mouse_xdist) < 30) || button = noone
 	        {
 			can_click = false;
-			scrollbar_index_scrolling = noone;
+			scrollbarIndexScrolling = noone;
 
 	        return true;
 	        }

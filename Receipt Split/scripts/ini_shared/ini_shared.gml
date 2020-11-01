@@ -1,8 +1,6 @@
 
 function ini_shared(){
 
-scrollbar_index = noone;
-
 searching = false;
 searched = false;
 searched_name = "";
@@ -83,7 +81,9 @@ scrollbar_num = 3;
 scrollbar_disp = array_create(scrollbar_num,0);
 scrollbar_disp_end = array_create(scrollbar_num,0);
 scrollbar_speed = array_create(scrollbar_num,0);
-scrollbar_index_scrolling = noone;
+
+scrollbarIndex = noone;
+scrollbarIndexScrolling = noone;
 
 can_flick = false;
 debug_flick_speed = 0;

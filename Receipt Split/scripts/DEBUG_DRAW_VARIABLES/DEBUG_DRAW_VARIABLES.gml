@@ -30,17 +30,17 @@ draw_text_height(xx,yy+((ind+3)*sep),"texStringScale: "+string(textboxStringScal
 
 function debug_draw_textbox_cursor(xx,yy,ind,sep,height) {
 
-draw_text_height(xx,yy+((ind+0)*sep),"cursPosStart "+string(cursorPosStart),height);
-draw_text_height(xx,yy+((ind+1)*sep),"cursorPos "+string(cursorPos),height);
-draw_text_height(xx,yy+((ind+2)*sep),"cursorHoverPos "+string(cursorHoverPos),height);
-draw_text_height(xx,yy+((ind+3)*sep),"cursorXposOff "+string(cursorXposOff),height);
+draw_text_height(xx,yy+((ind+0)*sep),"cursPosStart: "+string(cursorPosStart),height);
+draw_text_height(xx,yy+((ind+1)*sep),"cursorPos: "+string(cursorPos),height);
+draw_text_height(xx,yy+((ind+2)*sep),"cursorHoverPos: "+string(cursorHoverPos),height);
+draw_text_height(xx,yy+((ind+3)*sep),"cursorXposOff: "+string(cursorXposOff),height);
 	
 }
 
 function debug_draw_scrollbars(xx,yy,ind,sep,height) {
 
-draw_text_height(xx,yy+((ind+0)*sep),"scrollbar_spd "+string(scrollbar_speed[0]),height);
-draw_text_height(xx,yy+((ind+1)*sep),"scrollbar_ind_scro "+string(scrollbar_index_scrolling),height);
+draw_text_height(xx,yy+((ind+0)*sep),"scrollbar_spd: "+string(scrollbar_speed[0]),height);
+draw_text_height(xx,yy+((ind+1)*sep),"scrollbarIndexScrolling: "+string(scrollbarIndexScrolling),height);
 	
 }
 
