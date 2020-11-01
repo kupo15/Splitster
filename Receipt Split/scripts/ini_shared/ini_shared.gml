@@ -20,7 +20,7 @@ activeSubmenu = submenu;
 screenIndex = screen.home;
 
 textboxIndex = noone;
-date_pointer = noone;
+datePointer = noone;
 
 can_click = true;
 

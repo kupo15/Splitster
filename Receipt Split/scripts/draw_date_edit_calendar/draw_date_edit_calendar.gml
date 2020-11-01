@@ -6,7 +6,7 @@ function draw_date_edit_calendar() {
 	var height = 80;
 
 	draw_text_height(xx,yy,"Round Date",height);
-	draw_text_height_ext(xx,yy+80,date_pointer[| score_data.course],0,-1,500,50,false);
+	draw_text_height_ext(xx,yy+80,datePointer[| score_data.course],0,-1,500,50,false);
 
 	var xx = 20;
 	var yy = 225;
@@ -169,7 +169,7 @@ function draw_date_edit_calendar() {
 			var month = (month_offset_end mod 12)+1;		
 			var day = day_offset_end;
 		
-			date_pointer[| score_data.date] = date_create_datetime(year,month,day,1,1,1); // save date
+			datePointer[| score_data.date] = date_create_datetime(year,month,day,1,1,1); // save date
 			//json_save(save_data);
 			}
 	
@@ -182,7 +182,7 @@ function draw_date_edit_calendar() {
 		else
 			{
 		    screen_goto_prev();
-			date_pointer = noone;
+			datePointer = noone;
 			}
 	    }
 

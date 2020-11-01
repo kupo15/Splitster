@@ -6,7 +6,7 @@ function draw_date_edit() {
 	var height = 80;
 
 	draw_text_height(xx,yy,"Round Date",height);
-	draw_text_height_ext(xx,yy+80,date_pointer[| score_data.course],0,-1,500,50,false);
+	draw_text_height_ext(xx,yy+80,datePointer[| score_data.course],0,-1,500,50,false);
 
 
 	var rows = 3;
@@ -251,10 +251,11 @@ function draw_date_edit() {
 	if android_back
 	    {
 		if submit
-		date_pointer[| score_data.date] = date_create_datetime(year_offset_end,month_offset_end+1,day_offset_end+1,1,1,1); // save date
+		datePointer[| score_data.date] = date_create_datetime(year_offset_end,month_offset_end+1,day_offset_end+1,1,1,1); // save date
+		
 		submenu = navbar.main;
 	    screen_goto_prev();
-		date_pointer = noone;
+		datePointer = noone;
 		//json_save(save_data);
 	    }
 
