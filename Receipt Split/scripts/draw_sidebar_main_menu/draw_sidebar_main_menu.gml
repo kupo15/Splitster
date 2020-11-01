@@ -52,6 +52,7 @@ draw_text_height(xx+xx_off,yy+yoff+(screen.settings*sep),"Settings",height);
 
 draw_text_height(xx_off+15,room_height-40,"Vers. "+string(GM_version),30);
 
+// move highlight with side bar
 if active_submenu == navbar.sidebar
 click_highlight_xpos = xx_off+(ww*0.5);
 
@@ -61,7 +62,7 @@ for(var i=0;i<screen.enumcount;i++)
 	continue;
 
 	// draw highlight
-	//draw_highlight_click_clamp(yy,(i*sep),sep,hh,i);
+	draw_highlight_click_clamp(yy,(i*sep),sep,hh,i,navbar.sidebar);
 
 	draw_sprite_ext(spr_footer_icon,i,res_bleed_xx+xx_off,yy+yoff+(i*sep),0.12,0.12,0,c_white,1); // draw menu icons
 	
@@ -88,6 +89,7 @@ if android_back_sidebar
 	// submenu_menu_xpos = 1;
 	submenu_menu_xpos = -side_menu_width-30;
 	
+	// go back to previous submenu if clicked 3bars from a submenu
 	if !new_submenu && (submenu == navbar.sidebar)
 	submenu = submenu_previous;
 	}

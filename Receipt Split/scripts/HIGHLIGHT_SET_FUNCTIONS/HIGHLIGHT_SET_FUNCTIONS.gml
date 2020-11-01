@@ -37,12 +37,15 @@ click_highlight_index = array_pos;
 active_submenu = submenu;
 }
 
-function draw_highlight_click_clamp(y_top,yoff,ysep,box_hh,array_pos) {
+function draw_highlight_click_clamp(y_top,yoff,ysep,box_hh,array_pos,active_sub) {
 /// @description used for looping through lists
 
-if click_highlight_index != array_pos
+if active_sub == undefined
+active_sub = active_submenu;
+
+if (click_highlight_index != array_pos) || (active_submenu != active_sub)
 exit;
-	
+
 // change yy and sep/hh
 var ypos = y_top+yoff;
 var ypos_clamp = clamp(ypos,y_top,y_top+box_hh); // clamp between window
