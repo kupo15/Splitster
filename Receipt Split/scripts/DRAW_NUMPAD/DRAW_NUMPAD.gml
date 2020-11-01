@@ -42,23 +42,23 @@ for(var n=0;n<3;n++)
 	{
 	draw_text_height(xx+hsep1+(i*hsep2)+(0.5*hsep2),yy+yoff+(n*vsep),(n*3)+i+1,height);
 	
-	if click_region_released(xx+hsep1+(i*hsep2),yy+(n*vsep),hsep2,vsep,c_yellow,submenu)
+	if click_region_released(xx+hsep1+(i*hsep2),yy+(n*vsep),hsep2,vsep,true,submenu)
 	variable += string((n*3)+i+1);
 	}
 
 // draw 00
 draw_text_height(xx+hsep1+(hsep2*0.5),yy+yoff+(3*vsep),"00",height);
-if click_region_released(xx+hsep1+(0*hsep2),yy+(3*vsep),hsep2,vsep,c_yellow,submenu)
+if click_region_released(xx+hsep1+(0*hsep2),yy+(3*vsep),hsep2,vsep,true,submenu)
 variable += "00";
 
 // draw 0
 draw_text_height(xx+hsep1+(hsep2*1.5),yy+yoff+(3*vsep),"0",height);
-if click_region_released(xx+hsep1+(1*hsep2),yy+(3*vsep),hsep2,vsep,c_yellow,submenu)
+if click_region_released(xx+hsep1+(1*hsep2),yy+(3*vsep),hsep2,vsep,true,submenu)
 variable += "0";
 
 // delete
 draw_sprite_ext(ico_backspace,0,xx+(1*hsep1)+(2*hsep2)+(hsep2*0.5),yy+(3.5*vsep),0.25,0.25,0,c_white,1);
-if click_region_released(xx+hsep1+(2*hsep2),yy+(3*vsep),hsep2,vsep,c_yellow,submenu)
+if click_region_released(xx+hsep1+(2*hsep2),yy+(3*vsep),hsep2,vsep,true,submenu)
 	{
 	var length = string_length(variable);
 	variable = string_delete(variable,length,1);

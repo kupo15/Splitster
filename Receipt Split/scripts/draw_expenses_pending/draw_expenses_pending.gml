@@ -82,7 +82,7 @@ for(var i=pos_start;i<pos_end;i++)
 		
 		ds_list_delete(squareup_list,i); // delete from list
 		}
-	else if click_region_released(0,yy+off_pos-140,room_width,ysep,c_yellow,submenu)
+	else if click_region_released(0,yy+off_pos-140,room_width,ysep,true,submenu)
 	screen_change(screen.expenseReview);
 	}
 	

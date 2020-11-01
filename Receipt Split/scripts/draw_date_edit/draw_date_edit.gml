@@ -33,7 +33,7 @@ function draw_date_edit() {
 	
 		draw_text_height(xx+xoff,yy+(off_pos*sep),value,target)
 	
-		if click_region_released_clamp(xx,yy,off_pos*sep,ww,sep,hh,mb_left,c_yellow,0)
+		if click_region_released_clamp(xx,yy,off_pos*sep,ww,sep,hh,mb_left,true,0)
 		monthOffsetEnd = clamp(i-1,0,list_size-3);
 		}
 	
@@ -96,7 +96,7 @@ function draw_date_edit() {
 	
 		draw_text_height(xx+xoff,yy+(off_pos*sep),value,target)
 	
-		if click_region_released_clamp(xx,yy,off_pos*sep,ww,sep,hh,mb_left,c_yellow,0)
+		if click_region_released_clamp(xx,yy,off_pos*sep,ww,sep,hh,mb_left,true,0)
 		dayOffsetEnd = clamp(i-1,0,list_size-3);
 		}
 	
@@ -156,7 +156,7 @@ function draw_date_edit() {
 	
 		draw_text_height(xx+xoff,yy+(off_pos*sep),value,target);
 	
-		if click_region_released_clamp(xx,yy,off_pos*sep,ww,sep,hh,mb_left,c_yellow,0)
+		if click_region_released_clamp(xx,yy,off_pos*sep,ww,sep,hh,mb_left,true,0)
 		year_offset_end = clamp(i-1,0,list_size-3);
 		}
 	

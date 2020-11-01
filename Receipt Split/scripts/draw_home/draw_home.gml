@@ -51,12 +51,6 @@ var col = make_color_rgb(28,164,109);
 if click_button(xx,yy,"New Expense",height,c_white,ww,hh,col,true,false,navbar.hidden) || keyboard_check_pressed(vk_enter)
 scr_navbar_click(screen.expenseCreate);
 
-if click_region(xx,yy-60-60,ww,hh,true,mb_left,navbar.main)
-db("released");
-
-if click_region_released(xx,yy-60,ww,hh,true,mb_left,navbar.hidden)
-db("released");
-
 #region debug testing
 exit;
 draw_rectangle(50,250,250,450,true);

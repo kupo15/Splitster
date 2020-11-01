@@ -76,7 +76,7 @@ draw_rectangle_color(0,0,ww,hh,col,col,col,col,false);
 
 draw_menu_xout(xx+32,yy+35,35,35,5,c_white); // draw xout
 
-if mode_delete && click_region_released(0,0,hh,hh,c_yellow,navbar.hidden)
+if mode_delete && click_region_released(0,0,hh,hh,true,navbar.hidden)
 mode_delete = false;
 
 
@@ -93,7 +93,7 @@ draw_text_height(xx+120,yy+35,string(count)+" selected",height); // draw number 
 // clicked on trash
 draw_sprite_ext(ico_trash2,0,xx+450,yy+20,0.7,0.7,0,c_white,headerDeleteOffsetDisp); // trash icon
 
-if mode_delete && click_region_released(room_width-125,0,125,hh,c_yellow,navbar.hidden)
+if mode_delete && click_region_released(room_width-125,0,125,hh,true,navbar.hidden)
 delete_list_delete(delete_list,mode_delete_list_id);
 
 draw_set_color(c_black);

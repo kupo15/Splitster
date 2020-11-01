@@ -10,7 +10,7 @@ function funct_screen_scrolling(xx,yy,ww,hh,sep,list_size,list_disp,offset_start
 	scrollbar_speed[scrollbar_index] = 0;
 	
 	// scrolling
-	if click_region_pressed(xx,yy,ww,hh,false)
+	if click_region_pressed(xx,yy,ww,hh,false,sub)
 		{
 		var offset_value = ref_get(offset_pointer); // get the value of the original offset variable
 		ref_set(offset_start_pointer,offset_value); // set pointer variable of offset start

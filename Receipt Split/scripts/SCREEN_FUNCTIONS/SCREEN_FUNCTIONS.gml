@@ -20,7 +20,6 @@ screenIndex = ind;
 if clear
 ds_stack_clear(prev_screen_stack);
 
-vk_hide();
 screen_goto_actions();
 }
 
@@ -38,12 +37,14 @@ if ds_stack_empty(prev_screen_stack)
 else
 screenIndex = ds_stack_pop(prev_screen_stack);
 
-vk_hide();
 screen_goto_actions();
 }
 
 function screen_goto_actions() {
-	
+
+click_highlight_index = undefined;
+vk_hide();
+
 switch screenIndex
 	{
 	case screen.receiptAmount:

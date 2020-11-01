@@ -24,7 +24,7 @@ var yy = 55;
 var ww_hh = sprite_get_width(spr_icon_blank_profile);
 draw_sprite(spr_icon_blank_profile,0,xx+xx_off,yy); // profile picture
 
-//if click_region_released(xx+xx_off,yy,ww_hh,ww_hh,mb_left,noone,navbar.sidebar) // clicked on PROFILE PIC
+//if click_region_released(xx+xx_off,yy,ww_hh,ww_hh,mb_left,false,navbar.sidebar) // clicked on PROFILE PIC
 //funct_screen_set(screen.user_profile); // goto to profile
 
 var yy = 120;
@@ -69,7 +69,7 @@ for(var i=0;i<screen.enumcount;i++)
 	if i==screen.settings-1
 	draw_line(xx_off,yy+(i*sep),xx_off+ww,yy+(i*sep)); // separating line
 
-	if click_region_released_clamp(xx_off,yy,(i*sep),ww,sep,screen.enumcount*sep,mb_left,c_yellow,navbar.sidebar,i)
+	if click_region_released_clamp(xx_off,yy,(i*sep),ww,sep,screen.enumcount*sep,mb_left,true,navbar.sidebar,i)
 		{
 		click_highlight_alpha = 0;
 		click_highlight_alpha_start = 0;

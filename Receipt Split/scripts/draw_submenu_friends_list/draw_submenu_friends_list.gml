@@ -8,7 +8,7 @@ var text_yoff = (ysep-height)*0.5;
 
 yy += ysep;
 
-var hh = room_height-yy; // rows*ysep;
+var hh = room_height-yy;
 rows = hh/ysep;
 
 if searched_name != ""
@@ -36,14 +36,14 @@ else
 		draw_line_pixel(xx,yy+((off_pos+1)*ysep),room_width,1,c_black,0.7);
 	
 		// clicked on score
-		if !mode_delete && click_region_pressed_clamp(0,yy,(off_pos*ysep),ww,ysep,hh,mb_left,noone,submenu,i)
+		if !mode_delete && click_region_pressed_clamp(0,yy,(off_pos*ysep),ww,ysep,hh,mb_left,false,submenu,i)
 		delete_list_set(master_friends_list,i);
 			
 		// draw clicked highlight
 		draw_highlight_click_clamp(yy,(off_pos*ysep),ysep,hh,i);
 
 		// click released on friend
-		if click_region_released_clamp(0,yy,(off_pos*ysep),ww,ysep,hh,mb_left,c_yellow,submenu,i)
+		if click_region_released_clamp(0,yy,(off_pos*ysep),ww,ysep,hh,mb_left,true,submenu,i)
 			{
 			if mode_delete
 				{
