@@ -65,7 +65,7 @@ draw_popup_par();
 if kvActive // || timer[timerIndex.vk_switch] > -1
 	{
 	kvLastString = keyboard_string;
-	kv_input_string = keyboard_string; // get string input
+	kvInputString = keyboard_string; // get string input
 	}
 
 if android_back && (submenu != navbar.numpad)
