@@ -1,7 +1,7 @@
 
 function draw_screen_header(header_left,header_right,header_string,height) {
 
-if height == undefined
+if argument[3] == undefined
 height = header_font_height;
 
 var xx = room_width*0.5;
@@ -14,7 +14,7 @@ draw_rectangle_color(0,0,ww,hh,header_color,header_color,header_color,header_col
 if header_string != ""
 	{
 	draw_set_halign(fa_center);	
-	draw_text_height_color(xx,yy,header_string,height,c_white);
+	draw_text_height_color(xx,yy,header_string,c_white,height);
 	draw_set_halign(fa_left);
 	}
 

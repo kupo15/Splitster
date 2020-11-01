@@ -101,7 +101,7 @@ if click_region_released(room_width-ysep,yy-ysep,ysep,ysep,true,submenu)
 
 draw_set_color(c_white);
 if searched_name != ""
-draw_text_height_ext_cursor(xx+70,yy+text_yoff-ysep,searched_name,searched_name,0,-1,ww-ysep-10,height*0.8,-1); // draw searched name
+draw_text_height_ext_cursor(xx+70,yy+text_yoff-ysep,searched_name,searched_name,-1,ww-ysep-10,0,height*0.8,-1); // draw searched name
 else
 draw_text_height_entry(xx+70,yy+text_yoff-ysep,"Enter name",height*0.8,noone,-1,height*0.8,fn_italic); // draw course label
 

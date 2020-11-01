@@ -41,7 +41,7 @@ for(var i=pos_start;i<pos_end;i++)
 	
 	// total cost
 	draw_set_halign(fa_right);
-	draw_text_height_color(room_width-30,yy+off_pos+85,currency_symbol[currency_index]+string(price),height,c_red); 
+	draw_text_height_color(room_width-30,yy+off_pos+85,currency_symbol[currency_index]+string(price),c_red,height); 
 	draw_set_halign(fa_right);
 	}
 	

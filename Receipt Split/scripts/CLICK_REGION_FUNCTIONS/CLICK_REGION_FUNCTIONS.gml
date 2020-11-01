@@ -17,6 +17,12 @@ return false;
 }
 
 function click_textbox_set(str,textbox_ind,kvInit,kvGo) {
+/// @param string
+/// @param textboxInd
+/// @param kvType
+/// @param [kvGo]
+
+var int = argument[3];
 
 keyboard_string = str;
 kvLastString = str;

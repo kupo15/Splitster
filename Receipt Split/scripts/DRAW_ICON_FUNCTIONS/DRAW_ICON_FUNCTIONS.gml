@@ -46,8 +46,8 @@ draw_roundrect_color(xx+1,yy+sq_yoff,xx+sq_size,yy+sq_size-1+sq_yoff,c_gray,c_gr
 draw_roundrect_color(xx,yy+sq_yoff,xx+sq_size,yy+sq_size+sq_yoff,c_gray,c_gray,true);
 	
 draw_set_halign(fa_center);
-draw_text_height_color(xx+(sq_size*0.5),yy+10+sq_yoff,day_str,25,c_red);
-draw_text_height_color(xx+(sq_size*0.5),yy+40+sq_yoff,day,46,c_black);
+draw_text_height_color(xx+(sq_size*0.5),yy+10+sq_yoff,day_str,c_red,25);
+draw_text_height_color(xx+(sq_size*0.5),yy+40+sq_yoff,day,c_black,46);
 
 draw_set_halign(fa_left);
 }

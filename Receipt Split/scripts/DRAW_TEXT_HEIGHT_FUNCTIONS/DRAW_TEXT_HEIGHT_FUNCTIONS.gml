@@ -17,12 +17,12 @@ var alpha = 1;
 return draw_text_height_ext_color(xx,yy,str,sep,w,angle,col,alpha,height,font);
 }
 
-function draw_text_height_color(xx,yy,str,height,col,font) {
+function draw_text_height_color(xx,yy,str,col,height,font) {
 /// @param xx
 /// @param yy
 /// @param str
-/// @param height
 /// @param color
+/// @param height
 /// @param [font]
 
 var int = argument[5];
@@ -35,13 +35,13 @@ var alpha = 1;
 return draw_text_height_ext_color(xx,yy,str,sep,w,angle,col,alpha,height,font);
 }
 
-function draw_text_height_ext(xx,yy,str,angle,sep,w,height,font) {
+function draw_text_height_ext(xx,yy,str,sep,w,angle,height,font) {
 /// @param xx
 /// @param yy
 /// @param str
-/// @param angle
 /// @param sep
 /// @param w
+/// @param angle
 /// @param height
 /// @param [font]
 
@@ -51,6 +51,103 @@ var col = draw_get_color();
 var alpha = 1;
 
 return draw_text_height_ext_color(xx,yy,str,sep,w,angle,col,alpha,height,font);
+}
+
+function draw_text_height_ext_cursor(xx,yy,str,str_disp,sep,str_ww,angle,height,ind,cursor_ww,cursor_col,font) {
+/// @param xx
+/// @param yy
+/// @param string
+/// @param stringDisp
+/// @param sep
+/// @param stringWidth
+/// @param angle
+/// @param height
+/// @param textboxIndex
+/// @param [cursor_width
+/// @param cursor_color
+/// @param font]
+
+// [optional arguments]
+if is_undefined(argument[9])
+cursor_ww = cursor_width;
+
+if is_undefined(argument[10])
+cursor_col = cursor_color;
+		
+// draw text
+if str == ""
+	{
+	var col = c_gray;
+	var alpha = draw_get_alpha();
+	var scale = draw_text_height_ext_color(xx,yy+20,str_disp,sep,str_ww,angle,col,alpha,height*0.7,fn_italic); // draw string
+	}
+else
+	{
+	var col = draw_get_color();
+	var alpha = draw_get_alpha();
+	var scale = draw_text_height_ext_color(xx,yy,str,sep,str_ww,angle,col,alpha,height,font); // draw string
+	}
+	
+#region draw cursor
+var xoff = string_width(str)*scale; 
+var yoff = floor(xoff/str_ww); // cursor ypos
+var hh = height*0.9; // cursor height
+
+// don't draw cursor
+if (textboxIndex != ind) || !kvActive
+exit;
+	
+textboxStringScale = scale;
+textboxStringLength = string_length(str); // number of characters in string
+textboxStringWidth = string_width(str)*scale; // width of string in px
+
+var str_width_half = textboxStringWidth*0.5;
+var fa_mod = (draw_get_halign() == fa_center); // half width of string
+
+if fa_mod // if centered 
+cursorHoverPos = 1-abs(clamp((mouse_x-xx-str_width_half)/textboxStringWidth,-1,0)); // percentage in string mouse_x is (0 - 1)
+else
+cursorHoverPos = clamp((mouse_x-xx)/textboxStringWidth,0,1); // percentage in string mouse_x is (0 - 1)
+
+// if deleting a character
+if textboxStringLength < cursorPos
+	{
+	cursorPos = textboxStringLength;
+	cursorPosStart = cursorPos;
+	}
+else if string_length(kvLastString) != string_length(keyboard_string) // if adding a character
+	{
+	var last_length = string_length(kvLastString);
+	cursorPos += textboxStringLength-last_length;
+
+	if cursorPos < 0
+	cursorPos = 0;
+	}
+
+cursorXposOff = 0;
+for(var i=0;i<cursorPos;i++) // loop through character until cursor pos
+	{
+	var char_ = string_char_at(str,i+1);
+	var char_width = string_width(char_)*scale;
+	
+	cursorXposOff += char_width; // add width to cursor position
+	}
+			
+if fa_mod // if centered
+cursorXposOff -= str_width_half;
+
+var blink = current_time mod (cursor_blink*2);
+blink = floor(blink/cursor_blink);
+
+// draw cursor
+if !blink
+	{
+	draw_set_alpha(0.5);
+	//draw_line_width_color(xx+xoff_mod,yy+yoff_mod,xx+xoff_mod,yy+yoff_mod+hh,ww,cursor_col,cursor_col); // draw cursor
+	draw_line_width_color(xx+cursorXposOff,yy+hh,xx+cursorXposOff,yy,cursor_ww,cursor_col,cursor_col); // cursor
+	draw_set_alpha(1);
+	}
+#endregion
 }
 
 function draw_text_height_ext_color(xx,yy,str,sep,w,angle,col,alpha,height,font) {
@@ -81,122 +178,32 @@ draw_text_ext_transformed_color(xx,yy,str,sep_scale,w,scale,scale,angle,col,col,
 return scale;	
 }
 
+function draw_text_height_cursor(xx,yy,xoffset,yoff,str,str_disp,halign,angle,height,cursor_ww,cursor_col) {
 
-function draw_text_height_ext_cursor(xx,yy,str,str_disp,angle,sep,str_ww,height,ind,cursor_ww,cursor_col,font) {
+var hoff = 0.5;
 
-	// [optional arguments]
-	if is_undefined(cursor_ww)
-	cursor_ww = cursor_width;
+var scale = draw_text_height(xx,yy,str_disp,height); // draw string
+var xoff = (1+string_width(str))*scale;
+var hh = target*0.9; // cursor height
 
-	if is_undefined(cursor_col)
-	cursor_col = cursor_color;
-	
-	if is_undefined(font)
-	draw_set_font(fn_normal);
-	else
-	draw_set_font(font);
-	
-	// draw text
-	if str == ""
-		{
-		draw_set_color(c_gray);
-		draw_set_font(fn_italic);
-		var scale = draw_text_height_ext(xx,yy+20,str_disp,angle,sep,str_ww,height*0.7); // draw string
-		}
-	else
-		{
-		draw_set_color(c_black);
-		var scale = draw_text_height_ext(xx,yy,str,angle,sep,str_ww,height); // draw string
-		}
-	var xoff = string_width(str)*scale; 
-	var yoff = floor(xoff/str_ww); // cursor ypos
-	var hh = height*0.9; // cursor height
+if halign == fa_center
+xoff *= 0.5;
 
-	// don't draw cursor
-	if (textboxIndex != ind) || !kvActive
-	exit;
-	
-	textboxStringScale = scale;
-	textboxStringLength = string_length(str); // number of characters in string
-	textboxStringWidth = string_width(str)*scale; // width of string in px
+var blink = current_time mod (cursor_blink*2);
+blink = floor(blink/cursor_blink);
 
-	var str_width_half = textboxStringWidth*0.5;
-	var fa_mod = (draw_get_halign() == fa_center); // half width of string
-
-	if fa_mod // if centered 
-	cursorHoverPos = 1-abs(clamp((mouse_x-xx-str_width_half)/textboxStringWidth,-1,0)); // percentage in string mouse_x is (0 - 1)
-	else
-	cursorHoverPos = clamp((mouse_x-xx)/textboxStringWidth,0,1); // percentage in string mouse_x is (0 - 1)
-
-	// if deleting a character
-	if textboxStringLength < cursorPos
-		{
-		cursorPos = textboxStringLength;
-		cursorPosStart = cursorPos;
-		}
-	else if string_length(kvLastString) != string_length(keyboard_string) // if adding a character
-		{
-		var last_length = string_length(kvLastString);
-		cursorPos += textboxStringLength-last_length;
-
-		if cursorPos < 0
-		cursorPos = 0;
-		}
-
-	cursorXposOff = 0;
-	for(var i=0;i<cursorPos;i++) // loop through character until cursor pos
-		{
-		var char_ = string_char_at(str,i+1);
-		var char_width = string_width(char_)*scale;
-	
-		cursorXposOff += char_width; // add width to cursor position
-		}
-			
-	if fa_mod // if centered
-	cursorXposOff -= str_width_half;
-
-	var blink = current_time mod (cursor_blink*2);
-	blink = floor(blink/cursor_blink);
-
-	// draw cursor
-	if !blink
-		{
-		draw_set_alpha(0.5);
-		//draw_line_width_color(xx+xoff_mod,yy+yoff_mod,xx+xoff_mod,yy+yoff_mod+hh,ww,cursor_col,cursor_col); // draw cursor
-		draw_line_width_color(xx+cursorXposOff,yy+hh,xx+cursorXposOff,yy,cursor_ww,cursor_col,cursor_col); // cursor
-		draw_set_alpha(1);
-		}
-
+// draw cursor
+if !blink
+	{
+	draw_set_alpha(0.5);
+	draw_line_width_color(xx+xoff,yy,xx+xoff,yy+hh,cursor_ww,cursor_col,cursor_col); // draw cursor
+	draw_set_alpha(1);
+	}
 }
 
-
-function draw_text_height_cursor(xx,yy,xoffset,yoff,str,str_disp,halign,angle,target,debug_move,cursor_ww,cursor_col) {
-	var hoff = 0.5;
-
-	var scale = draw_text_height(xx,yy,str_disp,angle,target,debug_move); // draw string
-	var xoff = (1+string_width(str))*scale;
-	var hh = target*0.9; // cursor height
-
-	if halign == fa_center
-	xoff *= 0.5;
-
-	var blink = current_time mod (cursor_blink*2);
-	blink = floor(blink/cursor_blink);
-
-	// draw cursor
-	if !blink
-		{
-		draw_set_alpha(0.5);
-		draw_line_width_color(xx+xoff,yy,xx+xoff,yy+hh,cursor_ww,cursor_col,cursor_col); // draw cursor
-		draw_set_alpha(1);
-		}
-
-
-}
-
-function draw_text_height_entry() {
-/// @param x
-/// @param y
+function draw_text_height_entry(xx,yy,str,height,halign,ind,cursor_hh,font) {
+/// @param xx
+/// @param yy
 /// @param string
 /// @param height
 /// @param halign
@@ -204,54 +211,42 @@ function draw_text_height_entry() {
 /// @param cursor_height
 /// @param [font]
 
-	var xx = argument[0];
-	var yy = argument[1];
-	var str = argument[2];
+var currSize = string_height(str);
+var scale = height/currSize;
 
-	var wantSize = argument[3]; // height of text I want
-	var currSize = string_height(str);
-	var scale = wantSize / currSize;
+if argument[7] == undefined
+font = fn_normal;
 
-	var halign = argument[4];
-	var ind = argument[5];
-	var cursor_hh = argument[6];
+draw_set_font(font);
 
-	if argument_count > 7
-	draw_set_font(argument[7]);
-	else
-	draw_set_font(fn_normal);
+// draw text string
+draw_set_color(c_gray);
+draw_text_transformed(xx,yy,str,scale,scale,0);
 
-	// draw text string
-	draw_set_color(c_gray);
-	draw_text_transformed(xx,yy,str,scale,scale,0);
+// don't draw cursor
+if (textboxIndex != ind) || !kvActive
+exit;
 
-	// don't draw cursor
-	if (textboxIndex != ind) || !kvActive
-	exit;
+if is_nan(scale) || is_infinity(scale)
+scale = 1;
 
-	if is_nan(scale) || is_infinity(scale)
-	scale = 1;
+// draw cursor
+var xoff = (1+string_width(str))*scale;
+var hh = cursor_hh*0.9; // cursor height
 
-	// draw cursor
-	var xoff = (1+string_width(str))*scale;
-	var hh = cursor_hh*0.9; // cursor height
+if halign == fa_center
+xoff *= 0.5;
 
-	if halign == fa_center
-	xoff *= 0.5;
+var blink = current_time mod (cursor_blink*2);
+blink = floor(blink/cursor_blink);
 
-	var blink = current_time mod (cursor_blink*2);
-	blink = floor(blink/cursor_blink);
-
-	// draw cursor
-	if !blink
-		{
-		draw_set_alpha(0.5);
-		draw_line_width_color(xx+5+xoff,yy,xx+5+xoff,yy+hh,cursor_width,cursor_color,cursor_color); // draw cursor
-		draw_set_alpha(1);
-		}
-
-
-
+// draw cursor
+if !blink
+	{
+	draw_set_alpha(0.5);
+	draw_line_width_color(xx+5+xoff,yy,xx+5+xoff,yy+hh,cursor_width,cursor_color,cursor_color); // draw cursor
+	draw_set_alpha(1);
+	}
 
 }
 

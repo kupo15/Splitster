@@ -30,7 +30,7 @@ else
 	}
 
 draw_set_halign(fa_center);
-draw_text_height_color(xx+(ww*0.5),yy+yoff,str,height,str_col);
+draw_text_height_color(xx+(ww*0.5),yy+yoff,str,str_col,height);
 
 if click_region_released(xx,yy,ww,hh,true,sub)
 return true;

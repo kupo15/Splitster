@@ -10,7 +10,7 @@ draw_screen_header(headerType.bars,headerType.none,"Home");
 var xx = 10;
 var yy = 300;
 var ww = room_width-xx-xx;
-var hh = 150;
+var hh = 80;
 var col = c_white;
 var sub = navbar.hidden;
 

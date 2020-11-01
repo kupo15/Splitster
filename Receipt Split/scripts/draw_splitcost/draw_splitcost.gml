@@ -35,7 +35,7 @@ draw_text_height(xx,yy+10+yoff+height,"Expense Name",30);
 var ww = 500-xx;
 var height = 60;
 
-draw_text_height_ext_cursor(xx+5,yy+yoff,receipt_name,"Enter a description",0,-1,ww,height,0);
+draw_text_height_ext_cursor(xx+5,yy+yoff,receipt_name,"Enter a description",-1,ww,0,height,0);
 draw_set_color(c_black);
 
 for(var i=0;i<1;i++)
@@ -64,7 +64,7 @@ var yoff = 10;
 var height = 25;
 var col = c_gray; 
 
-draw_text_height_color(xx,yy+yoff,"Paid by",height,col);
+draw_text_height_color(xx,yy+yoff,"Paid by",col,height);
 
 var xx = 120;
 var yoff = 50;
@@ -89,7 +89,7 @@ for(var i=0;i<size;i++)
 	
 	// draw price
 	draw_set_halign(fa_right);
-	draw_text_height_color(room_width-30,yy+yoff+(ind*sep),currency_symbol[currency_index]+string(share),height,col);
+	draw_text_height_color(room_width-30,yy+yoff+(ind*sep),currency_symbol[currency_index]+string(share),col,height);
 	ind ++;
 	}
 
@@ -99,7 +99,7 @@ var height = 40;
 var col = make_color_rgb(239,91,35);
 
 draw_set_halign(fa_right);
-//draw_text_height_color(room_width-30,420,currency_symbol[currency_index]+string(receipt_price),height,col);
+//draw_text_height_color(room_width-30,420,currency_symbol[currency_index]+string(receipt_price),col,height);
 
 if click_region_released(0,yy,room_width,hh,true,navbar.hidden)
 screen_change(screen.receiptAmount);	
