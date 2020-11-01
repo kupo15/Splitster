@@ -72,7 +72,7 @@ function draw_date_edit_calendar() {
 			var curr_date = date_create_datetime(year_parse,month_parse,1,1,1,1); // without days
 			var day_span = round(date_day_span(start_date,curr_date))+(i-start_day+1);
 		
-			if day_span_select == day_span //(i-start_day+1) == day_offset_end
+			if daySpanSelect == day_span //(i-start_day+1) == day_offset_end
 			// if (i-start_day+1) == day_offset_end
 				{
 				draw_set_alpha(0.3);
@@ -83,7 +83,7 @@ function draw_date_edit_calendar() {
 			if click_region_released(xx+((i mod 7)*xsep)+off_pos,yy+ysep+(yoff*ysep),xsep,ysep,true,navbar.hidden)
 				{
 				day_offset_end = i-start_day+1; // set day
-				day_span_select = round(date_day_span(start_date,curr_date))+day_offset_end; // update day span
+				daySpanSelect = round(date_day_span(start_date,curr_date))+day_offset_end; // update day span
 				}
 			}
 		}

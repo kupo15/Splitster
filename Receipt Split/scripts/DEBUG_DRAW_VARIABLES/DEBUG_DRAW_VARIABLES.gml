@@ -52,7 +52,7 @@ draw_text_height(xx,yy+((ind+2)*sep),"month end "+string(month_offset_end),heigh
 draw_text_height(xx,yy+((ind+3)*sep),"month parse "+string(month_parse),height);
 						   
 draw_text_height(xx,yy+((ind+5)*sep),"day end "+string(day_offset_end),height);
-draw_text_height(xx,yy+((ind+6)*sep),"day span "+string(day_span_select),height);
+draw_text_height(xx,yy+((ind+6)*sep),"day span "+string(daySpanSelect),height);
 						   
 draw_text_height(xx,yy+((ind+8)*sep),"year parse "+string(year_parse),height);
 }

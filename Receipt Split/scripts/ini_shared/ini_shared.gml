@@ -38,7 +38,7 @@ mouse_ydist = 0;
 mouse_xprev = 0;
 mouse_yprev = 0;
 
-day_span_select = 0;
+daySpanSelect = 0;
 month_parse = 0;
 year_parse = 0;
 

@@ -12,7 +12,7 @@ function scr_set_date_offsets(date) {
 	month_offset_start = month;
 	month_offset_end = month;
 
-	day_span_select = round(date_day_span(start_date,curr_date))+1;
+	daySpanSelect = round(date_day_span(start_date,curr_date))+1;
 
 	day_offset = day;
 	day_offset_start = day;
