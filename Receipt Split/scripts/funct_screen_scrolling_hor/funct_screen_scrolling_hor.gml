@@ -20,7 +20,7 @@ function funct_screen_scrolling_hor(xx,yy,ww,hh,sep,list_size,list_disp,offset_s
 		}
 	else if mouse_check_button_released(mb_left)
 		{
-		debug_flick_speed = scrollbar_speed[scrollbar_index];
+		debugFlickSpeed = scrollbar_speed[scrollbar_index];
 		scrollbarIndexScrolling = noone;
 		timer[timerIndex.flick] = -1;
 		}

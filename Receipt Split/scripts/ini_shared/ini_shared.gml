@@ -86,7 +86,7 @@ scrollbarIndex = noone;
 scrollbarIndexScrolling = noone;
 
 can_flick = false;
-debug_flick_speed = 0;
+debugFlickSpeed = 0;
 
 
 
