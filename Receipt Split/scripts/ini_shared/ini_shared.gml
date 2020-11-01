@@ -23,6 +23,7 @@ textboxIndex = noone;
 datePointer = noone;
 
 canClick = true;
+clickMoved = false;
 
 kvStatus = false;
 kvActive = false;

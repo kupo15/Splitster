@@ -24,11 +24,17 @@ function scr_inputs() {
 	mouse_xdist = mouse_x-mouse_xstart;
 	mouse_ydist = mouse_y-mouse_ystart;
 
-	canClick = (abs(mouse_xdist) < 30) && (abs(mouse_ydist) < 15);
+	if mouse_check_button(mb_left) && ((abs(mouse_xdist) >= 10) || (abs(mouse_ydist) >= 5))
+	clickMoved = true;
+	
+	canClick = !clickMoved;
 	
 	// released click
 	if mouse_check_button_released(mb_left)
-	timer[timerIndex.press_hold] = -1;
+		{
+		clickMoved = false;
+		timer[timerIndex.press_hold] = -1;
+		}
 
 	debug_reset = keyboard_check_pressed(vk_delete);
 
