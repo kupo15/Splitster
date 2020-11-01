@@ -38,9 +38,9 @@ function sidebar_fades() {
 		}*/
 		
 	// header delete
-	header_delete_offset = mode_delete;
+	headerDeleteOffset = mode_delete;
 
-	if header_delete_offset != headerDeleteOffsetDisp
-	headerDeleteOffsetDisp = lerp(headerDeleteOffsetDisp,header_delete_offset,0.19);
+	if headerDeleteOffset != headerDeleteOffsetDisp
+	headerDeleteOffsetDisp = lerp(headerDeleteOffsetDisp,headerDeleteOffset,0.19);
 	
 }

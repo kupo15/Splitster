@@ -74,7 +74,7 @@ year_offset_start = 0;
 year_offset_end = 0;
 	
 headerDeleteOffsetDisp = 0;
-header_delete_offset = 0;
+headerDeleteOffset = 0;
 
 // variables
 scrollbar_num = 3;
