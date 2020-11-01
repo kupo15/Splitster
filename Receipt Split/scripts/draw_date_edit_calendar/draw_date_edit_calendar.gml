@@ -17,7 +17,7 @@ function draw_date_edit_calendar() {
 		{
 		submenu = navbar.year_select;
 		alpha_lerp_end = 1;
-		year_select_offset = month_offset_end;
+		year_select_offset = monthOffsetEnd;
 		mouse_clear(mb_left);
 		}
 
@@ -39,17 +39,17 @@ function draw_date_edit_calendar() {
 		}
 	
 	// draw month
-	var pos_start = floor(month_offset);
-	var pos_end = month_offset+1;
+	var pos_start = floor(monthOffset);
+	var pos_end = monthOffset+1;
 	for(var ii=pos_start;ii<pos_end;ii++) // draw three months
 		{
-		var off_pos = (ii-month_offset)*room_width;
+		var off_pos = (ii-monthOffset)*room_width;
 	
 		// update month when not holding down
 		if !mouse_check_button(mb_left) 
 			{
-			monthParse = (floor(month_offset_end) mod 12)+1;
-			yearParse = 1970+floor(month_offset_end/12);
+			monthParse = (floor(monthOffsetEnd) mod 12)+1;
+			yearParse = 1970+floor(monthOffsetEnd/12);
 			}
 
 		var datetime = date_create_datetime(yearParse,monthParse,1,0,0,0);
@@ -88,50 +88,50 @@ function draw_date_edit_calendar() {
 			}
 		}
 
-	month_offset_end += funct_mouse_wheel(1);
+	monthOffsetEnd += funct_mouse_wheel(1);
 
 	// scrolling
-	var offset_start_pointer = [self,"month_offset_start"];
-	var offset_pointer = [self,"month_offset_end"];
+	var offset_start_pointer = [self,"monthOffsetStart"];
+	var offset_pointer = [self,"monthOffsetEnd"];
 	var scrollbar_index = 0;
 	var list_size = 3600;
 
 	if submenu == navbar.hidden
 	funct_screen_scrolling_hor(xx,yy+ysep,7*xsep,6*ysep,7*xsep,list_size,1,offset_start_pointer,offset_pointer,scrollbar_index,navbar.hidden);
 
-	if month_offset_end < 0
-	month_offset_end = 0;
+	if monthOffsetEnd < 0
+	monthOffsetEnd = 0;
 
 	scrollbar_speed[scrollbar_index] = 0;
 
 	if mouse_check_button_released(mb_left) && scrollbar_speed[scrollbar_index] == 0
 		{
-		var dir = sign(month_offset-month_offset_start);
+		var dir = sign(monthOffset-monthOffsetStart);
 	
 		if dir == 1
-		month_offset_end = ceil(month_offset);
+		monthOffsetEnd = ceil(monthOffset);
 		else if dir == -1
-		month_offset_end = floor(month_offset);
+		monthOffsetEnd = floor(monthOffset);
 		}
 
 	if !mouse_check_button(mb_left)
 		{
 		if sign(scrollbar_speed[scrollbar_index]) == -1
-		month_offset_end = ceil(month_offset);
+		monthOffsetEnd = ceil(monthOffset);
 		else if sign(scrollbar_speed[scrollbar_index]) == 1
-		month_offset_end = floor(month_offset);
+		monthOffsetEnd = floor(monthOffset);
 	
-		month_offset_end = clamp(month_offset_end,0,list_size-3);
+		monthOffsetEnd = clamp(monthOffsetEnd,0,list_size-3);
 	
 		// align
 		if abs(scrollbar_speed[scrollbar_index]) == 0
 			{
-			if month_offset != month_offset_end
-			month_offset = lerp(month_offset,month_offset_end,0.2);
+			if monthOffset != monthOffsetEnd
+			monthOffset = lerp(monthOffset,monthOffsetEnd,0.2);
 			}
 		}
 	else
-	month_offset = month_offset_end;
+	monthOffset = monthOffsetEnd;
 
 #region SUBMIT button
 	var ww = 300;
@@ -165,8 +165,8 @@ function draw_date_edit_calendar() {
 	    {
 		if submit
 			{
-			var year = 1970+floor(month_offset_end/12);
-			var month = (month_offset_end mod 12)+1;		
+			var year = 1970+floor(monthOffsetEnd/12);
+			var month = (monthOffsetEnd mod 12)+1;		
 			var day = day_offset_end;
 		
 			datePointer[| score_data.date] = date_create_datetime(year,month,day,1,1,1); // save date

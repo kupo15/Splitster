@@ -24,22 +24,22 @@ function draw_date_edit() {
 	draw_rectangle(xx,yy,xx+ww,yy+hh,true);
 
 	// draw month
-	var pos_start = floor(month_offset);
+	var pos_start = floor(monthOffset);
 	var pos_end = min(pos_start+4,list_size);
 	for(var i=pos_start;i<pos_end;i++)
 		{
-		var off_pos = i-month_offset;
+		var off_pos = i-monthOffset;
 		var value = funct_convert_date(i-1,false,-1,-1);
 	
 		draw_text_height(xx+xoff,yy+(off_pos*sep),value,target)
 	
 		if click_region_released_clamp(xx,yy,off_pos*sep,ww,sep,hh,mb_left,c_yellow,0)
-		month_offset_end = clamp(i-1,0,list_size-3);
+		monthOffsetEnd = clamp(i-1,0,list_size-3);
 		}
 	
 	// scrolling
-	var offset_start_pointer = [self,"month_offset_start"];
-	var offset_pointer = [self,"month_offset"];
+	var offset_start_pointer = [self,"monthOffsetStart"];
+	var offset_pointer = [self,"monthOffset"];
 	var scrollbar_index = 0;
 	var submenu = 0;
 
@@ -47,38 +47,38 @@ function draw_date_edit() {
 
 	if mouse_check_button_released(mb_left) && scrollbar_speed[scrollbar_index] == 0
 		{
-		var dir = sign(month_offset-month_offset_start);
+		var dir = sign(monthOffset-monthOffsetStart);
 	
 		if dir == 1
-		month_offset_end = ceil(month_offset);
+		monthOffsetEnd = ceil(monthOffset);
 		else if dir == -1
-		month_offset_end = floor(month_offset);
+		monthOffsetEnd = floor(monthOffset);
 		}
 
 	if !mouse_check_button(mb_left)
 		{
 		if sign(scrollbar_speed[scrollbar_index]) == -1
-		month_offset_end = ceil(month_offset);
+		monthOffsetEnd = ceil(monthOffset);
 		else if sign(scrollbar_speed[scrollbar_index]) == 1
-		month_offset_end = floor(month_offset);
+		monthOffsetEnd = floor(monthOffset);
 	
-		month_offset_end = clamp(month_offset_end,0,list_size-3);
+		monthOffsetEnd = clamp(monthOffsetEnd,0,list_size-3);
 	
 		// align
 		if abs(scrollbar_speed[scrollbar_index]) == 0
-		&& month_offset != month_offset_end
-		month_offset = lerp(month_offset,month_offset_end,0.1);
+		&& monthOffset != monthOffsetEnd
+		monthOffset = lerp(monthOffset,monthOffsetEnd,0.1);
 		}
 	else
-	month_offset_end = month_offset;
+	monthOffsetEnd = monthOffset;
 
 
-	//draw_text_height(xx+20,430,month_offset_end,0,target,false);
-	//draw_text_height(xx+20,480,month_offset,0,target,false);
-	//draw_text_height(xx+20,530,month_offset_start,0,target,false);
+	//draw_text_height(xx+20,430,monthOffsetEnd,0,target,false);
+	//draw_text_height(xx+20,480,monthOffset,0,target,false);
+	//draw_text_height(xx+20,530,monthOffsetStart,0,target,false);
 #endregion
 #region Day
-	var datetime = date_create_datetime(round(year_offset),round(month_offset+1),5,current_hour,current_minute,current_second);
+	var datetime = date_create_datetime(round(year_offset),round(monthOffset+1),5,current_hour,current_minute,current_second);
 	var list_size = date_days_in_month(datetime)+2;
 
 	xx += ww;
@@ -250,7 +250,7 @@ function draw_date_edit() {
 if android_back
 	{
 	if submit
-	datePointer[| score_data.date] = date_create_datetime(year_offset_end,month_offset_end+1,day_offset_end+1,1,1,1); // save date
+	datePointer[| score_data.date] = date_create_datetime(year_offset_end,monthOffsetEnd+1,day_offset_end+1,1,1,1); // save date
 		
 	submenu = navbar.main;
 	screen_goto_prev();

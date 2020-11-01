@@ -59,9 +59,9 @@ screen_darken_value = 0;
 navbar_yoff = 1;
 navbar_yoff_start = 1;
 
-month_offset = 0;
-month_offset_start = 0;
-month_offset_end = 0;
+monthOffset = 0;
+monthOffsetStart = 0;
+monthOffsetEnd = 0;
 
 year_select_offset = 0;
 

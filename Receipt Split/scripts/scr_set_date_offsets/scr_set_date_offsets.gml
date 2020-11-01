@@ -8,9 +8,9 @@ function scr_set_date_offsets(date) {
 	var curr_date = date_create_datetime(year,month,day,0,0,0);
 	var month = floor(date_month_span(start_date,curr_date)); // ((year-1970)*12)+month;
 
-	month_offset = month;
-	month_offset_start = month;
-	month_offset_end = month;
+	monthOffset = month;
+	monthOffsetStart = month;
+	monthOffsetEnd = month;
 
 	daySpanSelect = round(date_day_span(start_date,curr_date))+1;
 

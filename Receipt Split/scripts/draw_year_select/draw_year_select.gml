@@ -49,7 +49,7 @@ function draw_year_select() {
 	
 		if click_region_released(xx+15+((i mod 3)*xsep),yy+80+(floor(i/3)*ysep),xsep-25,ysep-15,true,submenu)
 			{
-			month_offset_end = ((year_sel_parse-1970)*12)+i;
+			monthOffsetEnd = ((year_sel_parse-1970)*12)+i;
 			android_back = true;
 			}
 		}
