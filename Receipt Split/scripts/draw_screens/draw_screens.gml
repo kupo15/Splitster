@@ -49,7 +49,8 @@ switch screen_index
 	
 numpad_value = draw_numpad(numpad_value);
 	
-draw_highlight_click(submenu != navbar.sidebar);
+draw_highlight_click_static(submenu != navbar.sidebar);
+
 draw_darken_screen();
 
 // draw_footer_button();

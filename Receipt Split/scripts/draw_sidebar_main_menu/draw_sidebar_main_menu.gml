@@ -61,7 +61,7 @@ for(var i=0;i<screen.enumcount;i++)
 	continue;
 
 	// draw highlight
-	draw_highlight_click_clamp(yy,(i*sep),sep,hh,i);
+	//draw_highlight_click_clamp(yy,(i*sep),sep,hh,i);
 
 	draw_sprite_ext(spr_footer_icon,i,res_bleed_xx+xx_off,yy+yoff+(i*sep),0.12,0.12,0,c_white,1); // draw menu icons
 	
