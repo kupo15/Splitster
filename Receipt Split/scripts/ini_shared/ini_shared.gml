@@ -63,7 +63,7 @@ monthOffset = 0;
 monthOffsetStart = 0;
 monthOffsetEnd = 0;
 
-year_select_offset = 0;
+yearSelectOffset = 0;
 
 dayOffset = 0;
 dayOffsetStart = 0;

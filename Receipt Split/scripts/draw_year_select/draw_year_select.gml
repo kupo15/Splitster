@@ -11,7 +11,7 @@ function draw_year_select() {
 	var hh = 400;
 	var yy = room_height-(alpha_lerp*(hh+30));
 	var col = c_white; 
-	var year_sel_parse = 1970+floor(year_select_offset/12);
+	var year_sel_parse = 1970+floor(yearSelectOffset/12);
 
 
 	draw_roundrect_color(xx,yy,xx+ww,yy+hh,col,col,false); // draw dialogue
@@ -21,15 +21,15 @@ function draw_year_select() {
 	draw_text_height(xx+30,yy+20,"<",50); // draw left arrow
 	if click_region_released(xx+15,yy+20,50,50,true,submenu)
 		{
-		year_select_offset -= 12;
+		yearSelectOffset -= 12;
 	
-		if year_select_offset < 0
-		year_select_offset = 0;
+		if yearSelectOffset < 0
+		yearSelectOffset = 0;
 		}
 
 	draw_text_height(xx+ww-50,yy+20,">",50); // draw right arrow
 	if click_region_released(xx+ww-50-15,yy+20,50,50,true,submenu)
-	year_select_offset += 12;
+	yearSelectOffset += 12;
 
 	var xsep = room_width*0.33;
 	var ysep = (hh-100)*0.25;
@@ -39,7 +39,7 @@ function draw_year_select() {
 		{
 		var col = make_color_rgb(220,220,220); // default
 	
-		if ((yearParse-1970)*12)+i == year_select_offset
+		if ((yearParse-1970)*12)+i == yearSelectOffset
 		var col = make_color_rgb(255,255,193);
 	
 		draw_roundrect_color(xx+15+((i mod 3)*xsep),yy+80+(floor(i/3)*ysep),xx+15+xsep-25+((i mod 3)*xsep),yy+80+ysep-15+(floor(i/3)*ysep),col,col,false); // draw boxes

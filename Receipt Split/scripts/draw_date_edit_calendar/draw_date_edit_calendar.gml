@@ -17,7 +17,7 @@ function draw_date_edit_calendar() {
 		{
 		submenu = navbar.year_select;
 		alpha_lerp_end = 1;
-		year_select_offset = monthOffsetEnd;
+		yearSelectOffset = monthOffsetEnd;
 		mouse_clear(mb_left);
 		}
 
