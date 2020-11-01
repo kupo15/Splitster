@@ -29,6 +29,8 @@ function screen_goto_prev() {
 if argument_count == 1
 submenu = argument[0];
 
+click_highlight_screen = screenIndex;
+
 if ds_stack_empty(prev_screen_stack)
 	{
 	screenIndex = screen.home;
@@ -42,7 +44,6 @@ screen_goto_actions();
 
 function screen_goto_actions() {
 
-click_highlight_index = undefined;
 vk_hide();
 
 switch screenIndex

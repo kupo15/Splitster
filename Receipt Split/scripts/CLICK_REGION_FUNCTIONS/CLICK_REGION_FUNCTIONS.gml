@@ -193,9 +193,6 @@ function click_region_clamp_home(x_left,y_top,yoff,ww,hh,box_hh,button,highlight
 var col = c_yellow;
 var alpha = 0.3;
 
-var mx = mouse_x;
-var my = mouse_y;
-
 // change yy and sep/hh
 var ypos = y_top+yoff;
 var ypos_clamp = clamp(ypos,y_top,y_top+box_hh); // clamp between window
@@ -212,6 +209,9 @@ hh = sep;
 
 // y_top += yoff; // top of selection
 
+var mx = mouse_x;
+var my = mouse_y;
+
 var within_region = (mx > x_left) && (mx < x_left+ww) && (my > y_top) && (my < y_top+hh);
 var test_failed = (sub != submenu) || !canClick;
 
@@ -227,7 +227,7 @@ if mouse_check_button_pressed(button)
 if within_region
 	{
 	// highlight region
-	if os_type == os_windows && highlight
+	if (os_type == os_windows) && highlight
 	    {
 		if test_failed
 		var col = c_orange;
@@ -245,7 +245,7 @@ if within_region
 	scr_click_highlight_set(x_left,y_top,ww,hh,highlight,screenIndex,array_pos);
            
 	// clicked selection
-	if condition && (abs(mouse_ydist) < 10) && (abs(mouse_xdist) < 30)
+	if condition && (abs(mouse_ydist) < 15) && (abs(mouse_xdist) < 30)
 	    {
 		if mouse_check_button_released(button)
 		canClick = false;

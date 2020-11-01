@@ -35,7 +35,7 @@ else
 	
 		draw_line_pixel(xx,yy+((off_pos+1)*ysep),room_width,1,c_black,0.7);
 	
-		// clicked on score
+		// clicked on friend
 		if !mode_delete && click_region_pressed_clamp(0,yy,(off_pos*ysep),ww,ysep,hh,mb_left,false,submenu,i)
 		delete_list_set(master_friends_list,i);
 			
