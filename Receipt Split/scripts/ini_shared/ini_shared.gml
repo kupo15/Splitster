@@ -26,7 +26,7 @@ canClick = true;
 
 kvStatus = false;
 kvActive = false;
-kv_last_string = "";
+kvLastString = "";
 kv_input_string = "";
 
 mouse_xstart = 0;

@@ -1,7 +1,7 @@
 function scr_searchbar(searched_list) {
 	
 	
-if searched_name == kv_last_string
+if searched_name == kvLastString
 exit;
 
 searched = true;

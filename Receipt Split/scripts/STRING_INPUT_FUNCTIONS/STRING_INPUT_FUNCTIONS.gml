@@ -19,10 +19,10 @@ function string_convert_real(str,limit) {
 		 {
 		 if kv_input_backspace // if deleting a character
 			{
-			str = string_delete(kv_last_string,cursorPos,1); // delete character from previous string
+			str = string_delete(kvLastString,cursorPos,1); // delete character from previous string
 			keyboard_string = str; // update keyboard string
 			}
-		 else if (kv_last_string != keyboard_string) // if adding a character
+		 else if (kvLastString != keyboard_string) // if adding a character
 			{
 			var last_char = string_char_at(str,str_ll); // get last character
 			str = string_delete(str,str_ll,1); // delete last letter
@@ -33,7 +33,7 @@ function string_convert_real(str,limit) {
 		 }
 
 	if os_type == os_android
-	if string_length(kv_last_string) == 1 && kv_input_backspace
+	if string_length(kvLastString) == 1 && kv_input_backspace
 		{
 		keyboard_string = "";
 		str = "";
@@ -65,10 +65,10 @@ function string_capitalize(str,str_limit) {
 		 {
 		 if kv_input_backspace // if deleting a character
 			{
-			str = string_delete(kv_last_string,cursorPos,1); // delete character from previous string
+			str = string_delete(kvLastString,cursorPos,1); // delete character from previous string
 			keyboard_string = str; // update keyboard string
 			}
-		 else if (kv_last_string != keyboard_string) // if adding a character
+		 else if (kvLastString != keyboard_string) // if adding a character
 			{
 			var last_char = string_char_at(str,str_ll); // get last character
 			str = string_delete(str,str_ll,1); // delete last letter
@@ -80,7 +80,7 @@ function string_capitalize(str,str_limit) {
 
 	// Override Auto capital
 	if os_type == os_android
-	if string_length(kv_last_string) == 1 && kv_input_backspace
+	if string_length(kvLastString) == 1 && kv_input_backspace
 		{
 		keyboard_string = "";
 		str = "";
@@ -132,7 +132,7 @@ function string_convert_rating(str,limit) {
 		str = string_insert(str_ins,str,str_ll-decimal_places); // insert a decimal only
 		}
 	
-	if string_length(kv_last_string) == 1 && kv_input_backspace
+	if string_length(kvLastString) == 1 && kv_input_backspace
 		{
 		keyboard_string = "";
 		str = "";
@@ -231,7 +231,7 @@ if str_ != ""
 	str_ = string(str_); // add currency symbol
 	}
 	
-if string_length(kv_last_string) == 1 && kv_input_backspace
+if (string_length(kvLastString) == 1) && kv_input_backspace
 	{
 	keyboard_string = "";
 	str_ = "";
@@ -291,7 +291,7 @@ if str_ != ""
 	str_ = string(str_); // add currency symbol
 	}
 	
-if string_length(kv_last_string) == 1 && kv_input_backspace
+if (string_length(kvLastString) == 1) && kv_input_backspace
 	{
 	keyboard_string = "";
 	str_ = "";

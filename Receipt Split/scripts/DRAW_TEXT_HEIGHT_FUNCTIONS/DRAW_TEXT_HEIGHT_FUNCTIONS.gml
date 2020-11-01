@@ -117,9 +117,9 @@ function draw_text_height_ext_cursor(xx,yy,str,str_disp,angle,sep,str_ww,height,
 		cursorPos = textboxStringLength;
 		cursorPosStart = cursorPos;
 		}
-	else if string_length(kv_last_string) != string_length(keyboard_string) // if adding a character
+	else if string_length(kvLastString) != string_length(keyboard_string) // if adding a character
 		{
-		var last_length = string_length(kv_last_string);
+		var last_length = string_length(kvLastString);
 		cursorPos += textboxStringLength-last_length;
 
 		if cursorPos < 0

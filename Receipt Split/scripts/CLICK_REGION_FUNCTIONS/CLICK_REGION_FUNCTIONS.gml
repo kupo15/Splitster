@@ -231,7 +231,7 @@ function clickout_region(xx,yy,ww,hh,highlight,_sub) {
 function click_textbox_set(str,textbox_ind,kvInit,kvGo) {
 
 keyboard_string = str;
-kv_last_string = str;
+kvLastString = str;
 textboxIndex = textbox_ind; // set the textbox index
 
 vk_initiate(kvInit,kvGo); // popup keyboard
