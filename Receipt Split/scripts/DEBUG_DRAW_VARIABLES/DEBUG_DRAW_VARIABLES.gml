@@ -49,7 +49,7 @@ function debug_draw_calendar(xx,yy,ind,sep,height) {
 draw_text_height(xx,yy+((ind+0)*sep),"month start "+string(month_offset_start),height);
 draw_text_height(xx,yy+((ind+1)*sep),"month "+string(month_offset),height);
 draw_text_height(xx,yy+((ind+2)*sep),"month end "+string(month_offset_end),height);
-draw_text_height(xx,yy+((ind+3)*sep),"month parse "+string(month_parse),height);
+draw_text_height(xx,yy+((ind+3)*sep),"monthParse: "+string(monthParse),height);
 						   
 draw_text_height(xx,yy+((ind+5)*sep),"day end "+string(day_offset_end),height);
 draw_text_height(xx,yy+((ind+6)*sep),"day span "+string(daySpanSelect),height);
