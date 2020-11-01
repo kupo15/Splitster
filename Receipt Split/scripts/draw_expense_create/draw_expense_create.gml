@@ -69,11 +69,7 @@ for(var i=pos_start;i<pos_end;i++)
 	var price = currency_symbol[pointer.currency]+pointer.price;
 	draw_text_height(xx+10,yy+off_pos+text_yoff+(0*ysep),"Name: "+string(name),height);
 	draw_text_height(xx+10,yy+off_pos+text_yoff+(1*ysep),"Price: "+string(price),height);
-	
-	// highlight selected
-	if mode_delete
-	delete_list_draw_selected(xx,yy,off_pos,ww,receipt_height,hh,delete_list,i);
-		
+			
 	// draw clicked highlight
 	draw_highlight_click_clamp(yy,off_pos,receipt_height,hh,i);
 

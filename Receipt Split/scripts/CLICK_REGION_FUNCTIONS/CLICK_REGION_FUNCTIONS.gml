@@ -190,6 +190,10 @@ function click_region_released_clamp(x_left,y_top,yoff,ww,hh,box_hh,button,highl
 	
 var condition = mouse_check_button_released(button);
 	
+// highlight selected
+if (ref_list != undefined) && mode_delete
+delete_list_draw_selected(x_left,y_top,yoff,ww,hh,box_hh,delete_list,array_pos);
+	
 // set list variables to delete
 if (ref_list != undefined) && !mode_delete && click_region_pressed_clamp(0,y_top,yoff,ww,hh,box_hh,button,false,sub,array_pos)	
 delete_list_set(ref_list,array_pos);

@@ -66,11 +66,7 @@ for(var i=0;i<pos_end;i++)
 	//draw_line_pixel(0,yy+off_pos,350,1,c_black,1);
 	//draw_line_pixel(0,yy+off_pos+ysep,350,1,c_black,1);
 
-		
-	// highlight selected
-	if mode_delete
-	delete_list_draw_selected(0,yy,off_pos,ww,ysep,hh,delete_list,i);
-		
+			
 	draw_calendar_icon(xx,yy+15+off_pos,sq_yoff,sq_size,date);
 		
 	// draw_text_height(xx,yy+off_pos,i,height); // 

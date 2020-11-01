@@ -10,7 +10,7 @@ yy += ysep;
 
 var hh = room_height-yy;
 rows = hh/ysep;
-
+db("88")
 if searched_name != ""
 	{
 	if draw_search_list(xx,yy,ww,ysep,rows,height)
@@ -26,11 +26,7 @@ else
 		var off_pos = i-master_friends_list_offset;
 		var friend_pointer = master_friends_list[| i];
 		var name = friend_pointer.dispName;
-	
-		// highlight selected
-		if mode_delete
-		delete_list_draw_selected(0,yy,(off_pos*ysep),ww,ysep,hh,delete_list,i);
-		
+			
 		draw_text_height(xx,yy+text_yoff+(off_pos*ysep),name,height); // draw name
 	
 		draw_line_pixel(xx,yy+((off_pos+1)*ysep),room_width,1,c_black,0.7);
