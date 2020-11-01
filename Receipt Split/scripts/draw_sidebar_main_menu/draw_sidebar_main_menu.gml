@@ -13,7 +13,7 @@ var col = c_white;
 draw_rectangle_color(xx+xx_off,yy,xx+xx_off+ww,yy+hh,col,col,col,col,false); // menu background
 
 // if click outside of menu
-if click_region_released(xx+xx_off+side_menu_width,yy,ww,hh,noone,navbar.sidebar) // make_color_rgb(0,255,255)
+if (submenu == navbar.sidebar) && click_region_released(xx+xx_off+side_menu_width,yy,ww,hh,noone,navbar.sidebar) // make_color_rgb(0,255,255)
 androidBackSidebar = true;
 
 var yy_sep = 180;

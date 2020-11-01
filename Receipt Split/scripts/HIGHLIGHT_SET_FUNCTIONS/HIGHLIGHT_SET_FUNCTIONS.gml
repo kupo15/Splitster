@@ -130,3 +130,4 @@ draw_set_alpha(1);
 highlight_fadeout(xx);
 
 }
+	

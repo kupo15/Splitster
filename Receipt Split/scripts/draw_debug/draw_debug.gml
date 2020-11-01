@@ -43,18 +43,16 @@ function draw_debug() {
 	
 	draw_text_height(xx,yy+((yoff+0)*sep),"numpad_value: "+string(numpad_value),height);
 	
-	//debug_draw_scrollbars(xx,yy,ind,sep,height);
+	//debug_draw_scrollbars(xx,yy,yoff,sep,height);
 	
-	//debug_draw_calendar(xx,yy,ind,sep,height);
+	//debug_draw_calendar(xx,yy,yoff,sep,height);
 
 	// draw_text_height(xx,yy+(25*sep),"search results "+string(ds_grid_height(search_grid)),height);
 
-	var yoff = 29;
-	draw_text_height(xx,yy+((yoff+0)*sep),"Resolution: "+string(win_ww)+"x"+string(win_hh),height); // resolution
-	draw_text_height(xx,yy+((yoff+1)*sep),"Mouse Coor: "+string(mouse_x)+","+string(mouse_y),height); // mouse coor
+	var yoff = 26;
+	//draw_text_height(xx,yy+((yoff+0)*sep),"Resolution: "+string(win_ww)+"x"+string(win_hh),height); // resolution
 	
-	if mouse_check_button(mb_middle)
-	draw_text_height(xx+150,yy+((yoff+1)*sep),"Region Size: ["+string(abs(mouse_xpos-mouse_x))+","+string(abs(mouse_ypos-mouse_y))+"]",height); // mouse coor
+	debug_draw_mouse(xx,yy,yoff,sep,height);
 
 	// right side
 	var size = ds_list_size(delete_list);

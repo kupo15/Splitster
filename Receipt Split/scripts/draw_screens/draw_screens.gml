@@ -44,7 +44,7 @@ switch screenIndex
 	case screen.info: draw_info(); break;
 	case screen.settings: draw_settings(); break;
 	
-	case screen.edit_date: draw_date_edit_calendar(); break;
+	//case screen.edit_date: draw_date_edit_calendar(); break;
 	}
 	
 numpad_value = draw_numpad(numpad_value);

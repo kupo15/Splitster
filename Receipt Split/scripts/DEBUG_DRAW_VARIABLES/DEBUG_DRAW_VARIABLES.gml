@@ -57,4 +57,18 @@ draw_text_height(xx,yy+((ind+6)*sep),"daySpanSelect: "+string(daySpanSelect),hei
 draw_text_height(xx,yy+((ind+8)*sep),"yearParse: "+string(yearParse),height);
 }
 
+
+function debug_draw_mouse(xx,yy,ind,sep,height) {
+	
+draw_text_height(xx,yy+((ind+0)*sep),"MouseXstart: "+string(mouse_xstart),height); // mouse xstart
+draw_text_height(xx,yy+((ind+1)*sep),"MouseYstart: "+string(mouse_ystart),height); // mouse ystart
+draw_text_height(xx,yy+((ind+2)*sep),"Mouse Distance: "+string(mouse_xdist)+" , "+string(mouse_ydist),height); // mouse distances
+draw_text_height(xx,yy+((ind+3)*sep),"Mouse Coor: "+string(mouse_x)+" , "+string(mouse_y),height); // mouse coor
+	
+if mouse_check_button(mb_middle)
+draw_text_height(xx,yy+((ind+4)*sep),"Region Size: ["+string(abs(mouse_xpos-mouse_x))+" , "+string(abs(mouse_ypos-mouse_y))+"]",height); // mouse coor
+}
+
+
+
 goto_draw_debug();
