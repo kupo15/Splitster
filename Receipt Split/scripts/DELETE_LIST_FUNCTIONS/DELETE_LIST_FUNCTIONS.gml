@@ -64,7 +64,7 @@ if ypos+sep > yy+box_hh
 sep = yy+box_hh-ypos;
 
 if del_list_id[| ind]	
-	{db(ind)
+	{
 	draw_set_alpha(0.2);
 	draw_rectangle_color(xx,ypos_clamp,xx+ww,ypos_clamp+sep,col,col,col,col,false);
 	draw_set_alpha(1);

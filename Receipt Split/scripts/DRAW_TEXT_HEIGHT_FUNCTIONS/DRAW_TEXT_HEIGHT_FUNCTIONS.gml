@@ -1,4 +1,4 @@
-
+// text draws
 function draw_text_height(xx,yy,str,height,font) {
 /// @param xx
 /// @param yy
@@ -12,7 +12,7 @@ var sep = -1;
 var w = -1;
 var angle = 0;
 var col = draw_get_color();
-var alpha = 1;
+var alpha = draw_get_alpha();
 
 return draw_text_height_ext_color(xx,yy,str,sep,w,angle,col,alpha,height,font);
 }
@@ -30,7 +30,7 @@ var int = argument[5];
 var sep = -1;
 var w = -1;
 var angle = 0;
-var alpha = 1;
+var alpha = draw_get_alpha();
 
 return draw_text_height_ext_color(xx,yy,str,sep,w,angle,col,alpha,height,font);
 }
@@ -48,11 +48,40 @@ function draw_text_height_ext(xx,yy,str,sep,w,angle,height,font) {
 var int = argument[7];
 
 var col = draw_get_color();
-var alpha = 1;
+var alpha = draw_get_alpha();
 
 return draw_text_height_ext_color(xx,yy,str,sep,w,angle,col,alpha,height,font);
 }
 
+function draw_text_height_ext_color(xx,yy,str,sep,w,angle,col,alpha,height,font) {
+/// @param xx
+/// @param yy
+/// @param str
+/// @param sep
+/// @param w
+/// @param angle
+/// @param color
+/// @param alpha
+/// @param height
+/// @param [font]	
+
+if argument[9] == undefined
+font = fn_normal;
+	
+draw_set_font(font);
+	
+var currSize = string_height(str); // current height of string
+var scale = height/currSize;
+	
+var sep_scale = sep/scale;
+w /= scale;
+
+draw_text_ext_transformed_color(xx,yy,str,sep_scale,w,scale,scale,angle,col,col,col,col,alpha);
+
+return scale;	
+}
+
+// text draw with cursor
 function draw_text_height_ext_cursor(xx,yy,str,str_disp,sep,str_ww,angle,height,ind,cursor_ww,cursor_col,font) {
 /// @param xx
 /// @param yy
@@ -150,34 +179,6 @@ if !blink
 #endregion
 }
 
-function draw_text_height_ext_color(xx,yy,str,sep,w,angle,col,alpha,height,font) {
-/// @param xx
-/// @param yy
-/// @param str
-/// @param sep
-/// @param w
-/// @param angle
-/// @param color
-/// @param alpha
-/// @param height
-/// @param [font]	
-
-if argument[9] == undefined
-font = fn_normal;
-	
-draw_set_font(font);
-	
-var currSize = string_height(str); // current height of string
-var scale = height/currSize;
-	
-var sep_scale = sep/scale;
-w /= scale;
-
-draw_text_ext_transformed_color(xx,yy,str,sep_scale,w,scale,scale,angle,col,col,col,col,alpha);
-
-return scale;	
-}
-
 function draw_text_height_cursor(xx,yy,xoffset,yoff,str,str_disp,halign,angle,height,cursor_ww,cursor_col) {
 
 var hoff = 0.5;
@@ -250,55 +251,50 @@ if !blink
 
 }
 
-
+// text manipulation
 function text_reduce(str,ww,height) {
 
-	if str == ""
-	return height;
+if str == ""
+return height;
 
-	var wantSize = height; // height of text I want
-	var currSize = string_height(str);
-	var scale = wantSize / currSize;
+var currSize = string_height(str);
+var scale = height/currSize;
 
-	var str_ww = string_width(str)*scale;  // current width
-	var sca = ww/str_ww;
+var str_ww = string_width(str)*scale;  // current width
+var sca = ww/str_ww;
 
-	if str_ww < ww // if current width is less than the limit
-	return wantSize; // no change
-	else
-	return wantSize*sca;
+if str_ww < ww // if current width is less than the limit
+return height; // no change
+else
+return height*sca;
 
 
 }
 
-function string_abbreviate(argument0, argument1, argument2, argument3) {
+function string_abbreviate(str,ll,height,abbre) {
 /// @param string
 /// @param length
-/// @param target_height
+/// @param height
 /// @param abbrev_string
 
-	var str = argument0;
-	var ll = argument1;
-	var target = argument2;
-	var abbre = argument3;
-	var new_str = "";
-	var str_ll = string_length(str); // number of charaters
+var new_str = "";
+var str_ll = string_length(str); // number of charaters
 
-	var wantSize = target; // height of text I want
-	var currSize = string_height(str);
-	var scale = wantSize / currSize;
+var wantSize = height; // height of text I want
+var currSize = string_height(str);
+var scale = wantSize / currSize;
 
-	// loop through string
-	for(var i=0;i<str_ll;i++)
-	if string_width(new_str)*scale < ll 
-	new_str += string_char_at(str,i+1);
-	else
-		{
-		new_str += abbre;
-		break;
-		}
+// loop through string
+for(var i=0;i<str_ll;i++)
+if string_width(new_str)*scale < ll 
+new_str += string_char_at(str,i+1);
+else
+	{
+	new_str += abbre;
+	break;
+	}
 
-	return new_str;
+return new_str;
 
 
 }

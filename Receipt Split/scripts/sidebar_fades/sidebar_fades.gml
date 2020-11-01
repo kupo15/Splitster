@@ -42,5 +42,4 @@ function sidebar_fades() {
 
 	if headerDeleteOffset != headerDeleteOffsetDisp
 	headerDeleteOffsetDisp = lerp(headerDeleteOffsetDisp,headerDeleteOffset,0.19);
-	
 }

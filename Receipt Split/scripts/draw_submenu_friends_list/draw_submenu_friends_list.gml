@@ -10,7 +10,7 @@ yy += ysep;
 
 var hh = room_height-yy;
 rows = hh/ysep;
-db("88")
+
 if searched_name != ""
 	{
 	if draw_search_list(xx,yy,ww,ysep,rows,height)

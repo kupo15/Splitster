@@ -79,7 +79,6 @@ draw_menu_xout(xx+32,yy+35,35,35,5,c_white); // draw xout
 if mode_delete && click_region_released(0,0,hh,hh,true,navbar.hidden)
 mode_delete = false;
 
-
 var height = 50;
 var count = 0;
 var size = ds_list_size(delete_list);
