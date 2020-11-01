@@ -1,5 +1,6 @@
+function goto_draw_debug() {};
+
 function draw_debug() {
-	
 	
 	if os_type == os_android
 	exit;
@@ -42,28 +43,18 @@ function draw_debug() {
 	
 	draw_text_height(xx,yy+((yoff+0)*sep),"numpad_value: "+string(numpad_value),height);
 	
-	/*
-	draw_text_height(xx,yy+((yoff+0)*sep),"scrollbar_spd "+string(scrollbar_speed[0]),height);
-	draw_text_height(xx,yy+((yoff+1)*sep),"scrollbar_ind_scro "+string(scrollbar_index_scrolling),height);
-
-	/*draw_text_height(xx,yy+(15*sep),"month start "+string(month_offset_start),height);
-	draw_text_height(xx,yy+(16*sep),"month "+string(month_offset),height);
-	draw_text_height(xx,yy+(17*sep),"month end "+string(month_offset_end),height);
-	draw_text_height(xx,yy+(18*sep),"month parse "+string(month_parse),height);
-
-	draw_text_height(xx,yy+(20*sep),"day end "+string(day_offset_end),height);
-	draw_text_height(xx,yy+(21*sep),"day span "+string(day_span_select),height);
-
-	draw_text_height(xx,yy+(24*sep),"year parse "+string(year_parse),height);*/
+	//debug_draw_scrollbars(xx,yy,ind,sep,height);
+	
+	//debug_draw_calendar(xx,yy,ind,sep,height);
 
 	// draw_text_height(xx,yy+(25*sep),"search results "+string(ds_grid_height(search_grid)),height);
 
 	var yoff = 29;
-	draw_text_height(xx,yy+((yoff+0)*sep),string(win_ww)+"x"+string(win_hh),height); // resolution
-	draw_text_height(xx,yy+((yoff+1)*sep),string(mouse_x)+","+string(mouse_y),height); // mouse coor
+	draw_text_height(xx,yy+((yoff+0)*sep),"Resolution: "+string(win_ww)+"x"+string(win_hh),height); // resolution
+	draw_text_height(xx,yy+((yoff+1)*sep),"Mouse Coor: "+string(mouse_x)+","+string(mouse_y),height); // mouse coor
 	
 	if mouse_check_button(mb_middle)
-	draw_text_height(xx+150,yy+((yoff+1)*sep),"["+string(abs(mouse_xpos-mouse_x))+","+string(abs(mouse_ypos-mouse_y))+"]",height); // mouse coor
+	draw_text_height(xx+150,yy+((yoff+1)*sep),"Region Size: ["+string(abs(mouse_xpos-mouse_x))+","+string(abs(mouse_ypos-mouse_y))+"]",height); // mouse coor
 
 	// right side
 	var size = ds_list_size(delete_list);
