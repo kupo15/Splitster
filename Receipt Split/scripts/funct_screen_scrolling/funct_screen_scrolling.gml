@@ -40,14 +40,14 @@ function funct_screen_scrolling(xx,yy,ww,hh,sep,list_size,list_disp,offset_start
 	
 		if mouse_y != mouse_yprev // if the mouse moved since the last step
 			{
-			can_flick = true;
+			canFlick = true;
 			timer[timerIndex.flick] = flick_window;
 			}
 	
 		offset_var = ref_get(offset_start_pointer)-amt;
 	    }
 	else
-	offset_var = ref_get(offset_pointer)-(scrollbar_speed[scrollbar_index])*can_flick;
+	offset_var = ref_get(offset_pointer)-(scrollbar_speed[scrollbar_index])*canFlick;
 	
 	// keep the offset variable in bounds
 	var offset_test = offset_var;

@@ -85,7 +85,7 @@ scrollbar_speed = array_create(scrollbar_num,0);
 scrollbarIndex = noone;
 scrollbarIndexScrolling = noone;
 
-can_flick = false;
+canFlick = false;
 debugFlickSpeed = 0;
 
 
