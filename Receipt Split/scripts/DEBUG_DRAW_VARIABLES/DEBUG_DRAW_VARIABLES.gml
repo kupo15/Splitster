@@ -13,7 +13,7 @@ draw_text_height(xx,yy+((ind+4)*sep),"activeSubmenu: "+string(activeSubmenu),hei
 
 function debug_draw_vk(xx,yy,ind,sep,height) {
 	
-draw_text_height(xx,yy+((ind+0)*sep),"vk_active: "+string(kv_active),height);
+draw_text_height(xx,yy+((ind+0)*sep),"vk_active: "+string(kvActive),height);
 draw_text_height(xx,yy+((ind+1)*sep),"keyboard_string:",height);
 draw_text_height(xx,yy+((ind+2)*sep),"'"+keyboard_string+"'",height,fn_italic);
 	

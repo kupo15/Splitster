@@ -71,7 +71,7 @@ else
 	}
 	
 // type in search bar
-if kv_active
+if kvActive
 switch textboxIndex
 	{
 	case -1: searched_name = string_capitalize(keyboard_string,22); break; // scr_input_text(22); break;

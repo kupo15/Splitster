@@ -9,7 +9,7 @@ exit;
 
 
 // draw kv popup overlay
-var kv_off = 400*kv_active*(submenu != navbar.numpad);
+var kv_off = 400*kvActive*(submenu != navbar.numpad);
 var col = c_blue;
 
 draw_set_alpha(0.4);

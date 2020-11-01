@@ -62,7 +62,7 @@ draw_popup_par();
 
 
 // update the virtual keyboard
-if kv_active // || timer[timerIndex.vk_switch] > -1
+if kvActive // || timer[timerIndex.vk_switch] > -1
 	{
 	kv_last_string = keyboard_string;
 	kv_input_string = keyboard_string; // get string input

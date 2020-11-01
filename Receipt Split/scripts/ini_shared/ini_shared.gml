@@ -25,7 +25,7 @@ datePointer = noone;
 canClick = true;
 
 kvStatus = false;
-kv_active = false;
+kvActive = false;
 kv_last_string = "";
 kv_input_string = "";
 

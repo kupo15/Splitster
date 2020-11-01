@@ -11,7 +11,7 @@ screen_change(screen.friendsProfile)
 
 if android_back
 	{
-	if !kv_active
+	if !kvActive
 	screen_goto_prev();
 	}
 

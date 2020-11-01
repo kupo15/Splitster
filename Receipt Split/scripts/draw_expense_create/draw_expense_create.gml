@@ -5,7 +5,7 @@ function draw_expense_create() {
 draw_screen_header(headerType.back,headerType.none,"Expenses");
 
 // entry
-if kv_active
+if kvActive
 switch textboxIndex
 	{
 	case 0: event_name = string_capitalize(keyboard_string,200); break;
@@ -191,7 +191,7 @@ if click_button(xx,yy,str,height,c_black,ww,hh,c_white,true,true,navbar.hidden)
 
 if android_back
 	{
-	if !kv_active
+	if !kvActive
 	screen_change(screen.home,true);
 	}
 	

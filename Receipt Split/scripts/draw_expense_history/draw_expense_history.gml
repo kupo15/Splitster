@@ -135,7 +135,7 @@ funct_screen_scrolling(xx,yy,ww,hh,ysep,list_size+banner_ext,rows,offset_start_p
 
 if android_back
 	{
-	if !kv_active
+	if !kvActive
 	screen_goto_prev();
 	}
 	

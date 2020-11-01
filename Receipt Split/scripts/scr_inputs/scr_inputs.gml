@@ -4,7 +4,7 @@ function scr_inputs() {
 	android_back_sidebar = input_android_back(vk_down,noone,noone);
 
 	//if android_back
-	//kv_active = false;
+	//kvActive = false;
 
 	if os_type == os_android 
 	var bs_key = keyboard_check_released(vk_backspace);

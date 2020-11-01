@@ -14,7 +14,7 @@ function vk_initiate(kvtype,kvreturn) {
 	else
 	keyboard_virtual_show(kvtype,kvreturn,kbv_autocapitalize_words,false); // show keyboard
 	
-	kv_active = true;
+	kvActive = true;
 	cursorSet = true;
 }
 

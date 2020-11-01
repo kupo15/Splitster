@@ -8,7 +8,7 @@ draw_rectangle_color(0,0,room_width,room_height,bg_col,bg_col,bg_col,bg_col,fals
 
 draw_screen_header(headerType.back,headerType.none,"Split Cost");
 
-if kv_active
+if kvActive
 switch textboxIndex
 	{
 	case 0: receipt_name = string_capitalize(keyboard_string,200); break;
@@ -168,7 +168,7 @@ draw_set_alpha(1);
 
 if android_back
 	{
-	if !kv_active
+	if !kvActive
 	screen_goto_prev();
 	}
 	

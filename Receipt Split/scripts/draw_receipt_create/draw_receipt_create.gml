@@ -12,7 +12,7 @@ switch screenIndex
 
 draw_screen_header(headerType.back,headerType.none,header);
 
-if kv_active
+if kvActive
 switch textboxIndex
 	{
 	case 0: receipt_price = string_convert_currency(numpad_value,8); break;
@@ -72,7 +72,7 @@ if click_button(xx,yy,"Split Costs",height,c_white,ww,hh,col,false,false,submenu
     
 if android_back
 	{
-	//if !kv_active
+	//if !kvActive
 	screen_goto_prev();
 	}
 

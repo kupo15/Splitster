@@ -96,7 +96,7 @@ function draw_text_height_ext_cursor(xx,yy,str,str_disp,angle,sep,str_ww,height,
 	var hh = height*0.9; // cursor height
 
 	// don't draw cursor
-	if (textboxIndex != ind) || !kv_active
+	if (textboxIndex != ind) || !kvActive
 	exit;
 	
 	textboxStringScale = scale;
@@ -209,7 +209,7 @@ function draw_text_height_entry() {
 	draw_text_transformed(xx,yy,str,scale,scale,0);
 
 	// don't draw cursor
-	if (textboxIndex != ind) || !kv_active
+	if (textboxIndex != ind) || !kvActive
 	exit;
 
 	if is_nan(scale) || is_infinity(scale)
