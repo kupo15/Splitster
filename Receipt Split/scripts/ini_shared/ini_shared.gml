@@ -73,7 +73,7 @@ year_offset = 0;
 year_offset_start = 0;
 year_offset_end = 0;
 	
-header_delete_offset_disp = 0;
+headerDeleteOffsetDisp = 0;
 header_delete_offset = 0;
 
 // variables

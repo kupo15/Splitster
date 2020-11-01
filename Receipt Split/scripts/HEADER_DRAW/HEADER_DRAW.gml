@@ -69,7 +69,7 @@ draw_header_delete(0,0,ww,hh);
 
 function draw_header_delete(xx,yy,ww,hh){
 	
-draw_set_alpha(header_delete_offset_disp);
+draw_set_alpha(headerDeleteOffsetDisp);
 
 var col = c_gray;
 draw_rectangle_color(0,0,ww,hh,col,col,col,col,false);
@@ -91,7 +91,7 @@ draw_set_color(c_white);
 draw_text_height(xx+120,yy+35,string(count)+" selected",height); // draw number of items to delete
 
 // clicked on trash
-draw_sprite_ext(ico_trash2,0,xx+450,yy+20,0.7,0.7,0,c_white,header_delete_offset_disp); // trash icon
+draw_sprite_ext(ico_trash2,0,xx+450,yy+20,0.7,0.7,0,c_white,headerDeleteOffsetDisp); // trash icon
 
 if mode_delete && click_region_released(room_width-125,0,125,hh,c_yellow,navbar.hidden)
 delete_list_delete(delete_list,mode_delete_list_id);
