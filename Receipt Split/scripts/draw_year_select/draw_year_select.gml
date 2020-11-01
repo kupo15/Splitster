@@ -39,7 +39,7 @@ function draw_year_select() {
 		{
 		var col = make_color_rgb(220,220,220); // default
 	
-		if ((year_parse-1970)*12)+i == year_select_offset
+		if ((yearParse-1970)*12)+i == year_select_offset
 		var col = make_color_rgb(255,255,193);
 	
 		draw_roundrect_color(xx+15+((i mod 3)*xsep),yy+80+(floor(i/3)*ysep),xx+15+xsep-25+((i mod 3)*xsep),yy+80+ysep-15+(floor(i/3)*ysep),col,col,false); // draw boxes

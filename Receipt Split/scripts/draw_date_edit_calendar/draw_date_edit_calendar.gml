@@ -49,16 +49,16 @@ function draw_date_edit_calendar() {
 		if !mouse_check_button(mb_left) 
 			{
 			monthParse = (floor(month_offset_end) mod 12)+1;
-			year_parse = 1970+floor(month_offset_end/12);
+			yearParse = 1970+floor(month_offset_end/12);
 			}
 
-		var datetime = date_create_datetime(year_parse,monthParse,1,0,0,0);
+		var datetime = date_create_datetime(yearParse,monthParse,1,0,0,0);
 		var day_num = date_days_in_month(datetime);
 		var start_day = date_get_weekday(datetime);
 	
 		// draw calendar month
 		var month_disp = funct_convert_date(monthParse-1,true,-1,-1);
-		var year_disp = year_parse;
+		var year_disp = yearParse;
 
 		if ii = pos_start
 		draw_text_height(room_width*0.5,yy-15,string(month_disp)+" "+string(year_disp),70); // draw month AND year
@@ -69,7 +69,7 @@ function draw_date_edit_calendar() {
 			var yoff = floor(i/7);
 			draw_text_height(xx+(xsep*0.5)+((i mod 7)*xsep)+off_pos,yy+20+ysep+(yoff*ysep),i-start_day+1,50);
 	
-			var curr_date = date_create_datetime(year_parse,monthParse,1,1,1,1); // without days
+			var curr_date = date_create_datetime(yearParse,monthParse,1,1,1,1); // without days
 			var day_span = round(date_day_span(start_date,curr_date))+(i-start_day+1);
 		
 			if daySpanSelect == day_span //(i-start_day+1) == day_offset_end

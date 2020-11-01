@@ -40,7 +40,7 @@ mouse_yprev = 0;
 
 daySpanSelect = 0;
 monthParse = 0;
-year_parse = 0;
+yearParse = 0;
 
 alpha_lerp = 0;
 alpha_lerp_end = 0;
