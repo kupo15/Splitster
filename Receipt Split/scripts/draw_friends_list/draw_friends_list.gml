@@ -4,9 +4,7 @@ function draw_friends_list() {
 // draw the 3 bars
 draw_screen_header(headerType.back,headerType.none,"Friends List");
 
-var ysep = 85;
-
-if draw_submenu_friends_list(30,header_height+ysep,room_width,60,ysep,8)
+if draw_submenu_friends_list(header_height,room_width,20)
 screen_change(screen.friendsProfile)
 
 if androidBack

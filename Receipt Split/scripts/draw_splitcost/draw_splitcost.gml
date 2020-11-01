@@ -106,12 +106,11 @@ screen_change(screen.receiptAmount);
 		
 // draw friends list
 var ysep = 85;
-var xx = 30;
 var ypos = header_height+(ysep*4)
 var diff = room_height-ypos+ysep;
 var yy = ypos+(diff*friendsbar_yoff_start);
 
-draw_submenu_friends_list(xx,yy,room_width,60,ysep,6)
+draw_submenu_friends_list(yy,room_width,6)
 
 
 #region delete expense

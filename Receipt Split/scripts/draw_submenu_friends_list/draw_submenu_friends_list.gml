@@ -1,8 +1,15 @@
 
-function draw_submenu_friends_list(xx,yy,ww,height,ysep,rows) {
+function draw_submenu_friends_list(yy,ww,rows) {
 	
+var xx = 50;
+var ysep = 90;
+var height = 45;
 var text_yoff = (ysep-height)*0.5;
-var hh = rows*ysep;
+
+yy += ysep;
+
+var hh = room_height-yy; // rows*ysep;
+rows = hh/ysep;
 
 if searched_name != ""
 	{
