@@ -72,8 +72,8 @@ function draw_date_edit_calendar() {
 			var curr_date = date_create_datetime(yearParse,monthParse,1,1,1,1); // without days
 			var day_span = round(date_day_span(start_date,curr_date))+(i-start_day+1);
 		
-			if daySpanSelect == day_span //(i-start_day+1) == day_offset_end
-			// if (i-start_day+1) == day_offset_end
+			if daySpanSelect == day_span //(i-start_day+1) == dayOffsetEnd
+			// if (i-start_day+1) == dayOffsetEnd
 				{
 				draw_set_alpha(0.3);
 				draw_circle_color(xx+(xsep*0.5)+((i mod 7)*xsep)+off_pos,yy+(ysep*0.5)+ysep+(yoff*ysep),xsep*0.5,c_aqua,c_aqua,false);
@@ -82,8 +82,8 @@ function draw_date_edit_calendar() {
 	
 			if click_region_released(xx+((i mod 7)*xsep)+off_pos,yy+ysep+(yoff*ysep),xsep,ysep,true,navbar.hidden)
 				{
-				day_offset_end = i-start_day+1; // set day
-				daySpanSelect = round(date_day_span(start_date,curr_date))+day_offset_end; // update day span
+				dayOffsetEnd = i-start_day+1; // set day
+				daySpanSelect = round(date_day_span(start_date,curr_date))+dayOffsetEnd; // update day span
 				}
 			}
 		}
@@ -167,7 +167,7 @@ function draw_date_edit_calendar() {
 			{
 			var year = 1970+floor(monthOffsetEnd/12);
 			var month = (monthOffsetEnd mod 12)+1;		
-			var day = day_offset_end;
+			var day = dayOffsetEnd;
 		
 			datePointer[| score_data.date] = date_create_datetime(year,month,day,1,1,1); // save date
 			//json_save(save_data);

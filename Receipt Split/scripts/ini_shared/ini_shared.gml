@@ -65,9 +65,9 @@ monthOffsetEnd = 0;
 
 year_select_offset = 0;
 
-day_offset = 0;
-day_offset_start = 0;
-day_offset_end = 0;
+dayOffset = 0;
+dayOffsetStart = 0;
+dayOffsetEnd = 0;
 
 year_offset = 0;
 year_offset_start = 0;

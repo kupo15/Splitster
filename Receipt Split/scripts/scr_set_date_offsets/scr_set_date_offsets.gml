@@ -14,9 +14,9 @@ function scr_set_date_offsets(date) {
 
 	daySpanSelect = round(date_day_span(start_date,curr_date))+1;
 
-	day_offset = day;
-	day_offset_start = day;
-	day_offset_end = day;
+	dayOffset = day;
+	dayOffsetStart = day;
+	dayOffsetEnd = day;
 
 	year_offset = year;
 	year_offset_start = year;

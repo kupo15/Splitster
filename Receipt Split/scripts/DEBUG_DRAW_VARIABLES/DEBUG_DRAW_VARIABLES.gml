@@ -51,7 +51,7 @@ draw_text_height(xx,yy+((ind+1)*sep),"monthOffset: "+string(monthOffset),height)
 draw_text_height(xx,yy+((ind+2)*sep),"monthOffsetEnd "+string(monthOffsetEnd),height);
 draw_text_height(xx,yy+((ind+3)*sep),"monthParse: "+string(monthParse),height);
 						   
-draw_text_height(xx,yy+((ind+5)*sep),"day end "+string(day_offset_end),height);
+draw_text_height(xx,yy+((ind+5)*sep),"day end "+string(dayOffsetEnd),height);
 draw_text_height(xx,yy+((ind+6)*sep),"daySpanSelect: "+string(daySpanSelect),height);
 						   
 draw_text_height(xx,yy+((ind+8)*sep),"yearParse: "+string(yearParse),height);

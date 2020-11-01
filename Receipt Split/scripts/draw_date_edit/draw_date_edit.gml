@@ -86,23 +86,23 @@ function draw_date_edit() {
 	draw_rectangle(xx,yy,xx+ww,yy+hh,true);
 
 	// draw day
-	var pos_start = floor(day_offset);
+	var pos_start = floor(dayOffset);
 	var pos_end = min(pos_start+4,list_size);
 	for(var i=pos_start;i<pos_end;i++)
 		{
-		var off_pos = i-day_offset;
+		var off_pos = i-dayOffset;
 		var value = i;
 	
 	
 		draw_text_height(xx+xoff,yy+(off_pos*sep),value,target)
 	
 		if click_region_released_clamp(xx,yy,off_pos*sep,ww,sep,hh,mb_left,c_yellow,0)
-		day_offset_end = clamp(i-1,0,list_size-3);
+		dayOffsetEnd = clamp(i-1,0,list_size-3);
 		}
 	
 	// scrolling
-	var offset_start_pointer = [self,"day_offset_start"];
-	var offset_pointer = [self,"day_offset"];
+	var offset_start_pointer = [self,"dayOffsetStart"];
+	var offset_pointer = [self,"dayOffset"];
 	var scrollbar_index = 1;
 	var submenu = 0;
 
@@ -110,35 +110,35 @@ function draw_date_edit() {
 
 	if mouse_check_button_released(mb_left) && scrollbar_speed[scrollbar_index] == 0
 		{
-		var dir = sign(day_offset-day_offset_start);
+		var dir = sign(dayOffset-dayOffsetStart);
 	
 		if dir == 1
-		day_offset_end = ceil(day_offset);
+		dayOffsetEnd = ceil(dayOffset);
 		else if dir == -1
-		day_offset_end = floor(day_offset);
+		dayOffsetEnd = floor(dayOffset);
 		}
 
 	if !mouse_check_button(mb_left)
 		{
 		if sign(scrollbar_speed[scrollbar_index]) == -1
-		day_offset_end = ceil(day_offset);
+		dayOffsetEnd = ceil(dayOffset);
 		else if sign(scrollbar_speed[scrollbar_index]) == 1
-		day_offset_end = floor(day_offset);
+		dayOffsetEnd = floor(dayOffset);
 	
-		day_offset_end = clamp(day_offset_end,0,list_size-3);
+		dayOffsetEnd = clamp(dayOffsetEnd,0,list_size-3);
 	
 		// align
 		if abs(scrollbar_speed[scrollbar_index]) == 0
-		&& day_offset != day_offset_end
-		day_offset = lerp(day_offset,day_offset_end,0.1);
+		&& dayOffset != dayOffsetEnd
+		dayOffset = lerp(dayOffset,dayOffsetEnd,0.1);
 		}
 	else
-	day_offset_end = day_offset;
+	dayOffsetEnd = dayOffset;
 
 
-	// draw_text_height(xx+20,430,day_offset_end,0,target,false);
-	// draw_text_height(xx+20,480,day_offset,0,target,false);
-	// draw_text_height(xx+20,530,day_offset_start,0,target,false);
+	// draw_text_height(xx+20,430,dayOffsetEnd,0,target,false);
+	// draw_text_height(xx+20,480,dayOffset,0,target,false);
+	// draw_text_height(xx+20,530,dayOffsetStart,0,target,false);
 #endregion
 #region Year
 	var list_size = 3000;
@@ -250,7 +250,7 @@ function draw_date_edit() {
 if android_back
 	{
 	if submit
-	datePointer[| score_data.date] = date_create_datetime(year_offset_end,monthOffsetEnd+1,day_offset_end+1,1,1,1); // save date
+	datePointer[| score_data.date] = date_create_datetime(year_offset_end,monthOffsetEnd+1,dayOffsetEnd+1,1,1,1); // save date
 		
 	submenu = navbar.main;
 	screen_goto_prev();
