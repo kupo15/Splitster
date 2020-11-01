@@ -301,3 +301,17 @@ return str_;
 
 
 }
+	
+function plural(str,value,ending_str) {
+/// @param string	
+/// @param compare_variable
+/// @param [ending_string]
+
+if value != 1
+str += "s";
+
+if ending_str != undefined
+str += ending_str;
+
+return str;	
+}

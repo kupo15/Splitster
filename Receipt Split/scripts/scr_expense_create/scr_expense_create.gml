@@ -13,11 +13,13 @@ active_expense = {
 
 name: desc,
 date: _date,
+total_cost: 0,
 
 receiptList: ds_list_create()
 
 }
 
+event_name = "";
 //click_textbox_set(event_name,0,kbv_type_default);
 
 }

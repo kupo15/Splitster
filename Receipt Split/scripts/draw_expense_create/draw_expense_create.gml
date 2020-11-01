@@ -175,11 +175,19 @@ var str = "Create Expense";
 
 if click_button(xx,yy,str,height,c_black,ww,hh,c_white,true,true,navbar.hidden)
 	{
-	active_expense.name = event_name; // set event name
+	// debug
+	if event_name == ""
+	event_name = choose("Pizza Party","Get Together","Dinner","Night Out");
+		
+	// set event name
+	active_expense.name = event_name; 
 	
+	// add to pending list
 	ds_list_add(squareup_list,active_expense);
 	ds_list_sort_nested_struct(squareup_list,"date",false);
 
+	// clear variables
+	event_name = "";
 	active_expense = undefined;
 	active_receipt = undefined;
 	
@@ -195,10 +203,11 @@ if android_back
 	
 if keyboard_check_released(vk_enter)
 	{
-	scr_receipt_create();
+	var price = string(irandom_range(1,10));
+	scr_receipt_create("",price);
 	
-	screen_change(screen.receiptCreate);
-	click_textbox_set(receipt_name,0,kbv_type_default);
+	var ind = ds_list_size(active_expense.receiptList);
+	scr_receipt_add(ind);
 	}
 	
 }

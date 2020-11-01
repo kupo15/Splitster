@@ -87,6 +87,7 @@ for(var i=0;i<size;i++)
 	draw_set_halign(fa_left);
 	draw_text_height(xx,yy+yoff+(ind*sep),name,height); // draw name
 	
+	// draw price
 	draw_set_halign(fa_right);
 	draw_text_height_color(room_width-30,yy+yoff+(ind*sep),currency_symbol[currency_index]+string(share),height,col);
 	ind ++;

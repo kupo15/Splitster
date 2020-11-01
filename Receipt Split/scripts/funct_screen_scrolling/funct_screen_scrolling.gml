@@ -73,7 +73,7 @@ function funct_screen_scrolling(xx,yy,ww,hh,sep,list_size,list_disp,offset_start
 	// draw scrollbar
 	var offset_var = ref_get(offset_pointer); // get the value of offset pointer
 
-	funct_draw_scrollbar(res_bleed_xx+5,yy,list_disp,0,list_size,6,offset_var,sep,-5,c_gray,scrollbar_index);
+	//funct_draw_scrollbar(res_bleed_xx+5,yy,list_disp,0,list_size,6,offset_var,sep,-5,c_gray,scrollbar_index);
 
 
 

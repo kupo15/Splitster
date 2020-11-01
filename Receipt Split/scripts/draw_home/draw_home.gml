@@ -18,13 +18,15 @@ if dialogue
 screen_change(screen.expensesPending);
 
 var xoff = 120;
-var yoff = 30;
 var height = 40;
+var yoff = (hh-height)*0.5;
 var size = ds_list_size(squareup_list);
 
 if size == 0
 	{
-	draw_text_height(xx+xoff,yy+yoff,"No expenses pending!!",height);
+	var str = "No expenses pending!!";
+	draw_text_height(xx+xoff,yy+yoff,str,height);
+
 	}
 else
 	{
@@ -32,11 +34,10 @@ else
 	var scale = hh/spr_hh*0.8;
 	
 	draw_sprite_ext(spr_icon_megaphone,0,xx+20,yy+5,scale,scale,0,c_white,1); // draw megaphone
+
+	var str = plural(" Expense",size," pending");
 	
-	var str = " Expense";
-	if size > 1
-	str += "s";
-	draw_text_height(xx+xoff,yy+yoff,string(size)+str+" pending!",height);
+	draw_text_height(xx+xoff,yy+yoff,string(size)+str,height);
 	}
 
 // create expense button
@@ -47,7 +48,7 @@ var hh = 60;
 var height = 40;
 var col = make_color_rgb(28,164,109);
 
-if click_button(xx,yy,"New Expense",height,c_white,ww,hh,col,true,false,navbar.hidden)
+if click_button(xx,yy,"New Expense",height,c_white,ww,hh,col,true,false,navbar.hidden) || keyboard_check_released(vk_enter)
 scr_navbar_click(screen.expenseCreate);
 
 #region debug testing

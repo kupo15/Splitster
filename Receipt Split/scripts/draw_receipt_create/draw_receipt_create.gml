@@ -44,7 +44,7 @@ for(var i=0;i<1;i++)
 	}
 	
 // split costs button
-var submit = (receipt_price != "");
+var submit = 1; // (receipt_price != "");
 var hh = 60;
 var xx = 0;
 var yy = element_numpad.yy-hh;
@@ -57,6 +57,10 @@ var col = c_gray;
 
 if click_button(xx,yy,"Split Costs",height,c_white,ww,hh,col,false,false,submenu) && submit
 	{
+	// debug
+	if receipt_price == ""
+	receipt_price = string(irandom_range(1,10));	
+		
 	if screen_index == screen.receiptAmount
 	screen_goto_prev();
 	else

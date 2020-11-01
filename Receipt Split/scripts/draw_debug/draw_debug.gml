@@ -28,9 +28,11 @@ function draw_debug() {
 	draw_text_height(xx,yy+((yoff+9)*sep),"receipt_index: "+string(receipt_index),height);
 
 	var yoff = 11;
-	draw_text_height(xx,yy+((yoff+0)*sep),"vk_active: "+string(kv_active),height);
-	draw_text_height(xx,yy+((yoff+1)*sep),"keyboard_string:",height);
-	draw_text_height(xx,yy+((yoff+2)*sep),"'"+keyboard_string+"'",height,fn_italic);
+	draw_text_height(xx,yy+((yoff+0)*sep),"event_name: "+string(event_name),height);
+	
+	//draw_text_height(xx,yy+((yoff+0)*sep),"vk_active: "+string(kv_active),height);
+	//draw_text_height(xx,yy+((yoff+1)*sep),"keyboard_string:",height);
+	//draw_text_height(xx,yy+((yoff+2)*sep),"'"+keyboard_string+"'",height,fn_italic);
 	
 	var yoff = 15;
 	draw_text_height(xx,yy+((yoff+0)*sep),"textbox_index: "+string(textbox_index),height);
