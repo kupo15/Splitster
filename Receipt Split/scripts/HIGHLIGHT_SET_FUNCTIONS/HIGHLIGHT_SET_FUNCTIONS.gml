@@ -13,7 +13,7 @@ click_highlight_color = c_gray;
 click_highlight_screen = noone;
 click_highlight_index = undefined;
 
-active_submenu = navbar.hidden;
+activeSubmenu = navbar.hidden;
 }
 
 function scr_click_highlight_set(xx,yy,ww,hh,col,screen_ind,array_pos){
@@ -34,16 +34,16 @@ click_highlight_color = col;
 click_highlight_screen = screen_ind;
 click_highlight_index = array_pos;
 
-active_submenu = submenu;
+activeSubmenu = submenu;
 }
 
 function draw_highlight_click_clamp(y_top,yoff,ysep,box_hh,array_pos,active_sub) {
 /// @description used for looping through lists
 
 if active_sub == undefined
-active_sub = active_submenu;
+active_sub = activeSubmenu;
 
-if (click_highlight_index != array_pos) || (active_submenu != active_sub)
+if (click_highlight_index != array_pos) || (activeSubmenu != active_sub)
 exit;
 
 // change yy and sep/hh

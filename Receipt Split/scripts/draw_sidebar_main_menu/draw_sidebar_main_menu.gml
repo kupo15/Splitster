@@ -53,7 +53,7 @@ draw_text_height(xx+xx_off,yy+yoff+(screen.settings*sep),"Settings",height);
 draw_text_height(xx_off+15,room_height-40,"Vers. "+string(GM_version),30);
 
 // move highlight with side bar
-if active_submenu == navbar.sidebar
+if activeSubmenu == navbar.sidebar
 click_highlight_xpos = xx_off+(ww*0.5);
 
 for(var i=0;i<screen.enumcount;i++)

@@ -17,6 +17,7 @@ android_back = false;
 
 submenu = navbar.hidden;
 submenu_previous = submenu;
+activeSubmenu = submenu;
 
 screen_index = screen.home;
 

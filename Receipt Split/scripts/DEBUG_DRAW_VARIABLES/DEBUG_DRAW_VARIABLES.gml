@@ -7,7 +7,7 @@ function debug_draw_click_highlight(xx,yy,ind,sep,height) {
 draw_text_height(xx,yy+((ind+0)*sep),"click_highlight_index: "+string(click_highlight_index),height);
 draw_text_height(xx,yy+((ind+1)*sep),"click_highlight_height: "+string(click_highlight_height),height);
 draw_text_height(xx,yy+((ind+2)*sep),"click_highlight_screen: "+string(click_highlight_screen),height);
-draw_text_height(xx,yy+((ind+4)*sep),"active_submenu: "+string(active_submenu),height);
+draw_text_height(xx,yy+((ind+4)*sep),"activeSubmenu: "+string(activeSubmenu),height);
 	
 }
 
