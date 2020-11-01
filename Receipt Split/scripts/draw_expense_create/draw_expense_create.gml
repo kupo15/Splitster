@@ -189,7 +189,7 @@ if click_button(xx,yy,str,height,c_black,ww,hh,c_white,true,true,navbar.hidden)
 	}
 #endregion
 
-if android_back
+if androidBack
 	{
 	if !kvActive
 	screen_change(screen.home,true);

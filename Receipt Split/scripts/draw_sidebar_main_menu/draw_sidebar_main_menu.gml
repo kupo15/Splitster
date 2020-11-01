@@ -14,7 +14,7 @@ draw_rectangle_color(xx+xx_off,yy,xx+xx_off+ww,yy+hh,col,col,col,col,false); // 
 
 // if click outside of menu
 if click_region_released(xx+xx_off+side_menu_width,yy,ww,hh,noone,navbar.sidebar) // make_color_rgb(0,255,255)
-android_back_sidebar = true;
+androidBackSidebar = true;
 
 var yy_sep = 180;
 draw_line(xx+xx_off,yy_sep,xx+xx_off+ww,yy_sep); // separating line
@@ -75,7 +75,7 @@ for(var i=0;i<screen.enumcount;i++)
 		click_highlight_alpha_start = 0;
 		
 		submenu = navbar.hidden;
-		android_back_sidebar = true;
+		androidBackSidebar = true;
 
 		scr_navbar_click(i);
 		new_submenu = true;
@@ -84,7 +84,7 @@ for(var i=0;i<screen.enumcount;i++)
 
 #endregion
 
-if android_back_sidebar
+if androidBackSidebar
 	{
 	// submenu_menu_xpos = 1;
 	submenu_menu_xpos = -side_menu_width-30;

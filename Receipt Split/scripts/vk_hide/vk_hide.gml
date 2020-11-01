@@ -5,7 +5,7 @@ function vk_hide() {
 	submenu = navbar.hidden;
 	numpad_value = "";
 	kvActive = false;
-	android_back = false;
+	androidBack = false;
 	
 	/// @description hide the virtual keyboard
 	/// @param switching

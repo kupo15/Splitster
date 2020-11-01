@@ -166,7 +166,7 @@ draw_set_alpha(1);
 #endregion
 
 
-if android_back
+if androidBack
 	{
 	if !kvActive
 	screen_goto_prev();

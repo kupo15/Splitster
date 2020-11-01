@@ -90,7 +90,7 @@ for(var i=pos_start;i<pos_end;i++)
 // draw the 3 bars
 draw_screen_header(headerType.back,headerType.none,"Pending Expenses");
 	
-if android_back
+if androidBack
 screen_change(screen.home);
 	
 }

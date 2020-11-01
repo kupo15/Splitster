@@ -97,13 +97,13 @@ function draw_date_edit_calendar1() {
 	if click_region_released(0,yy,room_width,hh,true,navbar.hidden)
 		{
 		submit = true;
-		android_back = true;
+		androidBack = true;
 		}
 
 #endregion
 
 
-	if android_back
+	if androidBack
 	    {
 		if submit
 		datePointer[| score_data.date] = date_create_datetime(year_offset_end,monthOffsetEnd,dayOffsetEnd,1,1,1); // save date

@@ -11,7 +11,7 @@ mode_delete = false;
 mode_delete_list_id = noone;
 delete_list = ds_list_create();
 
-android_back = false;
+androidBack = false;
 
 submenu = navbar.hidden;
 submenuPrevious = submenu;

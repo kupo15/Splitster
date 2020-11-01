@@ -52,7 +52,7 @@ if click_region_released(xx,yy,ww,hh,true,navbar.hidden)
 	}
 
 
-if android_back
+if androidBack
 screen_goto_prev();
 
 }

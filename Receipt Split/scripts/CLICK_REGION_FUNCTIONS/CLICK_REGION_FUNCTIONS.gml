@@ -222,7 +222,7 @@ function clickout_region(xx,yy,ww,hh,highlight,_sub) {
 	if submenu != _sub
 	exit;
 
-	if android_back || (canClick && !click_region(xx,yy,ww,hh,noone,highlight) && mouse_check_button_released(mb_left))
+	if androidBack || (canClick && !click_region(xx,yy,ww,hh,noone,highlight) && mouse_check_button_released(mb_left))
 	return true;
 	else
 	return false;

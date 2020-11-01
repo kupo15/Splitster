@@ -1,12 +1,12 @@
 function draw_screens() {
 	
 #region android back
-if android_back
+if androidBack
 	{
 	if mode_delete
 		{
 		mode_delete = false;
-		android_back = false;
+		androidBack = false;
 		}
 	else if submenu == navbar.hidden
 		{
@@ -68,7 +68,7 @@ if kvActive // || timer[timerIndex.vk_switch] > -1
 	kvInputString = keyboard_string; // get string input
 	}
 
-if android_back && (submenu != navbar.numpad)
+if androidBack && (submenu != navbar.numpad)
 vk_hide();
 
 }

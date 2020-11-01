@@ -1,9 +1,9 @@
 function scr_inputs() {
 	
-	android_back = input_android_back(vk_down,noone,noone) && submenu != navbar.sidebar;
-	android_back_sidebar = input_android_back(vk_down,noone,noone);
+	androidBack = input_android_back(vk_down,noone,noone) && submenu != navbar.sidebar;
+	androidBackSidebar = input_android_back(vk_down,noone,noone);
 
-	//if android_back
+	//if androidBack
 	//kvActive = false;
 
 	if os_type == os_android 
@@ -11,7 +11,7 @@ function scr_inputs() {
 	else if os_type == os_windows
 	var bs_key = keyboard_check_pressed(vk_backspace);
 
-	kv_input_backspace = !android_back && bs_key;
+	kv_input_backspace = !androidBack && bs_key;
 	virtual_keyboard_enter = keyboard_check_released(vk_return);
 
 	// monitor mouse distances

@@ -70,7 +70,7 @@ if click_button(xx,yy,"Split Costs",height,c_white,ww,hh,col,false,false,submenu
 	}
 
     
-if android_back
+if androidBack
 	{
 	//if !kvActive
 	screen_goto_prev();

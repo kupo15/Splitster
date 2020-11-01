@@ -133,7 +133,7 @@ var sub = navbar.hidden;
 funct_screen_scrolling(xx,yy,ww,hh,ysep,list_size+banner_ext,rows,offset_start_pointer,offset_pointer,scrollbar_index,sub);
 #endregion
 
-if android_back
+if androidBack
 	{
 	if !kvActive
 	screen_goto_prev();
