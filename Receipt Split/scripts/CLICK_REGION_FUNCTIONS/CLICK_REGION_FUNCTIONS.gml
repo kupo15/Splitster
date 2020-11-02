@@ -139,10 +139,11 @@ if within_region
 	if condition || (condition == undefined)
 	    {
 		if mouse_check_button_released(button)
-		canClick = false;
-		
-		scrollbarIndexScrolling = noone;
-
+			{
+			canClick = false;
+			scrollbarIndexScrolling = noone;
+			}
+			
 	    return true;
 	    }
 	else 

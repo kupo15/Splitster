@@ -96,7 +96,7 @@ var scrollbar_index = 0;
 var xx = 0;
 var sub = navbar.hidden;
 
-funct_screen_scrolling(xx,yy,ww,hh,ysep,list_size,rows,offset_start_pointer,offset_pointer,scrollbar_index,sub);
+funct_screen_scrolling(xx,yy,ww,hh,receipt_sep,list_size,rows,offset_start_pointer,offset_pointer,scrollbar_index,sub);
 #endregion
 
 #region draw add expense button
