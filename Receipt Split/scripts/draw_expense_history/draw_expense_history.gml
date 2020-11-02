@@ -85,14 +85,10 @@ for(var i=0;i<pos_end;i++)
 			can_delete = true;
 			}
 		else // clicking on an expense
-			{
-			textboxIndex = noone;
-			keyboard_string = "";
-			vk_hide();
-				
-			expense_index = i;
-			expense_id = expense_pointer;
-			//screen_change(screen.friendsProfile);
+			{		
+			//expense_index = i;
+			//expense_id = expense_pointer;
+			screen_change(screen.expenseReview);
 			}
 		}
 	}

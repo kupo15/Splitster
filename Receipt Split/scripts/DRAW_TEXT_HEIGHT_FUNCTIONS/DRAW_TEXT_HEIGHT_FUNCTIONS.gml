@@ -119,7 +119,7 @@ if str == ""
 	{
 	var col = c_gray;
 	var alpha = draw_get_alpha();
-	var scale = draw_text_height_ext_color(xx,yy+20,str_disp,sep,str_ww,angle,col,alpha,height*0.7,fn_italic); // draw string
+	var scale = draw_text_height_ext_color(xx,yy,str_disp,sep,str_ww,angle,col,alpha,height,fn_italic); // draw string
 	}
 else
 	{

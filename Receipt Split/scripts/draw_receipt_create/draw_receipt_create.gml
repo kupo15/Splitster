@@ -23,11 +23,11 @@ var yy = 250;
 var ww = 500-xx;
 var ysep = 120;
 var height = 60;
+var col = c_gray;
 
 // draw labels
 draw_set_halign(fa_left);
-draw_set_color(c_gray);
-draw_text_height(xx,yy+height+(0*ysep),"Amount",30);
+draw_text_height_color(xx,yy+height+(0*ysep),"Amount",col,30);
 
 var height = 60;
 draw_text_height_ext_cursor(xx+5,yy+(0*ysep),receipt_price,"0.00",-1,ww,0,height,0);

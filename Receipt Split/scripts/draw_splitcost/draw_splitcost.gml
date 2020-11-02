@@ -22,25 +22,24 @@ var hh = 190;
 
 var yoff = 35;
 var ysep = 80;
-var height = 50;
+var height = 30;
 
 // background
 draw_rectangle_color(0,yy,room_width,yy+hh,box_col,box_col,box_col,box_col,false);
 
 draw_set_halign(fa_left);
 draw_set_color(c_gray);
-
-draw_text_height(xx,yy+10+yoff+height,"Expense Name",30);
+draw_text_height(xx,yy+10+yoff+height,"Expense Name",height);
 
 var ww = 500-xx;
-var height = 60;
+var height = 40;
 
-draw_text_height_ext_cursor(xx+5,yy+yoff,receipt_name,"Enter a description",-1,ww,0,height,0);
 draw_set_color(c_black);
+draw_text_height_ext_cursor(xx+5,yy+35,receipt_name,"Enter a description",-1,ww,0,height,0);
 
 for(var i=0;i<1;i++)
 	{
-	if click_region_released(xx,yy+yoff+10+(i*ysep),ww,ysep-25,true,navbar.hidden)
+	if click_region_released(xx,yy+20+(i*ysep),ww,ysep-25,true,navbar.hidden)
 	switch i
 		{
 		case 0: click_textbox_set(receipt_name,0,kbv_type_default); break;	
