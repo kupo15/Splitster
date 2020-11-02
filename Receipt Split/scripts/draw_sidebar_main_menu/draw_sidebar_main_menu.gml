@@ -21,8 +21,9 @@ draw_line(xx+xx_off,yy_sep,xx+xx_off+ww,yy_sep); // separating line
 
 var xx = side_menu_width*0.5;
 var yy = 55;
-var ww_hh = sprite_get_width(spr_icon_blank_profile);
-draw_sprite(spr_icon_blank_profile,0,xx+xx_off,yy); // profile picture
+var ww_hh = 100;
+
+draw_icon_width(spr_icon_blank_profile,xx+xx_off,yy,ww_hh,1); // profile picture
 
 //if click_region_released(xx+xx_off,yy,ww_hh,ww_hh,mb_left,false,navbar.sidebar) // clicked on PROFILE PIC
 //funct_screen_set(screen.user_profile); // goto to profile

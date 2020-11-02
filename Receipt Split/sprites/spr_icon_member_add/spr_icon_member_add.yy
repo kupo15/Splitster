@@ -8,14 +8,14 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 45,
+  "bbox_right": 413,
   "bbox_top": 0,
-  "bbox_bottom": 31,
+  "bbox_bottom": 283,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 46,
-  "height": 32,
+  "width": 414,
+  "height": 284,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"c8001b92-29dc-46ef-bc7d-111da5552faf","path":"sprites/spr_icon_member_add/spr_icon_member_add.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"c8001b92-29dc-46ef-bc7d-111da5552faf","path":"sprites/spr_icon_member_add/spr_icon_member_add.yy",},"LayerId":{"name":"21f78fe5-7df7-411a-9143-a47132dfb307","path":"sprites/spr_icon_member_add/spr_icon_member_add.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_icon_member_add","path":"sprites/spr_icon_member_add/spr_icon_member_add.yy",},"resourceVersion":"1.0","name":"c8001b92-29dc-46ef-bc7d-111da5552faf","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"f4ded589-ae04-4a88-bb82-b8be1fb65875","path":"sprites/spr_icon_member_add/spr_icon_member_add.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"f4ded589-ae04-4a88-bb82-b8be1fb65875","path":"sprites/spr_icon_member_add/spr_icon_member_add.yy",},"LayerId":{"name":"5ec9d9fa-da82-4e3b-ad96-6a5c82b4d56f","path":"sprites/spr_icon_member_add/spr_icon_member_add.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_icon_member_add","path":"sprites/spr_icon_member_add/spr_icon_member_add.yy",},"resourceVersion":"1.0","name":"f4ded589-ae04-4a88-bb82-b8be1fb65875","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_icon_member_add","path":"sprites/spr_icon_member_add/spr_icon_member_add.yy",},
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"c74c2539-f096-42e0-b9cb-73e670893ba6","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c8001b92-29dc-46ef-bc7d-111da5552faf","path":"sprites/spr_icon_member_add/spr_icon_member_add.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"c8a67bc5-9e4e-4fec-a85a-c9cb6db7c585","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f4ded589-ae04-4a88-bb82-b8be1fb65875","path":"sprites/spr_icon_member_add/spr_icon_member_add.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"21f78fe5-7df7-411a-9143-a47132dfb307","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"5ec9d9fa-da82-4e3b-ad96-6a5c82b4d56f","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "Sprites",

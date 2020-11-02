@@ -23,6 +23,7 @@
     {"id":{"name":"ini_enums","path":"scripts/ini_enums/ini_enums.yy",},"order":1,},
     {"id":{"name":"ini_config","path":"scripts/ini_config/ini_config.yy",},"order":2,},
     {"id":{"name":"ini_create","path":"scripts/ini_create/ini_create.yy",},"order":3,},
+    {"id":{"name":"ICON_DRAW","path":"scripts/ICON_DRAW/ICON_DRAW.yy",},"order":19,},
     {"id":{"name":"draw_debug","path":"scripts/draw_debug/draw_debug.yy",},"order":1,},
     {"id":{"name":"draw_footer_button","path":"scripts/draw_footer_button/draw_footer_button.yy",},"order":5,},
     {"id":{"name":"draw_expense_review","path":"scripts/draw_expense_review/draw_expense_review.yy",},"order":11,},
