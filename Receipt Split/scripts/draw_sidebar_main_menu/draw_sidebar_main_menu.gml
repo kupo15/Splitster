@@ -63,8 +63,8 @@ for(var i=0;i<screen.enumcount;i++)
 	continue;
 
 	// draw menu icons	
-	draw_icon_height_centered(spr_footer_icon,i,res_bleed_xx+xx_off,yy+(i*sep),0,sep,sep*0.7,1); 
-	
+	draw_icon_height_centered(spr_footer_icon,i,res_bleed_xx+xx_off,yy+(i*sep),sep*0.7,sep,sep*0.7,1); 
+
 	if i==screen.settings-1
 	draw_line(xx_off,yy+(i*sep),xx_off+ww,yy+(i*sep)); // separating line
 

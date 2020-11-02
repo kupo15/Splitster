@@ -58,8 +58,8 @@ function draw_icon_width_centered(spr,index,xx,yy,ww,hh,width,alpha) {
 var spr_ww = sprite_get_width(spr);
 var sca = width/spr_ww;
 var spr_hh = sprite_get_height(spr)*sca;
-var xoff = (hh-width)*0.5;
-var yoff = (hh-spr_hh)*0.5;
+var xoff = abs(ww-width)*0.5;
+var yoff = abs(hh-spr_hh)*0.5;
 var col = c_white;
 
 draw_sprite_ext(spr,index,xx+xoff,yy+yoff,sca,sca,0,col,alpha);
@@ -70,8 +70,8 @@ function draw_icon_height_centered(spr,index,xx,yy,ww,hh,height,alpha) {
 var spr_hh = sprite_get_height(spr);
 var sca = height/spr_hh;
 var spr_ww = sprite_get_width(spr)*sca;
-var xoff = (ww-spr_ww)*0.5;
-var yoff = (hh-height)*0.5;
+var xoff = abs(ww-spr_ww)*0.5;
+var yoff = abs(hh-height)*0.5;
 var col = c_white;
 
 draw_sprite_ext(spr,index,xx+xoff,yy+yoff,sca,sca,0,col,alpha);
