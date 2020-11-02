@@ -29,14 +29,10 @@ if size == 0
 	}
 else
 	{
-	var spr_hh = sprite_get_height(spr_icon_megaphone)
-	var scale = hh/spr_hh*0.8;
-	
-	draw_sprite_ext(spr_icon_megaphone,0,xx+20,yy+5,scale,scale,0,c_white,1); // draw megaphone
-
 	var str = plural(" Expense",size," pending");
 	
 	draw_text_height(xx+xoff,yy+yoff,string(size)+str,height);
+	draw_icon_height(spr_icon_megaphone,xx+20,yy+5,60,1); // draw megaphone
 	}
 
 // create expense button

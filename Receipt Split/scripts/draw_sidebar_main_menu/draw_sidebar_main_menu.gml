@@ -62,7 +62,8 @@ for(var i=0;i<screen.enumcount;i++)
 	if i>screen.expenseHistory && i<(screen.settings-1)
 	continue;
 
-	draw_sprite_ext(spr_footer_icon,i,res_bleed_xx+xx_off,yy+yoff+(i*sep),0.12,0.12,0,c_white,1); // draw menu icons
+	// draw menu icons	
+	draw_icon_height_centered(spr_footer_icon,i,res_bleed_xx+xx_off,yy+(i*sep),0,sep,sep*0.7,1); 
 	
 	if i==screen.settings-1
 	draw_line(xx_off,yy+(i*sep),xx_off+ww,yy+(i*sep)); // separating line

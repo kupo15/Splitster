@@ -53,7 +53,7 @@ draw_sprite_ext(spr,0,xx,yy,sca,sca,0,col,alpha);
 return height;
 }
 
-function draw_icon_width_centered(spr,xx,yy,ww,hh,width,alpha) {
+function draw_icon_width_centered(spr,index,xx,yy,ww,hh,width,alpha) {
 	
 var spr_ww = sprite_get_width(spr);
 var sca = width/spr_ww;
@@ -62,10 +62,10 @@ var xoff = (hh-width)*0.5;
 var yoff = (hh-spr_hh)*0.5;
 var col = c_white;
 
-draw_sprite_ext(spr,0,xx+xoff,yy+yoff,sca,sca,0,col,alpha);
+draw_sprite_ext(spr,index,xx+xoff,yy+yoff,sca,sca,0,col,alpha);
 }
 
-function draw_icon_height_centered(spr,xx,yy,ww,hh,height,alpha) {
+function draw_icon_height_centered(spr,index,xx,yy,ww,hh,height,alpha) {
 	
 var spr_hh = sprite_get_height(spr);
 var sca = height/spr_hh;
@@ -74,6 +74,6 @@ var xoff = (hh-spr_ww)*0.5;
 var yoff = (hh-height)*0.5;
 var col = c_white;
 
-draw_sprite_ext(spr,0,xx+xoff,yy+yoff,sca,sca,0,col,alpha);
+draw_sprite_ext(spr,index,xx+xoff,yy+yoff,sca,sca,0,col,alpha);
 }
 

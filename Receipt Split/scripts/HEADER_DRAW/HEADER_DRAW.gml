@@ -102,7 +102,7 @@ draw_text_height(xx,yy+yoff,string(count)+" selected",height); // draw number of
 
 // clicked on trash
 var xx = room_width-hh-20;
-draw_icon_height_centered(ico_trash3,xx,yy,hh,hh,40,headerDeleteOffsetDisp); // trash icon
+draw_icon_height_centered(ico_trash3,0,xx,yy,hh,hh,40,headerDeleteOffsetDisp); // trash icon
 
 if click_region_released(xx,0,hh,hh,true,navbar.hidden) && mode_delete
 delete_list_delete(delete_list,mode_delete_list_id);
