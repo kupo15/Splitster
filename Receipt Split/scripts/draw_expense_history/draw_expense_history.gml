@@ -6,7 +6,6 @@ var ysep = 110;
 var xx = 20;
 var yy = header_height;
 var height = 60;
-var text_yoff = (ysep-height)*0.5;
 
 var rows = (room_height-yy)/ysep;
 var ww = 540;

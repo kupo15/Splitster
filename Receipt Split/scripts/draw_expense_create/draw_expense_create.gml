@@ -34,11 +34,10 @@ var xx = room_width*0.5;
 var yy = header_height+(ysep*2.5);
 var ww = room_width;
 var col = make_color_rgb(28,194,159);
-var text_yoff = (ysep-(height*0.8))*0.5;
 
 draw_set_color(c_black);
 draw_set_halign(fa_center);
-// draw_text_height(xx,yy+text_yoff-ysep,"Receipts",height);
+// draw_text_height(xx,yy-ysep,"Receipts",height);
 
 #region draw receipts
 var height = 30;

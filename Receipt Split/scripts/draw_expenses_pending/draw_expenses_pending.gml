@@ -4,7 +4,6 @@ function draw_expenses_pending() {
 // content variables
 var xpos = 140;
 var height = 35;
-//var text_yoff = (ysep-height)*0.5;
 
 // calendar variables
 var ysep = 200;
