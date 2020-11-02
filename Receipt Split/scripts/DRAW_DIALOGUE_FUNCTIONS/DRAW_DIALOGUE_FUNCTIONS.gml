@@ -1,4 +1,35 @@
 
+function draw_dialogue_box(xx,yy,ww,hh,col,sub) {
+
+draw_roundrect_color(xx,yy,xx+ww,yy+hh,col,col,false);
+
+return click_region_released(xx,yy,ww,hh,true,sub);
+}
+
+function draw_textbox(xx,yy,ww,hh) {
+
+/// @param xx
+/// @param yy
+/// @param width
+/// @param height
+/// @param [round]
+
+var rounded = false;
+
+if argument_count == 5
+var rounded = argument[4];
+
+var col = make_color_rgb(232,236,255);
+
+if rounded
+draw_rectangle_color(xx,yy,xx+ww,yy+hh,col,col,col,col,false);
+else
+draw_roundrect_color(xx,yy,xx+ww,yy+hh,col,col,false);
+
+
+}
+
+
 function draw_numpad(variable) {
 
 var xx = element_numpad.xx;

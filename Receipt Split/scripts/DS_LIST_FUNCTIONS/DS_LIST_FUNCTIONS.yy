@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Functions",
-    "path": "folders/Functions.yy",
+    "name": "Data Structures",
+    "path": "folders/Android App Library/Functions/Data Structures.yy",
   },
   "resourceVersion": "1.0",
-  "name": "funct_mouse_wheel",
+  "name": "DS_LIST_FUNCTIONS",
   "tags": [],
   "resourceType": "GMScript",
 }

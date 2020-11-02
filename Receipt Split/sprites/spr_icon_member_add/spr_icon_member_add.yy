@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"5ec9d9fa-da82-4e3b-ad96-6a5c82b4d56f","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Icons",
+    "path": "folders/Android App Library/Sprites/Icons.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_icon_member_add",

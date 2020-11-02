@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"f5dd41cf-7f75-4e46-952c-a4f5962394dd","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Icons",
+    "path": "folders/Android App Library/Sprites/Icons.yy",
   },
   "resourceVersion": "1.0",
   "name": "ico_trash1",

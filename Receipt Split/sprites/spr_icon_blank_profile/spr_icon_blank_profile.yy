@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"7f27853d-ff58-4dc9-8846-7670c745df1b","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Icons",
+    "path": "folders/Android App Library/Sprites/Icons.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_icon_blank_profile",

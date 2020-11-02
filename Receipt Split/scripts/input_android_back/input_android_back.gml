@@ -31,5 +31,4 @@ else if os_type == os_android
 
 return nav_back;
 
-
 }

@@ -21,7 +21,7 @@ for(var i=0;i<timerIndex.enumcount;i++)
 	timer[i] --;
 	}
 	
-if abs(mouse_ydist) > 5
+if clickMoved
 timer[timerIndex.press_hold] = -1;
 	
 scr_timer_beep();

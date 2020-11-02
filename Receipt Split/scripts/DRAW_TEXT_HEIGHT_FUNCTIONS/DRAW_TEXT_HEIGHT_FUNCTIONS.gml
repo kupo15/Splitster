@@ -1,4 +1,24 @@
 // text draws
+function draw_text_height_middled(xx,yy,str,hh,height,font) {
+/// @param xx
+/// @param yy
+/// @param str
+/// @param region_height
+/// @param height
+/// @param [font]
+
+var int = argument[5];
+
+var yoff = abs(height-hh)*0.5;
+var sep = -1;
+var w = -1;
+var angle = 0;
+var col = draw_get_color();
+var alpha = draw_get_alpha();
+
+return draw_text_height(xx,yy+yoff,str,height,font);
+}
+
 function draw_text_height(xx,yy,str,height,font) {
 /// @param xx
 /// @param yy

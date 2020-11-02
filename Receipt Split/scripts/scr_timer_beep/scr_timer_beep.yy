@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Step",
-    "path": "folders/Scripts/Main/Step.yy",
+    "name": "Scripts",
+    "path": "folders/Scripts/Scripts.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_timer_beep",

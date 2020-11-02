@@ -4,7 +4,6 @@ function draw_submenu_friends_list(yy,ww,rows) {
 var xx = 50;
 var ysep = 90;
 var height = 45;
-var text_yoff = (ysep-height)*0.5;
 
 yy += ysep;
 
@@ -27,7 +26,7 @@ else
 		var friend_pointer = master_friends_list[| i];
 		var name = friend_pointer.dispName;
 			
-		draw_text_height(xx,yy+text_yoff+(off_pos*ysep),name,height); // draw name
+		draw_text_height_middled(xx,yy+(off_pos*ysep),name,ysep,height); // draw name
 	
 		draw_line_pixel(xx,yy+((off_pos+1)*ysep),room_width,1,c_black,0.7);
 				

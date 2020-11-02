@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Functions",
-    "path": "folders/Functions.yy",
+    "name": "Draw",
+    "path": "folders/Android App Library/Functions/Draw.yy",
   },
   "resourceVersion": "1.0",
-  "name": "funct_draw_scrollbar_hor",
+  "name": "DRAW_DIALOGUE_FUNCTIONS",
   "tags": [],
   "resourceType": "GMScript",
 }
