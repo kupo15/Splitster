@@ -22,5 +22,5 @@ userId: "1",
 }
 
 ds_list_add(master_friends_list,friend);
-
+ds_list_sort_nested_struct(master_friends_list,"dispName",true);
 }
