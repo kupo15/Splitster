@@ -8,6 +8,7 @@
     {"id":{"name":"spr_pixel","path":"sprites/spr_pixel/spr_pixel.yy",},"order":6,},
     {"id":{"name":"ini_currency_symbols","path":"scripts/ini_currency_symbols/ini_currency_symbols.yy",},"order":4,},
     {"id":{"name":"ico_trash2","path":"sprites/ico_trash2/ico_trash2.yy",},"order":8,},
+    {"id":{"name":"ico_trash3","path":"sprites/ico_trash3/ico_trash3.yy",},"order":18,},
     {"id":{"name":"spr_icon_receipt_button","path":"sprites/spr_icon_receipt_button/spr_icon_receipt_button.yy",},"order":14,},
     {"id":{"name":"json_data_load","path":"scripts/json_data_load/json_data_load.yy",},"order":0,},
     {"id":{"name":"CLICK_REGION_FUNCTIONS","path":"scripts/CLICK_REGION_FUNCTIONS/CLICK_REGION_FUNCTIONS.yy",},"order":16,},
