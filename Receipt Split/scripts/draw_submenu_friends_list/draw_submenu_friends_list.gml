@@ -75,38 +75,9 @@ switch textboxIndex
 	
 scr_searchbar(master_friends_list);
 
-#region draw search bar
-xx = 0;
+// draw search bar
 var col = make_color_rgb(140,238,255);
-var text_yoff = (ysep-(height*0.8))*0.5;
-
-draw_rectangle_color(xx,yy-ysep,xx+ww,yy,col,col,col,col,false);
-
-// clicked on search bar
-if click_region_released(xx,yy-ysep,ww-ysep-10,ysep,true,submenu)
-	{
-	searching = true;
-	click_textbox_set(searched_name,-1,kbv_type_default,kbv_returnkey_done);
-	}
-
-// clear
-var xWidth = 25;
-draw_menu_xout(room_width-ysep+18,yy-ysep+30,xWidth,xWidth,4,c_black);
-
-if click_region_released(room_width-ysep,yy-ysep,ysep,ysep,true,submenu)
-	{
-	keyboard_string = "";
-	searched_name = "";
-	}
-
-draw_set_color(c_white);
-if searched_name != ""
-draw_text_height_ext_cursor(xx+70,yy+text_yoff-ysep,searched_name,searched_name,-1,ww-ysep-10,0,height*0.8,-1); // draw searched name
-else
-draw_text_height_entry(xx+70,yy+text_yoff-ysep,"Enter name",height*0.8,noone,-1,height*0.8,fn_italic); // draw course label
-
-draw_sprite_ext(ico_search,0,xx+15,yy-ysep+25,0.35,0.35,0,c_white,1); // searchbar ico
-#endregion
+draw_list_searchbar(0,yy-ysep,"Enter name",height,ww,ysep,col,submenu);
 
 return false;
 }

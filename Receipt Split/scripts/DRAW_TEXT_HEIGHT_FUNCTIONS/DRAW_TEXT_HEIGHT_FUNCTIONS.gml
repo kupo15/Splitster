@@ -188,6 +188,8 @@ if !blink
 	draw_set_alpha(1);
 	}
 #endregion
+
+
 }
 
 function draw_text_height_cursor(xx,yy,xoffset,yoff,str,str_disp,halign,angle,height,cursor_ww,cursor_col) {
