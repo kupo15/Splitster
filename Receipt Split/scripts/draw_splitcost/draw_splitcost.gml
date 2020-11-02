@@ -119,7 +119,7 @@ var hh = 95;
 var xx = 5;
 var yy = room_height-hh-5;
 
-if draw_button_trash(xx,yy,ww,hh,screen.splitCost,navbar.hidden)
+if draw_button_trash(xx,yy,ww,hh,ico_trash1,screen.splitCost,navbar.hidden)
 		{
 		//ds_list_delete(master_score_list,index); // delete score
 		//json_save(save_data);

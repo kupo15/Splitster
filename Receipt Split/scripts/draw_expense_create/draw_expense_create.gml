@@ -130,7 +130,7 @@ var xx = 5;
 var yy = 850;
 
 // clicked trash icon
-if draw_button_trash(xx,yy,ww,hh,screenIndex,navbar.hidden)
+if draw_button_trash(xx,yy,ww,hh,ico_trash1,screenIndex,navbar.hidden)
 	{
 	//ds_list_delete(master_score_list,index); // delete score
 	//json_save(save_data);
