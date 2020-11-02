@@ -36,24 +36,19 @@ draw_text_height(xx+(hsep1*0.5),yy+yoff+(1*vsep),"x",height);
 draw_text_height(xx+(hsep1*0.5),yy+yoff+(2*vsep),"+",height);
 draw_text_height(xx+(hsep1*0.5),yy+yoff+(3*vsep),"-",height);
 
-draw_set_color(c_black);
 for(var i=0;i<3;i++)
 for(var n=0;n<3;n++)
 	{
-	draw_text_height(xx+hsep1+(i*hsep2)+(0.5*hsep2),yy+yoff+(n*vsep),(n*3)+i+1,height);
-	
-	if click_region_released(xx+hsep1+(i*hsep2),yy+(n*vsep),hsep2,vsep,true,submenu)
+	if click_button(xx+hsep1+(i*hsep2),yy+(n*vsep),(n*3)+i+1,height,c_black,hsep2,vsep,undefined,true,false,submenu)
 	variable += string((n*3)+i+1);
 	}
 
 // draw 00
-draw_text_height(xx+hsep1+(hsep2*0.5),yy+yoff+(3*vsep),"00",height);
-if click_region_released(xx+hsep1+(0*hsep2),yy+(3*vsep),hsep2,vsep,true,submenu)
+if click_button(xx+hsep1+(0*hsep2),yy+(3*vsep),"00",height,c_black,hsep2,vsep,undefined,true,false,submenu)
 variable += "00";
 
 // draw 0
-draw_text_height(xx+hsep1+(hsep2*1.5),yy+yoff+(3*vsep),"0",height);
-if click_region_released(xx+hsep1+(1*hsep2),yy+(3*vsep),hsep2,vsep,true,submenu)
+if click_button(xx+hsep1+(1*hsep2),yy+(3*vsep),"0",height,c_black,hsep2,vsep,undefined,true,false,submenu)
 variable += "0";
 
 // delete

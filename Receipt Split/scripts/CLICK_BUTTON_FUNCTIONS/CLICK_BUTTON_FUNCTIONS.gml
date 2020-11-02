@@ -14,6 +14,7 @@ function click_button(xx,yy,str,height,str_col,ww,hh,col,rounded,outline,sub) {
 
 var yoff = (hh-height)*0.5;
 
+if col != undefined
 if rounded
 	{
 	draw_roundrect_color(xx,yy,xx+ww,yy+hh,col,col,false);
@@ -32,8 +33,5 @@ else
 draw_set_halign(fa_center);
 draw_text_height_color(xx+(ww*0.5),yy+yoff,str,str_col,height);
 
-if click_region_released(xx,yy,ww,hh,true,sub)
-return true;
-else
-return false;
+return click_region_released(xx,yy,ww,hh,true,sub);
 }
