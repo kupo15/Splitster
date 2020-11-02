@@ -70,7 +70,7 @@ function draw_icon_height_centered(spr,index,xx,yy,ww,hh,height,alpha) {
 var spr_hh = sprite_get_height(spr);
 var sca = height/spr_hh;
 var spr_ww = sprite_get_width(spr)*sca;
-var xoff = (hh-spr_ww)*0.5;
+var xoff = (ww-spr_ww)*0.5;
 var yoff = (hh-height)*0.5;
 var col = c_white;
 

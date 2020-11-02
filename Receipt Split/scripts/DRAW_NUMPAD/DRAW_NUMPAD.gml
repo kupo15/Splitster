@@ -57,8 +57,7 @@ if click_region_released(xx+hsep1+(1*hsep2),yy+(3*vsep),hsep2,vsep,true,submenu)
 variable += "0";
 
 // delete
-draw_sprite_ext(ico_backspace,0,xx+(1*hsep1)+(2*hsep2)+(hsep2*0.5),yy+(3.5*vsep),0.25,0.25,0,c_white,1);
-if click_region_released(xx+hsep1+(2*hsep2),yy+(3*vsep),hsep2,vsep,true,submenu)
+if draw_button_backspace(ico_backspace,0,xx+(1*hsep1)+(2*hsep2),yy+(3*vsep),hsep2,vsep,30,1,submenu)
 	{
 	var length = string_length(variable);
 	variable = string_delete(variable,length,1);

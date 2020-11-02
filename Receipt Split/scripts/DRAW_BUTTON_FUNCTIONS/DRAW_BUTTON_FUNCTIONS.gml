@@ -31,10 +31,14 @@ if screenIndex == screenInd
 	draw_sprite_ext(spr,0,xx+xoff,yy+yoff,sca,sca,0,col,1); // draw trash icon
 	
 	// clicked trash icon
-	if click_region_released(xx,yy,ww,hh,true,sub)
-	return true;
-	else
-	return false;
+	return click_region_released(xx,yy,ww,hh,true,sub);
 	}
 
+}
+
+function draw_button_backspace(spr,index,xx,yy,ww,hh,height,alpha,sub) {
+	
+draw_icon_height_centered(spr,index,xx,yy,ww,hh,height,alpha);
+	
+return click_region_released(xx,yy,ww,hh,true,sub);	
 }
