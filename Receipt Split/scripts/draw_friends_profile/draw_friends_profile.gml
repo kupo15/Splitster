@@ -35,7 +35,7 @@ var hh = 100;
 var xx = 50;
 var yy = 800;
 	
-if draw_button_trash(xx,yy,ww,hh,ico_trash1,screenIndex,navbar.hidden)
+if draw_button_trash(xx,yy,ww,hh,ico_trash1,c_red,screenIndex,navbar.hidden,true)
 	{
 	ds_list_delete(master_friends_list,friend_index); // delete score
 	// json_save(save_data);

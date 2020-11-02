@@ -101,17 +101,18 @@ draw_set_color(c_white);
 draw_text_height(xx,yy+yoff,string(count)+" selected",height); // draw number of items to delete
 
 // clicked on trash
-var spr_hh = sprite_get_height(ico_trash3);
+var spr = ico_trash3;
+var spr_hh = sprite_get_height(spr);
 var height = 40;
 var sca = height/spr_hh;
-var spr_ww = sprite_get_width(ico_trash3)*sca;
+var spr_ww = sprite_get_width(spr)*sca;
 var xoff = (hh-spr_ww)*0.5;
 var yoff = (hh-height)*0.5;
 var xx = room_width-hh-20;
 
-draw_sprite_ext(ico_trash3,0,xx+xoff,yy+yoff,sca,sca,0,c_white,headerDeleteOffsetDisp); // trash icon
+draw_sprite_ext(spr,0,xx+xoff,yy+yoff,sca,sca,0,c_white,headerDeleteOffsetDisp); // trash icon
 
-if mode_delete && click_region_released(xx,0,hh,hh,true,navbar.hidden)
+if click_region_released(xx,0,hh,hh,true,navbar.hidden) && mode_delete
 delete_list_delete(delete_list,mode_delete_list_id);
 
 draw_set_color(c_black);
