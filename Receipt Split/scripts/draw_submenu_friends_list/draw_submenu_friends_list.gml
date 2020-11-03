@@ -10,13 +10,7 @@ yy += ysep;
 var hh = room_height-yy;
 rows = hh/ysep;
 
-// type in search bar
-if kvActive
-switch textboxIndex
-	{
-	case -1: searched_name = string_capitalize(keyboard_string,22); break; // scr_input_text(22); break;
-	case 0: friend_name_entry = string_capitalize(keyboard_string,22); break; // scr_input_text(22); break;
-	}
+scr_searchbar(master_friends_list);
 
 if searched_name != ""
 	{
@@ -31,7 +25,7 @@ else
 	for(var i=pos_start;i<pos_end;i++)
 		{
 		var off_ind = i-master_friends_list_offset;
-		var off_pos = (off_ind*ysep)-(kvActive*400);
+		var off_pos = (off_ind*ysep)-(kvActive*mode_new_member*400);
 		var friend_pointer = master_friends_list[| i];
 		var name = friend_pointer.dispName;
 		var initial = string_char_at(name,1);	
@@ -118,15 +112,13 @@ if virtual_keyboard_enter
 		}
 	}
 
-scr_searchbar(master_friends_list);
-
 // draw search bar
 var col = make_color_rgb(140,238,255);
 draw_list_searchbar(0,yy-ysep,"Enter name",height,ww,ysep,col,submenu);
 
-if androidBack && !kvActive && mode_new_member
+if androidBack && mode_new_member
 	{
-	androidBack = false;
+	//androidBack = false;
 	mode_new_member = false;
 	}
 

@@ -1,5 +1,12 @@
 function scr_searchbar(searched_list) {
 	
+// type in search bar
+if kvActive
+switch textboxIndex
+	{
+	case -1: searched_name = string_capitalize(keyboard_string,22); break;
+	case 0: friend_name_entry = string_capitalize(keyboard_string,22); break;
+	}	
 	
 if searched_name == kvLastString
 exit;
