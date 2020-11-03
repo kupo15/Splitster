@@ -11,6 +11,7 @@
     {"id":{"name":"spr_icon_receipt_button","path":"sprites/spr_icon_receipt_button/spr_icon_receipt_button.yy",},"order":14,},
     {"id":{"name":"json_data_load","path":"scripts/json_data_load/json_data_load.yy",},"order":0,},
     {"id":{"name":"CLICK_REGION_FUNCTIONS","path":"scripts/CLICK_REGION_FUNCTIONS/CLICK_REGION_FUNCTIONS.yy",},"order":1,},
+    {"id":{"name":"backup","path":"scripts/backup/backup.yy",},"order":14,},
     {"id":{"name":"JSON_FUNCTIONS","path":"scripts/JSON_FUNCTIONS/JSON_FUNCTIONS.yy",},"order":2,},
     {"id":{"name":"draw_friends_list","path":"scripts/draw_friends_list/draw_friends_list.yy",},"order":2,},
     {"id":{"name":"obj_main_template","path":"objects/obj_main_template/obj_main_template.yy",},"order":0,},

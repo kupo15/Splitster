@@ -6,6 +6,8 @@ draw_set_circle_precision(32);
 searching = false;
 searched = false;
 searched_name = "";
+searchedList = ds_list_create();
+searchedMap = ds_map_create();
 search_grid = ds_grid_create(2,0);
 
 can_delete = false;

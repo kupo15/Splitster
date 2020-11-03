@@ -12,6 +12,10 @@ function scr_inputs() {
 	var bs_key = keyboard_check_pressed(vk_backspace);
 
 	kv_input_backspace = !androidBack && bs_key;
+	
+	if os_type == os_windows
+	virtual_keyboard_enter = keyboard_check_pressed(vk_return);
+	else
 	virtual_keyboard_enter = keyboard_check_released(vk_return);
 
 	// monitor mouse distances

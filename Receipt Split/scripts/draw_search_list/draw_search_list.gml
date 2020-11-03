@@ -25,10 +25,7 @@ for(var i=0;i<size;i++)
 		}
 	}
 	
-if searched && (size == 0) // if no results
-	{
-	draw_text_height(xx+30,yy+10,"no results!",height); // draw no results
-	}
+
 
 return false;
 }
