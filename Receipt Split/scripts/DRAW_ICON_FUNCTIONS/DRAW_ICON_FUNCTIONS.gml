@@ -51,3 +51,13 @@ draw_text_height_color(xx+(sq_size*0.5),yy+40+sq_yoff,day,c_black,46);
 
 draw_set_halign(fa_left);
 }
+	
+function draw_icon_enclosed(spr,ind,xx,yy,ww,hh,ysep,col,shape) {
+	
+var xoff = (ww*0.5);
+var yoff = (ysep*0.5);
+var r = ww*0.5;
+
+draw_circle_color(xx+xoff,yy+yoff,r,col,col,false); // draw circle
+draw_icon_height_centered(spr,ind,xx+xoff-r,yy+yoff-r,ww,hh,hh*0.4,1);
+}

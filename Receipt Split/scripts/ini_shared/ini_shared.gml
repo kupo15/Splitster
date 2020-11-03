@@ -1,6 +1,8 @@
 
 function ini_shared(){
 
+draw_set_circle_precision(32);
+
 searching = false;
 searched = false;
 searched_name = "";
@@ -10,6 +12,8 @@ can_delete = false;
 mode_delete = false;
 mode_delete_list_id = noone;
 delete_list = ds_list_create();
+
+mode_new_member = false;
 
 androidBack = false;
 
@@ -27,6 +31,7 @@ clickMoved = false;
 
 kvStatus = false;
 kvActive = false;
+kvHeight = 0;
 kvLastString = "";
 kvInputString = "";
 

@@ -229,7 +229,6 @@ return click_region_home(x_left,y_top,ww,hh,button,highlight,condition,sub,array
 // HIGHLIGHT FUNCTIONS
 function ini_highlight_vars() {
 	
-// static highlight
 click_highlight_xpos = 0;
 click_highlight_ypos = 0;
 click_highlight_width = 0;
@@ -241,6 +240,8 @@ click_highlight_alpha_end = 0;
 click_highlight_color = c_gray;
 click_highlight_screen = noone;
 click_highlight_index = undefined;
+
+click_highlight_action = undefined;
 
 activeSubmenu = navbar.hidden;
 }

@@ -23,11 +23,11 @@ ds_stack_clear(prev_screen_stack);
 screen_goto_actions();
 }
 
-function screen_goto_prev() {
+function screen_goto_prev(subIndex) {
 /// @param [submen]
 
-if argument_count == 1
-submenu = argument[0];
+if argument[0] != undefined
+submenu = subIndex;
 
 click_highlight_screen = screenIndex;
 
@@ -51,6 +51,8 @@ switch screenIndex
 	case screen.receiptAmount:
 	case screen.receiptUpdate:
 	case screen.receiptCreate: click_textbox_set(receipt_price,0,kbv_type_numbers); break;
+	
+	case screen.friendsProfile: mode_new_member = false; break;
 	}	
 	
 }

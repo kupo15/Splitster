@@ -23,6 +23,7 @@ event_name = "";
 receipt_name = "";
 receipt_price = "";
 
+friend_name_entry = "";
 friend_index = undefined;
 friend_id = undefined;
 
@@ -58,7 +59,9 @@ mouse_xpos = 0;
 mouse_ypos = 0;
 
 repeat 15
-scr_friend_create();
+scr_friend_create("",true);
+
+scr_friend_create("z",true);
 
 ini_debug();
 }

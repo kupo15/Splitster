@@ -315,3 +315,13 @@ str += ending_str;
 
 return str;	
 }
+	
+function capitalize(str) {
+	
+var first_letter = string_char_at(str,1);
+var letter_cap = string_upper(first_letter);
+var str_missing = string_delete(str,1,1);
+var final_str = string_insert(letter_cap,str_missing,1);
+
+return final_str;	
+}

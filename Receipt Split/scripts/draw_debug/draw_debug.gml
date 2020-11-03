@@ -22,23 +22,23 @@ function draw_debug() {
 	draw_text_height(xx,yy+((yoff+2)*sep),"screenIndex: "+string(screenIndex),height);
 	draw_text_height(xx,yy+((yoff+3)*sep),"friends_list_off: "+string(master_friends_list_offset),height);
 	draw_text_height(xx,yy+((yoff+4)*sep),"friends_list_off_st: "+string(master_friends_list_offset_start),height);
-	draw_text_height(xx,yy+((yoff+5)*sep),"searched_name: "+string(searched_name),height);
+	draw_text_height(xx,yy+((yoff+5)*sep),"kvLastString: "+string(kvLastString),height);
 	draw_text_height(xx,yy+((yoff+6)*sep),"click_ypos: "+string(click_highlight_ypos),height);
 	draw_text_height(xx,yy+((yoff+7)*sep),"click_index: "+string(click_highlight_index),height);
 	draw_text_height(xx,yy+((yoff+8)*sep),"expense_index: "+string(expense_index),height);
 	draw_text_height(xx,yy+((yoff+9)*sep),"receipt_index: "+string(receipt_index),height);
 
 	var yoff = 11;
-	debug_draw_click_highlight(xx,yy,yoff,sep,height);
+	//debug_draw_click_highlight(xx,yy,yoff,sep,height);
 	
 	//debug_draw_vk(xx,yy,yoff,sep,height);
 	
 	var yoff = 15;
-	//debug_draw_textbox(xx,yy,yoff,sep,height);
+	debug_draw_textbox(xx,yy,yoff,sep,height);
 
 	var yoff = 20;
-//	debug_draw_textbox_cursor(xx,yy,yoff,sep,height);
-	debug_draw_scrollbars(xx,yy,yoff,sep,height);
+	debug_draw_textbox_cursor(xx,yy,yoff,sep,height);
+	//debug_draw_scrollbars(xx,yy,yoff,sep,height);
 
 	
 	var yoff = 25;

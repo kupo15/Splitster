@@ -18,7 +18,7 @@ var xx = 30;
 var yy = header_height+10;
 var ww = room_width;
 var col = make_color_rgb(28,194,159);
-var text_yoff = (ysep-(height*0.8))*0.5;
+var text_yoff = (ysep-height)*0.5;
 
 draw_set_halign(fa_left);
 draw_text_height_ext_cursor(xx+5,yy+text_yoff+(0*ysep),event_name,"Enter a description",-1,ww,0,height,0);

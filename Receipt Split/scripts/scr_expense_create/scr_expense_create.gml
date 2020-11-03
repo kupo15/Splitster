@@ -3,10 +3,10 @@ function scr_expense_create(desc,_date) {
 /// @param [name
 /// @param date]
 
-if desc == undefined
+if argument[0] == undefined
 desc = "";
 
-if _date == undefined
+if argument[1] == undefined
 _date = date_create_datetime(current_year,current_month,current_day,1,1,1);
 	
 active_expense = {

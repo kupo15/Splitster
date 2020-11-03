@@ -10,9 +10,12 @@ profileInfo = {
 	
 }
 
-function scr_friend_create() {
+function scr_friend_create(name,ascending) {
+/// @param name
+/// @param [ascending]
 
-var name = choose("Lindsey","Matt","John", "Steven", "Graham", "Jack", "Emily", "Tina", "Jill", "Helen");
+if name == ""
+name = choose("Lindsey","Matt","John", "Steven", "Graham", "Jack", "Emily", "Tina", "Jill", "Helen");
 
 var friend = {
 
@@ -21,6 +24,13 @@ var friend = {
 	
 	}
 
-ds_list_add(master_friends_list,friend);
-ds_list_sort_nested_struct(master_friends_list,"dispName",true);
+var size = ds_list_size(master_friends_list);
+var ind = max(size-1,0);
+ds_list_insert(master_friends_list,ind,friend);
+
+if argument[1] != undefined
+ds_list_sort_nested_struct(master_friends_list,"dispName",ascending);
+
+friend_name_entry = "";
+keyboard_string = "";
 }
