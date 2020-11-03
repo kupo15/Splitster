@@ -55,4 +55,6 @@ switch screenIndex
 	case screen.friendsProfile: mode_new_member = false; break;
 	}	
 	
+searched_name = "";
+transitionReady = 0;
 }

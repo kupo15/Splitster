@@ -54,7 +54,6 @@ vk_switch,
 scroll_end,
 flick,
 press_hold,
-highlightAction,
 
 enumcount
 }

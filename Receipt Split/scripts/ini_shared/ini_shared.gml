@@ -17,6 +17,7 @@ delete_list = ds_list_create();
 
 mode_new_member = false;
 
+transitionReady = 0;
 androidBack = false;
 
 submenu = navbar.hidden;

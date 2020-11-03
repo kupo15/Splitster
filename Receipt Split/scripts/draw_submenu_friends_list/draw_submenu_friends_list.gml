@@ -91,7 +91,7 @@ var kvoff = (kvHeight*mode_new_member)/ysep;
 var list_ext = list_size+kvoff;
 var scrollbar_index = 0;
 var sub = submenu;
-db(kvoff)
+
 //funct_dialogue_scrolling(xx,yy,ww,hh,sep,list_size,rows,offset_start_pointer,offset_pointer,scrollbar_index,sub);
 funct_screen_scrolling(0,yy,ww,hh,ysep,list_ext,rows,offset_start_pointer,offset_pointer,scrollbar_index,sub);
 
@@ -115,6 +115,7 @@ if virtual_keyboard_enter
 		}
 	else
 		{
+		searched_name = "";
 		scr_friend_create(capitalize(friend_name_entry),undefined);
 		variable_instance_set(id,offsetStr,offset_value+1);
 		}

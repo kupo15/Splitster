@@ -325,13 +325,15 @@ click_highlight_alpha = lerp(click_highlight_alpha,click_highlight_alpha_end,cli
 
 function highlight_fadeout(xx) {
 	
-var width_reached = (click_highlight_width/click_highlight_width_end) > 0.999;
+var width_reached = (click_highlight_width/click_highlight_width_end) > 0.995;
 var clickout = width_reached && !mouse_check_button(mb_left);
 
 // fade away when released OR not inside of box
 if clickout || (clickMoved && width_reached)
 click_highlight_alpha_end = 0; // fade away	
 	
+if width_reached && transitionReady
+transitionReady = 2;
 }
 
 function highlight_draw(xx,yy,hh,col) {

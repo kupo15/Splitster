@@ -1,6 +1,9 @@
 
 draw_screens();
 
+if !canClick
+transitionReady = 1;
+
 mouse_xprev = mouse_x;
 mouse_yprev = mouse_y;
 
