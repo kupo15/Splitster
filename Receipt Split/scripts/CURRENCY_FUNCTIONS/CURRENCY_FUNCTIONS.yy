@@ -6,7 +6,7 @@
     "path": "folders/Scripts/Main/Ini.yy",
   },
   "resourceVersion": "1.0",
-  "name": "ini_currency_symbols",
+  "name": "CURRENCY_FUNCTIONS",
   "tags": [],
   "resourceType": "GMScript",
 }

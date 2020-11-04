@@ -1,8 +1,13 @@
 function json_data_load() {
-	
-master_friends_array = array_create(0);
-master_expense_array = array_create(0);
+		
+friendslist_array = array_create(0);
+event_history_array = array_create(0);
 pending_array = array_create(0);
+
+master_data_array = array_create(0);
+array_push(master_data_array,friendslist_array)
+array_push(master_data_array,event_history_array)
+array_push(master_data_array,pending_array)
 	
 undo_map = ds_map_create();
 	

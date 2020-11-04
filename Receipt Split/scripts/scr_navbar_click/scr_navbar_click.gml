@@ -8,7 +8,7 @@ switch ind
 	{
 	case screen.expenseCreate: scr_expense_create(); break;		
 	
-	case screen.friendsList: array_sort_nested_struct(master_friends_array,"dispName",true); break;
+	case screen.friendsList: array_sort_nested_struct(friendslist_array,"dispName",true); break;
 	}
 
 

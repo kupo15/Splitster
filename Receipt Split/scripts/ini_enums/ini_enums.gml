@@ -69,5 +69,6 @@ sidebar
 }
 
 enum currencySymbol {
-dollar	
+dollar,
+euro
 }

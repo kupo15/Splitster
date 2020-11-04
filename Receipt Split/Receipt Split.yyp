@@ -5,7 +5,7 @@
     {"id":{"name":"HEADER_DRAW","path":"scripts/HEADER_DRAW/HEADER_DRAW.yy",},"order":4,},
     {"id":{"name":"spr_icon_reciept","path":"sprites/spr_icon_reciept/spr_icon_reciept.yy",},"order":13,},
     {"id":{"name":"spr_pixel","path":"sprites/spr_pixel/spr_pixel.yy",},"order":1,},
-    {"id":{"name":"ini_currency_symbols","path":"scripts/ini_currency_symbols/ini_currency_symbols.yy",},"order":4,},
+    {"id":{"name":"CURRENCY_FUNCTIONS","path":"scripts/CURRENCY_FUNCTIONS/CURRENCY_FUNCTIONS.yy",},"order":4,},
     {"id":{"name":"ico_trash2","path":"sprites/ico_trash2/ico_trash2.yy",},"order":1,},
     {"id":{"name":"ico_trash3","path":"sprites/ico_trash3/ico_trash3.yy",},"order":2,},
     {"id":{"name":"spr_icon_receipt_button","path":"sprites/spr_icon_receipt_button/spr_icon_receipt_button.yy",},"order":14,},

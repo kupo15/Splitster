@@ -37,7 +37,7 @@ var yy = 800;
 	
 if draw_button_trash(xx,yy,ww,hh,ico_trash1,c_red,screenIndex,navbar.hidden,true)
 	{
-	array_delete(master_friends_array,friend_index,1); // delete score
+	array_delete(friendslist_array,friend_index,1); // delete score
 	// json_save(save_data);
 
 	screen_goto_prev();

@@ -1,7 +1,7 @@
 
-function ini_debug(){
+function ini_debug() {
 	
-repeat 3
+repeat 15
 scr_friend_create("",true);
 scr_friend_create("z",true);
 
@@ -21,13 +21,12 @@ for(var i=0;i<15;i++)
 	scr_receipt_create(desc,price);
 	scr_receipt_add(0);
 
-	array_push(master_expense_array,active_expense);
+	array_push(event_history_array,active_expense);
 	}
 		
-array_sort_nested_struct(master_expense_array,"date",false);
+array_sort_nested_struct(event_history_array,"date",false);
 		
 active_expense = undefined;
 active_receipt = undefined;
 screen_change(screen.home,true);
-
 }

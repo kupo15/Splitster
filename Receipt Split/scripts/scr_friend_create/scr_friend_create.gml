@@ -26,13 +26,13 @@ var friend = {
 	}
 
 // add to friends list
-var size = array_length(master_friends_array);
+var size = array_length(friendslist_array);
 var ind = max(size-1,0);
-array_insert(master_friends_array,ind,friend);
+array_insert(friendslist_array,ind,friend);
 
 // sort friends list
 if argument[1] != undefined
-array_sort_nested_struct(master_friends_array,"dispName",ascending);
+array_sort_nested_struct(friendslist_array,"dispName",ascending);
 
 // reset variables
 friend_name_entry = "";

@@ -76,8 +76,8 @@ for(var i=pos_start;i<pos_end;i++)
 		}
 	else if click_button(xx+20+(1*ww),yy+off_pos,"Squared Up",height,c_white,ww,hh,col2,true,false,navbar.hidden)
 		{
-		array_push(master_expense_array,pending_array[i]); // move to history
-		array_sort_nested_struct(master_expense_array,"date",false);
+		array_push(event_history_array,pending_array[i]); // move to history
+		array_sort_nested_struct(event_history_array,"date",false);
 		
 		array_delete(pending_array,i,1); // delete from list
 		}
