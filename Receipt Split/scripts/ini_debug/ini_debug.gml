@@ -3,14 +3,7 @@ function ini_debug() {
 randomise();
 
 // create data structure variables
-friendslist_array = array_create(0);
-event_history_array = array_create(0);
-pending_array = array_create(0);	
-		
-master_data_array = array_create(0);
-array_push(master_data_array,friendslist_array);
-array_push(master_data_array,event_history_array);
-array_push(master_data_array,pending_array);
+root_data_create();
 
 // debug friendslist
 repeat 11
@@ -42,7 +35,7 @@ active_expense = undefined;
 active_receipt = undefined;
 screen_change(screen.home,true);
 
-json_save_array(save_data,master_data_array);
+json_save_array(save_data,ROOT_data_struct);
 
 db("debug reset");
 }

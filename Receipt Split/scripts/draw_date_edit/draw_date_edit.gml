@@ -255,7 +255,7 @@ if androidBack
 	submenu = navbar.main;
 	screen_goto_prev();
 	datePointer = noone;
-	json_save_array(save_data,master_data_array);
+	json_save_array(save_data,ROOT_data_struct);
 	}
 
 

@@ -3,31 +3,21 @@ function json_load_array(_filename) {
 
 if file_exists(_filename)
 	{
-	master_data_array = LoadJSONFromFile(_filename); 
+	ROOT_data_struct = LoadJSONFromFile(_filename); 
 	
-	var friends_data = master_data_array[0];			
-	var event_history_data = master_data_array[1];			
-	var pending_data = master_data_array[2];			
-		
-	friendslist_array = friends_data;
-	event_history_array = event_history_data;
-	pending_array = pending_data;
+	var saveVersion = ROOT_data_struct.version;
+
+	// create data arrays
+	friendslist_array = ROOT_data_struct.friendslist;
+	event_history_array = ROOT_data_struct.event_history;
+	pending_array = ROOT_data_struct.pending;
 
 	db(string(_filename)+" loaded");
 	}
 else
 	{
-	friendslist_array = array_create(0);
-	event_history_array = array_create(0);
-	pending_array = array_create(0);	
-		
-	master_data_array = array_create(0);
-	array_push(master_data_array,friendslist_array);
-	array_push(master_data_array,event_history_array);
-	array_push(master_data_array,pending_array);
-	
+	root_data_create();	
 	db(string(_filename)+" not found > creating data structures");
-
 	}
 }
 
@@ -37,7 +27,7 @@ function json_save_array(_filename,arrayId) {
 // save all
 var _string = json_stringify(arrayId);
 SaveStringToFile(_filename,_string);
-
+clipboard_set_text(_string)
 show_debug_message(string(_filename)+" saved");
 }
 

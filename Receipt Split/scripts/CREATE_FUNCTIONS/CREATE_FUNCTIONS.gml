@@ -57,5 +57,20 @@ squareup_list_offset_start = squareup_list_offset;
 
 mouse_xpos = 0;
 mouse_ypos = 0;
+}
 
+function root_data_create() {
+	
+friendslist_array = array_create(0);
+event_history_array = array_create(0);
+pending_array = array_create(0);	
+			
+ROOT_data_struct = {
+	
+version: json_version,
+friendslist: friendslist_array,	
+event_history: event_history_array,	
+pending: pending_array,	
+}
+	
 }

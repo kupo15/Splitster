@@ -1,7 +1,7 @@
 
 // json saving
-#macro save_data "split_save.dat"
 #macro json_version "1.0"
+#macro save_data "split_save-"+json_version+".dat"
 
 // header
 #macro header_color c_black // make_color_rgb(0,122,173)
@@ -42,7 +42,6 @@
 
 #macro start_date date_create_datetime(1970,1,1,0,0,0)
 
-#macro set_background_color draw_rectangle_color(0,0,room_width,room_height,col,col,col,col,false)
 #macro dialogue draw_dialogue_box(xx,yy,ww,hh,col,sub)
 #macro db show_debug_message
 #macro sm show_message

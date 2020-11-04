@@ -1,7 +1,6 @@
 
 function draw_home() {
-var col = c_lt_gray;
-set_background_color;
+draw_clear(c_lt_gray);
 
 // draw the 3 bars
 draw_screen_header(headerType.bars,headerType.none,"Home");
