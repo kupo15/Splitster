@@ -7,7 +7,7 @@ root_data_create();
 
 // debug friendslist
 repeat 11
-scr_friend_create("",true);
+scr_friend_create("",undefined);
 scr_friend_create("z",true);
 
 // debug event history

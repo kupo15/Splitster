@@ -164,6 +164,7 @@ if click_button(xx,yy,str,height,c_black,ww,hh,c_white,true,true,navbar.hidden)
 	// add to pending list
 	array_push(pending_array,active_expense);
 	array_sort_nested_struct(pending_array,"date",false);
+	app_save;
 
 	// clear variables
 	event_name = "";

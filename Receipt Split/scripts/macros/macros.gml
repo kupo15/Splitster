@@ -2,6 +2,8 @@
 // json saving
 #macro json_version "1.0"
 #macro save_data "split_save-"+json_version+".dat"
+#macro app_save json_save_array(save_data,ROOT_data_struct)
+#macro app_load json_load_array(save_data)
 
 // header
 #macro header_color c_black // make_color_rgb(0,122,173)
