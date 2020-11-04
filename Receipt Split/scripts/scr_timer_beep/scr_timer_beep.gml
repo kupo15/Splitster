@@ -14,8 +14,9 @@ exit;
 
 var active_ind = click_highlight_action;
 
+click_highlight_alpha = 0;
+click_highlight_alpha_end = 0;
 click_highlight_action = undefined;	
-click_highlight_index = undefined;
 transitionReady = 0;
 
 return active_ind == ind;

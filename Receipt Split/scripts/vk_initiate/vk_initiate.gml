@@ -14,8 +14,13 @@ if kvtype == kbv_type_numbers
 	}
 else
 keyboard_virtual_show(kvtype,kvreturn,kbv_autocapitalize_words,false); // show keyboard
-	
-kvActive = true;
+
 cursorSet = true;
+kvActive = true;
+
+if os_type == os_windows
+kvHeight = 400*kvActive*(submenu != navbar.numpad);
+else
+kvHeight = keyboard_virtual_height();
 }
 

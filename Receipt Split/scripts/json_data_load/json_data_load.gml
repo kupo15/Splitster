@@ -10,4 +10,5 @@ function json_data_load() {
 	// debug_reset = true;
 	json_load(save_data);
 
+
 }

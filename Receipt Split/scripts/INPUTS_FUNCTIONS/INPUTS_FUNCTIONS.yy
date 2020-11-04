@@ -6,7 +6,7 @@
     "path": "folders/Scripts/Main/Step.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_inputs",
+  "name": "INPUTS_FUNCTIONS",
   "tags": [],
   "resourceType": "GMScript",
 }

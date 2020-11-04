@@ -64,7 +64,6 @@ draw_popup_par();
 // update the virtual keyboard
 if kvActive // || timer[timerIndex.vk_switch] > -1
 	{
-	kvHeight = keyboard_virtual_height();
 	kvLastString = keyboard_string;
 	kvInputString = keyboard_string; // get string input
 	}

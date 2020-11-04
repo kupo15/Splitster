@@ -37,8 +37,8 @@ function draw_debug() {
 	debug_draw_textbox(xx,yy,yoff,sep,height);
 
 	var yoff = 20;
-	debug_draw_textbox_cursor(xx,yy,yoff,sep,height);
-	//debug_draw_scrollbars(xx,yy,yoff,sep,height);
+	//debug_draw_textbox_cursor(xx,yy,yoff,sep,height);
+	debug_draw_scrollbars(xx,yy,yoff,sep,height);
 
 	
 	var yoff = 25;

@@ -10,6 +10,7 @@
 
 // background colors
 #macro c_lt_gray make_color_rgb(228,228,228)
+#macro c_click_color make_color_rgb(235,235,235)
 
 // navbar
 #macro nav_sca_off 0.85
@@ -44,3 +45,4 @@
 #macro set_background_color draw_rectangle_color(0,0,room_width,room_height,col,col,col,col,false)
 #macro dialogue draw_dialogue_box(xx,yy,ww,hh,col,sub)
 #macro db show_debug_message
+#macro sm show_message

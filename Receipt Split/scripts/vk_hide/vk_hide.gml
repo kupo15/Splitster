@@ -1,11 +1,11 @@
 function vk_hide() {
+
+keyboard_virtual_hide(); // hide keyboard
 	
-	keyboard_virtual_hide(); // hide keyboard
-	
-	submenu = navbar.hidden;
-	numpad_value = "";
-	kvActive = false;
-	androidBack = false;
+submenu = navbar.hidden;
+numpad_value = "";
+kvActive = false;
+androidBack = false;
 	
 	/// @description hide the virtual keyboard
 	/// @param switching

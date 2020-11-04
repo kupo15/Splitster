@@ -44,7 +44,7 @@
     {"id":{"name":"draw_expenses_pending","path":"scripts/draw_expenses_pending/draw_expenses_pending.yy",},"order":1,},
     {"id":{"name":"DRAW_ICON_FUNCTIONS","path":"scripts/DRAW_ICON_FUNCTIONS/DRAW_ICON_FUNCTIONS.yy",},"order":0,},
     {"id":{"name":"draw_expense_create","path":"scripts/draw_expense_create/draw_expense_create.yy",},"order":5,},
-    {"id":{"name":"scr_inputs","path":"scripts/scr_inputs/scr_inputs.yy",},"order":1,},
+    {"id":{"name":"INPUTS_FUNCTIONS","path":"scripts/INPUTS_FUNCTIONS/INPUTS_FUNCTIONS.yy",},"order":1,},
     {"id":{"name":"ELEMENT_STRUCTS","path":"scripts/ELEMENT_STRUCTS/ELEMENT_STRUCTS.yy",},"order":9,},
     {"id":{"name":"draw_info","path":"scripts/draw_info/draw_info.yy",},"order":10,},
     {"id":{"name":"DEBUG_DRAW_VARIABLES","path":"scripts/DEBUG_DRAW_VARIABLES/DEBUG_DRAW_VARIABLES.yy",},"order":13,},

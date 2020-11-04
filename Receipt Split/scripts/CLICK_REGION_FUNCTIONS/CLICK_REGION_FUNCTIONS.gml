@@ -237,7 +237,7 @@ click_highlight_height = 0;
 
 click_highlight_alpha = 0;
 click_highlight_alpha_end = 0;
-click_highlight_color = c_gray;
+click_highlight_color = c_click_color;
 click_highlight_screen = noone;
 click_highlight_index = undefined;
 
@@ -337,6 +337,10 @@ transitionReady = 2;
 }
 
 function highlight_draw(xx,yy,hh,col) {
+	
+// debug
+if (click_highlight_index == undefined) && (os_type == os_windows)
+col = c_lt_gray;	
 	
 // lerp position
 if click_highlight_width != click_highlight_width_end

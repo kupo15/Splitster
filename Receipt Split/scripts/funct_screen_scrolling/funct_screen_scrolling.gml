@@ -1,15 +1,8 @@
 function funct_screen_scrolling(xx,yy,ww,hh,sep,list_size,list_disp,offset_start_pointer,offset_pointer,scrollbar_index,sub) {
 
 if (list_size < list_disp) || (sub != submenu) 
-	{
-	var offset_var = ref_get(offset_start_pointer);
-	
-	offset_var = clamp(offset_var,0,list_size)
-	
-	// set the original offset vars
-	ref_set(offset_pointer,offset_var);
-	exit;    
-	}
+exit;    
+
 
 // flicking speed slow down
 scrollbar_speed[scrollbar_index] -= fric*sign(scrollbar_speed[scrollbar_index]);

@@ -8,7 +8,6 @@ yy += ysep;
 
 var hh = room_height-yy;
 var rows = hh/ysep;
-var offset_value = variable_instance_get(id,offsetStr);
 
 scr_searchbar(ref_list);
 
@@ -17,6 +16,27 @@ if searched_name != ""
 ref_list = searchedList;
 
 var list_size = ds_list_size(ref_list);
+var kvoff = kvHeight/ysep;
+var test_passed = yy+(list_size*ysep)+kvHeight > room_height;
+var list_ext = list_size+(kvoff*test_passed);
+
+// push the list up out of the way of the keyboard
+if scr_timer_highlight_action(highlightAction.newFriend)
+	{
+	click_textbox_set(friend_name_entry,0,kbv_type_default,kbv_returnkey_next);
+	mode_new_member = true;
+	
+	var test_passed = yy+(list_size*ysep)+kvHeight > room_height;
+	var list_ext = list_size+(kvoff*test_passed);
+
+	if test_passed
+	scrollbar_speed[0] = -flick_max*1.1;
+	}
+	
+if !mode_new_member && (list_ext < rows)
+variable_instance_set(id,offsetStr,0);
+		
+var offset_value = variable_instance_get(id,offsetStr);
 var pos_start = floor(offset_value);
 var pos_end = min(list_size,ceil(offset_value)+rows);
 for(var i=pos_start;i<pos_end;i++)
@@ -44,7 +64,6 @@ for(var i=pos_start;i<pos_end;i++)
 		if click_region_released_clamp(0,yy,off_pos,ww,ysep,hh,mb_left,true,submenu,i,undefined,undefined)
 			{
 			click_highlight_action = highlightAction.newFriend;
-			timer[timerIndex.highlightAction] = 5;
 			}
 				
 		continue;
@@ -83,29 +102,18 @@ for(var i=pos_start;i<pos_end;i++)
 			}
 		}
 	}
-	
+
+
 #region scrolling
 var offset_start_pointer = [self,offsetStr+"_start"];
 var offset_pointer = [self,offsetStr];
-var kvoff = (kvHeight*mode_new_member)/ysep;
-var list_ext = list_size+kvoff;
 var scrollbar_index = 0;
 var sub = submenu;
 
-//funct_dialogue_scrolling(xx,yy,ww,hh,sep,list_size,rows,offset_start_pointer,offset_pointer,scrollbar_index,sub);
 funct_screen_scrolling(0,yy,ww,hh,ysep,list_ext,rows,offset_start_pointer,offset_pointer,scrollbar_index,sub);
-
-// push the list up out of the way of the keyboard
-if scr_timer_highlight_action(highlightAction.newFriend)
-	{
-	mode_new_member = true;
-	variable_instance_set(id,offsetStr,list_ext);
-	click_textbox_set(friend_name_entry,0,kbv_type_default,kbv_returnkey_next);
-	}
-
 #endregion
 
-		
+	
 if virtual_keyboard_enter
 	{
 	if friend_name_entry == ""
