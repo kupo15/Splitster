@@ -92,10 +92,10 @@ var xx = 120;
 var height = 40;
 var yoff = (hh-height)*0.5;
 var count = 0;
-var size = ds_list_size(delete_list);
+var size = ds_list_size(deleteList);
 
 for(var i=0;i<size;i++)
-count += delete_list[| i];
+count += deleteList[| i];
 
 draw_set_color(c_white);
 draw_text_height(xx,yy+yoff,string(count)+" selected",height); // draw number of items to delete
@@ -105,7 +105,7 @@ var xx = room_width-hh-20;
 draw_icon_height_centered(ico_trash3,0,xx,yy,hh,hh,40,headerDeleteOffsetDisp); // trash icon
 
 if click_region_released(xx,0,hh,hh,true,navbar.hidden) && mode_delete
-delete_list_delete(delete_list,mode_delete_list_id);
+delete_list_delete_array(deleteList,mode_delete_list_id);
 
 draw_set_color(c_black);
 draw_set_alpha(1);

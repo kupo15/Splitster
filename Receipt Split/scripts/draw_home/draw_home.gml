@@ -20,7 +20,7 @@ screen_change(screen.expensesPending);
 var xoff = 120;
 var height = 40;
 var yoff = (hh-height)*0.5;
-var size = ds_list_size(squareup_list);
+var size = array_length(pending_array);
 
 if size == 0
 	{

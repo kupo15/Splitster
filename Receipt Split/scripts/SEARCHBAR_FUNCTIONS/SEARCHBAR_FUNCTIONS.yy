@@ -6,7 +6,7 @@
     "path": "folders/Submenus.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_searchbar",
+  "name": "SEARCHBAR_FUNCTIONS",
   "tags": [],
   "resourceType": "GMScript",
 }

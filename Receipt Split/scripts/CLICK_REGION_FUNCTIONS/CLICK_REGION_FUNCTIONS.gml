@@ -196,11 +196,29 @@ draw_highlight_click_clamp(y_top,yoff,hh,box_hh,array_pos,active_sub);
 	
 // highlight selected
 if (ref_list != undefined) && mode_delete
-delete_list_draw_selected(x_left,y_top,yoff,ww,hh,box_hh,delete_list,array_pos);
+delete_list_draw_selected(x_left,y_top,yoff,ww,hh,box_hh,deleteList,array_pos);
 	
 // set list variables to delete
 if (ref_list != undefined) && !mode_delete && click_region_pressed_clamp(0,y_top,yoff,ww,hh,box_hh,button,false,sub,array_pos)	
 delete_list_set(ref_list,array_pos);
+	
+return click_region_clamp_set(x_left,y_top,yoff,ww,hh,box_hh,button,highlight,condition,sub,array_pos)
+}
+
+function click_region_released_clamp_array(x_left,y_top,yoff,ww,hh,box_hh,button,highlight,sub,array_pos,ref_array,active_sub) {
+	
+var condition = mouse_check_button_released(button);
+
+// draw clicked highlight
+draw_highlight_click_clamp(y_top,yoff,hh,box_hh,array_pos,active_sub);
+	
+// highlight selected
+if (ref_array != undefined) && mode_delete
+delete_list_draw_selected(x_left,y_top,yoff,ww,hh,box_hh,deleteList,array_pos);
+	
+// set list variables to delete
+if (ref_array != undefined) && !mode_delete && click_region_pressed_clamp(0,y_top,yoff,ww,hh,box_hh,button,false,sub,array_pos)	
+delete_list_set_array(ref_array,array_pos);
 	
 return click_region_clamp_set(x_left,y_top,yoff,ww,hh,box_hh,button,highlight,condition,sub,array_pos)
 }
@@ -325,7 +343,7 @@ click_highlight_alpha = lerp(click_highlight_alpha,click_highlight_alpha_end,cli
 
 function highlight_fadeout(xx) {
 	
-var width_reached = (click_highlight_width/click_highlight_width_end) > 0.995;
+var width_reached = (click_highlight_width/click_highlight_width_end) > 0.99;
 var clickout = width_reached && !mouse_check_button(mb_left);
 
 // fade away when released OR not inside of box

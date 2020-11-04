@@ -58,10 +58,5 @@ squareup_list_offset_start = squareup_list_offset;
 mouse_xpos = 0;
 mouse_ypos = 0;
 
-repeat 3
-scr_friend_create("",true);
-
-scr_friend_create("z",true);
-
 ini_debug();
 }

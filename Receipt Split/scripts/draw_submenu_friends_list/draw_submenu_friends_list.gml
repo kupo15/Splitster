@@ -1,5 +1,5 @@
 
-function draw_submenu_friends_list(yy,ww,ysep,ref_list,offsetStr) {
+function draw_submenu_friends_list(yy,ww,ysep,ref_array,offsetStr) {
 	
 var searchbar_hh = ysep*0.75;
 var xx = 120;
@@ -11,13 +11,13 @@ var hh = room_height-yy;
 var rows = hh/ysep;
 
 
-scr_searchbar(ref_list);
+scr_searchbar_array(ref_array);
 
 // if searching for a name, swap lists
 if searched_name != ""
-ref_list = searchedList;
+ref_array = searchedList;
 
-var list_size = ds_list_size(ref_list);
+var list_size = array_length(ref_array);
 var kvoff = kvHeight/ysep;
 var test_passed = yy+(list_size*ysep)+kvHeight > room_height;
 var list_ext = list_size+(kvoff*test_passed);
@@ -47,7 +47,7 @@ for(var i=pos_start;i<pos_end;i++)
 	{
 	var off_ind = i-offset_value;
 	var off_pos = (off_ind*ysep);
-	var friend_pointer = ref_list[| i];
+	var friend_pointer = ref_array[i];
 	var name = friend_pointer.dispName;
 	var initial = string_char_at(name,1);	
 		
@@ -65,7 +65,7 @@ for(var i=pos_start;i<pos_end;i++)
 		draw_line_pixel(xx,yy+off_pos+ysep,room_width,1,c_black,0.7);
 
 		if !mode_new_member && !mode_delete
-		if click_region_released_clamp(0,yy,off_pos,ww,ysep,hh,mb_left,true,submenu,i,undefined,undefined)
+		if click_region_released_clamp_array(0,yy,off_pos,ww,ysep,hh,mb_left,true,submenu,i,undefined,undefined)
 			{
 			click_highlight_action = highlightAction.newFriend;
 			}
@@ -84,12 +84,12 @@ for(var i=pos_start;i<pos_end;i++)
 	draw_line_pixel(xx,yy+off_pos+ysep,room_width,1,c_black,0.7);
 								
 	// click released on friend
-	if click_region_released_clamp(0,yy,off_pos,ww,ysep,hh,mb_left,true,submenu,i,ref_list,undefined)
+	if click_region_released_clamp_array(0,yy,off_pos,ww,ysep,hh,mb_left,true,submenu,i,ref_array,undefined)
 		{
 		if mode_delete
 			{
 			if can_delete
-			delete_list[| i] = !delete_list[| i]; // toggle selected
+			deleteList[| i] = !deleteList[| i]; // toggle selected
 			
 			can_delete = true;
 			}

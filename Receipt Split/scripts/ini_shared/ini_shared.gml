@@ -6,14 +6,13 @@ draw_set_circle_precision(32);
 searching = false;
 searched = false;
 searched_name = "";
-searchedList = ds_list_create();
+searchedList = array_create(0);
 searchedMap = ds_map_create();
-search_grid = ds_grid_create(2,0);
 
 can_delete = false;
 mode_delete = false;
 mode_delete_list_id = noone;
-delete_list = ds_list_create();
+deleteList = ds_list_create();
 
 mode_new_member = false;
 

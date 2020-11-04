@@ -51,7 +51,7 @@ var text_yoff = (receipt_height-(height*2))*0.5;
 
 var rows = 4;
 var hh = rows*receipt_sep;
-var list_size = ds_list_size(active_expense.receiptList);
+var list_size = array_length(active_expense.receiptList);
 var pos_start = floor(receipt_list_offset);
 var pos_end = min(list_size,ceil(receipt_list_offset)+rows);
 
@@ -60,7 +60,7 @@ for(var i=pos_start;i<pos_end;i++)
 	{
 	var off_ind = i-receipt_list_offset;
 	var off_pos = (off_ind*receipt_sep);
-	var pointer = active_expense.receiptList[| i];
+	var pointer = active_expense.receiptList[i];
 	
 	draw_roundrect(xx,yy+off_pos,xx+ww,yy+off_pos+receipt_height-1,true);
 
@@ -70,12 +70,12 @@ for(var i=pos_start;i<pos_end;i++)
 	draw_text_height(xx+10,yy+off_pos+text_yoff+(1*ysep),"Price: "+string(price),height);
 
 	// click released on event
-	if click_region_released_clamp(xx,yy,off_pos,ww,receipt_height,hh,mb_left,true,navbar.hidden,i,active_expense.receiptList)
+	if click_region_released_clamp_array(xx,yy,off_pos,ww,receipt_height,hh,mb_left,true,navbar.hidden,i,active_expense.receiptList)
 		{
 		if mode_delete
 			{
 			if can_delete
-			delete_list[| i] = !delete_list[| i]; // toggle selected
+			deleteList[| i] = !deleteList[| i]; // toggle selected
 			
 			can_delete = true;
 			}
@@ -131,9 +131,6 @@ var yy = 850;
 // clicked trash icon
 if draw_button_trash(xx,yy,ww,hh,ico_trash1,c_red,screenIndex,navbar.hidden,true)
 	{
-	//ds_list_delete(master_score_list,index); // delete score
-	//json_save(save_data);
-
 	active_expense = undefined;
 	active_receipt = undefined;
 	receipt_index = undefined;
@@ -165,8 +162,8 @@ if click_button(xx,yy,str,height,c_black,ww,hh,c_white,true,true,navbar.hidden)
 	active_expense.name = event_name; 
 	
 	// add to pending list
-	ds_list_add(squareup_list,active_expense);
-	ds_list_sort_nested_struct(squareup_list,"date",false);
+	array_push(pending_array,active_expense);
+	array_sort_nested_struct(pending_array,"date",false);
 
 	// clear variables
 	event_name = "";
@@ -188,7 +185,7 @@ if keyboard_check_pressed(vk_enter)
 	var price = string(irandom_range(1,10));
 	scr_receipt_create("",price);
 	
-	var ind = ds_list_size(active_expense.receiptList);
+	var ind = array_length(active_expense.receiptList);
 	scr_receipt_add(ind);
 	}
 	

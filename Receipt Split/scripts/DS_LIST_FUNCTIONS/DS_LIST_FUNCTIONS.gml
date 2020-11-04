@@ -85,3 +85,35 @@ for(var i=0;i<size;i++)
 // destroy temp sorting grid
 ds_grid_destroy(sorting_grid);
 }
+
+function array_sort_nested_struct(source_array,key,ascending) {
+/// @description sorts nested structs within arrays
+/// @param source_array
+/// @param sort_key
+/// @param ascending
+
+// create temp sorting grid
+var sorting_grid = ds_grid_create(2,0);
+
+// add all data to grid
+var size = array_length(source_array); // size of the reference array
+for(var i=0;i<size;i++) // loop through source array
+	{
+	var pointer = source_array[i]; // get the pointer
+	var sort_value = variable_struct_get(pointer,key); // get the sort value
+
+	grid_row_add(sorting_grid); // add a row to the temp sorting grid
+	sorting_grid[# 0,i] = pointer; // add list pointer to grid
+	sorting_grid[# 1,i] = sort_value; // add value to sort to grid
+	}
+
+// sort grid
+ds_grid_sort(sorting_grid,1,ascending); 
+
+// re add pointers back to the source array
+for(var i=0;i<size;i++)
+source_array[@ i] = sorting_grid[# 0,i];
+
+// destroy temp sorting grid
+ds_grid_destroy(sorting_grid);
+}

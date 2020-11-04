@@ -1,11 +1,16 @@
 
 function ini_debug(){
+	
+repeat 3
+scr_friend_create("",true);
+scr_friend_create("z",true);
+
 
 for(var i=0;i<15;i++)
 	{
 	// create expense
 	var str = "Event "+string(i);
-	var _date = date_create_datetime(current_year,irandom(12),irandom(29),1,1,1);
+	var _date = date_create_datetime(current_year,irandom(8),irandom(29),current_hour,current_minute,current_second);
 	
 	scr_expense_create(str,_date);
 
@@ -16,10 +21,10 @@ for(var i=0;i<15;i++)
 	scr_receipt_create(desc,price);
 	scr_receipt_add(0);
 
-	ds_list_add(master_expense_list,active_expense);
+	array_push(master_expense_array,active_expense);
 	}
 		
-ds_list_sort_nested_struct(master_expense_list,"date",false);
+array_sort_nested_struct(master_expense_array,"date",false);
 		
 active_expense = undefined;
 active_receipt = undefined;

@@ -60,7 +60,7 @@
     {"id":{"name":"find_index","path":"scripts/find_index/find_index.yy",},"order":1,},
     {"id":{"name":"ico_backspace","path":"sprites/ico_backspace/ico_backspace.yy",},"order":3,},
     {"id":{"name":"draw_expense_history","path":"scripts/draw_expense_history/draw_expense_history.yy",},"order":6,},
-    {"id":{"name":"scr_searchbar","path":"scripts/scr_searchbar/scr_searchbar.yy",},"order":1,},
+    {"id":{"name":"SEARCHBAR_FUNCTIONS","path":"scripts/SEARCHBAR_FUNCTIONS/SEARCHBAR_FUNCTIONS.yy",},"order":1,},
     {"id":{"name":"scr_navbar_click","path":"scripts/scr_navbar_click/scr_navbar_click.yy",},"order":3,},
     {"id":{"name":"ico_search","path":"sprites/ico_search/ico_search.yy",},"order":4,},
     {"id":{"name":"spr_icon_group","path":"sprites/spr_icon_group/spr_icon_group.yy",},"order":6,},

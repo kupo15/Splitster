@@ -109,7 +109,7 @@ var ypos = header_height+(ysep*4)
 var diff = room_height-ypos+ysep;
 var yy = ypos+(diff*friendsbar_yoff_start);
 
-draw_submenu_friends_list(yy,room_width,6)
+// draw_submenu_friends_list(yy,room_width,6)
 
 
 #region delete expense

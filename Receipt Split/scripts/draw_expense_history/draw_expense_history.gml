@@ -29,7 +29,7 @@ draw_set_halign(fa_left);
 
 // draw_rectangle_color(0,yy,room_width,yy+hh,c_red,c_red,c_red,c_red,true)
 
-var list_size = ds_list_size(master_expense_list);
+var list_size = array_length(master_expense_array);
 var pos_start = floor(master_expense_list_offset*pos_ext);
 var pos_end = min(list_size,ceil(master_expense_list_offset)+rows);
 for(var i=0;i<pos_end;i++)
@@ -37,9 +37,9 @@ for(var i=0;i<pos_end;i++)
 	var off_ind = i-master_expense_list_offset;
 	var off_pos = (off_ind*ysep)+(banner_hh*banner_num);
 
-	var expense_pointer = master_expense_list[| i];
+	var expense_pointer = master_expense_array[i];
 	var name = expense_pointer.name;
-	var receiptNum = ds_list_size(expense_pointer.receiptList);
+	var receiptNum = array_length(expense_pointer.receiptList);
 	
 	var date = expense_pointer.date;
 	var month = date_get_month(date);
@@ -74,12 +74,12 @@ for(var i=0;i<pos_end;i++)
 	draw_text_height(xpos,yy+25+off_pos+(1*height)+sq_yoff,"Receipts: "+string(receiptNum),height); // draw receipt numbers
 		
 	// click released on event
-	if click_region_released_clamp(0,yy,off_pos,ww,ysep,hh,mb_left,true,navbar.hidden,i,master_expense_list)
+	if click_region_released_clamp_array(0,yy,off_pos,ww,ysep,hh,mb_left,true,navbar.hidden,i,master_expense_array)
 		{
 		if mode_delete
 			{
 			if can_delete
-			delete_list[| i] = !delete_list[| i]; // toggle selected
+			deleteList[| i] = !deleteList[| i]; // toggle selected
 			
 			can_delete = true;
 			}

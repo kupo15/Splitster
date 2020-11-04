@@ -1,13 +1,25 @@
-function delete_list_set(ref_list,first_pos){
+function delete_list_set(ref_list,first_pos) {
 // mouse click
 timer[timerIndex.press_hold] = press_hold_timer; // set timer until activation
 mode_delete_list_id = ref_list; // set the ref list to delete from
 			
-ds_list_clear(delete_list);
+ds_list_clear(deleteList);
 
 var list_size = ds_list_size(ref_list);
-ds_list_add(delete_list,list_size); // add number of slots
-ds_list_add(delete_list,first_pos); // add that index slot to the delete list
+ds_list_add(deleteList,list_size); // add number of slots
+ds_list_add(deleteList,first_pos); // add that index slot to the delete list
+}
+
+function delete_list_set_array(ref_array,first_pos) {
+// mouse click
+timer[timerIndex.press_hold] = press_hold_timer; // set timer until activation
+mode_delete_list_id = ref_array; // set the ref list to delete from
+			
+ds_list_clear(deleteList);
+
+var list_size = array_length(ref_array);
+ds_list_add(deleteList,list_size); // add number of slots
+ds_list_add(deleteList,first_pos); // add that index slot to the delete list
 }
 
 function delete_list_enable() {
@@ -21,27 +33,43 @@ mode_delete = true;
 can_delete = false;
 
 // get list param
-var size = delete_list[| 0];
-var first_ind = delete_list[| 1];
+var size = deleteList[| 0];
+var first_ind = deleteList[| 1];
 	
 // clear list
-ds_list_clear(delete_list);
+ds_list_clear(deleteList);
 	
 // make all entries false
 repeat size
-ds_list_add(delete_list,false); 
+ds_list_add(deleteList,false); 
 	
 // set the first index selected
-delete_list[| first_ind] = true;
+deleteList[| first_ind] = true;
 }
 
 function delete_list_delete(del_list_id,ref_list) {
 
-var size = ds_list_size(delete_list);
+sm(ref_list)
+
+var size = ds_list_size(deleteList);
 for(var i=size-1;i>-1;i--)
 	{// delete in reverse order
 	if del_list_id[| i]
 	ds_list_delete(ref_list,i); // delete from ref list
+	}
+		
+// disable delete mode
+mode_delete = false;
+//json_save(save_data);
+}
+
+function delete_list_delete_array(del_list_id,ref_array) {
+
+var size = ds_list_size(deleteList);
+for(var i=size-1;i>-1;i--)
+	{// delete in reverse order
+	if del_list_id[| i]
+	array_delete(ref_array,i,1); // delete from ref struct
 	}
 		
 // disable delete mode

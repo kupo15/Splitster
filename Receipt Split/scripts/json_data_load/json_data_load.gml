@@ -1,14 +1,15 @@
 function json_data_load() {
 	
-	master_friends_list = ds_list_create();
-	master_expense_list = ds_list_create();
-	squareup_list = ds_list_create();
-	undo_map = ds_map_create();
+master_friends_array = array_create(0);
+master_expense_array = array_create(0);
+pending_array = array_create(0);
 	
-	ini_profile_info();
+undo_map = ds_map_create();
 	
-	// debug_reset = true;
-	json_load(save_data);
+ini_profile_info();
+	
+// debug_reset = true;
+json_load(save_data);
 
 
 }

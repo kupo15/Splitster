@@ -50,7 +50,7 @@ function draw_debug() {
 	
 	//debug_draw_calendar(xx,yy,yoff,sep,height);
 
-	// draw_text_height(xx,yy+(25*sep),"search results "+string(ds_grid_height(search_grid)),height);
+	// draw_text_height(xx,yy+(25*sep),"search results "+string(ds_list_size(searchedList)),height);
 
 	var yoff = 26;
 	//draw_text_height(xx,yy+((yoff+0)*sep),"Resolution: "+string(win_ww)+"x"+string(win_hh),height); // resolution
@@ -58,9 +58,9 @@ function draw_debug() {
 	debug_draw_mouse(xx,yy,yoff,sep,height);
 
 	// right side
-	var size = ds_list_size(delete_list);
+	var size = ds_list_size(deleteList);
 	for(var i=0;i<size;i++)
-	draw_text_height(550,yy+(i*sep),delete_list[| i],height);
+	draw_text_height(550,yy+(i*sep),deleteList[| i],height);
 	
 	yy += (size+1)*sep;
 	draw_text_height(550,yy+(0*sep),string(ds_stack_size(prev_screen_stack))+": "+string(ds_stack_top(prev_screen_stack)),height);
