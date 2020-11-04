@@ -42,20 +42,23 @@ function debug_draw_scrollbars(xx,yy,ind,sep,height) {
 
 draw_text_height(xx,yy+((ind+0)*sep),"scrollbar_spd: "+string(scrollbar_speed[0]),height);
 draw_text_height(xx,yy+((ind+1)*sep),"scrollbarIndexScrolling: "+string(scrollbarIndexScrolling),height);
+draw_text_height(xx,yy+((ind+2)*sep),"canFlick: "+string(canFlick),height);
+	
+}
+
+function debug_draw_modes(xx,yy,ind,sep,height) {
+
+draw_text_height(xx,yy+((ind+0)*sep),"scrollbar_spd: "+string(scrollbar_speed[0]),height);
+draw_text_height(xx,yy+((ind+1)*sep),"scrollbarIndexScrolling: "+string(scrollbarIndexScrolling),height);
 	
 }
 
 function debug_draw_calendar(xx,yy,ind,sep,height) {
 	
-draw_text_height(xx,yy+((ind+0)*sep),"monthOffsetStart: "+string(monthOffsetStart),height);
-draw_text_height(xx,yy+((ind+1)*sep),"monthOffset: "+string(monthOffset),height);
-draw_text_height(xx,yy+((ind+2)*sep),"monthOffsetEnd "+string(monthOffsetEnd),height);
-draw_text_height(xx,yy+((ind+3)*sep),"monthParse: "+string(monthParse),height);
+draw_text_height(xx,yy+((ind+0)*sep),"mode_new_member: "+string(mode_new_member),height);
+draw_text_height(xx,yy+((ind+1)*sep),"mode_delete: "+string(mode_delete),height);
+
 						   
-draw_text_height(xx,yy+((ind+5)*sep),"day end "+string(dayOffsetEnd),height);
-draw_text_height(xx,yy+((ind+6)*sep),"daySpanSelect: "+string(daySpanSelect),height);
-						   
-draw_text_height(xx,yy+((ind+8)*sep),"yearParse: "+string(yearParse),height);
 }
 
 function debug_draw_mouse(xx,yy,ind,sep,height) {

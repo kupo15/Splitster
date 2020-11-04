@@ -1,13 +1,15 @@
 
 function draw_submenu_friends_list(yy,ww,ysep,ref_list,offsetStr) {
 	
+var searchbar_hh = ysep*0.75;
 var xx = 120;
 var height = 45;
 
-yy += ysep;
+yy += searchbar_hh;
 
 var hh = room_height-yy;
 var rows = hh/ysep;
+
 
 scr_searchbar(ref_list);
 
@@ -29,9 +31,11 @@ if scr_timer_highlight_action(highlightAction.newFriend)
 	var test_passed = yy+(list_size*ysep)+kvHeight > room_height;
 	var list_ext = list_size+(kvoff*test_passed);
 
+db(test_passed)
 	if test_passed
 	scrollbar_speed[0] = -flick_max*1.1;
 	}
+
 	
 if !mode_new_member && (list_ext < rows)
 variable_instance_set(id,offsetStr,0);
@@ -131,7 +135,7 @@ if virtual_keyboard_enter
 
 // draw search bar
 var col = make_color_rgb(140,238,255);
-draw_list_searchbar(0,yy-ysep,"Enter name",height,ww,ysep,col,submenu);
+draw_list_searchbar(0,yy-searchbar_hh,"Enter name",height,ww,searchbar_hh,col,submenu);
 
 // if no results
 if searched && (list_size == 0) 

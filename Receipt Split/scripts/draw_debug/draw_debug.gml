@@ -35,6 +35,8 @@ function draw_debug() {
 	
 	var yoff = 15;
 	debug_draw_textbox(xx,yy,yoff,sep,height);
+	
+	//debug_draw_modes(xx,yy,yoff,sep,height);
 
 	var yoff = 20;
 	//debug_draw_textbox_cursor(xx,yy,yoff,sep,height);

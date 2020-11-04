@@ -17,6 +17,7 @@ if click_region_pressed(xx,yy,ww,hh,false,sub)
 	ref_set(offset_start_pointer,offset_value); // set pointer variable of offset start
 	
 	scrollbarIndexScrolling = scrollbar_index;
+	scrollbar_speed[scrollbar_index] = 0; // stop speed
 	}
 else if mouse_check_button_released(mb_left)
 	{
@@ -28,7 +29,7 @@ else if mouse_check_button_released(mb_left)
 var offset_var;
 
 if scrollbar_index == scrollbarIndexScrolling
-	{
+	{// manual scrolling
 	var offset_var;
 	var num = 1/sep;
 	var amt = (mouse_ydist*num);
@@ -64,7 +65,7 @@ offset_var = clamp(offset_var,0,list_size-list_disp);
 // if hit the end
 if offset_test != offset_var
 	{
-	scrollbar_speed[scrollbar_index] = 0; // stop speed
+	//scrollbar_speed[scrollbar_index] = 0; // stop speed
 	timer[timerIndex.scroll_end] = 30;
 	}
 	
