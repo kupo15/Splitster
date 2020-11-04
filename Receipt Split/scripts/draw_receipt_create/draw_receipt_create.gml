@@ -30,7 +30,10 @@ draw_set_halign(fa_left);
 draw_text_height_color(xx,yy+height+(0*ysep),"Amount",col,30);
 
 var height = 60;
-draw_text_height_ext_cursor(xx+5,yy+(0*ysep),receipt_price,"0.00",-1,ww,0,height,0);
+if receipt_price == ""
+draw_text_height(xx+5,yy+(0*ysep),"0.00",height);
+else
+draw_text_height(xx+5,yy+(0*ysep),receipt_price,height);
 
 for(var i=0;i<1;i++)
 	{
