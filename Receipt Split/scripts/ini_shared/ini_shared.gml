@@ -14,6 +14,8 @@ mode_delete = false;
 mode_delete_list_id = noone;
 deleteList = ds_list_create();
 
+undo_map = ds_map_create();
+
 mode_new_member = false;
 
 transitionReady = 0;

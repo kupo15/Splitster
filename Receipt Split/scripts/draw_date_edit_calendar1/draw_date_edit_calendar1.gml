@@ -110,7 +110,7 @@ function draw_date_edit_calendar1() {
 	
 	    screen_goto_prev(navbar.main);
 		datePointer = noone;
-		//json_save(save_data);
+		json_save_array(save_data,master_data_array);
 	    }
 	
 	

@@ -60,7 +60,7 @@ for(var i=size-1;i>-1;i--)
 		
 // disable delete mode
 mode_delete = false;
-//json_save(save_data);
+json_save_array(save_data,master_data_array);
 }
 
 function delete_list_delete_array(del_list_id,ref_array) {
@@ -74,7 +74,7 @@ for(var i=size-1;i>-1;i--)
 		
 // disable delete mode
 mode_delete = false;
-//json_save(save_data);
+json_save_array(save_data,master_data_array);
 }
 
 function delete_list_draw_selected(xx,yy,yoff,ww,hh,box_hh,del_list_id,ind) {

@@ -51,6 +51,9 @@ function scr_debug_inputs() {
 	
 debug_reset = keyboard_check_pressed(vk_delete);
 
+if debug_reset 
+ini_debug();
+
 if keyboard_check(vk_control)
 	{
 	if room_speed == 60

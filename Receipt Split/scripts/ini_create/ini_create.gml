@@ -58,5 +58,4 @@ squareup_list_offset_start = squareup_list_offset;
 mouse_xpos = 0;
 mouse_ypos = 0;
 
-ini_debug();
 }

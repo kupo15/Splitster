@@ -121,9 +121,6 @@ var yy = room_height-hh-5;
 
 if draw_button_trash(xx,yy,ww,hh,ico_trash1,c_red,screen.splitCost,navbar.hidden,true)
 		{
-		//ds_list_delete(master_score_list,index); // delete score
-		//json_save(save_data);
-	
 		active_receipt = undefined;
 		receipt_index = undefined;
 	

@@ -15,7 +15,20 @@ function scr_friend_create(name,ascending) {
 /// @param [ascending]
 
 if name == ""
-name = choose("Lindsey","Matt","John", "Steven", "Graham", "Jack", "Emily", "Tina", "Jill", "Helen");
+name = choose("Lindsey","Matt","John","Steven",
+"Graham","Jack", 
+"Emily","Tina", 
+"Jill","Helen",
+"Liam","Olivia",
+"Noah","Emma",
+"Oliver","Ava",
+"William","Sophia",
+"Elijah","Isabella",
+"James","Charlotte",
+"Benjamin","Amelia",
+"Lucas","Mia",
+"Mason","Harper",
+"Ethan","Evelyn");
 
 // friend stuct
 var friend = {

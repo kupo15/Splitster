@@ -170,7 +170,7 @@ function draw_date_edit_calendar() {
 			var day = dayOffsetEnd;
 		
 			datePointer[| score_data.date] = date_create_datetime(year,month,day,1,1,1); // save date
-			//json_save(save_data);
+			json_save_array(save_data,master_data_array);
 			}
 	
 		// year select

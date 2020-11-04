@@ -1,11 +1,23 @@
 
 function ini_debug() {
-	
-repeat 15
+randomise();
+
+// create data structure variables
+friendslist_array = array_create(0);
+event_history_array = array_create(0);
+pending_array = array_create(0);	
+		
+master_data_array = array_create(0);
+array_push(master_data_array,friendslist_array);
+array_push(master_data_array,event_history_array);
+array_push(master_data_array,pending_array);
+
+// debug friendslist
+repeat 11
 scr_friend_create("",true);
 scr_friend_create("z",true);
 
-
+// debug event history
 for(var i=0;i<15;i++)
 	{
 	// create expense
@@ -29,4 +41,9 @@ array_sort_nested_struct(event_history_array,"date",false);
 active_expense = undefined;
 active_receipt = undefined;
 screen_change(screen.home,true);
+
+json_save_array(save_data,master_data_array);
+
+db("debug reset");
 }
+
