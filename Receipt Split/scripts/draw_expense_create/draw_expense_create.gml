@@ -70,7 +70,7 @@ for(var i=pos_start;i<pos_end;i++)
 	draw_text_height(xx+10,yy+off_pos+text_yoff+(1*ysep),"Price: "+string(price),height);
 
 	// click released on event
-	if click_region_released_clamp_array(xx,yy,off_pos,ww,receipt_height,hh,mb_left,true,navbar.hidden,i,active_expense.receiptList)
+	if click_region_released_clamp_array(xx,yy,off_pos,ww,receipt_height,hh,mb_left,true,navbar.hidden,i,active_expense.receiptList,undefined)
 		{
 		if mode_delete
 			{

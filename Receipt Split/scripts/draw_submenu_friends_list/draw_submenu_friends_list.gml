@@ -23,17 +23,14 @@ var test_passed = yy+(list_size*ysep)+kvHeight > room_height;
 var list_ext = list_size+(kvoff*test_passed);
 
 // push the list up out of the way of the keyboard
-if scr_timer_highlight_action(highlightAction.newFriend)
+var action = scr_timer_highlight_action(highlightAction.newFriend)
+if action
 	{
 	click_textbox_set(friend_name_entry,0,kbv_type_default,kbv_returnkey_next);
 	mode_new_member = true;
 	
 	var test_passed = yy+(list_size*ysep)+kvHeight > room_height;
 	var list_ext = list_size+(kvoff*test_passed);
-
-db(test_passed)
-	if test_passed
-	scrollbar_speed[0] = -flick_max*1.1;
 	}
 
 	
@@ -117,6 +114,8 @@ var sub = submenu;
 funct_screen_scrolling(0,yy,ww,hh,ysep,list_ext,rows,offset_start_pointer,offset_pointer,scrollbar_index,sub);
 #endregion
 
+if test_passed && action
+scrollbar_speed[0] = -flick_max*1.1;
 	
 if virtual_keyboard_enter
 	{

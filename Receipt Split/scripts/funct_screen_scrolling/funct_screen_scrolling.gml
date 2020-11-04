@@ -65,7 +65,7 @@ offset_var = clamp(offset_var,0,list_size-list_disp);
 // if hit the end
 if offset_test != offset_var
 	{
-	//scrollbar_speed[scrollbar_index] = 0; // stop speed
+	scrollbar_speed[scrollbar_index] = 0; // stop speed
 	timer[timerIndex.scroll_end] = 30;
 	}
 	
