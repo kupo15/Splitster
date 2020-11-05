@@ -325,3 +325,13 @@ var final_str = string_insert(letter_cap,str_missing,1);
 
 return final_str;	
 }
+	
+function string_width_height(str,height) {
+
+var currSize = string_height(str); // current height of string
+var scale = height/currSize;
+
+var ll = string_width(str);
+
+return ll*scale;
+}

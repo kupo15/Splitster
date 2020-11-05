@@ -47,6 +47,8 @@ main = -4,
 hidden = -1,
 
 friendsBar,
+calendar,
+calendarYearSelect,
 numpad
 }
 

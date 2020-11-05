@@ -151,11 +151,13 @@ var hh = 90;
 var col = c_white;
 
 draw_dialogue_box(xx,yy,ww,hh,col,navbar.hidden)
+//screen_change(screen.edit_date);
 
 draw_set_halign(fa_left)
 draw_text_height(xx+10,yy+10,"Calendar",25);
 
-draw_icon_height(spr_ico_calendar,xx+20,yy+40,45,1); // draw calendar icon
+var str_ww = string_width_height("Calendar",25);
+draw_icon_height_centered(spr_ico_calendar,0,xx+10,yy+40,str_ww,45,45,1); // draw calendar icon
 
 var date_pointer = active_expense.date;
 var day = date_get_day(date_pointer);

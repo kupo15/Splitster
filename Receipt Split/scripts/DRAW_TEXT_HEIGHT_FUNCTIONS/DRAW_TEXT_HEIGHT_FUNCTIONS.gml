@@ -42,8 +42,8 @@ function draw_text_height_middled_color(xx,yy,str,hh,col,height,font) {
 /// @param yy
 /// @param str
 /// @param region_height
-/// @param height
 /// @param color
+/// @param height
 /// @param [font]
 
 var int = argument[6];

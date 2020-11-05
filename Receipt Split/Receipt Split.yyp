@@ -41,6 +41,7 @@
     {"id":{"name":"STRING_INPUT_FUNCTIONS","path":"scripts/STRING_INPUT_FUNCTIONS/STRING_INPUT_FUNCTIONS.yy",},"order":1,},
     {"id":{"name":"draw_popup_par","path":"scripts/draw_popup_par/draw_popup_par.yy",},"order":2,},
     {"id":{"name":"spr_icon_member_add","path":"sprites/spr_icon_member_add/spr_icon_member_add.yy",},"order":5,},
+    {"id":{"name":"overlay_calendar","path":"scripts/overlay_calendar/overlay_calendar.yy",},"order":2,},
     {"id":{"name":"draw_sidebar_main_menu","path":"scripts/draw_sidebar_main_menu/draw_sidebar_main_menu.yy",},"order":3,},
     {"id":{"name":"draw_expenses_pending","path":"scripts/draw_expenses_pending/draw_expenses_pending.yy",},"order":1,},
     {"id":{"name":"DRAW_ICON_FUNCTIONS","path":"scripts/DRAW_ICON_FUNCTIONS/DRAW_ICON_FUNCTIONS.yy",},"order":0,},
