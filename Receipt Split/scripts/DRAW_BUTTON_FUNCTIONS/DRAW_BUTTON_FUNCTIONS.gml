@@ -3,16 +3,17 @@ function draw_button_trash(xx,yy,ww,hh,spr,color,screenInd,sub,background) {
 
 if screenIndex == screenInd
 	{		
-	var col = c_red;
-	var fit = 0.8; // 80% of the button height
+	switch color
+		{
+		case c_red: var col = make_color_rgb(255,200,200); break;
+		
+		default: var col = color; break;
+		}
 	
 	if background
-		{
-		draw_set_alpha(0.3);
-		draw_roundrect_color(xx,yy,xx+ww,yy+hh,col,col,false);
-		draw_set_alpha(1);
-		}
+	draw_roundrect_color(xx,yy,xx+ww,yy+hh,col,col,false);
 
+	var fit = 0.8; // 80% of the button height
 	var height = (hh*fit);
 	var spr_hh = sprite_get_height(spr);
 	var sca = height/spr_hh;
@@ -23,7 +24,7 @@ if screenIndex == screenInd
 	
 	switch color
 		{
-		case c_red: var col = make_color_rgb(204,49,28); break;
+		case c_red: var col = make_color_rgb(255,91,91); break;
 		
 		default: var col = color; break;
 		}

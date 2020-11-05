@@ -26,6 +26,7 @@
     {"id":{"name":"CREATE_FUNCTIONS","path":"scripts/CREATE_FUNCTIONS/CREATE_FUNCTIONS.yy",},"order":3,},
     {"id":{"name":"ICON_DRAW","path":"scripts/ICON_DRAW/ICON_DRAW.yy",},"order":11,},
     {"id":{"name":"draw_debug","path":"scripts/draw_debug/draw_debug.yy",},"order":1,},
+    {"id":{"name":"spr_ico_calendar","path":"sprites/spr_ico_calendar/spr_ico_calendar.yy",},"order":9,},
     {"id":{"name":"draw_footer_button","path":"scripts/draw_footer_button/draw_footer_button.yy",},"order":5,},
     {"id":{"name":"draw_expense_review","path":"scripts/draw_expense_review/draw_expense_review.yy",},"order":11,},
     {"id":{"name":"draw_screens","path":"scripts/draw_screens/draw_screens.yy",},"order":0,},

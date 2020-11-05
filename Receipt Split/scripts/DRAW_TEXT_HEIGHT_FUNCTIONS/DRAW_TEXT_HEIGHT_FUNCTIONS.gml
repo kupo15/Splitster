@@ -1,4 +1,21 @@
 // text draws
+function draw_text_height(xx,yy,str,height,font) {
+/// @param xx
+/// @param yy
+/// @param str
+/// @param height
+/// @param [font]
+
+var int = argument[4];
+
+var sep = -1;
+var w = -1;
+var angle = 0;
+var col = draw_get_color();
+var alpha = draw_get_alpha();
+
+return draw_text_height_ext_color(xx,yy,str,sep,w,angle,col,alpha,height,font);
+}
 
 function draw_text_height_middled(xx,yy,str,hh,height,font) {
 /// @param xx
@@ -38,24 +55,6 @@ var angle = 0;
 var alpha = draw_get_alpha();
 
 return draw_text_height_color(xx,yy+yoff,str,col,height,font);
-}
-
-function draw_text_height(xx,yy,str,height,font) {
-/// @param xx
-/// @param yy
-/// @param str
-/// @param height
-/// @param [font]
-
-var int = argument[4];
-
-var sep = -1;
-var w = -1;
-var angle = 0;
-var col = draw_get_color();
-var alpha = draw_get_alpha();
-
-return draw_text_height_ext_color(xx,yy,str,sep,w,angle,col,alpha,height,font);
 }
 
 function draw_text_height_color(xx,yy,str,col,height,font) {

@@ -3,7 +3,8 @@ enum headerType {
 none,
 bars,
 dots,
-back
+back,
+trash
 
 }
 

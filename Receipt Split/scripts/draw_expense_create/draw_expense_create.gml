@@ -31,7 +31,7 @@ var ww = room_width-xx-xx;
 var receipt_height = 100;
 var receipt_sep = 110;
 
-var rows = 5;
+var rows = 4;
 var hh = rows*receipt_sep;
 var list_size = array_length(active_expense.receiptList);
 var pos_start = floor(receipt_list_offset);
@@ -129,7 +129,7 @@ click_textbox_set(event_name,0,kbv_type_default);
 
 #region draw add expense button
 var xx = 15;
-var yy = 730;
+var yy = 630;
 var ww = room_width-xx-xx;
 var hh = 100;
 var height = 50;
@@ -145,11 +145,34 @@ if click_button(xx,yy,"Create Receipt",height,c_black,ww,hh,c_white,true,false,n
 draw_plus_button(xx+83,yy-4+(hh*0.5),70,false);
 #endregion
 
+// draw calendar
+var yy = 750;
+var hh = 90;
+var col = c_white;
+
+draw_dialogue_box(xx,yy,ww,hh,col,navbar.hidden)
+
+draw_set_halign(fa_left)
+draw_text_height(xx+10,yy+10,"Calendar",25);
+
+draw_icon_height(spr_ico_calendar,xx+20,yy+40,45,1); // draw calendar icon
+
+var date_pointer = active_expense.date;
+var day = date_get_day(date_pointer);
+var month = date_get_month(date_pointer);
+var year = date_get_year(date_pointer);
+
+var month_str = funct_convert_month(month,false);
+var date_str = string(month_str)+" "+string(day)+", "+string(year);
+
+draw_text_height_color(xx+115,yy+50,date_str,c_gray,35);
+
+
 #region delete expense
 var ww = 170;
-var hh = 95;
+var hh = 80;
 var xx = 5;
-var yy = 850;
+var yy = room_height-hh-5;
 
 // clicked trash icon
 if draw_button_trash(xx,yy,ww,hh,ico_trash1,c_red,screenIndex,navbar.hidden,true)
@@ -167,15 +190,16 @@ if draw_button_trash(xx,yy,ww,hh,ico_trash1,c_red,screenIndex,navbar.hidden,true
 var submit = 1;
 	
 var ww = 350;
-var hh = 95;
+var hh = 80;
 var xx = 185;
-var height = 50;
+var height = 40;
+var col = make_color_rgb(28,164,109); // green
 
 //var str = "Update";
 //if screenIndex == screen.add_score
 var str = "Create Expense";
 
-if click_button(xx,yy,str,height,c_black,ww,hh,c_white,true,false,navbar.hidden)
+if click_button(xx,yy,str,height,c_white,ww,hh,col,true,false,navbar.hidden)
 	{
 	// debug
 	if event_name == ""

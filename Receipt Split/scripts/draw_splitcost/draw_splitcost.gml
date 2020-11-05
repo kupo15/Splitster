@@ -102,18 +102,17 @@ if click_region_released(0,yy,room_width,hh,true,navbar.hidden)
 screen_change(screen.receiptAmount);	
 		
 // draw friends list
-var ysep = 85;
-var ypos = header_height+(ysep*4)
-var diff = room_height-ypos+ysep;
-var yy = ypos+(diff*friendsbar_yoff_start);
+// var ysep = 85;
+// var ypos = header_height+(ysep*4)
+// var diff = room_height-ypos+ysep;
+// var yy = ypos+(diff*friendsbar_yoff_start);
 
 // draw_submenu_friends_list(yy,room_width,6)
-
 
 #region delete expense
 
 var ww = 170;
-var hh = 95;
+var hh = 80;
 var xx = 5;
 var yy = room_height-hh-5;
 
@@ -132,7 +131,7 @@ if draw_button_trash(xx,yy,ww,hh,ico_trash1,c_red,screen.splitCost,navbar.hidden
 var submit = 1;
 	
 var ww = 350;
-var hh = 95;
+var hh = 80;
 var xx = 185;
 var yy = room_height-hh-5;
 var height = 50;

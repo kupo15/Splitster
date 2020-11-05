@@ -60,6 +60,10 @@ repeat 2
 		if click_region_released(xpos,0,region,region,true,submenu)
 		screen_goto_prev();
 		}
+	else if header_type == headerType.trash
+		{
+		draw_icon_height_centered(ico_trash3,0,xpos-20,0,region,region,40,1); // trash icon
+		}
 		
 	var header_type = header_right;
 	var xpos = room_width-region;

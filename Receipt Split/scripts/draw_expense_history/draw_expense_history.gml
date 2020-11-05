@@ -43,7 +43,7 @@ for(var i=0;i<pos_end;i++)
 	
 	var date = expense_pointer.date;
 	var month = date_get_month(date);
-	var month_str = funct_convert_month(month-1,true);
+	var month_str = funct_convert_month(month,true);
 	var year = date_get_year(date);
 
 	//draw_text_height(300,yy+off_pos+25,month,30)
@@ -124,5 +124,5 @@ if androidBack
 	}
 	
 // draw the 3 bars
-draw_screen_header(headerType.back,headerType.none,"Expense History");
+draw_screen_header(headerType.back,headerType.none,"Event History");
 }
