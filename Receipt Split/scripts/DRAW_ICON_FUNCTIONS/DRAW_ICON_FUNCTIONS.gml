@@ -61,3 +61,4 @@ var r = ww*0.5;
 draw_circle_color(xx+xoff,yy+yoff,r,col,col,false); // draw circle
 draw_icon_height_centered(spr,ind,xx+xoff-r,yy+yoff-r,ww,hh,hh*0.4,1);
 }
+	

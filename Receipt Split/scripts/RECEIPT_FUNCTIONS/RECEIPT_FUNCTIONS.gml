@@ -3,6 +3,13 @@ function scr_receipt_create(desc,amt) {
 /// @param [description
 /// @param price]
 
+if argument[0] == undefined
+desc = "";
+
+if argument[1] == undefined
+amt = "";
+
+// create struct
 active_receipt = {
 	
 description: "",
@@ -14,28 +21,12 @@ split: [
 		memberId: profileInfo, 
 		paid: true,
 		share: 0,
-		},
-		/*{
-		memberId: profileInfo, 
-		paid: false,
-		share: 0,
-		},
-		{
-		memberId: profileInfo, 
-		paid: true,
-		share: 10,
-		},*/
-	
+		},	
        ]
 
 }
 
-if desc == undefined
-desc = "";
-
-if amt == undefined
-amt = "";
-
+// assign values
 receipt_name = desc;
 receipt_price = amt;
 receipt_index = array_length(active_expense.receiptList);

@@ -1,11 +1,9 @@
 
 function draw_splitcost() {
 	
+draw_clear(c_lt_gray);
+
 var box_col = c_white;	
-var bg_col = c_lt_gray;
-
-draw_rectangle_color(0,0,room_width,room_height,bg_col,bg_col,bg_col,bg_col,false);
-
 draw_screen_header(headerType.back,headerType.none,"Split Cost");
 
 if kvActive

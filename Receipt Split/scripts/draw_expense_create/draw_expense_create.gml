@@ -1,9 +1,8 @@
 
 function draw_expense_create() {
+var bg_col = c_lt_gray;
+draw_clear(bg_col);
 	
-// draw the 3 bars
-draw_screen_header(headerType.back,headerType.none,"Expenses");
-
 // entry
 if kvActive
 switch textboxIndex
@@ -11,22 +10,6 @@ switch textboxIndex
 	case 0: event_name = string_capitalize(keyboard_string,200); break;
 	}
 	
-// draw Event Name
-var ysep = 50;
-var height = 50;
-var xx = 30;
-var yy = header_height+10;
-var ww = room_width;
-var col = make_color_rgb(28,194,159);
-var text_yoff = (ysep-height)*0.5;
-
-draw_set_halign(fa_left);
-draw_text_height_ext_cursor(xx+5,yy+text_yoff+(0*ysep),event_name,"Enter a description",-1,ww,0,height,0);
-draw_line_pixel(xx,yy+height+10+(0*ysep),ww,2,c_gray,0.8); // draw separating line
-
-if click_region_released(0,yy+(0*ysep),ww,ysep+10,true,navbar.hidden)
-click_textbox_set(event_name,0,kbv_type_default);
-
 // draw Receipt label
 var ysep = 50;
 var height = 50;
@@ -42,14 +25,13 @@ draw_set_halign(fa_center);
 #region draw receipts
 var height = 30;
 var ysep = 30;
-var xx = 30;
+var xx = 15;
 var yy = 180;
 var ww = room_width-xx-xx;
 var receipt_height = 100;
 var receipt_sep = 110;
-var text_yoff = (receipt_height-(height*2))*0.5;
 
-var rows = 4;
+var rows = 5;
 var hh = rows*receipt_sep;
 var list_size = array_length(active_expense.receiptList);
 var pos_start = floor(receipt_list_offset);
@@ -62,13 +44,42 @@ for(var i=pos_start;i<pos_end;i++)
 	var off_pos = (off_ind*receipt_sep);
 	var pointer = active_expense.receiptList[i];
 	
-	draw_roundrect(xx,yy+off_pos,xx+ww,yy+off_pos+receipt_height-1,true);
+	draw_textbox(xx,yy+off_pos,ww,receipt_height-1,true);
 
 	var name = pointer.description;
-	var price = currency_symbol[pointer.currency]+pointer.price;
-	draw_text_height(xx+10,yy+off_pos+text_yoff+(0*ysep),"Name: "+string(name),height);
-	draw_text_height(xx+10,yy+off_pos+text_yoff+(1*ysep),"Price: "+string(price),height);
+	var price = currency_symbol[pointer.currency]+string(pointer.price);
+	
+	draw_set_halign(fa_left);
+	draw_text_height(xx+20,yy+off_pos+(1*ysep),name,height);
 
+	draw_text_height(xx+5,yy+off_pos+5,"#"+string(i+1),20,fn_italic); // receipt number
+	
+	var paidby_str = "Paid by: ";
+	var num = array_length(pointer.split);
+	for(var n=0;n<num;n++)
+		{
+		var receiptPointer = pointer.split[n];
+		var paid = receiptPointer.paid;
+		
+		var profilePointer = receiptPointer.memberId;
+		var name = profilePointer.dispName;
+
+		if !paid
+		continue;	
+		
+		if n > 0
+		paidby_str += ", ";
+		
+		paidby_str += name;
+		}
+		
+	var abbr = string_abbreviate(paidby_str,350,height*0.75,"...");
+	draw_text_height(xx+20,yy+off_pos+(2.5*ysep),abbr,height*0.75,fn_italic);
+	
+	// draw price
+	draw_set_halign(fa_right);
+	draw_text_height_color(xx+ww-30,yy+off_pos+(1*ysep),price,c_red,height);
+		
 	// click released on event
 	if click_region_released_clamp_array(xx,yy,off_pos,ww,receipt_height,hh,mb_left,true,navbar.hidden,i,active_expense.receiptList,undefined)
 		{
@@ -86,6 +97,7 @@ for(var i=pos_start;i<pos_end;i++)
 		}
 	}
 	
+draw_rectangle_color(0,0,room_width,yy,bg_col,bg_col,bg_col,bg_col,false);	
 #endregion
 	
 #region scrolling
@@ -98,28 +110,39 @@ var sub = navbar.hidden;
 funct_screen_scrolling(xx,yy,ww,hh,receipt_sep,list_size,rows,offset_start_pointer,offset_pointer,scrollbar_index,sub);
 #endregion
 
+#region draw Event Name
+var ysep = 50;
+var height = 50;
+var xx = 30;
+var yy = header_height+10;
+var ww = room_width;
+var col = make_color_rgb(28,194,159);
+var text_yoff = (ysep-height)*0.5;
+
+draw_set_halign(fa_left);
+draw_text_height_ext_cursor(xx+5,yy+text_yoff+(0*ysep),event_name,"Enter event name",-1,ww,0,height,0);
+draw_line_pixel(xx,yy+height+10+(0*ysep),ww,2,c_gray,0.8); // draw separating line
+
+if click_region_released(0,yy+(0*ysep),ww,ysep+10,true,navbar.hidden)
+click_textbox_set(event_name,0,kbv_type_default);
+#endregion
+
 #region draw add expense button
-var xx = 20;
-var yy = 630;
+var xx = 15;
+var yy = 730;
 var ww = room_width-xx-xx;
-var hh = 200;
-var ysep = 60;
-var height = 60;
-var text_yoff = (hh-(height*2))*0.5;
+var hh = 100;
+var height = 50;
 
-draw_roundrect(xx,yy,xx+ww,yy+hh,true);
-
-draw_set_halign(fa_center);
-draw_text_height(xx+(ww*0.5),yy+text_yoff+(0*ysep),"Click to add",height);
-draw_text_height(xx+(ww*0.5),yy+text_yoff+(1*ysep),"Receipt",height);
-
-if click_region_released(xx,yy,ww,hh,true,navbar.hidden)
+if click_button(xx,yy,"Create Receipt",height,c_black,ww,hh,c_white,true,false,navbar.hidden)
 	{
 	scr_receipt_create();
 	
 	screen_change(screen.receiptCreate);
 	click_textbox_set(receipt_price,0,kbv_type_numbers);
 	}
+	
+draw_plus_button(xx+83,yy-4+(hh*0.5),70,false);
 #endregion
 
 #region delete expense
@@ -152,7 +175,7 @@ var height = 50;
 //if screenIndex == screen.add_score
 var str = "Create Expense";
 
-if click_button(xx,yy,str,height,c_black,ww,hh,c_white,true,true,navbar.hidden)
+if click_button(xx,yy,str,height,c_black,ww,hh,c_white,true,false,navbar.hidden)
 	{
 	// debug
 	if event_name == ""
@@ -175,12 +198,16 @@ if click_button(xx,yy,str,height,c_black,ww,hh,c_white,true,true,navbar.hidden)
 	}
 #endregion
 
+// draw the 3 bars
+draw_screen_header(headerType.back,headerType.none,"Event Expenses");
+
 if androidBack
 	{
 	if !kvActive
 	screen_change(screen.home,true);
 	}
 	
+// debug
 if keyboard_check_pressed(vk_enter)
 	{
 	var price = string(irandom_range(1,10));

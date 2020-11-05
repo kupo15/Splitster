@@ -6,7 +6,7 @@ draw_roundrect_color(xx,yy,xx+ww,yy+hh,col,col,false);
 return click_region_released(xx,yy,ww,hh,true,sub);
 }
 
-function draw_textbox(xx,yy,ww,hh) {
+function draw_textbox(xx,yy,ww,hh,rounded) {
 
 /// @param xx
 /// @param yy
@@ -14,18 +14,17 @@ function draw_textbox(xx,yy,ww,hh) {
 /// @param height
 /// @param [round]
 
-var rounded = false;
 
-if argument_count == 5
-var rounded = argument[4];
+if argument[4] == undefined
+rounded = false;
 
 var col = make_color_rgb(232,236,255);
+var col = c_white;
 
 if rounded
-draw_rectangle_color(xx,yy,xx+ww,yy+hh,col,col,col,col,false);
-else
 draw_roundrect_color(xx,yy,xx+ww,yy+hh,col,col,false);
-
+else
+draw_rectangle_color(xx,yy,xx+ww,yy+hh,col,col,col,col,false);
 
 }
 

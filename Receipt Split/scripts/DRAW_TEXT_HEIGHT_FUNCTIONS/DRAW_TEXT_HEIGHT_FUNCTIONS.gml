@@ -20,6 +20,26 @@ var alpha = draw_get_alpha();
 return draw_text_height(xx,yy+yoff,str,height,font);
 }
 
+function draw_text_height_middled_color(xx,yy,str,hh,col,height,font) {
+/// @param xx
+/// @param yy
+/// @param str
+/// @param region_height
+/// @param height
+/// @param color
+/// @param [font]
+
+var int = argument[6];
+
+var yoff = abs(height-hh)*0.5;
+var sep = -1;
+var w = -1;
+var angle = 0;
+var alpha = draw_get_alpha();
+
+return draw_text_height_color(xx,yy+yoff,str,col,height,font);
+}
+
 function draw_text_height(xx,yy,str,height,font) {
 /// @param xx
 /// @param yy
