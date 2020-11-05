@@ -3,4 +3,6 @@ draw_set_color(c_black);
 
 ini_config();
 ini_create();
+json_data_load();
+
 

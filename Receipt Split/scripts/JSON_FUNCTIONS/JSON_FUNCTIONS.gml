@@ -17,6 +17,7 @@ if file_exists(_filename)
 else
 	{
 	root_data_create();	
+	ini_debug();
 	db(string(_filename)+" not found > creating data structures");
 	}
 }

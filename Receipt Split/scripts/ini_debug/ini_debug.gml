@@ -6,12 +6,12 @@ randomise();
 root_data_create();
 
 // debug friendslist
-repeat 11
+repeat 3
 scr_friend_create("",undefined);
 scr_friend_create("z",true);
 
 // debug event history
-for(var i=0;i<15;i++)
+for(var i=0;i<3;i++)
 	{
 	// create expense
 	var str = "Event "+string(i);

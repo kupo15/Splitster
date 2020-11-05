@@ -146,7 +146,7 @@ var str = "Create Receipt";
 draw_set_alpha(0.5+(0.5*submit));
 
 // clicked submit
-if click_button(xx,yy,str,height,c_black,ww,hh,c_white,true,true,navbar.hidden) || keyboard_check_released(vk_enter)
+if click_button(xx,yy,str,height,c_black,ww,hh,c_white,true,false,navbar.hidden) || keyboard_check_released(vk_enter)
 	{
 	scr_receipt_add(receipt_index);
 	

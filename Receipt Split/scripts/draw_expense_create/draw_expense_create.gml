@@ -52,7 +52,7 @@ for(var i=pos_start;i<pos_end;i++)
 	draw_set_halign(fa_left);
 	draw_text_height(xx+20,yy+off_pos+(1*ysep),name,height);
 
-	draw_text_height(xx+5,yy+off_pos+5,"#"+string(i+1),20,fn_italic); // receipt number
+	draw_text_height(xx+5,yy+off_pos+5,"receipt #"+string(i+1),20,fn_italic); // receipt number
 	
 	var paidby_str = "Paid by: ";
 	var num = array_length(pointer.split);
@@ -136,7 +136,7 @@ var height = 50;
 
 if click_button(xx,yy,"Create Receipt",height,c_black,ww,hh,c_white,true,false,navbar.hidden)
 	{
-	scr_receipt_create();
+	scr_receipt_create(profileInfo);
 	
 	screen_change(screen.receiptCreate);
 	click_textbox_set(receipt_price,0,kbv_type_numbers);
@@ -211,7 +211,7 @@ if androidBack
 if keyboard_check_pressed(vk_enter)
 	{
 	var price = string(irandom_range(1,10));
-	scr_receipt_create("",price);
+	scr_receipt_create(profileInfo,"",price);
 	
 	var ind = array_length(active_expense.receiptList);
 	scr_receipt_add(ind);

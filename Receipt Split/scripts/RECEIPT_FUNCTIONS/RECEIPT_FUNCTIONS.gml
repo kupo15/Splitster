@@ -1,12 +1,13 @@
 
-function scr_receipt_create(desc,amt) {
+function scr_receipt_create(userStruct,desc,amt) {
+/// @param userStruct
 /// @param [description
 /// @param price]
 
-if argument[0] == undefined
+if argument[1] == undefined
 desc = "";
 
-if argument[1] == undefined
+if argument[2] == undefined
 amt = "";
 
 // create struct
@@ -15,16 +16,11 @@ active_receipt = {
 description: "",
 currency: currency_symbol[currency_index],
 price: "",
-
-split: [
-		{// auto add yourself
-		memberId: profileInfo, 
-		paid: true,
-		share: 0,
-		},	
-       ]
-
+split: [],
 }
+
+// add initial member
+scr_receipt_member_add(active_receipt,userStruct,true);
 
 // assign values
 receipt_name = desc;
@@ -79,4 +75,16 @@ receipt_index = undefined;
 active_receipt = undefined;
 	
 vk_hide();
+}
+	
+function scr_receipt_member_add(receiptPointer,userStruct,defaultPaid) {
+	
+var ind = array_length(receiptPointer.split);
+receiptPointer.split[ind] = {// auto add yourself
+	
+	memberId: userStruct, 
+	paid: defaultPaid,
+	share: 0,
+	}
+ 
 }
