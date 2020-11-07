@@ -27,15 +27,6 @@ function sidebar_fades() {
 
 	if submenu_menu_xpos != submenu_menu_xpos_disp
 	submenu_menu_xpos_disp = lerp(submenu_menu_xpos_disp,submenu_menu_xpos,lerp_spd);
-
-	// lerp the darken screen behind it
-	screen_darken_alpha = 1-(abs(submenu_menu_xpos_disp)/side_menu_width);
-	
-	/*switch screen_darken_value
-		{
-		case darken_index.none: screen_darken_alpha = 2; break;
-		case darken_index.sidebar: screen_darken_alpha = 1-(abs(submenu_menu_xpos_disp)/side_menu_width); break;
-		}*/
 		
 	// header delete
 	headerDeleteOffset = mode_delete;

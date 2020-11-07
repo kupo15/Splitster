@@ -40,7 +40,7 @@ repeat 2
 			submenu = navbar.sidebar;
 	
 			submenu_menu_xpos = 0;
-			screen_darken_value = darken_index.sidebar;
+			screenDarkenIndex = darkenIndex.sidebar;
 			}
 		}
 	else if header_type == headerType.dots

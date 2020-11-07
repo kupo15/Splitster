@@ -1,18 +1,32 @@
 function draw_overlay_calendar() {
 	
-//if submenu != navbar.calendar
-//exit;
+// set alpha	
+var alpha = (screenDarkenIndex == darkenIndex.calendar) || (screenDarkenIndex == darkenIndex.calendarYear);
+calendarAlpha = lerp(calendarAlpha,alpha,0.2);
+
+draw_set_alpha(calendarAlpha);
+
+var xcal = 10;
+var ycal = 200;
+var ysep = 70;
+var rows = 9;
+
+var wcal = room_width-xcal-xcal;
+var hcal = rows*ysep;
+var col = c_white;
+
+draw_roundrect_color(xcal,ycal,xcal+wcal,ycal+hcal,col,col,false);
 
 // clicked on year
+var xx = 20;
+var yy = ycal;
+var xsep = 70;
+
 draw_set_halign(fa_center);
 
-var xx = 20;
-var yy = 225;
-var xsep = 70;
-var ysep = 70;
-
-if click_region_released(0,yy,room_width,ysep,true,navbar.calendar)
+if click_region_released(0,yy,room_width,ysep,true,navbar.calendar,calendarAlpha)
 	{
+	screenDarkenIndex = darkenIndex.calendarYear;
 	submenu = navbar.calendarYearSelect;
 	alpha_lerp_end = 1;
 	yearSelectOffset = monthOffsetEnd;
@@ -32,7 +46,7 @@ for(var i=0;i<7;i++)
 		case 6: var str = "S"; break;
 		}
 		
-	draw_text_height_middled(xx+(xsep*0.5)+((i mod 7)*xsep),yy+ysep,str,ysep,35);
+	draw_text_height_middled(xx+(xsep*0.5)+((i mod 7)*xsep),yy+ysep,str,ysep,35,calendarAlpha);
 	}
 
 // update viewing month
@@ -67,8 +81,9 @@ for(var ii=pos_start;ii<pos_end;ii++) // draw three months
 		{
 		var calendar_day = i-start_day+1;
 		var yoff = floor(i/7);
+		var ypos_off = (ysep*2)+(yoff*ysep);
 		
-		draw_text_height_middled(xx+(xsep*0.5)+((i mod 7)*xsep)+off_pos,yy+(ysep*2)+(yoff*ysep),calendar_day,ysep,35); // draw days
+		draw_text_height_middled(xx+(xsep*0.5)+((i mod 7)*xsep)+off_pos,yy+ypos_off,calendar_day,ysep,35); // draw days
 	
 		var curr_date = date_create_datetime(yearParse,curr_month,calendar_day,1,1,1);
 		var span = date_day_span(start_date,curr_date);
@@ -77,12 +92,12 @@ for(var ii=pos_start;ii<pos_end;ii++) // draw three months
 		// draw selected day
 		if daySelectSpan == day_span_test
 			{
-			draw_set_alpha(0.3);
-			draw_circle_color(xx+(xsep*0.5)+((i mod 7)*xsep)+off_pos,yy+(ysep*0.5)+(ysep*2)+(yoff*ysep),xsep*0.5,c_aqua,c_aqua,false);
-			draw_set_alpha(1);
+			draw_set_alpha(0.3*calendarAlpha);
+			draw_circle_color(xx+(xsep*0.5)+((i mod 7)*xsep)+off_pos,yy+ypos_off+(ysep*0.5),xsep*0.5,c_aqua,c_aqua,false);
+			draw_set_alpha(calendarAlpha);
 			}
 	
-		if click_region_released(xx+((i mod 7)*xsep)+off_pos,yy+(ysep*2)+(yoff*ysep),xsep,ysep,true,navbar.calendar)
+		if click_region_released(xx+((i mod 7)*xsep)+off_pos,yy+ypos_off,xsep,ysep,true,navbar.calendar,calendarAlpha)
 			{
 			dayParse = calendar_day; // set day within the month
 				
@@ -146,42 +161,37 @@ if abs(scrollbar_speed[scrollbar_index]) == 0
 	}
 
 #region draw Cancel button
-var submit = false;
-var ww = 200;
 var hh = ysep;
+var yoff = 8;
+
 var xx = room_width*0.5;
-var xoff = -100;
-var yoff = 8.5;
+var ww = 200;
+var xoff = -ww*0.5;
 
 // draw Submit button
-if click_button(xx+xoff,yy+(yoff*ysep),"Cancel",50,c_black,ww,hh,undefined,false,false,navbar.calendar)
+if click_button(xx+xoff,yy+(yoff*ysep),"Cancel",50,c_black,ww,hh,undefined,false,false,navbar.calendar,calendarAlpha)
 androidBack = true;
 	
 #endregion
 
 #region OK button
 var ww = 120;
-var hh = ysep;
 var xx = room_width*0.8;
-var xoff = -60;
-var yoff = 8.5;
+var xoff = -ww*0.5;
 
 // draw Submit button
-if click_button(xx+xoff,yy+(yoff*ysep),"OK",50,c_black,ww,hh,undefined,false,false,navbar.calendar)
+if click_button(xx+xoff,yy+(yoff*ysep),"OK",50,c_black,ww,hh,undefined,false,false,navbar.calendar,calendarAlpha)
 	{
-	submit = true;
+	calendarDateEntry = date_create_datetime(dateSelectYear,dateSelectMonth,dateSelectDay,1,1,1);
 	androidBack = true;
 	}
 
 #endregion
 
-draw_year_select();
+draw_year_select(xcal,ycal,wcal,hcal);
 
 if androidBack
-	{
-	if submit
-	return date_create_datetime(dateSelectYear,dateSelectMonth,dateSelectDay,1,1,1);
-	
+	{	
 	// year select
 	if submenu == navbar.calendarYearSelect
 		{
@@ -189,11 +199,12 @@ if androidBack
 		alpha_lerp_end = 0;
 		}
 	else
-		{
-		screen_goto_prev();
+		{ // get out of calendar
+		screenDarkenIndex = darkenIndex.none;
+		submenu = navbar.hidden;
 		datePointer = noone;
 		}
 	}
 	
-return undefined;
+draw_set_alpha(1);
 }

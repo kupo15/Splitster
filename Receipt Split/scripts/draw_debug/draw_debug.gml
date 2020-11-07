@@ -20,8 +20,8 @@ draw_set_halign(fa_left);
 
 debug_draw_screens(xx,yy,debugyoff,sep,height);
 
-draw_text_height(xx,yy+((debugyoff+0)*sep),"friends_list_off: "+string(master_friends_list_offset),height);
-draw_text_height(xx,yy+((debugyoff+1)*sep),"friends_list_off_st: "+string(master_friends_list_offset_start),height);
+draw_text_height(xx,yy+((debugyoff+0)*sep),"screenDarkenIndex: "+string(screenDarkenIndex),height);
+draw_text_height(xx,yy+((debugyoff+1)*sep),"screenDarkenAlpha: "+string(screenDarkenAlpha),height);
 draw_text_height(xx,yy+((debugyoff+2)*sep),"kvLastString: "+string(kvLastString),height);
 draw_text_height(xx,yy+((debugyoff+3)*sep),"expense_index: "+string(expense_index),height);
 draw_text_height(xx,yy+((debugyoff+4)*sep),"receipt_index: "+string(receipt_index),height);

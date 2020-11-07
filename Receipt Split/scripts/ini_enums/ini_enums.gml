@@ -66,9 +66,11 @@ newFriend,
 	
 }
 
-enum darken_index {
+enum darkenIndex {
 none,
-sidebar
+sidebar,
+calendar,
+calendarYear
 }
 
 enum currencySymbol {

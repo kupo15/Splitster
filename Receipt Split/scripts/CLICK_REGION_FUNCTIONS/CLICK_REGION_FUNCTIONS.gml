@@ -94,10 +94,13 @@ function scr_cursor_position_set(str,scale) {
 }
 	
 // CLICK REGION FUNCTIONS
-function click_region_home(x_left,y_top,ww,hh,button,highlight,condition,sub,array_pos) {
+function click_region_home(x_left,y_top,ww,hh,button,highlight,condition,sub,array_pos,alphaValue) {
+	
+if argument[9] == undefined
+alphaValue = 1;
 	
 var col = c_yellow;
-var alpha = 0.3;
+var alpha = 0.3*alphaValue;
 
 var mx = mouse_x;
 var my = mouse_y;
@@ -126,7 +129,7 @@ if within_region
 			
 		draw_set_alpha(alpha);
 		draw_rectangle_colour(x_left,y_top,x_left+ww,y_top+hh,col,col,col,col,false);
-		draw_set_alpha(1);
+		draw_set_alpha(alphaValue);
 		}
 		
 	if test_failed
@@ -153,12 +156,12 @@ if within_region
 return false;
 }
 
-function click_region_released(x_left,y_top,ww,hh,highlight,sub) {
+function click_region_released(x_left,y_top,ww,hh,highlight,sub,alpha) {
 	
 var button = mb_left;	
 var condition = mouse_check_button_released(button);
 	
-return click_region_home(x_left,y_top,ww,hh,button,highlight,condition,sub,undefined);
+return click_region_home(x_left,y_top,ww,hh,button,highlight,condition,sub,undefined,alpha);
 }
 
 function click_region_pressed(x_left,y_top,ww,hh,highlight,sub) {

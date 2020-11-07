@@ -53,13 +53,16 @@ dateSelectMonth = 0;
 dateSelectYear = 0;
 daySelectSpan = 0;
 
+calendarAlpha = 0;
+calendarAlphaEnd = 0;
+
 // for current viewed month
 dayParse = 0;
 monthParse = 0;
 yearParse = 0;
 
-calendarDateEntry = date_create_datetime(1970,1,1,1,1,1);
-scr_set_date_offsets(calendarDateEntry);
+var temp = date_create_datetime(1970,1,1,1,1,1);
+scr_set_date_offsets(temp);
 
 alpha_lerp = 0;
 alpha_lerp_end = 0;
@@ -71,8 +74,8 @@ submenu_menu_xpos = -side_menu_width-30;
 submenu_menu_xpos_disp = submenu_menu_xpos;
 	
 darken_screen = false;
-screen_darken_alpha = 0;
-screen_darken_value = 0;
+screenDarkenAlpha = 0;
+screenDarkenIndex = 0;
 
 // offsets
 navbar_yoff = 1;

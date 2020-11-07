@@ -57,15 +57,15 @@ draw_darken_screen();
 draw_nav_bar();
 draw_sidebar_main_menu();
 
-var date = draw_overlay_calendar();
-
+draw_overlay_calendar();
+/*
 if date != undefined
 	{
 	db(date_get_month(date))
 	db(date_get_day(date))
 	db(date_get_year(date))
 	//json_save_array(save_data,ROOT_data_struct);	
-	}
+	}*/
 	
 draw_popup_par();
 	

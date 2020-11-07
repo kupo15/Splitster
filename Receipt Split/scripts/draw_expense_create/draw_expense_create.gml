@@ -149,6 +149,15 @@ draw_plus_button(xx+83,yy-4+(hh*0.5),70,false);
 var yy = 750;
 var hh = 90;
 var col = c_white;
+var date_pointer = active_expense.date;
+
+// clicked on calendar
+if draw_dialogue_box(xx,yy,ww,hh,col,navbar.hidden)
+	{
+	scr_set_date_offsets(date_pointer);
+	submenu = navbar.calendar;
+	
+	}
 
 draw_set_halign(fa_left)
 draw_text_height(xx+10,yy+10,"Calendar",25);
@@ -156,7 +165,6 @@ draw_text_height(xx+10,yy+10,"Calendar",25);
 var str_ww = string_width_height("Calendar",25);
 draw_icon_height_centered(spr_ico_calendar,0,xx+10,yy+40,str_ww,45,45,1); // draw calendar icon
 
-var date_pointer = active_expense.date;
 var day = date_get_day(date_pointer);
 var month = date_get_month(date_pointer);
 var year = date_get_year(date_pointer);
@@ -166,11 +174,11 @@ var date_str = string(month_str)+" "+string(day)+", "+string(year);
 
 draw_text_height_color(xx+115,yy+50,date_str,c_gray,35);
 
-// clicked on calendar
-if draw_dialogue_box(xx,yy,ww,hh,col,navbar.hidden)
+// pressed OK in calendar
+if calendarDateEntry != undefined
 	{
-	scr_set_date_offsets(date_pointer);
-	submenu = navbar.calendar;
+	active_expense.date = calendarDateEntry;
+	calendarDateEntry = undefined;
 	}
 	
 #region delete expense
@@ -233,7 +241,7 @@ draw_screen_header(headerType.back,headerType.none,"Event Expenses");
 
 if androidBack
 	{
-	if !kvActive
+	if !kvActive && (submenu == navbar.hidden)
 	screen_change(screen.home,true);
 	}
 	
