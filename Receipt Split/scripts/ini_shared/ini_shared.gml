@@ -48,9 +48,18 @@ mouse_ydist = 0;
 mouse_xprev = 0;
 mouse_yprev = 0;
 
-daySpanSelect = 0;
+dateSelectDay = 0;
+dateSelectMonth = 0;
+dateSelectYear = 0;
+daySelectSpan = 0;
+
+// for current viewed month
+dayParse = 0;
 monthParse = 0;
 yearParse = 0;
+
+calendarDateEntry = date_create_datetime(1970,1,1,1,1,1);
+scr_set_date_offsets(calendarDateEntry);
 
 alpha_lerp = 0;
 alpha_lerp_end = 0;
@@ -75,6 +84,7 @@ monthOffsetEnd = 0;
 
 yearSelectOffset = 0;
 
+// for 3 column calendar
 dayOffset = 0;
 dayOffsetStart = 0;
 dayOffsetEnd = 0;

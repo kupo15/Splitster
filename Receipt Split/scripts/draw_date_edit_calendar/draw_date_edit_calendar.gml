@@ -57,7 +57,7 @@ function draw_date_edit_calendar() {
 		var start_day = date_get_weekday(datetime);
 	
 		// draw calendar month
-		var month_disp = funct_convert_date(monthParse-1,true,-1,-1);
+		var month_disp = funct_convert_date(monthParse,true,-1,-1);
 		var year_disp = yearParse;
 
 		if ii = pos_start
@@ -72,7 +72,7 @@ function draw_date_edit_calendar() {
 			var curr_date = date_create_datetime(yearParse,monthParse,1,1,1,1); // without days
 			var day_span = round(date_day_span(start_date,curr_date))+(i-start_day+1);
 		
-			if daySpanSelect == day_span //(i-start_day+1) == dayOffsetEnd
+			if daySelectSpan == day_span //(i-start_day+1) == dayOffsetEnd
 			// if (i-start_day+1) == dayOffsetEnd
 				{
 				draw_set_alpha(0.3);
@@ -83,7 +83,7 @@ function draw_date_edit_calendar() {
 			if click_region_released(xx+((i mod 7)*xsep)+off_pos,yy+ysep+(yoff*ysep),xsep,ysep,true,navbar.hidden)
 				{
 				dayOffsetEnd = i-start_day+1; // set day
-				daySpanSelect = round(date_day_span(start_date,curr_date))+dayOffsetEnd; // update day span
+				daySelectSpan = round(date_day_span(start_date,curr_date))+dayOffsetEnd; // update day span
 				}
 			}
 		}

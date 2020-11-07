@@ -42,7 +42,7 @@
 #macro res_bleed_xx 15
 #macro res_bleed_yy 10
 
-#macro start_date date_create_datetime(1970,1,1,0,0,0)
+#macro start_date date_create_datetime(1970,1,1,1,1,1)
 
 #macro dialogue draw_dialogue_box(xx,yy,ww,hh,col,sub)
 #macro db show_debug_message

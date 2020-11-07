@@ -44,7 +44,7 @@ function draw_year_select() {
 	
 		draw_roundrect_color(xx+15+((i mod 3)*xsep),yy+80+(floor(i/3)*ysep),xx+15+xsep-25+((i mod 3)*xsep),yy+80+ysep-15+(floor(i/3)*ysep),col,col,false); // draw boxes
 	
-		var mon_disp = funct_convert_date(i,false,-1,-1);
+		var mon_disp = funct_convert_date(i+1,false,-1,-1);
 		draw_text_height(xx+xoff+((i mod 3)*xsep),yy+90+(floor(i/3)*ysep),mon_disp,50); // draw month
 	
 		if click_region_released(xx+15+((i mod 3)*xsep),yy+80+(floor(i/3)*ysep),xsep-25,ysep-15,true,submenu)
@@ -54,7 +54,7 @@ function draw_year_select() {
 			}
 		}
 
-	if clickout_region(xx,yy,ww,hh,noone,navbar.year_select)
+	if clickout_region(xx,yy,ww,hh,noone,navbar.calendarYearSelect)
 		{
 		submenu = navbar.hidden;
 		alpha_lerp_end = 0;

@@ -74,15 +74,20 @@ function debug_draw_calendar(xx,yy,ind,sep,height) {
 draw_text_height(xx,yy+((ind+0)*sep),"monthOffsetStart: "+string(monthOffsetStart),height);
 draw_text_height(xx,yy+((ind+1)*sep),"monthOffset: "+string(monthOffset),height);
 draw_text_height(xx,yy+((ind+2)*sep),"monthOffsetEnd: "+string(monthOffsetEnd),height);
-draw_text_height(xx,yy+((ind+3)*sep),"monthParse: "+string(monthParse),height);
 
-draw_text_height(xx,yy+((ind+5)*sep),"dayOffset: "+string(dayOffset),height);
-draw_text_height(xx,yy+((ind+6)*sep),"dayOffsetEnd: "+string(dayOffsetEnd),height);
-draw_text_height(xx,yy+((ind+7)*sep),"daySpan: "+string(daySpanSelect),height);
+draw_text_height(xx,yy+((ind+4)*sep),"dayOffset: "+string(dayOffset),height);
+draw_text_height(xx,yy+((ind+5)*sep),"dayOffsetEnd: "+string(dayOffsetEnd),height);
+draw_text_height(xx,yy+((ind+6)*sep),"daySelectSpan: "+string(daySelectSpan),height);
 
-draw_text_height(xx,yy+((ind+9)*sep),"yearParse: "+string(yearParse),height);
+draw_text_height(xx,yy+((ind+8)*sep),"yearParse: "+string(yearParse),height);
+draw_text_height(xx,yy+((ind+9)*sep),"monthParse: "+string(monthParse),height);
+draw_text_height(xx,yy+((ind+10)*sep),"dayParse: "+string(dayParse),height);
 
-debugyoff += 11;
+draw_text_height(xx,yy+((ind+12)*sep),"dateSelectDay: "+string(dateSelectDay),height);
+draw_text_height(xx,yy+((ind+13)*sep),"dateSelectMonth: "+string(dateSelectMonth),height);
+draw_text_height(xx,yy+((ind+14)*sep),"dateSelectYear: "+string(dateSelectYear),height);
+
+debugyoff += 16;
 }
 
 function debug_draw_mouse(xx,yy,ind,sep,height) {
