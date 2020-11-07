@@ -23,12 +23,10 @@ debug_draw_screens(xx,yy,debugyoff,sep,height);
 draw_text_height(xx,yy+((debugyoff+0)*sep),"friends_list_off: "+string(master_friends_list_offset),height);
 draw_text_height(xx,yy+((debugyoff+1)*sep),"friends_list_off_st: "+string(master_friends_list_offset_start),height);
 draw_text_height(xx,yy+((debugyoff+2)*sep),"kvLastString: "+string(kvLastString),height);
-draw_text_height(xx,yy+((debugyoff+3)*sep),"click_ypos: "+string(click_highlight_ypos),height);
-draw_text_height(xx,yy+((debugyoff+4)*sep),"click_index: "+string(click_highlight_index),height);
-draw_text_height(xx,yy+((debugyoff+5)*sep),"expense_index: "+string(expense_index),height);
-draw_text_height(xx,yy+((debugyoff+6)*sep),"receipt_index: "+string(receipt_index),height);
+draw_text_height(xx,yy+((debugyoff+3)*sep),"expense_index: "+string(expense_index),height);
+draw_text_height(xx,yy+((debugyoff+4)*sep),"receipt_index: "+string(receipt_index),height);
 
-debugyoff = 13;
+debugyoff = 11;
 //debug_draw_click_highlight(xx,yy,debugyoff,sep,height);
 //debug_draw_vk(xx,yy,debugyoff,sep,height);
 //debug_draw_textbox(xx,yy,debugyoff,sep,height);

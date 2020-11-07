@@ -1,7 +1,7 @@
 
 function draw_home() {
 draw_clear(c_lt_gray);
-exit
+
 // draw the 3 bars
 draw_screen_header(headerType.bars,headerType.none,"Home");
 

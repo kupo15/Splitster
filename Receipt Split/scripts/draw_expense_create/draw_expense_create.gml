@@ -150,7 +150,8 @@ var yy = 750;
 var hh = 90;
 var col = c_white;
 
-draw_dialogue_box(xx,yy,ww,hh,col,navbar.hidden)
+if draw_dialogue_box(xx,yy,ww,hh,col,navbar.hidden)
+submenu = navbar.calendar;
 //screen_change(screen.edit_date);
 
 draw_set_halign(fa_left)
@@ -186,6 +187,7 @@ if draw_button_trash(xx,yy,ww,hh,ico_trash1,c_red,screenIndex,navbar.hidden,true
 	screen_change(screen.home,true);
 	exit;
 	}
+	
 #endregion
     
 #region Create

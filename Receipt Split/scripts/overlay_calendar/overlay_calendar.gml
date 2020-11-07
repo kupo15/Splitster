@@ -1,7 +1,7 @@
 function draw_overlay_calendar() {
 	
-//if submenu != navbar.calendar
-//exit;
+if submenu != navbar.calendar
+exit;
 
 // clicked on year
 draw_set_halign(fa_center);
@@ -12,7 +12,7 @@ var xsep = 72;
 var ysep = 85;
 var height = 80;
 
-if click_region_released(0,yy-20,room_width,ysep,true,navbar.hidden)
+if click_region_released(0,yy-20,room_width,ysep,true,navbar.calendar)
 	{
 	submenu = navbar.calendarYearSelect;
 	alpha_lerp_end = 1;
@@ -38,8 +38,11 @@ for(var i=0;i<7;i++)
 	}
 
 // update viewing month
-monthParse = (monthOffsetEnd mod 12)+1;
-yearParse = 1970+floor(monthOffsetEnd/12);
+if !mouse_check_button(mb_left)
+	{
+	monthParse = (round(monthOffsetEnd) mod 12)+1;
+	yearParse = 1970+floor(monthOffsetEnd/12);
+	}
 		
 // draw month
 var pos_start = floor(monthOffset);
@@ -80,7 +83,7 @@ for(var ii=pos_start;ii<pos_end;ii++) // draw three months
 			draw_set_alpha(1);
 			}
 	
-		if click_region_released(xx+((i mod 7)*xsep)+off_pos,yy+ysep+(yoff*ysep),xsep,ysep,true,navbar.hidden)
+		if click_region_released(xx+((i mod 7)*xsep)+off_pos,yy+ysep+(yoff*ysep),xsep,ysep,true,navbar.calendar)
 			{
 			dayParse = calendar_day; // set day within the month
 				
@@ -104,7 +107,7 @@ var offset_pointer = [self,"monthOffsetEnd"];
 var scrollbar_index = 0;
 var list_size = 3600;
 
-funct_screen_scrolling_hor(xx,yy+ysep,7*xsep,6*ysep,7*xsep,list_size,1,offset_start_pointer,offset_pointer,scrollbar_index,navbar.hidden);
+funct_screen_scrolling_hor(xx,yy+ysep,7*xsep,6*ysep,7*xsep,list_size,1,offset_start_pointer,offset_pointer,scrollbar_index,navbar.calendar);
 #endregion
 
 if monthOffsetEnd < 0
@@ -162,7 +165,7 @@ var str = "Submit";
 draw_text_height(xx+xoff,yy+yoff,str,90);
 
 var submit = false;
-if click_region_released(0,yy,room_width,hh,true,navbar.hidden)
+if click_region_released(0,yy,room_width,hh,true,navbar.calendar)
 	{
 	submit = true;
 	androidBack = true;
@@ -175,15 +178,12 @@ draw_year_select();
 if androidBack
 	{
 	if submit
-		{
-		var selectedDate = date_create_datetime(dateSelectYear,dateSelectMonth,dateSelectDay,1,1,1);
-		return selectedDate;
-		}
+	return date_create_datetime(dateSelectYear,dateSelectMonth,dateSelectDay,1,1,1);
 	
 	// year select
 	if submenu == navbar.calendarYearSelect
 		{
-		submenu = navbar.hidden;
+		submenu = navbar.calendar;
 		alpha_lerp_end = 0;
 		}
 	else
@@ -194,6 +194,4 @@ if androidBack
 	}
 	
 return undefined;
-
-
 }
