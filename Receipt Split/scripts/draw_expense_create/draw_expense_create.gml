@@ -150,10 +150,6 @@ var yy = 750;
 var hh = 90;
 var col = c_white;
 
-if draw_dialogue_box(xx,yy,ww,hh,col,navbar.hidden)
-submenu = navbar.calendar;
-//screen_change(screen.edit_date);
-
 draw_set_halign(fa_left)
 draw_text_height(xx+10,yy+10,"Calendar",25);
 
@@ -170,7 +166,13 @@ var date_str = string(month_str)+" "+string(day)+", "+string(year);
 
 draw_text_height_color(xx+115,yy+50,date_str,c_gray,35);
 
-
+// clicked on calendar
+if draw_dialogue_box(xx,yy,ww,hh,col,navbar.hidden)
+	{
+	scr_set_date_offsets(date_pointer);
+	submenu = navbar.calendar;
+	}
+	
 #region delete expense
 var ww = 170;
 var hh = 80;

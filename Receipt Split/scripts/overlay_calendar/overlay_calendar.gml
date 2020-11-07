@@ -1,23 +1,21 @@
 function draw_overlay_calendar() {
 	
-if submenu != navbar.calendar
-exit;
+//if submenu != navbar.calendar
+//exit;
 
 // clicked on year
 draw_set_halign(fa_center);
 
 var xx = 20;
 var yy = 225;
-var xsep = 72;
-var ysep = 85;
-var height = 80;
+var xsep = 70;
+var ysep = 70;
 
-if click_region_released(0,yy-20,room_width,ysep,true,navbar.calendar)
+if click_region_released(0,yy,room_width,ysep,true,navbar.calendar)
 	{
 	submenu = navbar.calendarYearSelect;
 	alpha_lerp_end = 1;
 	yearSelectOffset = monthOffsetEnd;
-	mouse_clear(mb_left);
 	}
 
 // draw weekdays
@@ -34,7 +32,7 @@ for(var i=0;i<7;i++)
 		case 6: var str = "S"; break;
 		}
 		
-	draw_text_height(xx+(xsep*0.5)+((i mod 7)*xsep),yy+65,str,35);
+	draw_text_height_middled(xx+(xsep*0.5)+((i mod 7)*xsep),yy+ysep,str,ysep,35);
 	}
 
 // update viewing month
@@ -57,7 +55,7 @@ for(var ii=pos_start;ii<pos_end;ii++) // draw three months
 	var year_disp = yearParse;
 
 	if ii == pos_start
-	draw_text_height(room_width*0.5,yy-15,string(month_disp)+" "+string(year_disp),70); // draw month AND year
+	draw_text_height_middled(room_width*0.5,yy,string(month_disp)+" "+string(year_disp),ysep,60); // draw month AND year
 	
 	// draw calendar days
 	var curr_month = (ii mod 12)+1;
@@ -69,7 +67,8 @@ for(var ii=pos_start;ii<pos_end;ii++) // draw three months
 		{
 		var calendar_day = i-start_day+1;
 		var yoff = floor(i/7);
-		draw_text_height_middled(xx+(xsep*0.5)+((i mod 7)*xsep)+off_pos,yy+ysep+(yoff*ysep),calendar_day,ysep,50); // draw days
+		
+		draw_text_height_middled(xx+(xsep*0.5)+((i mod 7)*xsep)+off_pos,yy+(ysep*2)+(yoff*ysep),calendar_day,ysep,35); // draw days
 	
 		var curr_date = date_create_datetime(yearParse,curr_month,calendar_day,1,1,1);
 		var span = date_day_span(start_date,curr_date);
@@ -79,11 +78,11 @@ for(var ii=pos_start;ii<pos_end;ii++) // draw three months
 		if daySelectSpan == day_span_test
 			{
 			draw_set_alpha(0.3);
-			draw_circle_color(xx+(xsep*0.5)+((i mod 7)*xsep)+off_pos,yy+(ysep*0.5)+ysep+(yoff*ysep),xsep*0.5,c_aqua,c_aqua,false);
+			draw_circle_color(xx+(xsep*0.5)+((i mod 7)*xsep)+off_pos,yy+(ysep*0.5)+(ysep*2)+(yoff*ysep),xsep*0.5,c_aqua,c_aqua,false);
 			draw_set_alpha(1);
 			}
 	
-		if click_region_released(xx+((i mod 7)*xsep)+off_pos,yy+ysep+(yoff*ysep),xsep,ysep,true,navbar.calendar)
+		if click_region_released(xx+((i mod 7)*xsep)+off_pos,yy+(ysep*2)+(yoff*ysep),xsep,ysep,true,navbar.calendar)
 			{
 			dayParse = calendar_day; // set day within the month
 				
@@ -146,26 +145,29 @@ if abs(scrollbar_speed[scrollbar_index]) == 0
 	monthOffset = monthOffsetEnd;
 	}
 
-
-#region SUBMIT button
-var ww = 300;
-var hh = 130;
-var xx = room_width*0.5-(ww*0.5);
-var yy = room_height-hh;
-var xoff = ww*0.5;
-var yoff = 7;
-var col = c_white;
-
-draw_roundrect_color(xx,yy,xx+ww,yy+hh,col,col,false); // draw button
+#region draw Cancel button
+var submit = false;
+var ww = 200;
+var hh = ysep;
+var xx = room_width*0.5;
+var xoff = -100;
+var yoff = 8.5;
 
 // draw Submit button
-draw_set_halign(fa_center);
+if click_button(xx+xoff,yy+(yoff*ysep),"Cancel",50,c_black,ww,hh,undefined,false,false,navbar.calendar)
+androidBack = true;
+	
+#endregion
 
-var str = "Submit";
-draw_text_height(xx+xoff,yy+yoff,str,90);
+#region OK button
+var ww = 120;
+var hh = ysep;
+var xx = room_width*0.8;
+var xoff = -60;
+var yoff = 8.5;
 
-var submit = false;
-if click_region_released(0,yy,room_width,hh,true,navbar.calendar)
+// draw Submit button
+if click_button(xx+xoff,yy+(yoff*ysep),"OK",50,c_black,ww,hh,undefined,false,false,navbar.calendar)
 	{
 	submit = true;
 	androidBack = true;
