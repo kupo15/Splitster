@@ -207,7 +207,7 @@ var ww = 350;
 var hh = 80;
 var xx = 185;
 var height = 40;
-var col = make_color_rgb(28,164,109); // green
+var col = c_app_green; // green
 
 //var str = "Update";
 //if screenIndex == screen.add_score

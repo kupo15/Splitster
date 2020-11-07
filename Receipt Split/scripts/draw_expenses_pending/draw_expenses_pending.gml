@@ -80,7 +80,7 @@ for(var i=pos_start;i<pos_end;i++)
 		array_sort_nested_struct(event_history_array,"date",false);
 		
 		array_delete(pending_array,i,1); // delete from list
-		app_save
+		app_save;
 		}
 	else if click_region_released(0,yy+off_pos-140,room_width,ysep,true,submenu)
 	screen_change(screen.expenseReview);

@@ -1,14 +1,11 @@
 
 function ini_debug() {
+	
 randomise();
 
 // create data structure variables
 root_data_create();
 
-// debug friendslist
-repeat 3
-scr_friend_create("",undefined);
-scr_friend_create("z",true);
 
 // debug event history
 for(var i=0;i<3;i++)
@@ -21,10 +18,10 @@ for(var i=0;i<3;i++)
 
 	// add a receipt to expense
 	var desc = choose("A","B","C","D","E","F");
-	var price = random_range(1.00,5.00);
+	var price = random_range(1,5);
 	
 	scr_receipt_create(desc,price);
-	scr_receipt_add(0);
+	scr_receipt_add(receipt_index);
 
 	array_push(event_history_array,active_expense);
 	}
@@ -35,7 +32,11 @@ active_expense = undefined;
 active_receipt = undefined;
 screen_change(screen.home,true);
 
-json_save_array(save_data,ROOT_data_struct);
+// debug friendslist
+repeat 3
+scr_friend_create("",undefined);
+scr_friend_create("z",true);
+
 
 db("debug reset");
 }

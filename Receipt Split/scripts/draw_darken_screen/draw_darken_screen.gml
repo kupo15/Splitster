@@ -20,9 +20,9 @@ switch screenDarkenIndex
 	screenDarkenIndex = darkenIndex.none; break;
 	}
 	
-// var col = merge_color(c_white,c_black,darken_screen);
 
 // lerp the darken screen behind it
+// var col = merge_color(c_white,c_black,darken_screen);
 var lerp_spd = 0.13;
 switch screenDarkenIndex
 	{

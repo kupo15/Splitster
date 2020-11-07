@@ -8,14 +8,14 @@ if argument[1] == undefined
 desc = "";
 
 if argument[2] == undefined
-amt = "";
+amt = "0";
 
 // create struct
 active_receipt = {
 	
 description: "",
 currency: currency_symbol[currency_index],
-price: "",
+price: "0",
 split: [],
 }
 

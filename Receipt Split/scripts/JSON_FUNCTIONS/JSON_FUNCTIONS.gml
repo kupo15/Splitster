@@ -1,36 +1,3 @@
-function json_load_array(_filename) {
-/// @param filename
-
-if file_exists(_filename)
-	{
-	ROOT_data_struct = LoadJSONFromFile(_filename); 
-	
-	var saveVersion = ROOT_data_struct.version;
-
-	// create data arrays
-	friendslist_array = ROOT_data_struct.friendslist;
-	event_history_array = ROOT_data_struct.event_history;
-	pending_array = ROOT_data_struct.pending;
-
-	db(string(_filename)+" loaded");
-	}
-else
-	{
-	root_data_create();	
-	ini_debug();
-	db(string(_filename)+" not found > creating data structures");
-	}
-}
-
-function json_save_array(_filename,arrayId) {
-/// @param filename
-
-// save all
-var _string = json_stringify(arrayId);
-SaveStringToFile(_filename,_string);
-clipboard_set_text(_string)
-show_debug_message(string(_filename)+" saved");
-}
 
 function LoadJSONFromFile(_filename) {
 /// @param filename
@@ -41,8 +8,6 @@ buffer_delete(_buffer);
 
 var _json = json_parse(_string);
 return _json;
-
-show_debug_message(_string);
 
 }
 
@@ -55,7 +20,46 @@ buffer_write(_buffer,buffer_string,_string);
 buffer_save(_buffer,_filename);
 buffer_delete(_buffer);
 
-show_debug_message(_string);
+db(_string);
+}
+
+
+function json_load_array(_filename) {
+/// @param filename
+
+if file_exists(_filename)
+	{
+	ROOT_data_struct = LoadJSONFromFile(_filename); 
+	
+	var saveVersion = variable_struct_get(ROOT_data_struct,"version");
+
+	if saveVersion != json_version
+	scr_json_version_transition(saveVersion);
+	else
+		{
+		// create data arrays
+		friendslist_array = ROOT_data_struct.friendslist;
+		event_history_array = ROOT_data_struct.event_history;
+		pending_array = ROOT_data_struct.pending;
+
+		db(string(_filename)+" loaded");
+		}
+	}
+else
+	{
+	json_conversion_missing();
+	db(string(_filename)+" not found > creating data structures");
+	}
+}
+
+function json_save_array(_filename,arrayId) {
+/// @param filename
+
+// save all
+var _string = json_stringify(arrayId);
+SaveStringToFile(_filename,_string);
+
+db(string(_filename)+" saved");
 }
 
 function json_save(_filename,arrayId) {

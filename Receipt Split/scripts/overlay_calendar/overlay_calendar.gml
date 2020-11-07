@@ -180,7 +180,7 @@ var xx = room_width*0.8;
 var xoff = -ww*0.5;
 
 // draw Submit button
-if click_button(xx+xoff,yy+(yoff*ysep),"OK",50,c_black,ww,hh,undefined,false,false,navbar.calendar,calendarAlpha)
+if click_button(xx+xoff,yy+(yoff*ysep),"OK",50,c_app_green,ww,hh,undefined,false,false,navbar.calendar,calendarAlpha)
 	{
 	calendarDateEntry = date_create_datetime(dateSelectYear,dateSelectMonth,dateSelectDay,1,1,1);
 	androidBack = true;

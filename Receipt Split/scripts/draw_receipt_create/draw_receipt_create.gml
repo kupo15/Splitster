@@ -53,7 +53,7 @@ var xx = 0;
 var yy = element_numpad.yy-hh;
 var height = 40;
 var ww = room_width-xx-xx;
-var col = make_color_rgb(28,164,109); // green
+var col = c_app_green;
 
 if !submit
 var col = c_gray;

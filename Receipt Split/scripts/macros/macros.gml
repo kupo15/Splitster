@@ -1,7 +1,7 @@
 
 // json saving
 #macro json_version "0.1"
-#macro save_data "split_save-"+json_version+".dat"
+#macro save_data "split_save.dat"
 #macro app_save json_save_array(save_data,ROOT_data_struct)
 #macro app_load json_load_array(save_data)
 
@@ -13,6 +13,7 @@
 // background colors
 #macro c_lt_gray make_color_rgb(228,228,228)
 #macro c_click_color make_color_rgb(235,235,235)
+#macro c_app_green make_color_rgb(28,164,109)
 
 // navbar
 #macro nav_sca_off 0.85

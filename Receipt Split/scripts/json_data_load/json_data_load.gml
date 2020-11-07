@@ -2,5 +2,6 @@ function json_data_load() {
 		
 ini_profile_info();
 
-app_load;
+//root_data_create();	
+json_load_array(save_data)
 }

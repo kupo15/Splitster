@@ -28,9 +28,11 @@ if click_button(xx,yy,"<",50,c_black,header_hh+40,header_hh,undefined,false,fals
 	yearSelectOffset = 0;
 	}
 
+// draw right arrow
 if click_button(xx+ww-header_hh-40,yy,">",50,c_black,header_hh+40,header_hh,undefined,false,false,submenu)
 yearSelectOffset += 12;
 
+// draw months
 var xoff = 10; // starting xoff
 var yoff = header_hh+10; // starting yoff
 var button_sep = 20; // gap between buttons
@@ -60,6 +62,7 @@ for(var i=0;i<12;i++)
 		}
 	}
 
+// click out of box
 if clickout_region(xx,yy,ww,hh,noone,navbar.calendarYearSelect)
 	{
 	screenDarkenIndex = darkenIndex.calendar;
@@ -67,7 +70,5 @@ if clickout_region(xx,yy,ww,hh,noone,navbar.calendarYearSelect)
 	alpha_lerp_end = 0;
 	androidBack = false;
 	}
-
-
 
 }

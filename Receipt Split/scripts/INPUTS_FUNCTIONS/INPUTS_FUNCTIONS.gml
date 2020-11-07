@@ -49,6 +49,9 @@ scr_cursor_position_set(keyboard_string,textboxStringScale); // set cursor posit
 
 function scr_debug_inputs() {
 	
+if os_type == os_android
+exit;
+	
 debug_reset = keyboard_check_pressed(vk_delete);
 
 if debug_reset 

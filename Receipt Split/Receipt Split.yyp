@@ -52,6 +52,7 @@
     {"id":{"name":"DEBUG_DRAW_VARIABLES","path":"scripts/DEBUG_DRAW_VARIABLES/DEBUG_DRAW_VARIABLES.yy",},"order":13,},
     {"id":{"name":"sidebar_fades","path":"scripts/sidebar_fades/sidebar_fades.yy",},"order":2,},
     {"id":{"name":"DRAW_DIALOGUE_FUNCTIONS","path":"scripts/DRAW_DIALOGUE_FUNCTIONS/DRAW_DIALOGUE_FUNCTIONS.yy",},"order":2,},
+    {"id":{"name":"SAVE_DATA_CONVERSIONS","path":"scripts/SAVE_DATA_CONVERSIONS/SAVE_DATA_CONVERSIONS.yy",},"order":14,},
     {"id":{"name":"ico_trash1","path":"sprites/ico_trash1/ico_trash1.yy",},"order":0,},
     {"id":{"name":"scr_sidebar_active","path":"scripts/scr_sidebar_active/scr_sidebar_active.yy",},"order":3,},
     {"id":{"name":"scr_expense_create","path":"scripts/scr_expense_create/scr_expense_create.yy",},"order":6,},

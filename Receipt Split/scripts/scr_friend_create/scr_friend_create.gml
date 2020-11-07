@@ -47,7 +47,7 @@ array_insert(friendslist_array,ind,friend);
 if argument[1] != undefined
 	{
 	array_sort_nested_struct(friendslist_array,"dispName",ascending);
-	app_save
+	app_save;
 	}
 
 // reset variables
