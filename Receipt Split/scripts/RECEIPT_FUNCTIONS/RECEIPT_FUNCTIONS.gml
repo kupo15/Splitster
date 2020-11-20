@@ -32,9 +32,9 @@ function scr_receipt_update(ind) {
 
 active_receipt = active_expense.receiptList[ind];
 
-receipt_name = active_expense.receiptList[ind].description;
-receipt_price = active_expense.receiptList[ind].price;
-currency_index = active_expense.receiptList[ind].currency;
+receipt_name = active_receipt.description;
+receipt_price = active_receipt.price;
+currency_index = active_receipt.currency;
 receipt_index = ind;
 
 screen_change(screen.receiptUpdate);

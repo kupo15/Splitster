@@ -3,6 +3,11 @@ function ini_shared(){
 
 draw_set_circle_precision(32);
 
+ini_screen_change();
+ini_timers();
+ini_highlight_vars();
+ini_cursor_vars();
+	
 searching = false;
 searched = false;
 searched_name = "";
@@ -30,14 +35,21 @@ screenIndex = screen.home;
 textboxIndex = noone;
 datePointer = noone;
 
-canClick = true;
-clickMoved = false;
+// switch tabs
+switchTabNum = 5;
+switchTabDisp = array_create(switchTabNum,0);
+switchTabDispEnd = array_create(switchTabNum,0);
 
+// virtual keyboard
 kvStatus = false;
 kvActive = false;
 kvHeight = 0;
 kvLastString = "";
 kvInputString = "";
+
+// mouse
+canClick = true;
+clickMoved = false;
 
 mouse_xstart = 0;
 mouse_ystart = 0;
@@ -48,6 +60,10 @@ mouse_ydist = 0;
 mouse_xprev = 0;
 mouse_yprev = 0;
 
+mouse_xpos = 0;
+mouse_ypos = 0;
+
+// calendar
 dateSelectDay = 0;
 dateSelectMonth = 0;
 dateSelectYear = 0;

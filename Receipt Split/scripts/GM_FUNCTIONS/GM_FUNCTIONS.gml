@@ -40,3 +40,76 @@ function funct_mouse_wheel(scale) {
 return (mouse_wheel_up()-mouse_wheel_down())*scale;
 
 }
+
+function trace() {
+/// @param value
+
+var _string = "";
+
+for(var i=0;i<argument_count;i++)
+_string += string(argument[i]);
+
+show_debug_message(_string);	
+}
+
+function concat() {
+/// @param value
+
+var _string = "";
+
+for(var i=0;i<argument_count;i++)
+_string += string(argument[i]);
+
+return _string;
+}
+
+function pick(val1,val2,condition) {
+/// val1 if false
+/// val2 if true
+
+if condition
+return val2;
+else
+return val1;
+	
+}
+	
+function pct_x(percent) {
+
+var xx = app_width*percent;
+
+return xx;
+}
+
+function pct_y(percent) {
+
+var yy = app_height*percent;
+
+return yy;
+}
+
+function pct_x_convert(ww) {
+
+var pct = ww/room_width;
+
+return pct;
+}
+
+function pct_y_convert(hh) {
+
+var pct = hh/room_height;
+
+return pct;
+}
+	
+function point_x(xx) {
+	
+return xx*global.DPI_X_CONVERT;
+
+}
+
+function point_y(yy) {
+	
+return yy*global.DPI_Y_CONVERT;
+
+}

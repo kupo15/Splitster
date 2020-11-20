@@ -40,16 +40,15 @@ var xx = 100;
 var yy = yy_sep;
 var sep = 70;
 var height = 30;
-var yoff = (sep-height)*0.5;
 
 draw_set_halign(fa_left);
-draw_text_height(xx+xx_off,yy+yoff+(screen.home*sep),"Home",height);
-draw_text_height(xx+xx_off,yy+yoff+(screen.friendsList*sep),"Friends",height);
-draw_text_height(xx+xx_off,yy+yoff+(screen.expenseCreate*sep),"Create Expense",height);
-draw_text_height(xx+xx_off,yy+yoff+(screen.expensesPending*sep),"Pending Expenses",height);
-draw_text_height(xx+xx_off,yy+yoff+(screen.expenseHistory*sep),"Event History",height);
+draw_text_height_middled(xx+xx_off,yy+(screen.home*sep),"Home",sep,height);
+draw_text_height_middled(xx+xx_off,yy+(screen.friendsList*sep),"Friends",sep,height);
+draw_text_height_middled(xx+xx_off,yy+(screen.expenseCreate*sep),"Create Expense",sep,height);
+draw_text_height_middled(xx+xx_off,yy+(screen.expensesPending*sep),"Pending Expenses",sep,height);
+draw_text_height_middled(xx+xx_off,yy+(screen.expenseHistory*sep),"Event History",sep,height);
 
-draw_text_height(xx+xx_off,yy+yoff+(screen.settings*sep),"Settings",height);
+draw_text_height_middled(xx+xx_off,yy+(screen.settings*sep),"Settings",sep,height);
 
 draw_text_height(xx_off+15,room_height-40,"Vers. "+string(GM_version),30);
 

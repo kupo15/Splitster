@@ -4,6 +4,7 @@ function draw_overlay_calendar() {
 var alpha = (screenDarkenIndex == darkenIndex.calendar) || (screenDarkenIndex == darkenIndex.calendarYear);
 calendarAlpha = lerp(calendarAlpha,alpha,0.2);
 
+draw_set_color(c_black);
 draw_set_alpha(calendarAlpha);
 
 var xcal = 10;

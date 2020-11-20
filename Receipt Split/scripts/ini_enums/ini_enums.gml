@@ -1,13 +1,4 @@
 
-enum headerType {
-none,
-bars,
-dots,
-back,
-trash
-
-}
-
 enum screen {
 home,
 friendsList,
@@ -33,14 +24,6 @@ edit_date,
 }
 
 
-// debug vk
-enum vk {
-hidden,
-hiding,
-showing,
-visible
-}
-
 enum navbar {
 sidebar = -5,
 main = -4,
@@ -52,26 +35,13 @@ calendarYearSelect,
 numpad
 }
 
-enum timerIndex {
-vk_switch,
-scroll_end,
-flick,
-press_hold,
 
-enumcount
-}
 
 enum highlightAction {
 newFriend,	
 	
 }
 
-enum darkenIndex {
-none,
-sidebar,
-calendar,
-calendarYear
-}
 
 enum currencySymbol {
 dollar,

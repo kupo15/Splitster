@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Debug",
-    "path": "folders/Android App Library/Debug.yy",
+    "name": "Data Structures",
+    "path": "folders/Android App Library/Functions/Data Structures.yy",
   },
   "resourceVersion": "1.0",
-  "name": "draw_debug",
+  "name": "DS_STACK_FUNCTIONS",
   "tags": [],
   "resourceType": "GMScript",
 }

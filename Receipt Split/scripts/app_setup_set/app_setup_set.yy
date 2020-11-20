@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Debug",
-    "path": "folders/Android App Library/Debug.yy",
+    "name": "Ini",
+    "path": "folders/Android App Library/Scripts/Ini.yy",
   },
   "resourceVersion": "1.0",
-  "name": "draw_debug",
+  "name": "app_setup_set",
   "tags": [],
   "resourceType": "GMScript",
 }

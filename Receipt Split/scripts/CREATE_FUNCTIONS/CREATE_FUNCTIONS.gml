@@ -1,12 +1,6 @@
 function ini_create() {
 		
-ini_shared();
 layout_normal();
-ini_screen_change();
-ini_timers();
-ini_highlight_vars();
-ini_cursor_vars();
-
 ini_currency_symbols();
 	
 currency_index = 0;
@@ -54,8 +48,7 @@ squareup_list_offset_start = squareup_list_offset;
 
 #endregion
 
-mouse_xpos = 0;
-mouse_ypos = 0;
+
 }
 
 function root_data_create() {

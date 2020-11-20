@@ -145,7 +145,7 @@ if click_button(xx,yy,"Create Receipt",height,c_black,ww,hh,c_white,true,false,n
 draw_plus_button(xx+83,yy-4+(hh*0.5),70,false);
 #endregion
 
-// draw calendar
+#region draw calendar
 var yy = 750;
 var hh = 90;
 var col = c_white;
@@ -180,6 +180,7 @@ if calendarDateEntry != undefined
 	active_expense.date = calendarDateEntry;
 	calendarDateEntry = undefined;
 	}
+#endregion	
 	
 #region delete expense
 var ww = 170;

@@ -23,7 +23,7 @@ switch screenDarkenIndex
 
 // lerp the darken screen behind it
 // var col = merge_color(c_white,c_black,darken_screen);
-var lerp_spd = 0.13;
+var lerp_spd = 0.15;
 switch screenDarkenIndex
 	{
 	case darkenIndex.none: screenDarkenAlpha = lerp(screenDarkenAlpha,0,lerp_spd); break;

@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Receipt Split",
-    "path": "Receipt Split.yyp",
+    "name": "Data Structures",
+    "path": "folders/Android App Library/Functions/Data Structures.yy",
   },
   "resourceVersion": "1.0",
-  "name": "ICON_DRAW",
+  "name": "STRUCT_FUNCTIONS",
   "tags": [],
   "resourceType": "GMScript",
 }

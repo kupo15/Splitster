@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Receipt Split",
-    "path": "Receipt Split.yyp",
+    "name": "Debug",
+    "path": "folders/Android App Library/Debug.yy",
   },
   "resourceVersion": "1.0",
   "name": "DEBUG_DRAW_VARIABLES",
