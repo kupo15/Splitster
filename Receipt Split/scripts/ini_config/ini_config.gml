@@ -11,6 +11,10 @@ if os_type == os_android
 	// set layout
 	app_width = display_get_width();
 	app_height = display_get_height();
+	
+	// set app layout variables
+	DPI_X = display_get_dpi_x();
+	DPI_Y = display_get_dpi_y();
 
 	// apply settings
 	alarm[0] = 1;
@@ -48,4 +52,11 @@ else
 	
 	window_set_position(window_xx-200,window_yy);
 	}
+	
+// set dpi variables
+DPI_X = display_get_dpi_x();
+DPI_Y = display_get_dpi_y();
+	
+global.DPI_X_CONVERT = display_get_dpi_x()/DPI_POINT;
+global.DPI_Y_CONVERT = display_get_dpi_y()/DPI_POINT;
 }
