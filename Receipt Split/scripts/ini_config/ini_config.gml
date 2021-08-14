@@ -17,7 +17,7 @@ if os_type == os_android
 	DPI_Y = display_get_dpi_y();
 
 	// apply settings
-	alarm[0] = 1;
+	alarm[0] = 2;
 	}
 else
 	{
